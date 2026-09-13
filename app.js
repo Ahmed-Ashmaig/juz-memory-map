@@ -102,6 +102,32 @@ const Weak = {
   },
 };
 
+/* ---------- "add to home screen" (the installed app only: the claude.ai copy has no manifest) ---------- */
+const isPWA = !!document.querySelector('link[rel="manifest"]');
+const standalone = matchMedia("(display-mode: standalone)").matches || navigator.standalone === true;
+const isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+const wantsInstall = new URLSearchParams(location.search).has("install");
+if (wantsInstall) history.replaceState(null, "", location.pathname + location.hash);   // keep the query off the home-screen icon
+let installPrompt = null;
+window.addEventListener("beforeinstallprompt", e => { e.preventDefault(); installPrompt = e; if (!$("home").hidden) installTip(); });
+const SHARE_ICON = '<svg class="share" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v13M7 8l5-5 5 5M5 12v8h14v-8"/></svg>';
+function installTip() {
+  const el = $("installTip");
+  if (!el || !isPWA || standalone) return;
+  const dismissed = store.get("qf-install-hint", false) && !wantsInstall;
+  let body = "";
+  if (installPrompt) body = `<p><b>Install QuranFlow as an app.</b> It opens full screen and works offline.</p>
+    <div class="row"><button type="button" class="btn" id="installGo">Install</button><button type="button" class="btn ghost" id="installNo">Not now</button></div>`;
+  else if (isIOS) body = `<p><b>Add QuranFlow to your home screen.</b> Tap the Share button ${SHARE_ICON} in Safari, then <b>Add to Home Screen</b>, then <b>Add</b>. It then opens full screen and works offline.</p>
+    <div class="row"><button type="button" class="btn ghost" id="installNo">Got it</button></div>`;
+  else if (wantsInstall) body = `<p><b>Add QuranFlow to your home screen.</b> In your browser's menu, choose <b>Add to Home screen</b> or <b>Install app</b>.</p>
+    <div class="row"><button type="button" class="btn ghost" id="installNo">Got it</button></div>`;
+  el.hidden = !body || dismissed;
+  el.innerHTML = body;
+  if ($("installGo")) $("installGo").onclick = async () => { installPrompt.prompt(); await installPrompt.userChoice.catch(() => {}); installPrompt = null; el.hidden = true; };
+  if ($("installNo")) $("installNo").onclick = () => { store.set("qf-install-hint", true); el.hidden = true; };
+}
+
 /* ---------- home ---------- */
 function chip(n, last) {
   const s = IDX.surahs[n], ready = IDX.ready.includes(n), w = Weak.total(n);
@@ -123,10 +149,12 @@ function armClear(btn, label, onConfirm) {
 }
 function showHome() {
   $("home").hidden = false; $("surah").hidden = true;
+  document.body.classList.remove("in-surah");
   $("homebtn").classList.add("here"); $("homebtn").setAttribute("aria-current", "page");
   $("feat").hidden = true; $("featMenu").hidden = true;
   $("crumb").innerHTML = ""; $("navbtns").innerHTML = "";
   Surah.leave();
+  installTip();
   const last = store.get("juzapp-last", null);
   $("resume").innerHTML = last && IDX.ready.includes(last)
     ? `<div class="row" style="margin-top:.4rem"><a class="btn" href="#${last}">Continue with ${esc(nameOf(last))}</a></div>` : "";
@@ -166,6 +194,7 @@ async function openSurah(n, tab) {
   const token = ++routeToken;
   if (!$("home").hidden && Surah.n !== n) flip.show();
   $("home").hidden = true; $("surah").hidden = false;
+  document.body.classList.add("in-surah");
   $("homebtn").classList.remove("here"); $("homebtn").removeAttribute("aria-current");   // now a clear way back to every surah
   $("feat").hidden = false;
   if (Surah.n !== n) {
@@ -184,11 +213,13 @@ async function openSurah(n, tab) {
   const earlier = IDX.ready.includes(n - 1) ? `<a href="#${n - 1}" aria-label="Previous surah: ${esc(nameOf(n - 1))}">${n - 1} ${esc(nameOf(n - 1))} ›</a>` : empty;
   $("crumb").innerHTML = "";
   $("navbtns").innerHTML = `${later}<span class="here" aria-current="page" title="Juz ${s.juz[0]}">${n} ${esc(nameOf(n))}</span>${earlier}`;
-  if (Surah.n !== n) {
+  const fresh = Surah.n !== n;
+  if (fresh) {
     try { Surah.mount(n, data); }
     catch (e) { $("loading").textContent = "This surah couldn’t open. Please try another one."; console.error(e); flip.hide(); return; }
   }
   $("loading").hidden = true; $("surahBody").hidden = false;
+  if (fresh) $("stage").scrollTop = 0;   // phones: a new surah starts on its first screen (only works once it is visible)
   if (tab) Surah.setTab(tab);   // e.g. #70/weak opens straight into that surah's weak spots
   setTopbar();
   flip.hide();
@@ -462,11 +493,11 @@ const Surah = (() => {
     mode = "learn"; sel = 1; cur = 1; revealed = 0; viewPage = 0;
     ltab = "ayah";   // every surah opens on the Ayah tab with its rows closed
     drill = null; drillNote = ""; allClear = false;
-    $("surah").style.minHeight = "";
     quizA = 0; lastQuiz = 0; answered = false; score[0] = score[1] = 0;
     stuckThisPass.clear(); openGroups.clear();
     buildPages(); buildHeader(); buildStrip();
     $("f-quiz").hidden = S.length < 2;
+    $("stage").scrollTop = 0;   // phones: back to the first screen
     simSel = 0;
     $("f-sim").hidden = !(data.similars || []).length;
     syncFeat();
@@ -643,7 +674,7 @@ const Surah = (() => {
     drill = { a, steps, idx: 0, done: false };
     drillNote = note;
     cur = steps[0]; sel = secOf(cur).n;
-    holdHeight(); render();
+    render();
     scrollToPage(AY[key(cur)].start[0]);
   }
   function drillStep(dir) {
@@ -654,7 +685,7 @@ const Surah = (() => {
     if (i >= drill.steps.length) { drill.done = true; cur = drill.a; }
     else { drill.idx = i; drill.done = false; cur = drill.steps[i]; }
     sel = secOf(cur).n;
-    holdHeight(); render();
+    render();
     scrollToPage(AY[key(cur)].start[0]);
   }
   function drillAnswer(ok) {
@@ -715,11 +746,6 @@ const Surah = (() => {
       <div class="row"><button type="button" class="replink" id="b-skip"${K > 1 ? "" : " hidden"}>Skip to the next weak spot</button><button type="button" class="replink" id="b-stop">Stop practising</button></div>`;
   }
 
-  // Hold the page at its tallest while stepping, so shorter content doesn't make the page snap upward.
-  function holdHeight() {
-    const page = $("surah");
-    page.style.minHeight = Math.max(page.offsetHeight, parseFloat(page.style.minHeight) || 0) + "px";
-  }
 
   /* ---------- Learn: tabs, the panel and the bar ---------- */
   function renderLearn() {
@@ -783,7 +809,6 @@ const Surah = (() => {
     if (mode !== "learn") { mode = "learn"; revealed = 0; stuckThisPass.clear(); syncFeat(); }
     if (t !== "weak") { drill = null; drillNote = ""; }
     if (t !== ltab) { ltab = t; store.set("juzapp-ltab", ltab); }
-    $("surah").style.minHeight = "";
     render();
   }
 
@@ -931,11 +956,27 @@ const Surah = (() => {
   // Learn keeps everything in the panel, so the area under the pages is only used by Similars.
   function renderDeep() { $("deep").hidden = true; }
 
+  // Phones: the surah view is a scroller of three screens. A re-render can change the height of what is
+  // above the reader (e.g. the panel), so remember where they are within their screen and put it back.
+  function screenAnchor() {
+    const st = $("stage");
+    if (!st || st.scrollHeight <= st.clientHeight + 1) return () => {};
+    const ids = ["scr1", "scr2", "scr3"], y = st.scrollTop, tops = ids.map(id => $(id).offsetTop - st.offsetTop);
+    let i = 0;
+    tops.forEach((t, k) => { if (t <= y + 1) i = k; });
+    const d = y - tops[i];
+    return () => { const t2 = $(ids[i]).offsetTop - st.offsetTop; if (Math.abs(st.scrollTop - (t2 + d)) > 1) st.scrollTop = t2 + d; };
+  }
   function render() {
     if (!D) return;
+    const restore = screenAnchor();
+    renderNow();
+    restore();
+  }
+  function renderNow() {
     if (weakList().length) allClear = false;
     // Only the chosen feature shows. Learn opens with the surah's intro card; the others go straight to the pages.
-    $("sHead").hidden = mode !== "learn";
+    $("sHead").hidden = $("scr1").hidden = mode !== "learn";
     $("strip").hidden = mode === "sim";
     paint();
     syncStrip(true);
@@ -963,10 +1004,9 @@ const Surah = (() => {
     if (scroll) scrollToPage(S[sn - 1].from[0]);
   }
   function openAyah(a, scroll, tab) {
-    if (tab && tab !== ltab) { ltab = tab; store.set("juzapp-ltab", ltab); $("surah").style.minHeight = ""; }
+    if (tab && tab !== ltab) { ltab = tab; store.set("juzapp-ltab", ltab); }
     if (ltab !== "weak") { drill = null; drillNote = ""; }
     cur = a; sel = secOf(a).n;
-    holdHeight();
     render();
     const P = $("panel");
     if (P.scrollHeight > P.clientHeight) P.scrollTop = 0;   // wide screens: keep the current ayah in sight
@@ -979,7 +1019,6 @@ const Surah = (() => {
     if (m === "sim" && !(D.similars || []).length) m = "learn";
     mode = m; revealed = 0; stuckThisPass.clear();
     drill = null; drillNote = "";
-    $("surah").style.minHeight = "";
     syncFeat();
     document.querySelectorAll("#strip .blk").forEach(b => b.classList.remove("right", "wrong"));
     if (m === "quiz") newQuiz(); else render();
@@ -988,7 +1027,6 @@ const Surah = (() => {
     $("dock").hidden = true;
     $("anav").hidden = true;
     $("surah").classList.remove("surah-test", "surah-nav");
-    $("surah").style.minHeight = "";
     drill = null; drillNote = "";
   }
   // Arrow keys step through Learn, matching the bar: ← previous, → next.
@@ -1028,7 +1066,9 @@ Weak.listeners.add(() => {
 const splash = $("splash");
 if (splash && !splash.hidden) {
   if ($("splashBism") && !$("splashBism").textContent) $("splashBism").textContent = IDX.basmala;   // from the muṣḥaf data, not typed by hand
-  const done = () => { splash.hidden = true; try { sessionStorage.setItem("qf-splash", "1"); } catch (e) { /* storage unavailable */ } };
+  // Mark it played as soon as it starts, so a reload mid-animation (e.g. when an update takes over) doesn't replay it.
+  try { sessionStorage.setItem("qf-splash", "1"); } catch (e) { /* storage unavailable */ }
+  const done = () => { splash.hidden = true; };
   if (reduceMotion) done(); else { splash.addEventListener("click", done); setTimeout(done, 3800); }
 }
 window.addEventListener("hashchange", route);

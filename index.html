@@ -158,13 +158,17 @@ h1.stitle .ar{font:400 .95em/1.2 var(--q);color:var(--green)}
 .blk.b7[aria-pressed="true"]{border-color:var(--s7e)} .blk.b8[aria-pressed="true"]{border-color:var(--s8e)}
 
 /* ---- muṣḥaf pages ---- */
+/* The surah view is three groups: the intro, the sections with the pages, and the panel. On wide screens the
+   groups dissolve into one grid; on phones each group is a screen the page snaps to. */
 .stage{display:grid;gap:1.2rem;align-items:start;grid-template-columns:minmax(0,1fr)}
+.screen{display:contents}
 @media (min-width:1100px){
   .stage{grid-template-columns:15rem minmax(0,1fr) 25rem}
-  .strip{grid-column:1;grid-row:1 / span 2;align-self:start;position:sticky;top:3.6rem;max-height:calc(100vh - 10rem)}
-  .pagewrap{grid-column:2;grid-row:1}
-  .panel{grid-column:3;grid-row:1 / span 2;align-self:start}
-  .deep{grid-column:1 / 3;grid-row:2}
+  #sHead,#sBar{grid-column:1 / -1}
+  .strip{grid-column:1;align-self:start;position:sticky;top:3.6rem;max-height:calc(100vh - 10rem)}
+  .pagewrap{grid-column:2}
+  .panel{grid-column:3;grid-row:span 2;align-self:start}
+  .deep{grid-column:1 / 3}
   .stage.sim .pagewrap{grid-column:1 / 3}
 }
 /* wide screens show two pages side by side, so a section that runs over a page break is all in view */
@@ -276,6 +280,11 @@ h1.stitle .ar{font:400 .95em/1.2 var(--q);color:var(--green)}
 .w.veil{color:transparent!important;background:var(--hide)!important;box-shadow:none!important;text-decoration:none!important}
 .w.veil .e{border-color:transparent;color:transparent}
 .brandlbl{color:var(--green)}
+/* "add to home screen" tip on the home screen (installed app only, never inside the claude.ai copy) */
+.installtip{display:grid;gap:.5rem;padding:.75rem .9rem;border:1px solid var(--green);border-radius:10px;background:var(--sheet);margin-top:.4rem}
+.installtip p{line-height:1.5}
+.installtip .share{display:inline-block;vertical-align:-.15em;width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.installtip .row .btn{padding:.4rem .8rem;font-size:.9rem}
 /* opening, once per launch: a closed muṣḥaf settles in, its cover swings open, and the page reveals the
    basmala in Arabic, then in English, then the name. A tap skips it. */
 .splash{position:fixed;inset:0;z-index:50;display:grid;place-items:center;background:var(--paper);animation:splashOut .6s ease 3.1s forwards;cursor:pointer}
@@ -310,7 +319,6 @@ h1.stitle .ar{font:400 .95em/1.2 var(--q);color:var(--green)}
 @media (min-width:1100px){.ltabs{position:sticky;top:0;z-index:2;box-shadow:0 0 0 .55rem var(--sheet)}}
 .surah-nav{padding-bottom:6rem}
 @media (min-width:1100px){.surah-nav .panel{max-height:calc(100vh - 10rem)}}
-#panel{scroll-margin-top:7rem}
 .ayat{display:grid;gap:.2rem;border-top:1px solid var(--line);padding-top:.5rem}
 .ay{all:unset;box-sizing:border-box;display:grid;gap:.05rem;padding:.35rem .4rem;border-radius:6px;cursor:pointer}
 .ay:hover{background:var(--paper)}
@@ -406,19 +414,24 @@ details[open]>summary .more::before{content:"▾ Close"}
   .feat:not([hidden]) + .navbtns{margin-inline-start:0}
   .navbtns a{text-align:center}
   .hint{text-align:center}
-  .strip{max-height:11.5rem}
 }
-/* phones: the surah screen snaps in three screens — the intro, the sections with the page, then the tabs */
+/* phones: the surah view is one scroller that snaps between three screens — the intro, the sections with
+   the page, then the tabs. Only the scroller moves; the document itself stays put under the top bar. */
 .scrollhint{display:none}
 @media (max-width:1099px){
-  html{scroll-snap-type:y proximity;scroll-padding-top:var(--topbar,5.6rem)}
-  .intro{scroll-snap-align:start}
+  body.in-surah{padding-bottom:0}
+  body.in-surah #surah{padding-bottom:0}
+  .stage{display:block;height:calc(100vh - var(--topbar,5.6rem) - 1.1rem);height:calc(100dvh - var(--topbar,5.6rem) - 1.1rem);overflow-y:auto;scroll-snap-type:y mandatory;overscroll-behavior-y:contain;overflow-anchor:none;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .stage::-webkit-scrollbar{display:none}
+  .screen{display:grid;grid-template-columns:minmax(0,1fr);gap:1rem;align-content:start;scroll-snap-align:start;scroll-snap-stop:always;box-sizing:border-box}
+  #scr2,#scr3{min-height:100%}
+  #scr1,#scr3{padding-bottom:8.5rem}   /* room for the bar pinned to the bottom of the screen */
+  #sBar{display:none}                  /* the hint lives in the intro card's last line on phones */
+  .strip{max-height:8.6rem}
   .scrollhint{display:block;padding-top:.4rem;text-align:center;font-size:.85rem;color:var(--muted)}
-  #sBar{scroll-snap-align:start}
-  .panel{scroll-snap-align:start}
   /* Section tab: before, this and after all fit one screen — neighbours compact, this section scrolls inside its card */
   .strio .nbc .mid-ar,.strio .nbc .t ~ .d{display:none}
-  .strio .here.secmain{max-height:calc(100vh - 29rem);max-height:calc(100dvh - 29rem);min-height:11rem;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
+  .strio .here.secmain{max-height:calc(100vh - 29rem);max-height:calc(100dvh - 29rem);min-height:11rem;overflow-y:auto;scrollbar-width:thin}
   .deep{padding:1rem}
   .ayds{margin-inline-start:0}
   .points li{grid-template-columns:3rem 1fr}
@@ -522,6 +535,7 @@ mark.simdiff{background:var(--repsoft);color:var(--rep);border-radius:3px;paddin
     <div class="card homehead">
       <span class="lbl brandlbl">QuranFlow</span>
       <h1>All surahs</h1>
+      <div class="installtip" id="installTip" hidden></div>
       <div id="resume"></div>
       <div id="weakSummary"></div>
     </div>
@@ -530,7 +544,9 @@ mark.simdiff{background:var(--repsoft);color:var(--rep);border-radius:3px;paddin
 
   <section id="surah" hidden>
     <div class="loading" id="loading">Loading…</div>
-    <div id="surahBody" hidden style="display:grid;gap:1.1rem">
+    <div id="surahBody" hidden>
+     <div class="stage" id="stage">
+     <div class="screen" id="scr1">
       <div class="card intro" id="sHead">
         <h1 class="stitle" id="sTitle"></h1>
         <div class="sub" id="sub"></div>
@@ -548,20 +564,24 @@ mark.simdiff{background:var(--repsoft);color:var(--rep);border-radius:3px;paddin
             </div>
           </details>
         </div>
-        <div class="scrollhint" aria-hidden="true">Scroll down for the sections and the page ↓</div>
+        <div class="scrollhint" aria-hidden="true">Scroll down for the sections and the page ↓<br>Tap any word on the page to jump to its ayah.</div>
       </div>
+     </div>
+     <div class="screen" id="scr2">
       <div class="bar" id="sBar">
         <div class="hint" id="hint"></div>
       </div>
-      <div class="stage" id="stage">
-        <div class="strip" id="strip" role="group" aria-label="Sections"></div>
-        <div class="pagewrap">
-          <div class="pages" id="pages"></div>
-          <div class="pagebar"><div class="pips" id="pagepips" role="group" aria-label="Pages"></div><div class="pagetxt" id="pagetxt"></div></div>
-        </div>
-        <aside class="panel" id="panel" aria-live="polite"></aside>
-        <section class="deep" id="deep" aria-label="Go deeper"></section>
+      <div class="strip" id="strip" role="group" aria-label="Sections"></div>
+      <div class="pagewrap">
+        <div class="pages" id="pages"></div>
+        <div class="pagebar"><div class="pips" id="pagepips" role="group" aria-label="Pages"></div><div class="pagetxt" id="pagetxt"></div></div>
       </div>
+     </div>
+     <div class="screen" id="scr3">
+      <aside class="panel" id="panel" aria-live="polite"></aside>
+      <section class="deep" id="deep" aria-label="Go deeper"></section>
+     </div>
+     </div>
     </div>
     <div class="dock" id="dock" hidden></div>
     <nav class="anav" id="anav" aria-label="Step through ayat" hidden>
@@ -576,8 +596,8 @@ mark.simdiff{background:var(--repsoft);color:var(--rep);border-radius:3px;paddin
   </section>
 </div>
 
-<script src="data/index.js?v=8dfdb1b4f6"></script>
-<script src="app.js?v=8dfdb1b4f6"></script>
+<script src="data/index.js?v=205cd45130"></script>
+<script src="app.js?v=205cd45130"></script>
 
 <script>
 if ("serviceWorker" in navigator && location.protocol === "https:") {

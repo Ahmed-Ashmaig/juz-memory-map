@@ -260,11 +260,11 @@ const Surah = (() => {
     mode = "learn"; sel = 1; cur = 1; revealed = 0; viewPage = 0;
     ltab = "ayah";   // every surah opens on the Ayah tab with its rows closed
     drill = null; drillNote = ""; allClear = false;
-    $("surah").style.minHeight = "";
     quizA = 0; lastQuiz = 0; answered = false; score[0] = score[1] = 0;
     stuckThisPass.clear(); openGroups.clear();
     buildPages(); buildHeader(); buildStrip();
     $("f-quiz").hidden = S.length < 2;
+    $("stage").scrollTop = 0;   // phones: back to the first screen
     simSel = 0;
     $("f-sim").hidden = !(data.similars || []).length;
     syncFeat();
@@ -441,7 +441,7 @@ const Surah = (() => {
     drill = { a, steps, idx: 0, done: false };
     drillNote = note;
     cur = steps[0]; sel = secOf(cur).n;
-    holdHeight(); render();
+    render();
     scrollToPage(AY[key(cur)].start[0]);
   }
   function drillStep(dir) {
@@ -452,7 +452,7 @@ const Surah = (() => {
     if (i >= drill.steps.length) { drill.done = true; cur = drill.a; }
     else { drill.idx = i; drill.done = false; cur = drill.steps[i]; }
     sel = secOf(cur).n;
-    holdHeight(); render();
+    render();
     scrollToPage(AY[key(cur)].start[0]);
   }
   function drillAnswer(ok) {
@@ -513,11 +513,6 @@ const Surah = (() => {
       <div class="row"><button type="button" class="replink" id="b-skip"${K > 1 ? "" : " hidden"}>Skip to the next weak spot</button><button type="button" class="replink" id="b-stop">Stop practising</button></div>`;
   }
 
-  // Hold the page at its tallest while stepping, so shorter content doesn't make the page snap upward.
-  function holdHeight() {
-    const page = $("surah");
-    page.style.minHeight = Math.max(page.offsetHeight, parseFloat(page.style.minHeight) || 0) + "px";
-  }
 
   /* ---------- Learn: tabs, the panel and the bar ---------- */
   function renderLearn() {
@@ -581,7 +576,6 @@ const Surah = (() => {
     if (mode !== "learn") { mode = "learn"; revealed = 0; stuckThisPass.clear(); syncFeat(); }
     if (t !== "weak") { drill = null; drillNote = ""; }
     if (t !== ltab) { ltab = t; store.set("juzapp-ltab", ltab); }
-    $("surah").style.minHeight = "";
     render();
   }
 
@@ -729,11 +723,27 @@ const Surah = (() => {
   // Learn keeps everything in the panel, so the area under the pages is only used by Similars.
   function renderDeep() { $("deep").hidden = true; }
 
+  // Phones: the surah view is a scroller of three screens. A re-render can change the height of what is
+  // above the reader (e.g. the panel), so remember where they are within their screen and put it back.
+  function screenAnchor() {
+    const st = $("stage");
+    if (!st || st.scrollHeight <= st.clientHeight + 1) return () => {};
+    const ids = ["scr1", "scr2", "scr3"], y = st.scrollTop, tops = ids.map(id => $(id).offsetTop - st.offsetTop);
+    let i = 0;
+    tops.forEach((t, k) => { if (t <= y + 1) i = k; });
+    const d = y - tops[i];
+    return () => { const t2 = $(ids[i]).offsetTop - st.offsetTop; if (Math.abs(st.scrollTop - (t2 + d)) > 1) st.scrollTop = t2 + d; };
+  }
   function render() {
     if (!D) return;
+    const restore = screenAnchor();
+    renderNow();
+    restore();
+  }
+  function renderNow() {
     if (weakList().length) allClear = false;
     // Only the chosen feature shows. Learn opens with the surah's intro card; the others go straight to the pages.
-    $("sHead").hidden = mode !== "learn";
+    $("sHead").hidden = $("scr1").hidden = mode !== "learn";
     $("strip").hidden = mode === "sim";
     paint();
     syncStrip(true);
@@ -761,10 +771,9 @@ const Surah = (() => {
     if (scroll) scrollToPage(S[sn - 1].from[0]);
   }
   function openAyah(a, scroll, tab) {
-    if (tab && tab !== ltab) { ltab = tab; store.set("juzapp-ltab", ltab); $("surah").style.minHeight = ""; }
+    if (tab && tab !== ltab) { ltab = tab; store.set("juzapp-ltab", ltab); }
     if (ltab !== "weak") { drill = null; drillNote = ""; }
     cur = a; sel = secOf(a).n;
-    holdHeight();
     render();
     const P = $("panel");
     if (P.scrollHeight > P.clientHeight) P.scrollTop = 0;   // wide screens: keep the current ayah in sight
@@ -777,7 +786,6 @@ const Surah = (() => {
     if (m === "sim" && !(D.similars || []).length) m = "learn";
     mode = m; revealed = 0; stuckThisPass.clear();
     drill = null; drillNote = "";
-    $("surah").style.minHeight = "";
     syncFeat();
     document.querySelectorAll("#strip .blk").forEach(b => b.classList.remove("right", "wrong"));
     if (m === "quiz") newQuiz(); else render();
@@ -786,7 +794,6 @@ const Surah = (() => {
     $("dock").hidden = true;
     $("anav").hidden = true;
     $("surah").classList.remove("surah-test", "surah-nav");
-    $("surah").style.minHeight = "";
     drill = null; drillNote = "";
   }
   // Arrow keys step through Learn, matching the bar: ← previous, → next.

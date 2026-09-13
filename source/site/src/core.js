@@ -102,6 +102,32 @@ const Weak = {
   },
 };
 
+/* ---------- "add to home screen" (the installed app only: the claude.ai copy has no manifest) ---------- */
+const isPWA = !!document.querySelector('link[rel="manifest"]');
+const standalone = matchMedia("(display-mode: standalone)").matches || navigator.standalone === true;
+const isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+const wantsInstall = new URLSearchParams(location.search).has("install");
+if (wantsInstall) history.replaceState(null, "", location.pathname + location.hash);   // keep the query off the home-screen icon
+let installPrompt = null;
+window.addEventListener("beforeinstallprompt", e => { e.preventDefault(); installPrompt = e; if (!$("home").hidden) installTip(); });
+const SHARE_ICON = '<svg class="share" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v13M7 8l5-5 5 5M5 12v8h14v-8"/></svg>';
+function installTip() {
+  const el = $("installTip");
+  if (!el || !isPWA || standalone) return;
+  const dismissed = store.get("qf-install-hint", false) && !wantsInstall;
+  let body = "";
+  if (installPrompt) body = `<p><b>Install QuranFlow as an app.</b> It opens full screen and works offline.</p>
+    <div class="row"><button type="button" class="btn" id="installGo">Install</button><button type="button" class="btn ghost" id="installNo">Not now</button></div>`;
+  else if (isIOS) body = `<p><b>Add QuranFlow to your home screen.</b> Tap the Share button ${SHARE_ICON} in Safari, then <b>Add to Home Screen</b>, then <b>Add</b>. It then opens full screen and works offline.</p>
+    <div class="row"><button type="button" class="btn ghost" id="installNo">Got it</button></div>`;
+  else if (wantsInstall) body = `<p><b>Add QuranFlow to your home screen.</b> In your browser's menu, choose <b>Add to Home screen</b> or <b>Install app</b>.</p>
+    <div class="row"><button type="button" class="btn ghost" id="installNo">Got it</button></div>`;
+  el.hidden = !body || dismissed;
+  el.innerHTML = body;
+  if ($("installGo")) $("installGo").onclick = async () => { installPrompt.prompt(); await installPrompt.userChoice.catch(() => {}); installPrompt = null; el.hidden = true; };
+  if ($("installNo")) $("installNo").onclick = () => { store.set("qf-install-hint", true); el.hidden = true; };
+}
+
 /* ---------- home ---------- */
 function chip(n, last) {
   const s = IDX.surahs[n], ready = IDX.ready.includes(n), w = Weak.total(n);
@@ -123,10 +149,12 @@ function armClear(btn, label, onConfirm) {
 }
 function showHome() {
   $("home").hidden = false; $("surah").hidden = true;
+  document.body.classList.remove("in-surah");
   $("homebtn").classList.add("here"); $("homebtn").setAttribute("aria-current", "page");
   $("feat").hidden = true; $("featMenu").hidden = true;
   $("crumb").innerHTML = ""; $("navbtns").innerHTML = "";
   Surah.leave();
+  installTip();
   const last = store.get("juzapp-last", null);
   $("resume").innerHTML = last && IDX.ready.includes(last)
     ? `<div class="row" style="margin-top:.4rem"><a class="btn" href="#${last}">Continue with ${esc(nameOf(last))}</a></div>` : "";
@@ -166,6 +194,7 @@ async function openSurah(n, tab) {
   const token = ++routeToken;
   if (!$("home").hidden && Surah.n !== n) flip.show();
   $("home").hidden = true; $("surah").hidden = false;
+  document.body.classList.add("in-surah");
   $("homebtn").classList.remove("here"); $("homebtn").removeAttribute("aria-current");   // now a clear way back to every surah
   $("feat").hidden = false;
   if (Surah.n !== n) {
@@ -184,11 +213,13 @@ async function openSurah(n, tab) {
   const earlier = IDX.ready.includes(n - 1) ? `<a href="#${n - 1}" aria-label="Previous surah: ${esc(nameOf(n - 1))}">${n - 1} ${esc(nameOf(n - 1))} ›</a>` : empty;
   $("crumb").innerHTML = "";
   $("navbtns").innerHTML = `${later}<span class="here" aria-current="page" title="Juz ${s.juz[0]}">${n} ${esc(nameOf(n))}</span>${earlier}`;
-  if (Surah.n !== n) {
+  const fresh = Surah.n !== n;
+  if (fresh) {
     try { Surah.mount(n, data); }
     catch (e) { $("loading").textContent = "This surah couldn’t open. Please try another one."; console.error(e); flip.hide(); return; }
   }
   $("loading").hidden = true; $("surahBody").hidden = false;
+  if (fresh) $("stage").scrollTop = 0;   // phones: a new surah starts on its first screen (only works once it is visible)
   if (tab) Surah.setTab(tab);   // e.g. #70/weak opens straight into that surah's weak spots
   setTopbar();
   flip.hide();

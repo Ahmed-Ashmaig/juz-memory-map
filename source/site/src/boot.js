@@ -23,7 +23,9 @@ Weak.listeners.add(() => {
 const splash = $("splash");
 if (splash && !splash.hidden) {
   if ($("splashBism") && !$("splashBism").textContent) $("splashBism").textContent = IDX.basmala;   // from the muṣḥaf data, not typed by hand
-  const done = () => { splash.hidden = true; try { sessionStorage.setItem("qf-splash", "1"); } catch (e) { /* storage unavailable */ } };
+  // Mark it played as soon as it starts, so a reload mid-animation (e.g. when an update takes over) doesn't replay it.
+  try { sessionStorage.setItem("qf-splash", "1"); } catch (e) { /* storage unavailable */ }
+  const done = () => { splash.hidden = true; };
   if (reduceMotion) done(); else { splash.addEventListener("click", done); setTimeout(done, 3800); }
 }
 window.addEventListener("hashchange", route);
