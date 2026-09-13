@@ -66,6 +66,12 @@ img{{max-width:100%}}
 {body}
 <script>
 if ("serviceWorker" in navigator && location.protocol === "https:") {{
+  // When a new version takes over, reload once so the newest surahs and features show immediately.
+  const hadController = !!navigator.serviceWorker.controller;
+  let reloaded = false;
+  navigator.serviceWorker.addEventListener("controllerchange", () => {{
+    if (hadController && !reloaded) {{ reloaded = true; location.reload(); }}
+  }});
   window.addEventListener("load", () => navigator.serviceWorker.register("sw.js"));
 }}
 </script>

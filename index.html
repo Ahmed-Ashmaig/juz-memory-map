@@ -28,7 +28,7 @@ img{max-width:100%}
   --paper:#F6F1E4; --sheet:#FFFDF6; --ink:#1C1A17; --muted:#6B6453; --line:#E2D8C0; --gold:#8E6E33; --green:#0E5A45;
   --s1:#CFE5D8; --s2:#F0DDB2; --s3:#EDCFC4; --s4:#D3DCEA; --s5:#E3D5EC; --s6:#DCE7C6; --s7:#F2D8BD; --s8:#CDE3E6;
   --s1e:#3E8A68; --s2e:#A57F2F; --s3e:#A95D48; --s4e:#4D6D99; --s5e:#7D5A99; --s6e:#6E8A3A; --s7e:#B06A2C; --s8e:#3F8792;
-  --hide:#E6DCC6; --focusw:#F5E3A6; --red:#B3261E; --redsoft:#F4D3CF; --rep:#6A3FB5;
+  --hide:#E6DCC6; --focusw:#F5E3A6; --red:#B3261E; --redsoft:#F4D3CF; --rep:#6A3FB5; --repsoft:#ECE3FA;
   --ui:"Alegreya Sans","Gill Sans","Segoe UI",system-ui,sans-serif;
   --display:"Alegreya",Georgia,"Times New Roman",serif;
   --q:"Amiri Quran","Amiri","Scheherazade New","Noto Naskh Arabic",serif;
@@ -37,13 +37,13 @@ img{max-width:100%}
   --paper:#12110D; --sheet:#1B1A15; --ink:#ECE5D2; --muted:#A89F8A; --line:#34302A; --gold:#CDAE72; --green:#72C3A0;
   --s1:#1F3B30; --s2:#3D3322; --s3:#402C27; --s4:#243042; --s5:#372C42; --s6:#2E3A22; --s7:#42301F; --s8:#203A3E;
   --s1e:#72C3A0; --s2e:#D8B46A; --s3e:#E0907A; --s4e:#8FB0DE; --s5e:#C3A2DC; --s6e:#B6D08A; --s7e:#E6A56A; --s8e:#86C9D2;
-  --hide:#2C2922; --focusw:#5A4A1E; --red:#F08A80; --redsoft:#4A2521; --rep:#B89CF0;
+  --hide:#2C2922; --focusw:#5A4A1E; --red:#F08A80; --redsoft:#4A2521; --rep:#B89CF0; --repsoft:#33284A;
 }}
 :root[data-theme="dark"]{
   --paper:#12110D; --sheet:#1B1A15; --ink:#ECE5D2; --muted:#A89F8A; --line:#34302A; --gold:#CDAE72; --green:#72C3A0;
   --s1:#1F3B30; --s2:#3D3322; --s3:#402C27; --s4:#243042; --s5:#372C42; --s6:#2E3A22; --s7:#42301F; --s8:#203A3E;
   --s1e:#72C3A0; --s2e:#D8B46A; --s3e:#E0907A; --s4e:#8FB0DE; --s5e:#C3A2DC; --s6e:#B6D08A; --s7e:#E6A56A; --s8e:#86C9D2;
-  --hide:#2C2922; --focusw:#5A4A1E; --red:#F08A80; --redsoft:#4A2521; --rep:#B89CF0;
+  --hide:#2C2922; --focusw:#5A4A1E; --red:#F08A80; --redsoft:#4A2521; --rep:#B89CF0; --repsoft:#33284A;
 }
 *{box-sizing:border-box}
 body{background:var(--paper);color:var(--ink);font:400 1rem/1.5 var(--ui);padding-inline:clamp(16px,3vw,40px);padding-block:0 3rem;-webkit-text-size-adjust:100%}
@@ -259,7 +259,9 @@ details[open]>summary .more::before{content:"▾ Close"}
 }
 .loading{padding:3rem 0;text-align:center;color:var(--muted)}
 /* ---- repeated ayat + clearing marks ---- */
-.w.rep{box-shadow:inset 0 -.2em 0 var(--rep)}
+.w.rep{box-shadow:inset 0 -.26em 0 var(--rep);color:var(--rep)}
+.stage.quiz .w.rep{background:var(--repsoft)}
+.w.stuck.rep{color:var(--red)}
 .w.rep .e{border-color:var(--rep);color:var(--rep)}
 .stage.test .w.sel.rep:not(.shown){box-shadow:none}
 .replegend{color:var(--rep);font-weight:700}
@@ -343,6 +345,12 @@ details[open]>summary .more::before{content:"▾ Close"}
 
 <script>
 if ("serviceWorker" in navigator && location.protocol === "https:") {
+  // When a new version takes over, reload once so the newest surahs and features show immediately.
+  const hadController = !!navigator.serviceWorker.controller;
+  let reloaded = false;
+  navigator.serviceWorker.addEventListener("controllerchange", () => {
+    if (hadController && !reloaded) { reloaded = true; location.reload(); }
+  });
   window.addEventListener("load", () => navigator.serviceWorker.register("sw.js"));
 }
 </script>

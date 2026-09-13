@@ -394,7 +394,7 @@ const Surah = (() => {
     renderDeep();
     $("dock").hidden = mode !== "test";
     $("hint").innerHTML = (mode === "learn" ? "Tap a section, or any word on the page" : mode === "test" ? "Pick a section, then recite it" : "Find the ayah’s section")
-      + (mode === "learn" && Object.keys(REP).length ? ' · <span class="replegend">violet underline = repeated ayah</span>' : "");
+      + (Object.keys(REP).length ? ' · <span class="replegend">violet underline = repeated ayah</span>' : "");
     if (mode === "learn") (view === "ayah" ? renderAyah() : renderSection());
     else if (mode === "test") renderTest();
     else renderQuiz();
