@@ -1,0 +1,42 @@
+<!doctype html><html><body>
+<pre id="out">running</pre>
+<div id="frames"></div>
+<script>
+try { localStorage.clear(); sessionStorage.clear(); } catch (e) {}
+const SIZES = [[390, 664, "iPhone 14 in Safari"], [390, 780, "iPhone 14 installed app"], [375, 553, "iPhone SE in Safari"], [430, 740, "iPhone Pro Max in Safari"], [360, 640, "small Android"]];
+const log = [], wait = ms => new Promise(r => setTimeout(r, ms));
+async function check([W, H, label], idx) {
+  const f = document.createElement("iframe");
+  f.src = "../../index.html#" + (idx % 2 ? "45" : "56"); f.style.cssText = `width:${W}px;height:${H}px;border:0`;
+  document.getElementById("frames").appendChild(f);
+  let d; while (!(d = f.contentDocument) || !d.querySelector("#panel .ltabs")) await wait(200);
+  await wait(700);
+  const w = f.contentWindow, st = d.getElementById("stage"), R = el => el.getBoundingClientRect();
+  const within = (el, box) => { const r = R(el); return r.top >= box.top - 1 && r.bottom <= box.bottom + 1; };
+  const go = async id => { st.scrollTop = d.getElementById(id).offsetTop - st.offsetTop; st.dispatchEvent(new Event("scroll")); await wait(500); };
+  const bar = d.getElementById("anav");
+  // screen 2
+  await go("scr2");
+  let sb = R(st), pages = d.getElementById("pages");
+  const page = [...pages.children].find(p => { const r = R(p); return r.left < sb.right && r.right > sb.left; });
+  const fs = parseFloat(w.getComputedStyle(page.querySelector(".ln")).fontSize);
+  const s2 = { strip: within(d.getElementById("strip"), sb), page: within(page, sb), pagebar: within(d.querySelector(".pagebar"), sb), barClear: sb.bottom <= R(bar).top + 1, barShown: !bar.classList.contains("away") };
+  // screen 3, section tab
+  d.getElementById("blk2").click(); await wait(400); await go("scr3");
+  sb = R(st);
+  const nbc = d.querySelectorAll("#panel .strio > .nbc");
+  const s3 = { tabs: within(d.querySelector("#panel .ltabs"), sb), before: nbc[0] ? within(nbc[0], sb) : "none", section: within(d.querySelector("#panel .secmain"), sb), after: nbc[1] ? within(nbc[1], sb) : "none", barClear: sb.bottom <= R(bar).top + 1 };
+  // screen 3, ayah tab
+  d.querySelector('[data-tab="ayah"]').click(); await wait(400); await go("scr3");
+  sb = R(st);
+  const s3a = { tabs: within(d.querySelector("#panel .ltabs"), sb), barClear: sb.bottom <= R(bar).top + 1 };
+  const ok = [...Object.values(s2), ...Object.values(s3).filter(v => v !== "none"), ...Object.values(s3a)].every(v => v === true);
+  log.push(`${ok ? "PASS" : "FAIL"} ${label} ${W}×${H}: page ${Math.round(R(page).width)}px wide, Arabic ${fs.toFixed(1)}px\n    screen 2 ${JSON.stringify(s2)}\n    screen 3 section ${JSON.stringify(s3)} · ayah ${JSON.stringify(s3a)}`);
+  f.remove();
+}
+(async () => {
+  for (let i = 0; i < SIZES.length; i++) { try { await check(SIZES[i], i); } catch (e) { log.push("ERROR " + SIZES[i][2] + ": " + (e.stack || e)); } }
+  document.getElementById("out").textContent = log.join("\n");
+})();
+</script>
+</body></html>

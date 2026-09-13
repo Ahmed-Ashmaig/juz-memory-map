@@ -1,0 +1,54 @@
+<!doctype html><html><body>
+<pre id="out">running</pre>
+<iframe id="f1" src="../../index.html#45" style="width:400px;height:760px"></iframe>
+<iframe id="f2" src="../../index.html#45" style="width:1400px;height:800px"></iframe>
+<script>
+try { localStorage.clear(); sessionStorage.clear(); } catch (e) {}
+const log = [], wait = ms => new Promise(r => setTimeout(r, ms));
+async function ready(id) { const f = document.getElementById(id); let d; while (!(d = f.contentDocument) || !d.querySelector("#panel .ltabs")) await wait(200); return [d, f.contentWindow]; }
+async function run() {
+  let [d, w] = await ready("f1"); await wait(600);
+  const st = d.getElementById("stage"), cs = w.getComputedStyle(st);
+  log.push(`phone: stage display=${cs.display} snap=${cs.scrollSnapType} height=${Math.round(st.clientHeight)} scrollable=${st.scrollHeight > st.clientHeight} | document scroll room: ${d.documentElement.scrollHeight - w.innerHeight}px (want ≤ 1)`);
+  const off = id => Math.round(d.getElementById(id).offsetTop - st.offsetTop);
+  log.push(`screen tops: intro ${off("scr1")} · sections+page ${off("scr2")} · tabs ${off("scr3")} | screen heights: ${["scr1","scr2","scr3"].map(i => Math.round(d.getElementById(i).offsetHeight)).join(" / ")} | snap-stop: ${w.getComputedStyle(d.getElementById("scr2")).scrollSnapStop}`);
+  // scroll a little past the intro: mandatory snapping should settle at screen 2's top
+  st.scrollTo({ top: off("scr2") + 40 }); await wait(700);
+  log.push(`after scrolling 40px past screen 2's top → stage scrollTop ${Math.round(st.scrollTop)} (headless may not settle; screen 2 top is ${off("scr2")})`);
+  const away = () => d.getElementById("anav").classList.contains("away");
+  st.scrollTo({ top: 0 }); st.dispatchEvent(new Event("scroll")); await wait(200);
+  const a0 = away();
+  st.scrollTo({ top: off("scr2") }); st.dispatchEvent(new Event("scroll")); await wait(200);
+  const a2 = away();
+  st.scrollTo({ top: off("scr3") }); st.dispatchEvent(new Event("scroll")); await wait(200);
+  const a3 = away();
+  log.push(`bar hidden on intro: ${a0} (want true) · shown on sections screen: ${!a2} (want true) · shown on tabs screen: ${!a3} (want true) · bar transform when away: ${(() => { st.scrollTo({top:0}); st.dispatchEvent(new Event("scroll")); return w.getComputedStyle(d.getElementById("anav")).transform !== "none"; })()}`);
+  // section tab: everything visible on the third screen?
+  d.getElementById("blk6").click(); await wait(400); st.scrollTo({ top: off("scr3") }); await wait(400);
+  const vis = sel => { const r = d.querySelector(sel).getBoundingClientRect(), s = st.getBoundingClientRect(); return r.top >= s.top - 1 && r.bottom <= s.bottom + 1; };
+  log.push(`third screen (section tab): tabs visible ${vis("#panel .ltabs")} · before card ${vis("#panel .strio .nbc")} · this section ${vis("#panel .secmain")} · after card ${vis("#panel .strio > :last-child")} · bar over content: bottom padding ${w.getComputedStyle(d.getElementById("scr3")).paddingBottom}`);
+  const steps = [Math.round(st.scrollTop)];
+  for (let i = 0; i < 4; i++) { d.getElementById("a-next").click(); await wait(350); steps.push(Math.round(st.scrollTop)); }
+  d.querySelector('[data-tab="ayah"]').click(); await wait(350); steps.push(Math.round(st.scrollTop));
+  for (let i = 0; i < 3; i++) { d.getElementById("a-next").click(); await wait(350); steps.push(Math.round(st.scrollTop)); }
+  log.push(`stepping keeps the scroller at screen 3's top: ${steps.join(" → ")} (now in ${d.querySelector("#navbtns .here").textContent}; its screen 3 top is ${off("scr3")})`);
+  // opening another surah from the top bar lands on its first screen
+  log.push(`bar order: ${[...d.getElementById("anav").children].map(b => b.id).join(" | ")} · labels: ${d.getElementById("a-next").textContent} … ${d.getElementById("a-prev").textContent}`);
+  d.querySelector('#navbtns a[href="#47"]').click(); await wait(900);
+  log.push(`opened ${d.querySelector("#navbtns .here").textContent}: stage scrollTop ${Math.round(st.scrollTop)} (want 0)`);
+  const barTop = () => Math.round(d.getElementById("anav").getBoundingClientRect().top), stBottom = () => Math.round(st.getBoundingClientRect().bottom);
+  log.push(`bar clear of the scroller: scroller bottom ${stBottom()} ≤ bar top ${barTop()} → ${stBottom() <= barTop() + 1} | --bar ${d.documentElement.style.getPropertyValue("--bar")}`);
+  d.querySelector('[data-tab="ayah"]').click(); await wait(300); d.getElementById("a-mark").click(); await wait(300);
+  log.push(`after marking (bar grows a line): scroller bottom ${stBottom()} ≤ bar top ${barTop()} → ${stBottom() <= barTop() + 1} | --bar ${d.documentElement.style.getPropertyValue("--bar")}`);
+  d.getElementById("a-mark").click(); await wait(300);
+  log.push(`screen 1 padding-bottom ${w.getComputedStyle(d.getElementById("scr1")).paddingBottom} · hint bar hidden on phone: ${w.getComputedStyle(d.getElementById("sBar")).display === "none"} · strip max-height ${w.getComputedStyle(d.getElementById("strip")).maxHeight}`);
+  // home: install tip is off in this copy (no manifest link), splash flagged at start
+  log.push(`splash flag set at start: ${w.sessionStorage.getItem("qf-splash")} | install tip hidden (no manifest): ${d.getElementById("installTip").hidden}`);
+  [d, w] = await ready("f2"); await wait(600);
+  const st2 = d.getElementById("stage"), cs2 = w.getComputedStyle(st2);
+  log.push(`desktop: stage display=${cs2.display} columns=${cs2.gridTemplateColumns.split(" ").length} | screen wrappers display=${w.getComputedStyle(d.getElementById("scr2")).display} | body in-surah class: ${d.body.classList.contains("in-surah")}`);
+  document.getElementById("out").textContent = log.join("\n");
+}
+setTimeout(() => run().catch(e => { log.push("ERROR: " + (e && e.stack || e)); document.getElementById("out").textContent = log.join("\n"); }), 800);
+</script>
+</body></html>

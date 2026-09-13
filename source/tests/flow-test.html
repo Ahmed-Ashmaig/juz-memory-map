@@ -1,0 +1,68 @@
+<!doctype html><html><body>
+<pre id="out">running</pre>
+<iframe id="f1" src="../../index.html#45" style="width:400px;height:900px"></iframe>
+<script>
+try { localStorage.clear(); } catch (e) {}
+const f = document.getElementById("f1"), log = [];
+const wait = ms => new Promise(r => setTimeout(r, ms));
+const bar = d => `${d.getElementById("a-prev").textContent}${d.getElementById("a-prev").disabled ? "(off)" : ""} | ${d.getElementById("a-num").textContent}${d.getElementById("a-mark").hidden ? "" : " +" + d.getElementById("a-mark").textContent} | ${d.getElementById("a-next").textContent}${d.getElementById("a-next").disabled ? "(off)" : ""}${d.getElementById("a-view").hidden ? "" : " // " + d.getElementById("a-view").textContent}`;
+const litByAyah = d => { const m = {}; d.querySelectorAll("#pages .w.s:not(.plain)").forEach(w => { m[w.dataset.a] = (m[w.dataset.a] || 0) + 1; }); return Object.keys(m).map(Number).sort((a, b) => a - b).join(","); };
+const cls = (d, a, c) => [...d.querySelectorAll(`#pages .w.s[data-a="${a}"]`)].every(w => w.classList.contains(c));
+async function run() {
+  let d, w = f.contentWindow;
+  while (!(d = f.contentDocument) || !d.querySelector("#panel .ltabs")) await wait(200);
+  const tabs = () => [...d.querySelectorAll("#panel .ltabs button")].map(b => b.textContent.trim() + (b.getAttribute("aria-selected") === "true" ? "*" : "")).join(" / ");
+  log.push("tabs at open: " + tabs());
+  log.push("ayah tab bar: " + bar(d));
+  // section 6 via the section list → only ayat 30–37 lit
+  d.getElementById("blk6").click(); await wait(400);
+  log.push("after tapping section 6: tabs " + tabs() + " | lit ayat: " + litByAyah(d) + " | bar: " + bar(d));
+  log.push("section tab: folds " + [...d.querySelectorAll("#panel details.fold > summary")].map(s => s.firstChild.textContent).join(" / ") + " | neighbour cards: " + d.querySelectorAll("#panel .strio .nbc").length + " | key point rows: " + d.querySelectorAll("#panel .kp details.grpd").length + " | order: " + [...d.querySelector("#panel .secmain").children].map(c => c.className.split(" ")[0] || c.tagName.toLowerCase()).join(" > "));
+  // ayah tab: before/after cards are buttons
+  d.querySelector('[data-tab="ayah"]').click(); await wait(300);
+  const tint = a => cls(d, a, "lit") ? "solid" : cls(d, a, "near") ? "light" : cls(d, a, "plain") ? "plain" : "mixed";
+  log.push("ayah tab on 30: ayah 30 " + tint(30) + (cls(d, 30, "curayah") ? "+underline" : "") + " | ayah 31 (same section, same page) " + tint(31) + " | ayah 29 (section 5, same page) " + tint(29) + " | ayah 1 (other page) " + tint(1) + " | step buttons: " + d.querySelectorAll("#panel .ctxbtn").length);
+  // swipe to the first page: its sections tint, the selected ayah stays solid
+  const pages = d.getElementById("pages"), pel = pages.firstElementChild, pr = pages.getBoundingClientRect(), r = pel.getBoundingClientRect();
+  pages.scrollBy({ left: r.left + r.width / 2 - (pr.left + pr.width / 2), behavior: "auto" }); pages.dispatchEvent(new Event("scroll")); await wait(500);
+  log.push("after swiping to " + pel.id + ": ayah 1 " + tint(1) + " | ayah 30 " + tint(30) + " | page bar: " + d.getElementById("pagetxt").textContent + " | pips on: " + d.querySelectorAll("#pagepips .on").length);
+  d.getElementById("a-next").click(); await wait(400); d.getElementById("a-prev").click(); await wait(400);
+  d.querySelector('#panel .ctxbtn[data-step="1"]').click(); await wait(300);
+  log.push("tapped 'Ayah after' card → " + d.getElementById("a-num").textContent);
+  // mark two weak spots: 31 (current) and 33
+  d.getElementById("a-mark").click(); await wait(200);
+  log.push("marked: " + d.getElementById("a-mark").textContent + " | view line: " + d.getElementById("a-view").textContent + " | tabs: " + tabs());
+  d.getElementById("a-next").click(); await wait(200); d.getElementById("a-next").click(); await wait(200);
+  d.getElementById("a-mark").click(); await wait(200);
+  // weak tab
+  d.getElementById("a-view").click(); await wait(400);
+  log.push("weak tab: " + tabs() + " | rows: " + [...d.querySelectorAll("#panel .wrow .wn")].map(x => x.textContent).join(", ") + " | lit: " + litByAyah(d) + " | bar: " + bar(d));
+  // start drill on 31: steps 29,30,31,32 — step until the prompt, then answer
+  d.getElementById("a-next").click(); await wait(400);
+  const isPrompt = () => /mistake/.test(d.getElementById("a-prev").textContent);
+  const steps = [];
+  while (!isPrompt()) { steps.push(`${d.getElementById("a-num").textContent} [${d.getElementById("a-prev").textContent} / ${d.getElementById("a-next").textContent}] veiled31=${cls(d, 31, "veil")} lit31=${tint(31)}`); d.getElementById("a-next").click(); await wait(250); if (steps.length > 8) break; }
+  log.push("drill steps:\n   " + steps.join("\n   "));
+  log.push("prompt: " + d.querySelector("#panel .ptitle")?.textContent + " | bar: " + bar(d) + " | aid rows: " + d.querySelectorAll("#panel .aid dt").length + " | veiled31=" + cls(d, 31, "veil"));
+  // a mistake resets, then 5 passes clear it
+  d.getElementById("a-prev").click(); await wait(300);
+  log.push("after mistake: " + d.querySelector("#panel .note")?.textContent + " | " + d.querySelector("#panel .streak")?.textContent?.trim());
+  const pass = async () => { let g = 0; while (!isPrompt() && g++ < 8) { d.getElementById("a-next").click(); await wait(150); } d.getElementById("a-next").click(); await wait(300); };
+  for (let k = 1; k <= 5; k++) { await pass(); log.push(`pass ${k}: ${d.querySelector("#panel .note")?.textContent || "(no note)"} | ${d.querySelector("#panel .streak")?.textContent?.trim() || d.querySelector("#panel .ptitle")?.textContent}`); }
+  log.push("weak spots left: " + [...d.querySelectorAll("#panel .lbl")].map(x => x.textContent).join(" | ") + " | tab label: " + tabs());
+  for (let k = 1; k <= 5; k++) await pass();
+  log.push("after clearing the second: " + d.querySelector("#panel .ptitle")?.textContent + " | " + bar(d) + " | recite btn: " + !!d.getElementById("b-recite"));
+  d.getElementById("a-next").click(); await wait(400);
+  log.push("recite → mode " + d.getElementById("featName").textContent + ", " + d.querySelector("#panel .lbl").textContent + " | dock buttons: " + [...d.querySelectorAll("#dock button")].map(b => b.textContent).join(" / ") + " | panel buttons: " + d.querySelectorAll("#panel button").length);
+  // home summary with a weak spot present
+  d.getElementById("featBtn").click(); d.getElementById("f-learn").click(); await wait(300);
+  d.getElementById("a-mark").click(); await wait(200);
+  w.location.hash = "#"; await wait(500);
+  log.push("home summary: " + (d.querySelector("#weakSummary")?.textContent.trim() || "(none)") + " | clear-all present: " + !!d.getElementById("clearAll"));
+  d.querySelector("#weakSummary a").click(); await wait(800);
+  log.push("summary link → hash " + w.location.hash + " · tab " + tabs());
+  document.getElementById("out").textContent = log.join("\n");
+}
+setTimeout(() => run().catch(e => { log.push("ERROR: " + (e && e.stack || e)); document.getElementById("out").textContent = log.join("\n"); }), 800);
+</script>
+</body></html>

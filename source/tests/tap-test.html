@@ -1,0 +1,29 @@
+<!doctype html><html><body>
+<pre id="out">running</pre>
+<iframe id="f1" src="../../index.html#45" style="width:400px;height:900px"></iframe>
+<script>
+try { localStorage.clear(); sessionStorage.clear(); } catch (e) {}
+const f = document.getElementById("f1"), log = [];
+const wait = ms => new Promise(r => setTimeout(r, ms));
+async function run() {
+  let d, w = f.contentWindow;
+  while (!(d = f.contentDocument) || !d.querySelector("#panel .ltabs")) await wait(200);
+  const tabs = () => [...d.querySelectorAll("#panel .ltabs button")].map(b => b.textContent.trim() + (b.getAttribute("aria-selected") === "true" ? "*" : "")).join(" / ");
+  const tap = a => [...d.querySelectorAll("#pages .w.s")].find(x => x.dataset.a === String(a)).click();
+  log.push("splash text: " + (d.getElementById("splashBism").textContent.length > 10 ? "basmala filled" : "EMPTY") + " | splash hidden after load? " + d.getElementById("splash").hidden);
+  log.push("open: " + tabs() + " | open key points: " + d.querySelectorAll("#panel details.grpd[open]").length);
+  tap(20); await wait(300); log.push("ayah tab, tap ayah 20 → " + tabs());
+  d.querySelector('[data-tab="section"]').click(); await wait(300);
+  log.push("section tab: " + tabs() + " | open rows: " + d.querySelectorAll("#panel details[open]").length);
+  tap(33); await wait(300); log.push("section tab, tap ayah 33 → " + tabs() + " | bar mid: " + d.getElementById("a-num").textContent);
+  d.querySelector('[data-tab="weak"]').click(); await wait(300); tap(5); await wait(300);
+  log.push("weak tab, tap ayah 5 → " + tabs());
+  // pick another surah from home: flip overlay shows, then hides
+  w.location.hash = "#"; await wait(400); d.querySelector('a.chip[href="#44"]').click(); await wait(100);
+  log.push("flip shown on open? " + !d.getElementById("flip").hidden); await wait(1200);
+  log.push("flip hidden after load? " + d.getElementById("flip").hidden + " | surah: " + d.querySelector("#navbtns .here").textContent + " | " + tabs());
+  document.getElementById("out").textContent = log.join("\n");
+}
+setTimeout(() => run().catch(e => { log.push("ERROR: " + (e && e.stack || e)); document.getElementById("out").textContent = log.join("\n"); }), 800);
+</script>
+</body></html>

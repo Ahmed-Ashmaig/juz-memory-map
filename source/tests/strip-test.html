@@ -1,0 +1,32 @@
+<!doctype html><html><body>
+<pre id="out">running</pre>
+<iframe id="f1" src="../../index.html#56" style="width:400px;height:760px"></iframe>
+<iframe id="f2" src="../../index.html#56" style="width:1400px;height:800px"></iframe>
+<script>
+try { localStorage.clear(); sessionStorage.clear(); } catch (e) {}
+const log = [], wait = ms => new Promise(r => setTimeout(r, ms));
+async function ready(id) { const f = document.getElementById(id); let d; while (!(d = f.contentDocument) || !d.querySelector("#panel .ltabs")) await wait(200); return [d, f.contentWindow]; }
+async function run() {
+  let [d, w] = await ready("f1"); await wait(600);
+  const strip = d.getElementById("strip"), R = id => d.getElementById(id).getBoundingClientRect();
+  log.push(`phone strip: horizontal scroll ${strip.scrollWidth > strip.clientWidth} · vertical scroll ${strip.scrollHeight > strip.clientHeight + 2} · height ${Math.round(strip.clientHeight)}px · section 1 right of section 2: ${R("blk1").left > R("blk2").left} · section 1 at the row's right edge: ${Math.abs(R("blk1").right - strip.getBoundingClientRect().right) < 8}`);
+  const pages = d.getElementById("pages");
+  for (const el of [...pages.children]) {
+    const pr = pages.getBoundingClientRect(), r = el.getBoundingClientRect();
+    pages.scrollBy({ left: r.left + r.width / 2 - (pr.left + pr.width / 2), behavior: "auto" }); pages.dispatchEvent(new Event("scroll")); await wait(400);
+    const sr = strip.getBoundingClientRect();
+    const inView = [...strip.children].filter(b => { const q = b.getBoundingClientRect(); return q.right > sr.left + 20 && q.left < sr.right - 20; }).map(b => +b.id.slice(3));
+    const bright = [...strip.children].filter(b => !b.classList.contains("faded")).map(b => +b.id.slice(3));
+    log.push(`swipe to ${el.id}: strip shows sections ${inView.join(", ")} · bright ${bright.join(", ")}`);
+  }
+  d.getElementById("blk6").click(); await wait(500);
+  const sr = strip.getBoundingClientRect(), b6 = R("blk6");
+  log.push(`tap section 6: in view ${b6.left >= sr.left - 1 && b6.right <= sr.right + 1} · tab ${d.querySelector('#panel [aria-selected="true"]').textContent}`);
+  [d, w] = await ready("f2"); await wait(600);
+  const s2 = d.getElementById("strip").getBoundingClientRect(), pw = d.querySelector(".pagewrap").getBoundingClientRect(), pn = d.getElementById("panel").getBoundingClientRect();
+  log.push(`desktop: strip above pages ${s2.bottom <= pw.top + 1} · strip and pages share a column ${Math.abs(s2.left - pw.left) < 2} · panel to the right ${pn.left > pw.right} · panel top aligned with strip top ${Math.abs(pn.top - s2.top) < 3}`);
+  document.getElementById("out").textContent = log.join("\n");
+}
+setTimeout(() => run().catch(e => { log.push("ERROR: " + (e && e.stack || e)); document.getElementById("out").textContent = log.join("\n"); }), 800);
+</script>
+</body></html>
