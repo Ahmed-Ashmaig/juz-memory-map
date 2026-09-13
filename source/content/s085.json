@@ -11,14 +11,29 @@
   {
    "a": 1,
    "b": 9,
-   "title": "The people of the trench",
+   "title": "Cursed are the trench-diggers who burned believers only for their faith",
    "meaning": "Allah swears by the sky with its great stars, the promised Day, and the witness and the witnessed. Cursed are the people of the trench, who sat by a blazing fire watching believers burn. Their only complaint against them was faith in Allah, who owns everything and sees everything.",
    "points": [
-    ["1–3", "By the starry sky, the promised Day, witness and witnessed"],
-    ["4–5", "Cursed are the people of the trench of fuelled fire"],
-    ["6–7", "They sat by it, watching what they did to believers"],
-    ["8", "Their only grudge: the believers’ faith in Allah"],
-    ["9", "He owns the heavens and earth and witnesses all"]
+    [
+     "1–3",
+     "By the starry sky, the promised Day, witness and witnessed"
+    ],
+    [
+     "4–5",
+     "Cursed are the people of the trench of fuelled fire"
+    ],
+    [
+     "6–7",
+     "They sat by it, watching what they did to believers"
+    ],
+    [
+     "8",
+     "Their only grudge: the believers’ faith in Allah"
+    ],
+    [
+     "9",
+     "He owns the heavens and earth and witnesses all"
+    ]
    ],
    "matters": "It gives persecuted believers a model: people who chose fire over giving up their faith. And it reminds persecutors that what they punish is exactly what Allah praises, and He is watching.",
    "story": "Reportedly this happened in Najrān in Yemen, under a king called Dhū Nuwās, about seventy years before the Prophet ﷺ; other reports mention trenches elsewhere. A mother hesitated at the edge, and her baby said: “Be patient, mother, you are on the truth.”",
@@ -37,13 +52,25 @@
   {
    "a": 10,
    "b": 16,
-   "title": "His grip is severe, His love vast",
+   "title": "Hell for unrepentant persecutors, gardens for believers; Allah is severe yet Loving",
    "meaning": "Those who persecuted believers and never repented get Hell and the burning punishment. Believers who did good get gardens with rivers, the great success. Allah’s grip is severe; He begins creation and repeats it; He forgives and loves; He owns the glorious Throne and does whatever He wills.",
    "points": [
-    ["10", "Persecutors who don’t repent: Hell and burning"],
-    ["11", "Believers who do good: gardens with rivers, the great success"],
-    ["12–13", "Your Lord’s grip is severe; He begins and repeats"],
-    ["14–16", "Forgiving, Loving, Lord of the Throne, doing what He wills"]
+    [
+     "10",
+     "Persecutors who don’t repent: Hell and burning"
+    ],
+    [
+     "11",
+     "Believers who do good: gardens with rivers, the great success"
+    ],
+    [
+     "12–13",
+     "Your Lord’s grip is severe; He begins and repeats"
+    ],
+    [
+     "14–16",
+     "Forgiving, Loving, Lord of the Throne, doing what He wills"
+    ]
    ],
    "matters": "Even after describing such cruelty, the door of repentance stays open. The section pairs severity with forgiveness and love, so the oppressor fears and the believer hopes.",
    "story": "No specific incident. It continues from the people of the trench and speaks to the persecutors in Makkah.",
@@ -62,12 +89,21 @@
   {
    "a": 17,
    "b": 22,
-   "title": "Armies destroyed, the Quran preserved",
+   "title": "Pharaoh and Thamūd destroyed; deniers are surrounded, the Quran is preserved",
    "meaning": "Has the story of the armies reached you, Pharaoh and Thamūd? They were destroyed. Yet the disbelievers keep denying, while Allah surrounds them. And this is a glorious Quran, kept safe in the Preserved Tablet.",
    "points": [
-    ["17–18", "The armies of Pharaoh and Thamūd"],
-    ["19–20", "The deniers keep denying; Allah surrounds them"],
-    ["21–22", "A glorious Quran in a Preserved Tablet"]
+    [
+     "17–18",
+     "The armies of Pharaoh and Thamūd"
+    ],
+    [
+     "19–20",
+     "The deniers keep denying; Allah surrounds them"
+    ],
+    [
+     "21–22",
+     "A glorious Quran in a Preserved Tablet"
+    ]
    ],
    "matters": "The Makkan leaders trusted their numbers. This section reminds them of stronger armies that were destroyed, and tells them the Quran they reject can’t be defeated or changed.",
    "story": "No specific incident. It warns the Quraysh, who were persecuting Muslims and calling the Quran poetry and fortune-telling.",
@@ -84,41 +120,119 @@
   }
  ],
  "groups": [
-  {"a": 1, "b": 3, "text": "By the sky of great stars, the promised Day, and the witness and the witnessed."},
-  {"a": 4, "b": 7, "text": "Cursed are the people of the trench, who sat by its fire watching what they did to believers."},
-  {"a": 8, "b": 9, "text": "Their only grudge was the believers’ faith in Allah, who owns and witnesses everything."},
-  {"a": 10, "b": 11, "text": "Persecutors who don’t repent get Hell’s burning; believers who do good get gardens, the great success."},
-  {"a": 12, "b": 13, "text": "Your Lord’s grip is severe. He begins creation and brings it back."},
-  {"a": 14, "b": 16, "text": "He is Forgiving and Loving, Owner of the glorious Throne, doing whatever He wills."},
-  {"a": 17, "b": 18, "text": "Has the story reached you of the armies of Pharaoh and Thamūd?"},
-  {"a": 19, "b": 20, "text": "The disbelievers keep denying, but Allah surrounds them from behind."},
-  {"a": 21, "b": 22, "text": "This is a glorious Quran, in a Preserved Tablet."}
+  {
+   "a": 1,
+   "b": 3,
+   "text": "By the sky of great stars, the promised Day, and the witness and the witnessed."
+  },
+  {
+   "a": 4,
+   "b": 7,
+   "text": "Cursed are the people of the trench, who sat by its fire watching what they did to believers."
+  },
+  {
+   "a": 8,
+   "b": 9,
+   "text": "Their only grudge was the believers’ faith in Allah, who owns and witnesses everything."
+  },
+  {
+   "a": 10,
+   "b": 11,
+   "text": "Persecutors who don’t repent get Hell’s burning; believers who do good get gardens, the great success."
+  },
+  {
+   "a": 12,
+   "b": 13,
+   "text": "Your Lord’s grip is severe. He begins creation and brings it back."
+  },
+  {
+   "a": 14,
+   "b": 16,
+   "text": "He is Forgiving and Loving, Owner of the glorious Throne, doing whatever He wills."
+  },
+  {
+   "a": 17,
+   "b": 18,
+   "text": "Has the story reached you of the armies of Pharaoh and Thamūd?"
+  },
+  {
+   "a": 19,
+   "b": 20,
+   "text": "The disbelievers keep denying, but Allah surrounds them from behind."
+  },
+  {
+   "a": 21,
+   "b": 22,
+   "text": "This is a glorious Quran, in a Preserved Tablet."
+  }
  ],
  "ayat": {
-  "1": {"explain": "Burūj: the great stars; others say the stations the sun and moon pass through. Allah swears by the sky that holds them, a sign of His power."},
-  "2": {"explain": "Al-yawm al-mawʿūd: the Day of Judgement, the Day Allah promised to gather everyone, first and last. He never breaks His promise."},
-  "3": {"explain": "Shāhid and mashhūd: the witness and the witnessed. A report from the Prophet ﷺ names Friday and the Day of ʿArafah. Many other meanings are given."},
+  "1": {
+   "explain": "Burūj: the great stars; others say the stations the sun and moon pass through. Allah swears by the sky that holds them, a sign of His power."
+  },
+  "2": {
+   "explain": "Al-yawm al-mawʿūd: the Day of Judgement, the Day Allah promised to gather everyone, first and last. He never breaks His promise."
+  },
+  "3": {
+   "explain": "Shāhid and mashhūd: the witness and the witnessed. A report from the Prophet ﷺ names Friday and the Day of ʿArafah. Many other meanings are given."
+  },
   "4": {
    "explain": "Qutila: cursed and destroyed. Ukhdūd: a long ditch dug in the ground. The persecutors dug trenches to burn believers.",
    "why": "Reportedly revealed about Dhū Nuwās, a king in Yemen, who dug trenches at Najrān and burned the believers who refused to give up their faith."
   },
-  "5": {"explain": "The trench held a fire dhāt al-waqūd, packed with fuel to keep it blazing."},
-  "6": {"explain": "They sat around it on its edges, reportedly on chairs, to watch."},
-  "7": {"explain": "Shuhūd: present and watching what they did to the believers. One report says the believers’ souls were taken before the fire touched them, and the fire rose and burned the watchers."},
-  "8": {"explain": "Naqamū: resented. Their only “crime” was believing in Allah, al-ʿAzīz, the Mighty, al-Ḥamīd, the Praiseworthy: a quality worth praise, not punishment."},
-  "9": {"explain": "He owns the heavens and the earth and witnesses everything. Did the persecutors not fear that the true Owner was watching them?"},
-  "10": {"explain": "Fatanū: tortured and burned. “Then did not repent”: the door of repentance was open even to them. Their punishment is Hell and burning, matching their deed; some say it burned them in this world too."},
-  "11": {"explain": "Believers in the heart who act with their limbs get gardens with rivers flowing beneath. Al-fawz al-kabīr: the great success, Allah’s pleasure and His home of honour."},
-  "12": {"explain": "Baṭsh: a violent seizing. When your Lord seizes wrongdoers, His grip is severe."},
-  "13": {"explain": "Yubdiʾu wa yuʿīd: He begins creation and brings it back after death. No one shares this with Him."},
-  "14": {"explain": "Al-Ghafūr forgives every sin of those who repent. Al-Wadūd: the Loving, and the Loved. Pairing the two shows He forgives repenting sinners and loves them too."},
-  "15": {"explain": "Dhū al-ʿArsh: Owner of the mighty Throne above all creation. Al-Majīd is read two ways: describing Allah, the Glorious, or the Throne. Both meanings are correct."},
-  "16": {"explain": "Faʿʿāl li-mā yurīd: whatever He wants, He does, and no one can oppose it. Created beings need help to do what they want; Allah needs none."},
-  "17": {"explain": "Has the story reached you of al-junūd, the armies that gathered against the prophets?"},
-  "18": {"explain": "Pharaoh, with his forces, and Thamūd. They denied their messengers and Allah destroyed them, a warning to those denying the Prophet ﷺ."},
-  "19": {"explain": "Rather, the disbelievers of your people stay stuck in denial of you and the Quran, and learn nothing from those before them."},
-  "20": {"explain": "Allah is behind them, surrounding them with knowledge and power. They cannot escape Him."},
-  "21": {"explain": "Qurʾān majīd: glorious and noble, full of good and knowledge. It is not poetry or fortune-telling, as they claimed."},
-  "22": {"explain": "In al-Lawḥ al-Maḥfūẓ, the Preserved Tablet, guarded from change, addition, loss and devils. One reading makes “preserved” describe the Quran itself."}
+  "5": {
+   "explain": "The trench held a fire dhāt al-waqūd, packed with fuel to keep it blazing."
+  },
+  "6": {
+   "explain": "They sat around it on its edges, reportedly on chairs, to watch."
+  },
+  "7": {
+   "explain": "Shuhūd: present and watching what they did to the believers. One report says the believers’ souls were taken before the fire touched them, and the fire rose and burned the watchers."
+  },
+  "8": {
+   "explain": "Naqamū: resented. Their only “crime” was believing in Allah, al-ʿAzīz, the Mighty, al-Ḥamīd, the Praiseworthy: a quality worth praise, not punishment."
+  },
+  "9": {
+   "explain": "He owns the heavens and the earth and witnesses everything. Did the persecutors not fear that the true Owner was watching them?"
+  },
+  "10": {
+   "explain": "Fatanū: tortured and burned. “Then did not repent”: the door of repentance was open even to them. Their punishment is Hell and burning, matching their deed; some say it burned them in this world too."
+  },
+  "11": {
+   "explain": "Believers in the heart who act with their limbs get gardens with rivers flowing beneath. Al-fawz al-kabīr: the great success, Allah’s pleasure and His home of honour."
+  },
+  "12": {
+   "explain": "Baṭsh: a violent seizing. When your Lord seizes wrongdoers, His grip is severe."
+  },
+  "13": {
+   "explain": "Yubdiʾu wa yuʿīd: He begins creation and brings it back after death. No one shares this with Him."
+  },
+  "14": {
+   "explain": "Al-Ghafūr forgives every sin of those who repent. Al-Wadūd: the Loving, and the Loved. Pairing the two shows He forgives repenting sinners and loves them too."
+  },
+  "15": {
+   "explain": "Dhū al-ʿArsh: Owner of the mighty Throne above all creation. Al-Majīd is read two ways: describing Allah, the Glorious, or the Throne. Both meanings are correct."
+  },
+  "16": {
+   "explain": "Faʿʿāl li-mā yurīd: whatever He wants, He does, and no one can oppose it. Created beings need help to do what they want; Allah needs none."
+  },
+  "17": {
+   "explain": "Has the story reached you of al-junūd, the armies that gathered against the prophets?"
+  },
+  "18": {
+   "explain": "Pharaoh, with his forces, and Thamūd. They denied their messengers and Allah destroyed them, a warning to those denying the Prophet ﷺ."
+  },
+  "19": {
+   "explain": "Rather, the disbelievers of your people stay stuck in denial of you and the Quran, and learn nothing from those before them."
+  },
+  "20": {
+   "explain": "Allah is behind them, surrounding them with knowledge and power. They cannot escape Him."
+  },
+  "21": {
+   "explain": "Qurʾān majīd: glorious and noble, full of good and knowledge. It is not poetry or fortune-telling, as they claimed."
+  },
+  "22": {
+   "explain": "In al-Lawḥ al-Maḥfūẓ, the Preserved Tablet, guarded from change, addition, loss and devils. One reading makes “preserved” describe the Quran itself."
+  }
  }
 }

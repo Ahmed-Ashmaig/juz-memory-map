@@ -11,13 +11,25 @@
   {
    "a": 1,
    "b": 5,
-   "title": "When the sky breaks apart",
+   "title": "Sky splits, graves overturn: each soul knows what it sent and left",
    "meaning": "The sky splits open, the stars scatter and fall, the seas burst into each other, and the graves are turned over. Then every soul will know what it sent ahead and what it left behind.",
    "points": [
-    ["1–2", "The sky splits; the stars fall and scatter"],
-    ["3", "The seas burst forth into one another"],
-    ["4", "Graves are overturned and the dead come out"],
-    ["5", "Each soul knows what it sent ahead and left behind"]
+    [
+     "1–2",
+     "The sky splits; the stars fall and scatter"
+    ],
+    [
+     "3",
+     "The seas burst forth into one another"
+    ],
+    [
+     "4",
+     "Graves are overturned and the dead come out"
+    ],
+    [
+     "5",
+     "Each soul knows what it sent ahead and left behind"
+    ]
    ],
    "matters": "In four short scenes the whole universe comes apart and the dead rise. It leads straight to the question that matters: what have you sent ahead, and what have you left behind?",
    "story": "No specific incident. It mirrors the opening of At-Takwīr, which ends with the same idea: a soul will know what it has brought.",
@@ -36,13 +48,25 @@
   {
    "a": 6,
    "b": 12,
-   "title": "What deceived you about your Lord?",
+   "title": "Fooled about his Generous Creator, man denies Recompense while angels record",
    "meaning": "O man, what has fooled you about your generous Lord, who created you, shaped you perfectly, balanced you, and put you together in whatever form He willed? No! The real problem is that you deny the Recompense, while noble angels record everything you do.",
    "points": [
-    ["6", "O man, what deceived you about your Generous Lord?"],
-    ["7–8", "He created, shaped, balanced and assembled you as He willed"],
-    ["9", "No! You deny the Recompense"],
-    ["10–12", "Noble guardian angels write down all you do"]
+    [
+     "6",
+     "O man, what deceived you about your Generous Lord?"
+    ],
+    [
+     "7–8",
+     "He created, shaped, balanced and assembled you as He willed"
+    ],
+    [
+     "9",
+     "No! You deny the Recompense"
+    ],
+    [
+     "10–12",
+     "Noble guardian angels write down all you do"
+    ]
    ],
    "matters": "It names the real trap: mistaking Allah’s generosity and patience for permission to disobey. His kindness in creating you should lead to thanks, not carelessness, especially when every deed is being written.",
    "story": "Reports differ on whether ayah 6 had one particular disbeliever in mind. Several names are given, but the question is put to every person who grows careless about his Lord.",
@@ -61,13 +85,25 @@
   {
    "a": 13,
    "b": 19,
-   "title": "What is the Day of Recompense?",
+   "title": "Righteous in bliss, wicked in Fire; that Day no soul helps another",
    "meaning": "The righteous will be in bliss and the wicked in Hellfire, burning in it on the Day of Recompense and never leaving it. What will make you understand that Day? It is the Day no soul can do anything for another, and the command belongs to Allah alone.",
    "points": [
-    ["13–14", "The righteous in bliss, the wicked in Hellfire"],
-    ["15–16", "They burn in it on that Day and never leave"],
-    ["17–18", "What will make you know the Day of Recompense?"],
-    ["19", "No soul can help another; the command is Allah’s"]
+    [
+     "13–14",
+     "The righteous in bliss, the wicked in Hellfire"
+    ],
+    [
+     "15–16",
+     "They burn in it on that Day and never leave"
+    ],
+    [
+     "17–18",
+     "What will make you know the Day of Recompense?"
+    ],
+    [
+     "19",
+     "No soul can help another; the command is Allah’s"
+    ]
    ],
    "matters": "The surah ends by answering its own warning. Those who deny the Recompense are shown the two final homes and a Day when no friend, relative or power can help, because the judgement is Allah’s alone.",
    "story": "No specific incident. It completes the warning to those who deny the Day of Recompense.",
@@ -85,12 +121,36 @@
   }
  ],
  "groups": [
-  {"a": 1, "b": 2, "text": "The sky splits apart, and the stars fall and scatter."},
-  {"a": 3, "b": 5, "text": "Seas burst forth and graves are overturned. Then each soul knows what it sent ahead and left behind."},
-  {"a": 6, "b": 8, "text": "O man, what fooled you about your Generous Lord, who created, shaped and formed you as He willed?"},
-  {"a": 9, "b": 12, "text": "No! You deny the Recompense, yet noble angels are writing down everything you do."},
-  {"a": 13, "b": 16, "text": "The righteous are in bliss; the wicked burn in Hellfire on that Day and never leave it."},
-  {"a": 17, "b": 19, "text": "What is the Day of Recompense? A Day no soul can help another, and the command is Allah’s."}
+  {
+   "a": 1,
+   "b": 2,
+   "text": "The sky splits apart, and the stars fall and scatter."
+  },
+  {
+   "a": 3,
+   "b": 5,
+   "text": "Seas burst forth and graves are overturned. Then each soul knows what it sent ahead and left behind."
+  },
+  {
+   "a": 6,
+   "b": 8,
+   "text": "O man, what fooled you about your Generous Lord, who created, shaped and formed you as He willed?"
+  },
+  {
+   "a": 9,
+   "b": 12,
+   "text": "No! You deny the Recompense, yet noble angels are writing down everything you do."
+  },
+  {
+   "a": 13,
+   "b": 16,
+   "text": "The righteous are in bliss; the wicked burn in Hellfire on that Day and never leave it."
+  },
+  {
+   "a": 17,
+   "b": 19,
+   "text": "What is the Day of Recompense? A Day no soul can help another, and the command is Allah’s."
+  }
  ],
  "ayat": {
   "1": {

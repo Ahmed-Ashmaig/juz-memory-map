@@ -11,12 +11,21 @@
   {
    "a": 1,
    "b": 5,
-   "title": "Sky and earth obey their Lord",
+   "title": "When the sky splits and earth empties itself, both obey their Lord",
    "meaning": "On the Last Day the sky splits open, and the earth is stretched flat and throws out everything inside it. Both simply listen to their Lord and obey, as they must.",
    "points": [
-    ["1–2", "The sky splits, listening to its Lord"],
-    ["3–4", "The earth is stretched flat and empties itself"],
-    ["5", "It too listens and obeys, as it must"]
+    [
+     "1–2",
+     "The sky splits, listening to its Lord"
+    ],
+    [
+     "3–4",
+     "The earth is stretched flat and empties itself"
+    ],
+    [
+     "5",
+     "It too listens and obeys, as it must"
+    ]
    ],
    "matters": "The surah opens with the end of the world, but the point is obedience. Sky and earth never argue with Allah’s command. Man, who was given a choice, is shown what submission looks like.",
    "story": "No specific incident. It answers the people of Makkah who denied the resurrection.",
@@ -34,14 +43,29 @@
   {
    "a": 6,
    "b": 15,
-   "title": "Right hand or behind the back",
+   "title": "Record in the right hand brings joy; behind the back, the Blaze",
    "meaning": "Every person is toiling toward his Lord and will meet Him. Whoever gets his record in his right hand has an easy account and returns to his family happy. Whoever gets it behind his back cries for destruction and burns, because he lived carefree and thought he would never return.",
    "points": [
-    ["6", "O man: you toil toward your Lord and will meet Him"],
-    ["7–9", "Right hand: an easy account, back to family happy"],
-    ["10–12", "Behind the back: cries for ruin, enters the Blaze"],
-    ["13–14", "He was happy among his people, sure he’d never return"],
-    ["15", "Yes! His Lord was always watching him"]
+    [
+     "6",
+     "O man: you toil toward your Lord and will meet Him"
+    ],
+    [
+     "7–9",
+     "Right hand: an easy account, back to family happy"
+    ],
+    [
+     "10–12",
+     "Behind the back: cries for ruin, enters the Blaze"
+    ],
+    [
+     "13–14",
+     "He was happy among his people, sure he’d never return"
+    ],
+    [
+     "15",
+     "Yes! His Lord was always watching him"
+    ]
    ],
    "matters": "This is the heart of the surah: the journey of life ends in a meeting. It splits people into two groups and gives the reason the second group failed: carefree living and denial of the return.",
    "story": "Reportedly, the right-hand ayat were revealed about Abū Salamah ibn ʿAbd al-Asad, the first to migrate to Madinah, and the behind-the-back ayat about his brother al-Aswad. They then apply to everyone.",
@@ -60,14 +84,29 @@
   {
    "a": 16,
    "b": 25,
-   "title": "Stage after stage, yet they won’t bow",
+   "title": "Life passes stage by stage, yet they won’t bow to the Quran",
    "meaning": "Allah swears by the sunset glow, the night and what it gathers, and the full moon: you will pass from stage to stage. So why don’t they believe, or bow when the Quran is recited? They deny, Allah knows what they hide, and a painful punishment awaits, except for believers who do good.",
    "points": [
-    ["16–18", "By the twilight, the night, and the full moon"],
-    ["19", "You will pass from stage to stage"],
-    ["20–21", "Why don’t they believe, or bow to the Quran?"],
-    ["22–23", "They deny; Allah knows what they hide"],
-    ["24–25", "Painful punishment, except believers: an unending reward"]
+    [
+     "16–18",
+     "By the twilight, the night, and the full moon"
+    ],
+    [
+     "19",
+     "You will pass from stage to stage"
+    ],
+    [
+     "20–21",
+     "Why don’t they believe, or bow to the Quran?"
+    ],
+    [
+     "22–23",
+     "They deny; Allah knows what they hide"
+    ],
+    [
+     "24–25",
+     "Painful punishment, except believers: an unending reward"
+    ]
    ],
    "matters": "The oaths show that nothing stays the same: day turns to night, the moon grows full. Man also moves through stages toward his Lord. After such signs, refusing to believe has no excuse.",
    "story": "No specific incident for most of it. One report says ayah 22 was about four men of Banū ʿAmr ibn ʿUmayr, two of whom later accepted Islam; others take it as all disbelievers.",
@@ -85,26 +124,82 @@
   }
  ],
  "groups": [
-  {"a": 1, "b": 2, "text": "The sky splits apart, listening to its Lord and obeying, as it must."},
-  {"a": 3, "b": 5, "text": "The earth is stretched flat, throws out what it holds, and also obeys."},
-  {"a": 6, "b": 6, "text": "O man, you are straining toward your Lord, and you will meet Him."},
-  {"a": 7, "b": 9, "text": "Whoever gets his record in his right hand has an easy account and returns to his family happy."},
-  {"a": 10, "b": 12, "text": "Whoever gets it behind his back cries for destruction and burns in the Blaze."},
-  {"a": 13, "b": 15, "text": "He was carefree among his people, sure he would never return. But his Lord saw him."},
-  {"a": 16, "b": 19, "text": "By the sunset glow, the night and the full moon: you will pass stage after stage."},
-  {"a": 20, "b": 21, "text": "Why don’t they believe, or bow when the Quran is recited?"},
-  {"a": 22, "b": 23, "text": "The disbelievers deny, and Allah knows what they hide."},
-  {"a": 24, "b": 25, "text": "A painful punishment for them; an unending reward for believers who do good."}
+  {
+   "a": 1,
+   "b": 2,
+   "text": "The sky splits apart, listening to its Lord and obeying, as it must."
+  },
+  {
+   "a": 3,
+   "b": 5,
+   "text": "The earth is stretched flat, throws out what it holds, and also obeys."
+  },
+  {
+   "a": 6,
+   "b": 6,
+   "text": "O man, you are straining toward your Lord, and you will meet Him."
+  },
+  {
+   "a": 7,
+   "b": 9,
+   "text": "Whoever gets his record in his right hand has an easy account and returns to his family happy."
+  },
+  {
+   "a": 10,
+   "b": 12,
+   "text": "Whoever gets it behind his back cries for destruction and burns in the Blaze."
+  },
+  {
+   "a": 13,
+   "b": 15,
+   "text": "He was carefree among his people, sure he would never return. But his Lord saw him."
+  },
+  {
+   "a": 16,
+   "b": 19,
+   "text": "By the sunset glow, the night and the full moon: you will pass stage after stage."
+  },
+  {
+   "a": 20,
+   "b": 21,
+   "text": "Why don’t they believe, or bow when the Quran is recited?"
+  },
+  {
+   "a": 22,
+   "b": 23,
+   "text": "The disbelievers deny, and Allah knows what they hide."
+  },
+  {
+   "a": 24,
+   "b": 25,
+   "text": "A painful punishment for them; an unending reward for believers who do good."
+  }
  ],
  "ayat": {
-  "1": {"explain": "Inshaqqat: the sky tears open on the Day of Judgement, its parts separating and its stars scattered."},
-  "2": {"explain": "Adhinat li-rabbihā: it listens to its Lord’s command to split, and obeys. Ḥuqqat: and it must, since His command cannot be refused or overcome."},
-  "3": {"explain": "Muddat: the earth is stretched out like leather, its mountains and buildings levelled, until it is wide enough to hold everyone gathered."},
-  "4": {"explain": "It throws out what is inside it, the dead and its buried treasures, and becomes completely empty."},
-  "5": {"explain": "The earth too listens and obeys, as it must. The “when…” sentence is left open; what follows fills it in: man meets what he did."},
-  "6": {"explain": "Kādiḥ: straining with effort. Every person is working his way to his Lord, with good or bad, and will meet it: meet his Lord, and meet his deeds."},
-  "7": {"explain": "Given his record of deeds in his right hand: the believer, one of the people of happiness."},
-  "8": {"explain": "Ḥisāb yasīr: an easy account. The Prophet ﷺ explained that this is only the presentation of deeds; whoever is questioned in detail is punished."},
+  "1": {
+   "explain": "Inshaqqat: the sky tears open on the Day of Judgement, its parts separating and its stars scattered."
+  },
+  "2": {
+   "explain": "Adhinat li-rabbihā: it listens to its Lord’s command to split, and obeys. Ḥuqqat: and it must, since His command cannot be refused or overcome."
+  },
+  "3": {
+   "explain": "Muddat: the earth is stretched out like leather, its mountains and buildings levelled, until it is wide enough to hold everyone gathered."
+  },
+  "4": {
+   "explain": "It throws out what is inside it, the dead and its buried treasures, and becomes completely empty."
+  },
+  "5": {
+   "explain": "The earth too listens and obeys, as it must. The “when…” sentence is left open; what follows fills it in: man meets what he did."
+  },
+  "6": {
+   "explain": "Kādiḥ: straining with effort. Every person is working his way to his Lord, with good or bad, and will meet it: meet his Lord, and meet his deeds."
+  },
+  "7": {
+   "explain": "Given his record of deeds in his right hand: the believer, one of the people of happiness."
+  },
+  "8": {
+   "explain": "Ḥisāb yasīr: an easy account. The Prophet ﷺ explained that this is only the presentation of deeds; whoever is questioned in detail is punished."
+  },
   "9": {
    "explain": "He returns to his family masrūr, delighted: either to his family in Paradise, or to his family from this world, to share the good news.",
    "why": "Reportedly revealed about Abū Salamah ibn ʿAbd al-Asad, the first to migrate from Makkah to Madinah. It then applies to every believer."
@@ -113,23 +208,51 @@
    "explain": "Given his record behind his back: in his left hand, reached from behind him. This is the disbeliever.",
    "why": "Reportedly revealed about al-Aswad ibn ʿAbd al-Asad, Abū Salamah’s brother. Like ayah 9, it then applies to everyone."
   },
-  "11": {"explain": "Yadʿū thubūrā: when he reads his record, he calls out for destruction, “O my ruin!”, wishing death would end it."},
-  "12": {"explain": "He enters the Saʿīr, the blazing Fire, which surrounds him on every side."},
-  "13": {"explain": "In the world he was happy among his people, following his desires and never thinking of what lay ahead. Believers, by contrast, lived among their families in awe of Allah (52:26)."},
-  "14": {"explain": "Lan yaḥūr: he was sure he would never return to Allah, never be raised after death."},
-  "15": {"explain": "Balā: yes, he will! His Lord saw him from the day He created him, and would never leave him without command, reward or punishment."},
-  "16": {"explain": "Fa-lā uqsimu: so I swear. Ash-shafaq: the red glow on the horizon after sunset, the start of the night. Some say the whiteness after it."},
-  "17": {"explain": "Wa mā wasaq: and what the night gathers. At night everything that spread out by day goes home: people, animals and birds."},
-  "18": {"explain": "Ittasaq: when the moon gathers its light and becomes full, in the middle nights of the month."},
-  "19": {"explain": "Ṭabaqan ʿan ṭabaq: stage after stage. From fluid to child, youth to old age, death, resurrection and judgement; or hardship after ease, and ease after hardship."},
-  "20": {"explain": "Fa-mā lahum: what is stopping them from believing, when the proofs are this clear?"},
-  "21": {"explain": "When the Quran is recited, they do not bow in submission. The Prophet ﷺ prostrated when reciting this surah, and a prostration of recitation is made at this ayah."},
+  "11": {
+   "explain": "Yadʿū thubūrā: when he reads his record, he calls out for destruction, “O my ruin!”, wishing death would end it."
+  },
+  "12": {
+   "explain": "He enters the Saʿīr, the blazing Fire, which surrounds him on every side."
+  },
+  "13": {
+   "explain": "In the world he was happy among his people, following his desires and never thinking of what lay ahead. Believers, by contrast, lived among their families in awe of Allah (52:26)."
+  },
+  "14": {
+   "explain": "Lan yaḥūr: he was sure he would never return to Allah, never be raised after death."
+  },
+  "15": {
+   "explain": "Balā: yes, he will! His Lord saw him from the day He created him, and would never leave him without command, reward or punishment."
+  },
+  "16": {
+   "explain": "Fa-lā uqsimu: so I swear. Ash-shafaq: the red glow on the horizon after sunset, the start of the night. Some say the whiteness after it."
+  },
+  "17": {
+   "explain": "Wa mā wasaq: and what the night gathers. At night everything that spread out by day goes home: people, animals and birds."
+  },
+  "18": {
+   "explain": "Ittasaq: when the moon gathers its light and becomes full, in the middle nights of the month."
+  },
+  "19": {
+   "explain": "Ṭabaqan ʿan ṭabaq: stage after stage. From fluid to child, youth to old age, death, resurrection and judgement; or hardship after ease, and ease after hardship."
+  },
+  "20": {
+   "explain": "Fa-mā lahum: what is stopping them from believing, when the proofs are this clear?"
+  },
+  "21": {
+   "explain": "When the Quran is recited, they do not bow in submission. The Prophet ﷺ prostrated when reciting this surah, and a prostration of recitation is made at this ayah."
+  },
   "22": {
    "explain": "Bal: rather, stubbornly denying the truth after it is clear is their habit, so their unbelief is no surprise.",
    "why": "Reportedly revealed about four men of Banū ʿAmr ibn ʿUmayr, two of whom accepted Islam. Others take it as all disbelievers."
   },
-  "23": {"explain": "Yūʿūn: what they gather and hide in their chests, denial and evil deeds. Allah knows all of it."},
-  "24": {"explain": "Bashshirhum: give them tidings. The word is used for news that shows on the face, joy or grief; here it is a painful punishment."},
-  "25": {"explain": "Except those who believe in their hearts and act with their limbs. Ajrun ghayru mamnūn: a reward never cut off and never reduced."}
+  "23": {
+   "explain": "Yūʿūn: what they gather and hide in their chests, denial and evil deeds. Allah knows all of it."
+  },
+  "24": {
+   "explain": "Bashshirhum: give them tidings. The word is used for news that shows on the face, joy or grief; here it is a painful punishment."
+  },
+  "25": {
+   "explain": "Except those who believe in their hearts and act with their limbs. Ajrun ghayru mamnūn: a reward never cut off and never reduced."
+  }
  }
 }

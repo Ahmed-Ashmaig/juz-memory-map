@@ -11,13 +11,25 @@
   {
    "a": 1,
    "b": 6,
-   "title": "Refuge from the sneaking whisperer",
+   "title": "Refuge in mankind’s Lord, King and God from jinn and human whisperers",
    "meaning": "Say: I seek refuge in the Lord of mankind, the King of mankind, the God of mankind, from the evil of the whisperer who slinks away, who whispers into people’s hearts, whether from among the jinn or from among people.",
    "points": [
-    ["1–3", "Lord of mankind, King of mankind, God of mankind"],
-    ["4", "From the whisperer who slinks away"],
-    ["5", "He whispers into people’s hearts"],
-    ["6", "From among the jinn and people"]
+    [
+     "1–3",
+     "Lord of mankind, King of mankind, God of mankind"
+    ],
+    [
+     "4",
+     "From the whisperer who slinks away"
+    ],
+    [
+     "5",
+     "He whispers into people’s hearts"
+    ],
+    [
+     "6",
+     "From among the jinn and people"
+    ]
    ],
    "matters": "Three descriptions of Allah are invoked against one enemy, because whispering attacks faith and the Hereafter, not just the body. Harm to the body can be treated; this enemy is hidden, and only Allah’s protection works against it.",
    "story": "No separate incident for An-Nās. It came with Al-Falaq: reportedly early in Makkah when hostility was intense, or in Madinah when magic was worked on the Prophet ﷺ.",
@@ -35,9 +47,21 @@
   }
  ],
  "groups": [
-  { "a": 1, "b": 3, "text": "I seek refuge in the Lord of mankind, the King of mankind, the God of mankind." },
-  { "a": 4, "b": 5, "text": "From the evil of the whisperer who slinks away and whispers into people’s hearts." },
-  { "a": 6, "b": 6, "text": "Whether that whisperer is from the jinn or from people." }
+  {
+   "a": 1,
+   "b": 3,
+   "text": "I seek refuge in the Lord of mankind, the King of mankind, the God of mankind."
+  },
+  {
+   "a": 4,
+   "b": 5,
+   "text": "From the evil of the whisperer who slinks away and whispers into people’s hearts."
+  },
+  {
+   "a": 6,
+   "b": 6,
+   "text": "Whether that whisperer is from the jinn or from people."
+  }
  ],
  "ayat": {
   "1": {

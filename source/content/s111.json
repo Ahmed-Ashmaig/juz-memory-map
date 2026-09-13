@@ -11,13 +11,25 @@
   {
    "a": 1,
    "b": 5,
-   "title": "Ruin for Abū Lahab and his wife",
+   "title": "Abū Lahab’s wealth won’t save him; he and his wife will burn",
    "meaning": "Abū Lahab’s hands are ruined, and he is ruined. His wealth and what he earned, including his children, will not help him. He will burn in a flaming Fire, and so will his wife, the carrier of firewood, with a rope of twisted fibre on her neck.",
    "points": [
-    ["1", "May Abū Lahab’s hands perish, and he has perished"],
-    ["2", "His wealth and earnings won’t help him"],
-    ["3", "He will burn in a Fire of flame"],
-    ["4–5", "His wife too, carrying firewood, a fibre rope on her neck"]
+    [
+     "1",
+     "May Abū Lahab’s hands perish, and he has perished"
+    ],
+    [
+     "2",
+     "His wealth and earnings won’t help him"
+    ],
+    [
+     "3",
+     "He will burn in a Fire of flame"
+    ],
+    [
+     "4–5",
+     "His wife too, carrying firewood, a fibre rope on her neck"
+    ]
    ],
    "matters": "Family ties do not replace faith: the Prophet’s ﷺ own uncle is condemned by name. It also showed people that Abū Lahab’s attacks came from hatred, and that no relative gets special treatment in this religion.",
    "story": "At Ṣafā, the Prophet ﷺ warned Quraysh of a severe punishment. Abū Lahab replied, “May you perish! Is this why you gathered us?”, and reportedly picked up a stone to throw at him. Other reports give different occasions.",
@@ -35,9 +47,21 @@
   }
  ],
  "groups": [
-  { "a": 1, "b": 2, "text": "Abū Lahab is ruined, and his wealth and children will not help him." },
-  { "a": 3, "b": 3, "text": "He will burn in a Fire full of flames." },
-  { "a": 4, "b": 5, "text": "So will his wife, the carrier of firewood, with a rope of palm fibre around her neck." }
+  {
+   "a": 1,
+   "b": 2,
+   "text": "Abū Lahab is ruined, and his wealth and children will not help him."
+  },
+  {
+   "a": 3,
+   "b": 3,
+   "text": "He will burn in a Fire full of flames."
+  },
+  {
+   "a": 4,
+   "b": 5,
+   "text": "So will his wife, the carrier of firewood, with a rope of palm fibre around her neck."
+  }
  ],
  "ayat": {
   "1": {

@@ -11,12 +11,21 @@
   {
    "a": 1,
    "b": 3,
-   "title": "When Allah’s help and victory come",
+   "title": "When victory brings crowds into Islam, glorify your Lord and seek forgiveness",
    "meaning": "When Allah’s help and the conquest of Makkah arrive, and you see people entering Allah’s religion in crowds, then glorify your Lord with praise and ask His forgiveness. He always accepts repentance.",
    "points": [
-    ["1", "Allah’s help and the conquest arrive"],
-    ["2", "People enter Allah’s religion in crowds"],
-    ["3", "Glorify, praise and seek forgiveness; He accepts repentance"]
+    [
+     "1",
+     "Allah’s help and the conquest arrive"
+    ],
+    [
+     "2",
+     "People enter Allah’s religion in crowds"
+    ],
+    [
+     "3",
+     "Glorify, praise and seek forgiveness; He accepts repentance"
+    ]
    ],
    "matters": "It shows how to meet success: with humility, praise and seeking forgiveness, not pride. It also told the Prophet ﷺ that his mission was complete and his time was near, since great deeds are sealed with seeking forgiveness.",
    "story": "Arab tribes had been waiting to see whether the Prophet ﷺ would overcome his own people. Once Makkah was conquered, they came in whole delegations to accept Islam, and within two years Arabia had embraced it.",
@@ -34,8 +43,16 @@
   }
  ],
  "groups": [
-  { "a": 1, "b": 2, "text": "When Allah’s help and the conquest of Makkah come, people enter Allah’s religion in crowds." },
-  { "a": 3, "b": 3, "text": "Then glorify your Lord with praise and ask His forgiveness; He always accepts repentance." }
+  {
+   "a": 1,
+   "b": 2,
+   "text": "When Allah’s help and the conquest of Makkah come, people enter Allah’s religion in crowds."
+  },
+  {
+   "a": 3,
+   "b": 3,
+   "text": "Then glorify your Lord with praise and ask His forgiveness; He always accepts repentance."
+  }
  ],
  "ayat": {
   "1": {

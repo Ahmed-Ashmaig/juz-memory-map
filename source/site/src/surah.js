@@ -114,7 +114,7 @@ const Surah = (() => {
   function buildStrip() {
     const strip = $("strip");
     strip.innerHTML = "";
-    strip.style.gridTemplateColumns = S.map(s => `minmax(2.4rem, ${s.words}fr)`).join(" ");
+    strip.style.gridTemplateColumns = S.map(s => `minmax(7.5rem, ${s.words}fr)`).join(" ");
     S.forEach(s => {
       const b = document.createElement("button");
       b.type = "button"; b.className = `blk b${s.color}`; b.id = "blk" + s.n;

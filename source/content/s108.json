@@ -11,12 +11,21 @@
   {
    "a": 1,
    "b": 3,
-   "title": "Abundance for you; your enemy cut off",
+   "title": "Given al-Kawthar, pray and sacrifice for Allah; your hater is cut off",
    "meaning": "Allah has given the Prophet ﷺ al-Kawthar: abundant good, including a river in Paradise and the Pool his followers will drink from. In thanks he should pray and sacrifice for his Lord alone. The one who hates him is the one cut off from all good.",
    "points": [
-    ["1", "We have given you al-Kawthar, abundant good"],
-    ["2", "So pray to your Lord and sacrifice"],
-    ["3", "Your hater is the one cut off"]
+    [
+     "1",
+     "We have given you al-Kawthar, abundant good"
+    ],
+    [
+     "2",
+     "So pray to your Lord and sacrifice"
+    ],
+    [
+     "3",
+     "Your hater is the one cut off"
+    ]
    ],
    "matters": "It turns an insult upside down. They said his name would die with his sons. Instead his name is honoured across the world and his way followed until the end of time, while his mockers are forgotten.",
    "story": "When the Prophet’s ﷺ sons died, his enemies called him abtar, a man with no son to carry his name. Most reports name al-ʿĀṣ ibn Wāʾil; others name Abū Lahab, Abū Jahl, ʿUqbah ibn Abī Muʿayṭ, or Quraysh with Kaʿb ibn al-Ashraf.",
@@ -34,8 +43,16 @@
   }
  ],
  "groups": [
-  { "a": 1, "b": 2, "text": "Allah has given you abundant good, so pray and sacrifice for your Lord alone." },
-  { "a": 3, "b": 3, "text": "The one who hates you is the one truly cut off." }
+  {
+   "a": 1,
+   "b": 2,
+   "text": "Allah has given you abundant good, so pray and sacrifice for your Lord alone."
+  },
+  {
+   "a": 3,
+   "b": 3,
+   "text": "The one who hates you is the one truly cut off."
+  }
  ],
  "ayat": {
   "1": {

@@ -11,13 +11,25 @@
   {
    "a": 1,
    "b": 4,
-   "title": "He is Allah, the One",
+   "title": "Allah is One, all depend on Him, unborn, childless, with no equal",
    "meaning": "Say: He is Allah, One. Allah, aṣ-Ṣamad: the Master everyone depends on, while He depends on no one. He has no child and was not born. And nothing is equal or comparable to Him.",
    "points": [
-    ["1", "Say: He is Allah, One"],
-    ["2", "Allah, aṣ-Ṣamad: all depend on Him"],
-    ["3", "He has no child and was not born"],
-    ["4", "Nothing is comparable to Him"]
+    [
+     "1",
+     "Say: He is Allah, One"
+    ],
+    [
+     "2",
+     "Allah, aṣ-Ṣamad: all depend on Him"
+    ],
+    [
+     "3",
+     "He has no child and was not born"
+    ],
+    [
+     "4",
+     "Nothing is comparable to Him"
+    ]
    ],
    "matters": "Tawḥīd is the foundation of the faith, and this surah states it in four short lines anyone can memorise. The Prophet ﷺ called it equal to a third of the Quran and recited it for protection morning, evening and before sleep.",
    "story": "People asked the Prophet ﷺ to describe his Lord: His lineage, or what He is made of. Reports name the idolaters of Makkah, Jewish rabbis or Christians of Najrān. This surah was the answer.",
@@ -36,8 +48,16 @@
   }
  ],
  "groups": [
-  { "a": 1, "b": 2, "text": "He is Allah, the One; Allah, the Master everyone turns to in need." },
-  { "a": 3, "b": 4, "text": "He has no child, was not born, and nothing is equal to Him." }
+  {
+   "a": 1,
+   "b": 2,
+   "text": "He is Allah, the One; Allah, the Master everyone turns to in need."
+  },
+  {
+   "a": 3,
+   "b": 4,
+   "text": "He has no child, was not born, and nothing is equal to Him."
+  }
  ],
  "ayat": {
   "1": {

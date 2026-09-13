@@ -11,12 +11,21 @@
   {
    "a": 1,
    "b": 4,
-   "title": "Worship the Lord of this House",
+   "title": "Quraysh, fed and safe on their journeys, should worship this House’s Lord",
    "meaning": "Quraysh were used to their two trade journeys, in winter and summer, travelling in safety. So let them worship the Lord of this House, who fed them when they faced hunger and made them safe from fear.",
    "points": [
-    ["1–2", "Quraysh’s familiar journeys of winter and summer"],
-    ["3", "So let them worship the Lord of this House"],
-    ["4", "He fed them against hunger, secured them from fear"]
+    [
+     "1–2",
+     "Quraysh’s familiar journeys of winter and summer"
+    ],
+    [
+     "3",
+     "So let them worship the Lord of this House"
+    ],
+    [
+     "4",
+     "He fed them against hunger, secured them from fear"
+    ]
    ],
    "matters": "Plenty of food and safety are among the greatest worldly blessings, and Quraysh had both because of the House. It would be deep ingratitude to enjoy the House’s benefits while refusing to worship its Lord.",
    "story": "Hāshim, father of ʿAbd al-Muṭṭalib, reportedly urged Quraysh to run the two yearly caravans, and profits were shared so the poor lived like the rich. Their link to the Kaʿbah kept them safe on roads where other caravans were robbed.",
@@ -34,8 +43,16 @@
   }
  ],
  "groups": [
-  { "a": 1, "b": 2, "text": "Quraysh were used to travelling safely: the winter caravan and the summer caravan." },
-  { "a": 3, "b": 4, "text": "So let them worship the Lord of the Kaʿbah, who fed them against hunger and made them safe from fear." }
+  {
+   "a": 1,
+   "b": 2,
+   "text": "Quraysh were used to travelling safely: the winter caravan and the summer caravan."
+  },
+  {
+   "a": 3,
+   "b": 4,
+   "text": "So let them worship the Lord of the Kaʿbah, who fed them against hunger and made them safe from fear."
+  }
  ],
  "ayat": {
   "1": {

@@ -11,15 +11,33 @@
   {
    "a": 1,
    "b": 14,
-   "title": "When the sun is wrapped up",
+   "title": "Sun rolled up, buried girl questioned: every soul knows what it brought",
    "meaning": "Twelve “when” scenes: the sun rolled up, stars falling, mountains moved, prized camels abandoned, beasts gathered, seas ablaze, souls paired, the buried girl questioned, records opened, the sky stripped away, Hell lit and Paradise brought near. Then every soul will know what it has brought.",
    "points": [
-    ["1–3", "Sun rolled up, stars fall, mountains removed"],
-    ["4–6", "Prized camels abandoned, wild beasts gathered, seas set ablaze"],
-    ["7", "Souls are paired with their like"],
-    ["8–9", "The buried girl is asked: for what sin?"],
-    ["10–13", "Records opened, sky stripped, Hell lit, Paradise brought near"],
-    ["14", "Every soul will know what it has brought"]
+    [
+     "1–3",
+     "Sun rolled up, stars fall, mountains removed"
+    ],
+    [
+     "4–6",
+     "Prized camels abandoned, wild beasts gathered, seas set ablaze"
+    ],
+    [
+     "7",
+     "Souls are paired with their like"
+    ],
+    [
+     "8–9",
+     "The buried girl is asked: for what sin?"
+    ],
+    [
+     "10–13",
+     "Records opened, sky stripped, Hell lit, Paradise brought near"
+    ],
+    [
+     "14",
+     "Every soul will know what it has brought"
+    ]
    ],
    "matters": "It lets you see the Day as if with your own eyes. Everything people relied on, from the sun to their most valued wealth, gives way, and the only thing left that matters is what each soul brought.",
    "story": "No specific incident. Before Islam, some Arabs buried newborn daughters alive out of fear of shame or poverty. Ayat 8–9 show that even this hidden crime, with no one to demand justice, will be exposed.",
@@ -38,13 +56,25 @@
   {
    "a": 15,
    "b": 21,
-   "title": "Sworn by stars: a noble messenger",
+   "title": "Sworn by stars, night and dawn: noble Jibrīl brought the Quran",
    "meaning": "Allah swears by the stars that hide by day and sweep across the night, by the night as it comes or goes, and by the dawn as it breathes. The Quran is the word brought by a noble messenger, Jibrīl: powerful, honoured by Allah, obeyed in heaven and trustworthy.",
    "points": [
-    ["15–16", "By the stars that retreat, run and disappear"],
-    ["17–18", "By the night as it closes in, the dawn as it breathes"],
-    ["19", "It is the word of a noble messenger"],
-    ["20–21", "Powerful, honoured with Allah, obeyed and trustworthy"]
+    [
+     "15–16",
+     "By the stars that retreat, run and disappear"
+    ],
+    [
+     "17–18",
+     "By the night as it closes in, the dawn as it breathes"
+    ],
+    [
+     "19",
+     "It is the word of a noble messenger"
+    ],
+    [
+     "20–21",
+     "Powerful, honoured with Allah, obeyed and trustworthy"
+    ]
    ],
    "matters": "After the Day, the surah turns to the message that warns of it. If the messenger who brought it is noble, powerful and trusted, the Quran reached us whole and cannot be doubted.",
    "story": "No specific incident. The people of Makkah doubted the Quran, and this oath answers them by praising the angel who brought it.",
@@ -63,14 +93,29 @@
   {
    "a": 22,
    "b": 29,
-   "title": "Your companion is not mad",
+   "title": "Your companion ﷺ isn’t mad: he saw Jibrīl, and the Quran reminds",
    "meaning": "The Prophet ﷺ is not mad. He truly saw Jibrīl on the clear horizon, he holds back nothing of the unseen, and the Quran is no devil’s word. So where are you going? It is a reminder for anyone who wants to go straight, though no one wills unless Allah wills.",
    "points": [
-    ["22–23", "Not mad: he saw Jibrīl on the clear horizon"],
-    ["24–25", "He withholds nothing of the unseen; no devil’s words"],
-    ["26", "So where are you going?"],
-    ["27–28", "A reminder for whoever wants to go straight"],
-    ["29", "But you only will what Allah wills"]
+    [
+     "22–23",
+     "Not mad: he saw Jibrīl on the clear horizon"
+    ],
+    [
+     "24–25",
+     "He withholds nothing of the unseen; no devil’s words"
+    ],
+    [
+     "26",
+     "So where are you going?"
+    ],
+    [
+     "27–28",
+     "A reminder for whoever wants to go straight"
+    ],
+    [
+     "29",
+     "But you only will what Allah wills"
+    ]
    ],
    "matters": "It answers every accusation against the Prophet ﷺ and the Quran, then puts the choice back on the listener. Guidance is offered to all, but no one reaches it without Allah’s help.",
    "story": "Makkah’s leaders called the Prophet ﷺ mad, reportedly after he fainted on seeing Jibrīl in his true form. And when ayah 28 came, Abū Jahl said: “It’s up to us,” so ayah 29 was revealed.",
@@ -88,14 +133,46 @@
   }
  ],
  "groups": [
-  {"a": 1, "b": 3, "text": "The sun is rolled up, the stars fall scattering, and the mountains are moved away."},
-  {"a": 4, "b": 6, "text": "Prized pregnant camels are abandoned, wild beasts are gathered, and the seas are set ablaze."},
-  {"a": 7, "b": 9, "text": "Souls are paired with their like, and the buried girl is asked what sin she was killed for."},
-  {"a": 10, "b": 14, "text": "Records opened, sky stripped away, Hell lit, Paradise brought near. Then each soul knows what it has brought."},
-  {"a": 15, "b": 18, "text": "Allah swears by the stars that hide and run, by the night as it falls, and by the breathing dawn."},
-  {"a": 19, "b": 21, "text": "The Quran is brought by Jibrīl: noble, powerful, honoured by Allah, obeyed in heaven, trustworthy."},
-  {"a": 22, "b": 25, "text": "The Prophet ﷺ is not mad, he saw Jibrīl clearly, he hides nothing, and no devil speaks the Quran."},
-  {"a": 26, "b": 29, "text": "Where are you going? It is a reminder for all who want to go straight, but only if Allah wills."}
+  {
+   "a": 1,
+   "b": 3,
+   "text": "The sun is rolled up, the stars fall scattering, and the mountains are moved away."
+  },
+  {
+   "a": 4,
+   "b": 6,
+   "text": "Prized pregnant camels are abandoned, wild beasts are gathered, and the seas are set ablaze."
+  },
+  {
+   "a": 7,
+   "b": 9,
+   "text": "Souls are paired with their like, and the buried girl is asked what sin she was killed for."
+  },
+  {
+   "a": 10,
+   "b": 14,
+   "text": "Records opened, sky stripped away, Hell lit, Paradise brought near. Then each soul knows what it has brought."
+  },
+  {
+   "a": 15,
+   "b": 18,
+   "text": "Allah swears by the stars that hide and run, by the night as it falls, and by the breathing dawn."
+  },
+  {
+   "a": 19,
+   "b": 21,
+   "text": "The Quran is brought by Jibrīl: noble, powerful, honoured by Allah, obeyed in heaven, trustworthy."
+  },
+  {
+   "a": 22,
+   "b": 25,
+   "text": "The Prophet ﷺ is not mad, he saw Jibrīl clearly, he hides nothing, and no devil speaks the Quran."
+  },
+  {
+   "a": 26,
+   "b": 29,
+   "text": "Where are you going? It is a reminder for all who want to go straight, but only if Allah wills."
+  }
  ],
  "ayat": {
   "1": {

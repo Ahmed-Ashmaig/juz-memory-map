@@ -11,13 +11,25 @@
   {
    "a": 1,
    "b": 4,
-   "title": "Don’t say what you don’t do",
+   "title": "Allah hates saying what you don’t do, loves fighters in solid rows",
    "meaning": "Everything in the heavens and earth glorifies Allah. Then a sharp question to the believers: why say what you do not do? Allah hates it greatly. What He loves is those who fight in His cause in rows, like a solid, tightly joined wall.",
    "points": [
-    ["1", "Everything in the heavens and earth glorifies Allah, the Mighty, the Wise"],
-    ["2", "Why do you say what you do not do?"],
-    ["3", "Most hateful to Allah: saying what you don’t do"],
-    ["4", "Allah loves those fighting in His cause in rows, like a solid structure"]
+    [
+     "1",
+     "Everything in the heavens and earth glorifies Allah, the Mighty, the Wise"
+    ],
+    [
+     "2",
+     "Why do you say what you do not do?"
+    ],
+    [
+     "3",
+     "Most hateful to Allah: saying what you don’t do"
+    ],
+    [
+     "4",
+     "Allah loves those fighting in His cause in rows, like a solid structure"
+    ]
    ],
    "matters": "The Companions wanted the deed Allah loves most. Before telling them, Allah warns against big promises that aren’t kept. Words must match deeds, and the answer, steadfast and united striving, follows at once.",
    "story": "Some Companions said, “If we knew the deed Allah loves most, we would do it.” This surah came in reply. Reportedly some then fled at Uḥud; other reports say ayah 2 was about false boasts of battle feats.",
@@ -36,15 +48,33 @@
   {
    "a": 5,
    "b": 9,
-   "title": "Mūsā, ʿĪsā, and Allah’s unstoppable light",
+   "title": "Mūsā’s people swerve, ʿĪsā foretells Aḥmad; none can blow out Allah’s light",
    "meaning": "Mūsā’s people hurt him though they knew he was Allah’s messenger; when they swerved, Allah made their hearts swerve. ʿĪsā confirmed the Torah and gave news of a messenger named Aḥmad, yet when he came they called it magic. They want to blow out Allah’s light, but He will complete it.",
    "points": [
-    ["5", "Mūsā: why do you hurt me, knowing I am Allah’s messenger?"],
-    ["5", "They swerved, so Allah made their hearts swerve"],
-    ["6", "ʿĪsā confirms the Torah and brings news of Aḥmad"],
-    ["6", "When he came with clear proofs, they said: obvious magic"],
-    ["7", "No one is more unjust than one who lies about Allah"],
-    ["8–9", "They try to blow out Allah’s light; He will make His religion prevail"]
+    [
+     "5",
+     "Mūsā: why do you hurt me, knowing I am Allah’s messenger?"
+    ],
+    [
+     "5",
+     "They swerved, so Allah made their hearts swerve"
+    ],
+    [
+     "6",
+     "ʿĪsā confirms the Torah and brings news of Aḥmad"
+    ],
+    [
+     "6",
+     "When he came with clear proofs, they said: obvious magic"
+    ],
+    [
+     "7",
+     "No one is more unjust than one who lies about Allah"
+    ],
+    [
+     "8–9",
+     "They try to blow out Allah’s light; He will make His religion prevail"
+    ]
    ],
    "matters": "It warns the believers not to treat their Messenger ﷺ as the Israelites treated Mūsā and ʿĪsā. It also comforts the Prophet ﷺ, who faced similar harm, and promises that no mouth can blow out Allah’s light.",
    "story": "No specific incident for ayat 5–7. Reportedly, when revelation paused for forty days, Kaʿb ibn al-Ashraf gloated that Allah had put out the light of Muhammad ﷺ. The Prophet ﷺ was saddened, and ayah 8 was revealed.",
@@ -63,15 +93,33 @@
   {
    "a": 10,
    "b": 14,
-   "title": "The trade that saves, and Allah’s helpers",
+   "title": "The trade that saves: faith and striving for Paradise; be Allah’s helpers",
    "meaning": "Allah offers a trade that saves from painful punishment: believe in Allah and His Messenger and strive with wealth and lives. The profit is forgiveness, gardens and fine homes, plus victory and a near conquest. Then the call: be Allah’s helpers, like ʿĪsā’s disciples, and Allah will support you.",
    "points": [
-    ["10", "Shall I show you a trade that saves from painful punishment?"],
-    ["11", "Believe, and strive with your wealth and your lives"],
-    ["12", "Forgiveness, gardens with rivers, pleasant homes in ʿAdn"],
-    ["13", "And something you love: help from Allah and a near victory"],
-    ["14", "Be Allah’s helpers, as the disciples answered ʿĪsā"],
-    ["14", "Allah supported the believers and they prevailed"]
+    [
+     "10",
+     "Shall I show you a trade that saves from painful punishment?"
+    ],
+    [
+     "11",
+     "Believe, and strive with your wealth and your lives"
+    ],
+    [
+     "12",
+     "Forgiveness, gardens with rivers, pleasant homes in ʿAdn"
+    ],
+    [
+     "13",
+     "And something you love: help from Allah and a near victory"
+    ],
+    [
+     "14",
+     "Be Allah’s helpers, as the disciples answered ʿĪsā"
+    ],
+    [
+     "14",
+     "Allah supported the believers and they prevailed"
+    ]
    ],
    "matters": "Ayah 2 warned against empty words; here is what real commitment looks like and what it earns. It answers the Companions’ question in full, promising reward in both worlds, and holds up the disciples of ʿĪsā as a model.",
    "story": "Reportedly these ayat also answer the Companions who wished to know the deed Allah loves most. Another report links ayah 10 to ʿUthmān ibn Maẓʿūn, who asked which trade Allah loves after being told not to renounce the world.",
@@ -89,15 +137,51 @@
   }
  ],
  "groups": [
-  {"a": 1, "b": 1, "text": "Everything in the heavens and earth glorifies Allah, the Mighty, the Wise."},
-  {"a": 2, "b": 3, "text": "Why say what you don’t do? It is most hateful to Allah."},
-  {"a": 4, "b": 4, "text": "Allah loves those who fight in His cause in rows, like a solid wall."},
-  {"a": 5, "b": 5, "text": "Mūsā’s people hurt him though they knew he was a messenger; when they swerved, Allah made their hearts swerve."},
-  {"a": 6, "b": 6, "text": "ʿĪsā confirmed the Torah and gave news of a messenger named Aḥmad; when he came, they called it magic."},
-  {"a": 7, "b": 9, "text": "No one is more unjust than one who lies about Allah. Allah will complete His light and make His religion prevail."},
-  {"a": 10, "b": 12, "text": "A trade that saves: believe and strive with wealth and lives. The reward is forgiveness and eternal gardens."},
-  {"a": 13, "b": 13, "text": "And something you love now: help from Allah and a near victory. Give the believers good news."},
-  {"a": 14, "b": 14, "text": "Be Allah’s helpers like ʿĪsā’s disciples. Allah supported those who believed, and they prevailed."}
+  {
+   "a": 1,
+   "b": 1,
+   "text": "Everything in the heavens and earth glorifies Allah, the Mighty, the Wise."
+  },
+  {
+   "a": 2,
+   "b": 3,
+   "text": "Why say what you don’t do? It is most hateful to Allah."
+  },
+  {
+   "a": 4,
+   "b": 4,
+   "text": "Allah loves those who fight in His cause in rows, like a solid wall."
+  },
+  {
+   "a": 5,
+   "b": 5,
+   "text": "Mūsā’s people hurt him though they knew he was a messenger; when they swerved, Allah made their hearts swerve."
+  },
+  {
+   "a": 6,
+   "b": 6,
+   "text": "ʿĪsā confirmed the Torah and gave news of a messenger named Aḥmad; when he came, they called it magic."
+  },
+  {
+   "a": 7,
+   "b": 9,
+   "text": "No one is more unjust than one who lies about Allah. Allah will complete His light and make His religion prevail."
+  },
+  {
+   "a": 10,
+   "b": 12,
+   "text": "A trade that saves: believe and strive with wealth and lives. The reward is forgiveness and eternal gardens."
+  },
+  {
+   "a": 13,
+   "b": 13,
+   "text": "And something you love now: help from Allah and a near victory. Give the believers good news."
+  },
+  {
+   "a": 14,
+   "b": 14,
+   "text": "Be Allah’s helpers like ʿĪsā’s disciples. Allah supported those who believed, and they prevailed."
+  }
  ],
  "ayat": {
   "1": {

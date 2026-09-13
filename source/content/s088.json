@@ -11,13 +11,25 @@
   {
    "a": 1,
    "b": 7,
-   "title": "The Overwhelming Day: faces humbled",
+   "title": "The Overwhelming Day: humbled faces burn, drink boiling water and eat thorns",
    "meaning": "Has news of the Overwhelming Day reached you? Some faces that Day will be humbled, toiling and exhausted. They burn in a scorching Fire, drink from a boiling spring, and eat only a bitter thorn that neither nourishes nor satisfies hunger.",
    "points": [
-    ["1", "Has news of al-Ghāshiyah reached you?"],
-    ["2–3", "Faces humbled, toiling, worn out"],
-    ["4–5", "A scorching Fire and a boiling spring"],
-    ["6–7", "Only ḍarīʿ: no nourishment, no relief from hunger"]
+    [
+     "1",
+     "Has news of al-Ghāshiyah reached you?"
+    ],
+    [
+     "2–3",
+     "Faces humbled, toiling, worn out"
+    ],
+    [
+     "4–5",
+     "A scorching Fire and a boiling spring"
+    ],
+    [
+     "6–7",
+     "Only ḍarīʿ: no nourishment, no relief from hunger"
+    ]
    ],
    "matters": "It opens with a question to wake heedless people up, then shows the losing side first. Every need, heat, thirst and hunger, is answered with more pain.",
    "story": "When ayah 6 described ḍarīʿ as the food of Hell, the idolaters of Makkah mocked: “Our camels grow fat on ḍarīʿ.” Ayah 7 answered them: this food neither fattens nor ends hunger.",
@@ -35,13 +47,25 @@
   {
    "a": 8,
    "b": 16,
-   "title": "Joyful faces in a high garden",
+   "title": "Radiant faces, pleased with their effort, in a high garden with couches",
    "meaning": "Other faces that Day are radiant, pleased with the effort they made, in a lofty garden. No idle talk is heard there. It has a flowing spring, raised couches, cups set ready, cushions in rows, and carpets spread everywhere.",
    "points": [
-    ["8–9", "Faces glowing, pleased with their effort"],
-    ["10–11", "A high garden with no empty talk"],
-    ["12–13", "A flowing spring, raised couches"],
-    ["14–16", "Cups set out, cushions lined up, carpets spread"]
+    [
+     "8–9",
+     "Faces glowing, pleased with their effort"
+    ],
+    [
+     "10–11",
+     "A high garden with no empty talk"
+    ],
+    [
+     "12–13",
+     "A flowing spring, raised couches"
+    ],
+    [
+     "14–16",
+     "Cups set out, cushions lined up, carpets spread"
+    ]
    ],
    "matters": "It is the mirror image of section 1: joy for exhaustion, a flowing spring for a boiling one, comfort for thorns. And it ties the reward to saʿy, the effort made in this life.",
    "story": "No specific incident. It completes the picture of the Overwhelming Day by describing the people of Paradise.",
@@ -59,14 +83,29 @@
   {
    "a": 17,
    "b": 26,
-   "title": "Look at the camel; you only remind",
+   "title": "Look at the camel, sky and mountains; you only remind, Allah judges",
    "meaning": "Do they not look at how the camel was created, how the sky was raised, the mountains set up and the earth spread out? So remind: you are only a reminder, not a controller. Whoever turns away and disbelieves gets the greatest punishment. To Us is their return, and on Us their account.",
    "points": [
-    ["17", "Look at the camel, how it was created"],
-    ["18–20", "The sky raised, mountains set firm, earth spread out"],
-    ["21–22", "So remind: you are not their controller"],
-    ["23–24", "Whoever turns away faces the greatest punishment"],
-    ["25–26", "Their return is to Us, their reckoning on Us"]
+    [
+     "17",
+     "Look at the camel, how it was created"
+    ],
+    [
+     "18–20",
+     "The sky raised, mountains set firm, earth spread out"
+    ],
+    [
+     "21–22",
+     "So remind: you are not their controller"
+    ],
+    [
+     "23–24",
+     "Whoever turns away faces the greatest punishment"
+    ],
+    [
+     "25–26",
+     "Their return is to Us, their reckoning on Us"
+    ]
    ],
    "matters": "After the Day comes the proof. A desert traveller sees these four signs on every journey; if Allah made them, He can raise the dead. And the Prophet ﷺ is freed from forcing faith: reminding is his job, reckoning is Allah’s.",
    "story": "Reportedly, when the raised couches of Paradise were mentioned, the disbelievers asked how they could climb them. Ayah 17 pointed to the camel, which kneels to be loaded and then rises.",
@@ -84,50 +123,142 @@
   }
  ],
  "groups": [
-  {"a": 1, "b": 3, "text": "Has news of the Overwhelming Day reached you? Some faces that Day will be humbled, toiling and worn out."},
-  {"a": 4, "b": 5, "text": "They burn in a scorching Fire and drink from a boiling spring."},
-  {"a": 6, "b": 7, "text": "Their only food is a poisonous thorn that neither fattens nor ends hunger."},
-  {"a": 8, "b": 10, "text": "Other faces are joyful, pleased with their effort, in a lofty garden."},
-  {"a": 11, "b": 13, "text": "No idle talk is heard there; it has a flowing spring and raised couches."},
-  {"a": 14, "b": 16, "text": "Cups set ready, cushions in rows, carpets spread everywhere."},
-  {"a": 17, "b": 17, "text": "Do they not look at the camel, how it was created?"},
-  {"a": 18, "b": 20, "text": "And the sky raised, the mountains set up, and the earth spread out?"},
-  {"a": 21, "b": 22, "text": "So remind: you are only a reminder, not a controller over them."},
-  {"a": 23, "b": 24, "text": "Whoever turns away and disbelieves, Allah will punish with the greatest punishment."},
-  {"a": 25, "b": 26, "text": "Their return is to Us, and their reckoning is on Us."}
+  {
+   "a": 1,
+   "b": 3,
+   "text": "Has news of the Overwhelming Day reached you? Some faces that Day will be humbled, toiling and worn out."
+  },
+  {
+   "a": 4,
+   "b": 5,
+   "text": "They burn in a scorching Fire and drink from a boiling spring."
+  },
+  {
+   "a": 6,
+   "b": 7,
+   "text": "Their only food is a poisonous thorn that neither fattens nor ends hunger."
+  },
+  {
+   "a": 8,
+   "b": 10,
+   "text": "Other faces are joyful, pleased with their effort, in a lofty garden."
+  },
+  {
+   "a": 11,
+   "b": 13,
+   "text": "No idle talk is heard there; it has a flowing spring and raised couches."
+  },
+  {
+   "a": 14,
+   "b": 16,
+   "text": "Cups set ready, cushions in rows, carpets spread everywhere."
+  },
+  {
+   "a": 17,
+   "b": 17,
+   "text": "Do they not look at the camel, how it was created?"
+  },
+  {
+   "a": 18,
+   "b": 20,
+   "text": "And the sky raised, the mountains set up, and the earth spread out?"
+  },
+  {
+   "a": 21,
+   "b": 22,
+   "text": "So remind: you are only a reminder, not a controller over them."
+  },
+  {
+   "a": 23,
+   "b": 24,
+   "text": "Whoever turns away and disbelieves, Allah will punish with the greatest punishment."
+  },
+  {
+   "a": 25,
+   "b": 26,
+   "text": "Their return is to Us, and their reckoning is on Us."
+  }
  ],
  "ayat": {
-  "1": {"explain": "Hal atāka: has it reached you? Al-Ghāshiyah, the Overwhelming, is the Day of Resurrection, covering all creation with its terrors."},
-  "2": {"explain": "Wujūh: faces, meaning the people themselves. Khāshiʿah: humbled and disgraced. Those who never lowered themselves before Allah are lowered now."},
-  "3": {"explain": "ʿĀmilah nāṣibah: toiling and exhausted. Either labouring in the Fire, or people who strained in worship on a wrong path in this world, and it counted for nothing."},
-  "4": {"explain": "Taṣlā: they enter and burn in a Fire ḥāmiyah, intensely hot and surrounding them. Unlike fire in this world, its heat never fades."},
-  "5": {"explain": "Their drink comes from ʿayn āniyah, a spring boiling at its highest heat."},
-  "6": {"explain": "Their only food is ḍarīʿ: a thorny plant, called shibriq when green, poisonous and foul once dry, which no animal will graze."},
+  "1": {
+   "explain": "Hal atāka: has it reached you? Al-Ghāshiyah, the Overwhelming, is the Day of Resurrection, covering all creation with its terrors."
+  },
+  "2": {
+   "explain": "Wujūh: faces, meaning the people themselves. Khāshiʿah: humbled and disgraced. Those who never lowered themselves before Allah are lowered now."
+  },
+  "3": {
+   "explain": "ʿĀmilah nāṣibah: toiling and exhausted. Either labouring in the Fire, or people who strained in worship on a wrong path in this world, and it counted for nothing."
+  },
+  "4": {
+   "explain": "Taṣlā: they enter and burn in a Fire ḥāmiyah, intensely hot and surrounding them. Unlike fire in this world, its heat never fades."
+  },
+  "5": {
+   "explain": "Their drink comes from ʿayn āniyah, a spring boiling at its highest heat."
+  },
+  "6": {
+   "explain": "Their only food is ḍarīʿ: a thorny plant, called shibriq when green, poisonous and foul once dry, which no animal will graze."
+  },
   "7": {
    "explain": "It neither fattens nor satisfies hunger. Food exists to do one of those two things; this does neither.",
    "why": "When ayah 6 was revealed, the idolaters said, “Our camels grow fat on ḍarīʿ.” This ayah answered them. They were wrong: camels only graze it while it is green."
   },
-  "8": {"explain": "Other faces are nāʿimah: soft and radiant with blessing, their joy plain to see."},
-  "9": {"explain": "Li-saʿyihā rāḍiyah: pleased with the effort they made in the world, now that they find its reward stored up and multiplied."},
-  "10": {"explain": "In a jannah ʿāliyah: a garden high in place and in rank."},
-  "11": {"explain": "Lā tasmaʿu fīhā lāghiyah: no idle, false or hurtful word is heard there. Their speech is good and full of remembering Allah."},
-  "12": {"explain": "ʿAyn jāriyah: a flowing spring. The word stands for many springs, running wherever they wish."},
-  "13": {"explain": "Surur marfūʿah: couches raised high, lofty in themselves and in the soft furnishings on them."},
-  "14": {"explain": "Akwāb mawḍūʿah: cups set out ready and close at hand, filled with delicious drinks."},
-  "15": {"explain": "Namāriq maṣfūfah: cushions lined up side by side for leaning on, arranged without their lifting a finger."},
-  "16": {"explain": "Zarābiyy mabthūthah: fine carpets spread out, filling their sitting places on every side."},
+  "8": {
+   "explain": "Other faces are nāʿimah: soft and radiant with blessing, their joy plain to see."
+  },
+  "9": {
+   "explain": "Li-saʿyihā rāḍiyah: pleased with the effort they made in the world, now that they find its reward stored up and multiplied."
+  },
+  "10": {
+   "explain": "In a jannah ʿāliyah: a garden high in place and in rank."
+  },
+  "11": {
+   "explain": "Lā tasmaʿu fīhā lāghiyah: no idle, false or hurtful word is heard there. Their speech is good and full of remembering Allah."
+  },
+  "12": {
+   "explain": "ʿAyn jāriyah: a flowing spring. The word stands for many springs, running wherever they wish."
+  },
+  "13": {
+   "explain": "Surur marfūʿah: couches raised high, lofty in themselves and in the soft furnishings on them."
+  },
+  "14": {
+   "explain": "Akwāb mawḍūʿah: cups set out ready and close at hand, filled with delicious drinks."
+  },
+  "15": {
+   "explain": "Namāriq maṣfūfah: cushions lined up side by side for leaning on, arranged without their lifting a finger."
+  },
+  "16": {
+   "explain": "Zarābiyy mabthūthah: fine carpets spread out, filling their sitting places on every side."
+  },
   "17": {
    "explain": "Do they not reflect on the camel? Strong, carrying heavy loads, yet led by a child; giving milk, meat and hair. It was the Arabs’ most familiar animal.",
    "why": "Reportedly, when the raised couches of Paradise were described, they asked, “How do we climb them?” This came: the camel kneels to be loaded, then rises."
   },
-  "18": {"explain": "And the sky: how it was raised so high above the earth, without pillars."},
-  "19": {"explain": "And the mountains: how they were set firmly in place, keeping the earth stable, with benefits and minerals stored inside them."},
-  "20": {"explain": "And the earth: how it was spread wide and made easy to live on, farm, build on and travel across."},
-  "21": {"explain": "Fa-dhakkir: so remind them of Allah’s blessings and signs. Innamā anta mudhakkir: that is your whole task."},
-  "22": {"explain": "Lasta ʿalayhim bi-muṣayṭir: you are not a controller over them. You cannot put faith in their hearts or force it. This came before fighting was ordered."},
-  "23": {"explain": "Illā man tawallā wa kafar: but whoever turns away from obedience and disbelieves after being reminded…"},
-  "24": {"explain": "…Allah will punish him with al-ʿadhāb al-akbar, the greatest punishment: the Fire of the Hereafter. Hardship in this world is the lesser one."},
-  "25": {"explain": "Inna ilaynā iyābahum: to Us is their return, gathered after death."},
-  "26": {"explain": "Then on Us is their ḥisāb: their account and recompense, good for good and evil for evil. Allah never leaves it undone."}
+  "18": {
+   "explain": "And the sky: how it was raised so high above the earth, without pillars."
+  },
+  "19": {
+   "explain": "And the mountains: how they were set firmly in place, keeping the earth stable, with benefits and minerals stored inside them."
+  },
+  "20": {
+   "explain": "And the earth: how it was spread wide and made easy to live on, farm, build on and travel across."
+  },
+  "21": {
+   "explain": "Fa-dhakkir: so remind them of Allah’s blessings and signs. Innamā anta mudhakkir: that is your whole task."
+  },
+  "22": {
+   "explain": "Lasta ʿalayhim bi-muṣayṭir: you are not a controller over them. You cannot put faith in their hearts or force it. This came before fighting was ordered."
+  },
+  "23": {
+   "explain": "Illā man tawallā wa kafar: but whoever turns away from obedience and disbelieves after being reminded…"
+  },
+  "24": {
+   "explain": "…Allah will punish him with al-ʿadhāb al-akbar, the greatest punishment: the Fire of the Hereafter. Hardship in this world is the lesser one."
+  },
+  "25": {
+   "explain": "Inna ilaynā iyābahum: to Us is their return, gathered after death."
+  },
+  "26": {
+   "explain": "Then on Us is their ḥisāb: their account and recompense, good for good and evil for evil. Allah never leaves it undone."
+  }
  }
 }

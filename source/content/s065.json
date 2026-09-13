@@ -11,14 +11,29 @@
   {
    "a": 1,
    "b": 3,
-   "title": "Divorce with care, and a way out",
+   "title": "Divorce carefully with witnesses; fearing Allah brings a way out and provision",
    "meaning": "If divorce must happen, do it at the right time, keep count of the waiting period, and don’t put her out of her home. Near its end, keep her kindly or part kindly, with two witnesses. Whoever fears Allah, He gives a way out and unexpected provision.",
    "points": [
-    ["1", "Divorce at the right time and keep count of the waiting period"],
-    ["1", "She stays in her home; perhaps Allah brings something new"],
-    ["2", "Near the end: keep her kindly or part kindly, with two witnesses"],
-    ["2–3", "Whoever fears Allah: a way out and unexpected provision"],
-    ["3", "Rely on Allah and He is enough; everything has a measure"]
+    [
+     "1",
+     "Divorce at the right time and keep count of the waiting period"
+    ],
+    [
+     "1",
+     "She stays in her home; perhaps Allah brings something new"
+    ],
+    [
+     "2",
+     "Near the end: keep her kindly or part kindly, with two witnesses"
+    ],
+    [
+     "2–3",
+     "Whoever fears Allah: a way out and unexpected provision"
+    ],
+    [
+     "3",
+     "Rely on Allah and He is enough; everything has a measure"
+    ]
    ],
    "matters": "Divorce is often rushed in anger. This section slows it down: a set time, a waiting period in the same home, and a calm decision at the end. It also holds one of the Quran’s most hopeful promises, for any hardship.",
    "story": "Reportedly ʿAbdullāh ibn ʿUmar divorced his wife during her period. The Prophet ﷺ was angry, told him to take her back, and said any divorce should come in a clean period. Ayat 2–3 are also linked to ʿAwf ibn Mālik, whose son was captured.",
@@ -38,14 +53,29 @@
   {
    "a": 4,
    "b": 7,
-   "title": "Waiting periods, housing and fair support",
+   "title": "Waiting periods: three months or until birth; lodging, support and nursing pay",
    "meaning": "Women whose periods have stopped, and those who have not had them, wait three months. A pregnant woman waits until she gives birth. Lodge divorced women as your means allow, without harming them. Support the pregnant until birth, pay a mother who nurses, and let each spend what he can.",
    "points": [
-    ["4", "No periods, or not yet: three months. Pregnant: until birth"],
-    ["4–5", "This is Allah’s command; taqwā brings ease, forgiveness and reward"],
-    ["6", "Lodge them as you can; don’t pressure them to leave"],
-    ["6", "Support the pregnant, pay for nursing, and agree fairly"],
-    ["7", "Spend by your means; after hardship, Allah brings ease"]
+    [
+     "4",
+     "No periods, or not yet: three months. Pregnant: until birth"
+    ],
+    [
+     "4–5",
+     "This is Allah’s command; taqwā brings ease, forgiveness and reward"
+    ],
+    [
+     "6",
+     "Lodge them as you can; don’t pressure them to leave"
+    ],
+    [
+     "6",
+     "Support the pregnant, pay for nursing, and agree fairly"
+    ],
+    [
+     "7",
+     "Spend by your means; after hardship, Allah brings ease"
+    ]
    ],
    "matters": "It fills the gaps Al-Baqarah left: every divorced woman now has a clear waiting period, and her housing and the child’s nursing are protected. It ends with hope for anyone short of money: Allah asks only what He gave, and ease is coming.",
    "story": "Reportedly, after Al-Baqarah gave the waiting period, people said some women had not been mentioned: the young, the older whose periods had stopped, and the pregnant. Ayah 4 answered them.",
@@ -64,14 +94,29 @@
   {
    "a": 8,
    "b": 12,
-   "title": "Warning from ruined towns, then the light",
+   "title": "Defiant towns ruined; a Messenger brings light; seven heavens show Allah’s knowledge",
    "meaning": "Many towns defied Allah and His messengers, were called to a hard account, and ended in loss, with worse prepared in the Hereafter. So people of understanding, fear Allah: He sent a Reminder and a Messenger to bring believers from darkness into light. He made seven heavens and earths like them.",
    "points": [
-    ["8–9", "Towns that defied Allah tasted the result: loss"],
-    ["10", "A severe punishment ahead; so fear Allah, people of understanding"],
-    ["10–11", "A Reminder and a Messenger: from darkness into light"],
-    ["11", "Believe and do good: gardens forever, the best provision"],
-    ["12", "Seven heavens, earths like them; His knowledge surrounds all"]
+    [
+     "8–9",
+     "Towns that defied Allah tasted the result: loss"
+    ],
+    [
+     "10",
+     "A severe punishment ahead; so fear Allah, people of understanding"
+    ],
+    [
+     "10–11",
+     "A Reminder and a Messenger: from darkness into light"
+    ],
+    [
+     "11",
+     "Believe and do good: gardens forever, the best provision"
+    ],
+    [
+     "12",
+     "Seven heavens, earths like them; His knowledge surrounds all"
+    ]
    ],
    "matters": "After the rulings comes the reason to keep them. Nations that ignored Allah’s commands were ruined. The Allah who sent these laws created the seven heavens and knows everything, so no wrong done in private escapes Him.",
    "story": "Reportedly ayah 11 was about believers from the People of the Book. Otherwise no specific incident: the section warns anyone who would ignore the rulings above.",
@@ -90,14 +135,46 @@
   }
  ],
  "groups": [
-  {"a": 1, "b": 1, "text": "If you divorce, do it at the right time and count the waiting period. She stays in her home; these are Allah’s limits."},
-  {"a": 2, "b": 3, "text": "Near its end, keep her or part kindly, with witnesses. Fear Allah: He gives a way out and provision. Rely on Him: He suffices."},
-  {"a": 4, "b": 5, "text": "Three months for women without periods; birth ends a pregnant woman’s wait. This is Allah’s command, and taqwā brings ease and reward."},
-  {"a": 6, "b": 6, "text": "House them as you can, don’t harm them, support the pregnant, pay for nursing, and settle matters kindly."},
-  {"a": 7, "b": 7, "text": "Each spends by his means. Allah asks only what He gave, and He brings ease after hardship."},
-  {"a": 8, "b": 9, "text": "Many towns defied Allah and His messengers; they were called to account, punished, and ended in loss."},
-  {"a": 10, "b": 11, "text": "So fear Allah, people of understanding. He sent a Reminder and a Messenger to bring believers from darkness into light."},
-  {"a": 12, "b": 12, "text": "Allah created seven heavens and earths like them, so you know His power and knowledge cover everything."}
+  {
+   "a": 1,
+   "b": 1,
+   "text": "If you divorce, do it at the right time and count the waiting period. She stays in her home; these are Allah’s limits."
+  },
+  {
+   "a": 2,
+   "b": 3,
+   "text": "Near its end, keep her or part kindly, with witnesses. Fear Allah: He gives a way out and provision. Rely on Him: He suffices."
+  },
+  {
+   "a": 4,
+   "b": 5,
+   "text": "Three months for women without periods; birth ends a pregnant woman’s wait. This is Allah’s command, and taqwā brings ease and reward."
+  },
+  {
+   "a": 6,
+   "b": 6,
+   "text": "House them as you can, don’t harm them, support the pregnant, pay for nursing, and settle matters kindly."
+  },
+  {
+   "a": 7,
+   "b": 7,
+   "text": "Each spends by his means. Allah asks only what He gave, and He brings ease after hardship."
+  },
+  {
+   "a": 8,
+   "b": 9,
+   "text": "Many towns defied Allah and His messengers; they were called to account, punished, and ended in loss."
+  },
+  {
+   "a": 10,
+   "b": 11,
+   "text": "So fear Allah, people of understanding. He sent a Reminder and a Messenger to bring believers from darkness into light."
+  },
+  {
+   "a": 12,
+   "b": 12,
+   "text": "Allah created seven heavens and earths like them, so you know His power and knowledge cover everything."
+  }
  ],
  "ayat": {
   "1": {

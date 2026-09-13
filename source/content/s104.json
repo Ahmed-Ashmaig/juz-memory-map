@@ -11,12 +11,21 @@
   {
    "a": 1,
    "b": 3,
-   "title": "The mocker who counts his money",
+   "title": "Woe to the mocker counting his wealth, thinking it keeps him forever",
    "meaning": "Woe to everyone who keeps finding fault with people, by look, gesture or word. He gathers wealth, counts it again and again, and thinks it will make him live forever.",
    "points": [
-    ["1", "Woe to every scorner and mocker"],
-    ["2", "He piles up wealth and keeps counting it"],
-    ["3", "He thinks his wealth will keep him forever"]
+    [
+     "1",
+     "Woe to every scorner and mocker"
+    ],
+    [
+     "2",
+     "He piles up wealth and keeps counting it"
+    ],
+    [
+     "3",
+     "He thinks his wealth will keep him forever"
+    ]
    ],
    "matters": "It names two faults everyone recognises: attacking people’s dignity and loving money more than people. It also exposes the false belief underneath hoarding, that wealth can hold off death.",
    "story": "Reportedly about a Makkan leader who spoke ill of the Prophet ﷺ: al-Akhnas ibn Sharīq, al-Walīd ibn al-Mughīrah or Umayyah ibn Khalaf. Most said it applies to anyone who behaves like them.",
@@ -35,13 +44,25 @@
   {
    "a": 4,
    "b": 9,
-   "title": "Thrown into the Crusher",
+   "title": "He is flung into the Crusher, a heart-reaching Fire shut over them",
    "meaning": "No! He will be flung into al-Ḥuṭamah, the Crusher. It is Allah’s blazing Fire, which reaches right into the hearts. It is shut over them, held by long stretched columns, with no way out.",
    "points": [
-    ["4", "No! He will be thrown into the Crusher"],
-    ["5–6", "What is the Crusher? Allah’s kindled Fire"],
-    ["7", "It rises over the hearts"],
-    ["8–9", "Shut over them, in stretched columns"]
+    [
+     "4",
+     "No! He will be thrown into the Crusher"
+    ],
+    [
+     "5–6",
+     "What is the Crusher? Allah’s kindled Fire"
+    ],
+    [
+     "7",
+     "It rises over the hearts"
+    ],
+    [
+     "8–9",
+     "Shut over them, in stretched columns"
+    ]
    ],
    "matters": "It answers his false hope directly. He thought his wealth would make him last; instead he is thrown into a Fire that is sealed shut. The picture is drawn so the listener feels he has earned it.",
    "story": "No specific incident. It continues the warning to the mocker and hoarder of ayat 1–3.",
@@ -58,11 +79,31 @@
   }
  ],
  "groups": [
-  { "a": 1, "b": 1, "text": "Woe to everyone who keeps finding fault with people and belittling them." },
-  { "a": 2, "b": 3, "text": "He gathers wealth, keeps counting it, and thinks it will make him live forever." },
-  { "a": 4, "b": 5, "text": "No! He will be thrown into al-Ḥuṭamah. And what will make you know what the Crusher is?" },
-  { "a": 6, "b": 7, "text": "It is Allah’s kindled Fire, which reaches right into the hearts." },
-  { "a": 8, "b": 9, "text": "It is shut over them, held by long stretched columns." }
+  {
+   "a": 1,
+   "b": 1,
+   "text": "Woe to everyone who keeps finding fault with people and belittling them."
+  },
+  {
+   "a": 2,
+   "b": 3,
+   "text": "He gathers wealth, keeps counting it, and thinks it will make him live forever."
+  },
+  {
+   "a": 4,
+   "b": 5,
+   "text": "No! He will be thrown into al-Ḥuṭamah. And what will make you know what the Crusher is?"
+  },
+  {
+   "a": 6,
+   "b": 7,
+   "text": "It is Allah’s kindled Fire, which reaches right into the hearts."
+  },
+  {
+   "a": 8,
+   "b": 9,
+   "text": "It is shut over them, held by long stretched columns."
+  }
  ],
  "ayat": {
   "1": {

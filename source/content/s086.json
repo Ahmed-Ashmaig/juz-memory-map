@@ -11,14 +11,29 @@
   {
    "a": 1,
    "b": 10,
-   "title": "Made from a drop, raised again",
+   "title": "Every soul guarded; man, made from fluid, will be raised and exposed",
    "meaning": "By the sky and the piercing star: every soul has a guardian over it. So let man look at what he was made from: a gushing fluid. The One who made him can bring him back, on the Day secrets are exposed and he has no strength and no helper.",
    "points": [
-    ["1–3", "By the sky and aṭ-ṭāriq, the piercing star"],
-    ["4", "Every soul has a guardian over it"],
-    ["5–7", "Look at your origin: a gushing fluid"],
-    ["8", "He can surely bring him back"],
-    ["9–10", "Secrets exposed; no strength, no helper"]
+    [
+     "1–3",
+     "By the sky and aṭ-ṭāriq, the piercing star"
+    ],
+    [
+     "4",
+     "Every soul has a guardian over it"
+    ],
+    [
+     "5–7",
+     "Look at your origin: a gushing fluid"
+    ],
+    [
+     "8",
+     "He can surely bring him back"
+    ],
+    [
+     "9–10",
+     "Secrets exposed; no strength, no helper"
+    ]
    ],
    "matters": "It takes the most common doubt, how dust could live again, and answers it with man’s own beginning. If Allah made you from a drop, bringing you back is no harder.",
    "story": "Reportedly, Abū Ṭālib was eating bread and milk with the Prophet ﷺ when a star shot across the sky, and he was frightened. The Prophet ﷺ told him it was a star thrown, one of Allah’s signs, and ayah 1 was revealed.",
@@ -37,13 +52,25 @@
   {
    "a": 11,
    "b": 17,
-   "title": "A decisive word, and their plot",
+   "title": "The Quran is a decisive word; they plot, Allah plans, so wait",
    "meaning": "By the sky that returns rain and the earth that splits with plants: the Quran is a decisive word, not a joke. They plot a plot, and Allah plans too. So give the disbelievers time, just a little while.",
    "points": [
-    ["11–12", "By the sky that returns rain, the earth that splits"],
-    ["13–14", "The Quran: a decisive word, not a joke"],
-    ["15–16", "They plot, and I plan"],
-    ["17", "Give the disbelievers time, a little while"]
+    [
+     "11–12",
+     "By the sky that returns rain, the earth that splits"
+    ],
+    [
+     "13–14",
+     "The Quran: a decisive word, not a joke"
+    ],
+    [
+     "15–16",
+     "They plot, and I plan"
+    ],
+    [
+     "17",
+     "Give the disbelievers time, a little while"
+    ]
    ],
    "matters": "It answers the second doubt: that the Quran can be mocked or beaten. Like rain and crops, it is serious and real, and every plan against it will fail. It also tells the Prophet ﷺ to be patient.",
    "story": "No specific incident. The Quraysh were plotting against the Prophet ﷺ and the Quran. The short respite of ayah 17 ended when they were defeated at Badr.",
@@ -61,33 +88,89 @@
   }
  ],
  "groups": [
-  {"a": 1, "b": 3, "text": "By the sky and the night visitor: the star whose light pierces the dark."},
-  {"a": 4, "b": 4, "text": "Every single soul has a guardian over it."},
-  {"a": 5, "b": 7, "text": "Let man look at his origin: a gushing fluid from between the backbone and ribs."},
-  {"a": 8, "b": 10, "text": "Allah can bring him back, on the Day secrets are exposed and no one can help him."},
-  {"a": 11, "b": 14, "text": "By the sky that returns rain and the earth that splits: the Quran is decisive, not a joke."},
-  {"a": 15, "b": 17, "text": "They plot and Allah plans, so give the disbelievers a little time."}
+  {
+   "a": 1,
+   "b": 3,
+   "text": "By the sky and the night visitor: the star whose light pierces the dark."
+  },
+  {
+   "a": 4,
+   "b": 4,
+   "text": "Every single soul has a guardian over it."
+  },
+  {
+   "a": 5,
+   "b": 7,
+   "text": "Let man look at his origin: a gushing fluid from between the backbone and ribs."
+  },
+  {
+   "a": 8,
+   "b": 10,
+   "text": "Allah can bring him back, on the Day secrets are exposed and no one can help him."
+  },
+  {
+   "a": 11,
+   "b": 14,
+   "text": "By the sky that returns rain and the earth that splits: the Quran is decisive, not a joke."
+  },
+  {
+   "a": 15,
+   "b": 17,
+   "text": "They plot and Allah plans, so give the disbelievers a little time."
+  }
  ],
  "ayat": {
   "1": {
    "explain": "Allah swears by the sky and aṭ-ṭāriq: anything that comes at night. Stars are called this because they appear at night and hide by day.",
    "why": "Reportedly revealed when Abū Ṭālib, eating with the Prophet ﷺ, was startled by a shooting star. The Prophet ﷺ told him it was a star thrown, one of Allah’s signs."
   },
-  "2": {"explain": "Wa mā adrāka: “and what will make you know?” The question shows how great the thing is before it is named."},
-  "3": {"explain": "An-najm ath-thāqib: the star whose light pierces the darkness. Any bright star; some named the Pleiades or Saturn."},
-  "4": {"explain": "Every soul has a ḥāfiẓ over it: angels recording its good and bad deeds, or angels guarding it from harms Allah has not decreed (13:11)."},
-  "5": {"explain": "So let man reflect: from what was he created? A look meant to teach a lesson, not just to see."},
-  "6": {"explain": "From a māʾ dāfiq, a gushing fluid. The child comes from both parents, by Allah’s permission."},
-  "7": {"explain": "It comes from between aṣ-ṣulb, the backbone, and at-tarāʾib, the ribs or chest bones: either the man’s backbone and the woman’s chest, or both in the man."},
-  "8": {"explain": "Rajʿih: bringing him back. The One who made him from that fluid can surely raise him after death, and beginning creation is no easier than repeating it."},
-  "9": {"explain": "Tublā as-sarāʾir: secrets are tested and exposed: hidden beliefs, intentions, and private duties like prayer and fasting that only Allah saw."},
-  "10": {"explain": "He has no quwwah, strength within himself, and no nāṣir, helper from outside, to protect him from the punishment."},
-  "11": {"explain": "Dhāt ar-rajʿ: the sky that returns, sending rain again and again each year. Without it, people and animals would perish."},
-  "12": {"explain": "Dhāt aṣ-ṣadʿ: the earth that cracks open to bring out plants and trees."},
-  "13": {"explain": "Innahu: the Quran is qawl faṣl, a decisive word that separates truth from falsehood, true and plain."},
-  "14": {"explain": "Wa mā huwa bil-hazl: it is serious, not play or empty talk."},
-  "15": {"explain": "They, the deniers of the Prophet ﷺ and the Quran, are scheming to push the truth away and prop up falsehood."},
-  "16": {"explain": "And Allah plans: leading them on step by step from where they don’t realise, so the truth wins. Man is far too weak to outplan Him."},
-  "17": {"explain": "Mahhil, amhilhum ruwaydā: give them respite, just a little. The command is repeated in two forms for emphasis. They were later seized at Badr."}
+  "2": {
+   "explain": "Wa mā adrāka: “and what will make you know?” The question shows how great the thing is before it is named."
+  },
+  "3": {
+   "explain": "An-najm ath-thāqib: the star whose light pierces the darkness. Any bright star; some named the Pleiades or Saturn."
+  },
+  "4": {
+   "explain": "Every soul has a ḥāfiẓ over it: angels recording its good and bad deeds, or angels guarding it from harms Allah has not decreed (13:11)."
+  },
+  "5": {
+   "explain": "So let man reflect: from what was he created? A look meant to teach a lesson, not just to see."
+  },
+  "6": {
+   "explain": "From a māʾ dāfiq, a gushing fluid. The child comes from both parents, by Allah’s permission."
+  },
+  "7": {
+   "explain": "It comes from between aṣ-ṣulb, the backbone, and at-tarāʾib, the ribs or chest bones: either the man’s backbone and the woman’s chest, or both in the man."
+  },
+  "8": {
+   "explain": "Rajʿih: bringing him back. The One who made him from that fluid can surely raise him after death, and beginning creation is no easier than repeating it."
+  },
+  "9": {
+   "explain": "Tublā as-sarāʾir: secrets are tested and exposed: hidden beliefs, intentions, and private duties like prayer and fasting that only Allah saw."
+  },
+  "10": {
+   "explain": "He has no quwwah, strength within himself, and no nāṣir, helper from outside, to protect him from the punishment."
+  },
+  "11": {
+   "explain": "Dhāt ar-rajʿ: the sky that returns, sending rain again and again each year. Without it, people and animals would perish."
+  },
+  "12": {
+   "explain": "Dhāt aṣ-ṣadʿ: the earth that cracks open to bring out plants and trees."
+  },
+  "13": {
+   "explain": "Innahu: the Quran is qawl faṣl, a decisive word that separates truth from falsehood, true and plain."
+  },
+  "14": {
+   "explain": "Wa mā huwa bil-hazl: it is serious, not play or empty talk."
+  },
+  "15": {
+   "explain": "They, the deniers of the Prophet ﷺ and the Quran, are scheming to push the truth away and prop up falsehood."
+  },
+  "16": {
+   "explain": "And Allah plans: leading them on step by step from where they don’t realise, so the truth wins. Man is far too weak to outplan Him."
+  },
+  "17": {
+   "explain": "Mahhil, amhilhum ruwaydā: give them respite, just a little. The command is repeated in two forms for emphasis. They were later seized at Badr."
+  }
  }
 }

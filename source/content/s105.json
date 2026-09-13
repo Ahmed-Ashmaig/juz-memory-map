@@ -11,13 +11,25 @@
   {
    "a": 1,
    "b": 5,
-   "title": "Your Lord and the elephant army",
+   "title": "Elephant army targeting the Kaʿbah is stoned by birds into chewed straw",
    "meaning": "Have you not seen what your Lord did to the people of the elephant? He wrecked their plot against the Kaʿbah, sent flocks of birds to pelt them with stones of baked clay, and left them like chewed-up straw.",
    "points": [
-    ["1", "Have you not seen what your Lord did to the elephant army?"],
-    ["2", "He turned their plot to ruin"],
-    ["3–4", "Flocks of birds pelting them with stones of baked clay"],
-    ["5", "He left them like eaten straw"]
+    [
+     "1",
+     "Have you not seen what your Lord did to the elephant army?"
+    ],
+    [
+     "2",
+     "He turned their plot to ruin"
+    ],
+    [
+     "3–4",
+     "Flocks of birds pelting them with stones of baked clay"
+    ],
+    [
+     "5",
+     "He left them like eaten straw"
+    ]
    ],
    "matters": "The Arabs knew it was Allah, not any idol, who saved the House: Quraysh’s leaders prayed to Him alone that day. So the surah asks them to think: why fight the Messenger of that same Lord?",
    "story": "When Abrahah’s envoy came, ʿAbd al-Muṭṭalib, the Prophet’s ﷺ grandfather, asked only for his seized camels: “I own the camels. The House has a Lord who will protect it.” Then he prayed at the Kaʿbah’s door, and the Makkans left for the mountains.",
@@ -35,9 +47,21 @@
   }
  ],
  "groups": [
-  { "a": 1, "b": 2, "text": "Have you not seen what your Lord did to the elephant army, and how He wrecked their plot?" },
-  { "a": 3, "b": 4, "text": "He sent flocks of birds that pelted them with stones of baked clay." },
-  { "a": 5, "b": 5, "text": "He left them like straw that animals have eaten." }
+  {
+   "a": 1,
+   "b": 2,
+   "text": "Have you not seen what your Lord did to the elephant army, and how He wrecked their plot?"
+  },
+  {
+   "a": 3,
+   "b": 4,
+   "text": "He sent flocks of birds that pelted them with stones of baked clay."
+  },
+  {
+   "a": 5,
+   "b": 5,
+   "text": "He left them like straw that animals have eaten."
+  }
  ],
  "ayat": {
   "1": {

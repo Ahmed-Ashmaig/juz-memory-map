@@ -13,6 +13,6 @@ fi
 READY=$(python3 -c "import json;print(len(json.loads(open('data/index.js').read().split('=',1)[1].rstrip().rstrip(';'))['ready']))")
 git commit -q -m "Add surahs: ${READY} of 57 ready
 
-Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>"
+Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>"
 git push -q origin main
 echo "pushed: ${READY} surahs ready"

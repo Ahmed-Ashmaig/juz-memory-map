@@ -11,14 +11,29 @@
   {
    "a": 1,
    "b": 5,
-   "title": "Refuge in the Lord of daybreak",
+   "title": "Seek refuge in daybreak’s Lord from creation’s evil, night, magic and envy",
    "meaning": "Say: I seek refuge in the Lord of daybreak, from the evil of everything He created, from the darkness of night when it settles, from those who blow on knots, and from the envier when he acts on his envy.",
    "points": [
-    ["1", "I seek refuge in the Lord of daybreak"],
-    ["2", "From the evil of all He created"],
-    ["3", "From darkness when it settles in"],
-    ["4", "From those who blow on knots"],
-    ["5", "From the envier when he envies"]
+    [
+     "1",
+     "I seek refuge in the Lord of daybreak"
+    ],
+    [
+     "2",
+     "From the evil of all He created"
+    ],
+    [
+     "3",
+     "From darkness when it settles in"
+    ],
+    [
+     "4",
+     "From those who blow on knots"
+    ],
+    [
+     "5",
+     "From the envier when he envies"
+    ]
    ],
    "matters": "The Prophet ﷺ said nothing like these ayat had been revealed, and he recited them for protection after prayers, before sleep and when ill. They teach that only Allah can shield us from harm we cannot see coming.",
    "story": "Reports link it to magic worked on the Prophet ﷺ by Labīd ibn al-Aʿṣam. Allah showed him in a dream what had been done and where it was hidden, and he recovered. Others say it first came in Makkah.",
@@ -36,8 +51,16 @@
   }
  ],
  "groups": [
-  { "a": 1, "b": 2, "text": "I seek refuge in the Lord of daybreak from the evil of everything He created." },
-  { "a": 3, "b": 5, "text": "And especially from the dark night, from those who blow on knots, and from the envier when he envies." }
+  {
+   "a": 1,
+   "b": 2,
+   "text": "I seek refuge in the Lord of daybreak from the evil of everything He created."
+  },
+  {
+   "a": 3,
+   "b": 5,
+   "text": "And especially from the dark night, from those who blow on knots, and from the envier when he envies."
+  }
  ],
  "ayat": {
   "1": {

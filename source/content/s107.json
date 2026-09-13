@@ -11,12 +11,21 @@
   {
    "a": 1,
    "b": 3,
-   "title": "The one who denies the Judgement",
+   "title": "The Judgement-denier shoves the orphan away and won’t urge feeding the poor",
    "meaning": "Have you seen the one who denies the Recompense? He is the one who shoves the orphan away and does not urge anyone to feed the poor. His denial shows in how he treats the weak.",
    "points": [
-    ["1", "Have you seen the one who denies the Recompense?"],
-    ["2", "He pushes the orphan away roughly"],
-    ["3", "He doesn’t urge feeding the poor"]
+    [
+     "1",
+     "Have you seen the one who denies the Recompense?"
+    ],
+    [
+     "2",
+     "He pushes the orphan away roughly"
+    ],
+    [
+     "3",
+     "He doesn’t urge feeding the poor"
+    ]
    ],
    "matters": "It ties belief to behaviour. Someone who expects no reward and fears no punishment has no reason to be kind to the helpless, and it shows in how he treats them.",
    "story": "Reports differ on whom it describes: al-ʿĀṣ ibn Wāʾil, al-Walīd ibn al-Mughīrah, Abū Jahl or a hypocrite. One says a man who slaughtered a camel every week hit an orphan with his stick for asking him for something.",
@@ -34,12 +43,21 @@
   {
    "a": 4,
    "b": 7,
-   "title": "Woe to those careless in prayer",
+   "title": "Woe to those who neglect prayer, show off, and refuse small help",
    "meaning": "Woe to people who pray yet are heedless of their prayer: delaying it, neglecting it, not caring whether they pray. They do good only to be seen, and they refuse even the smallest help to others.",
    "points": [
-    ["4–5", "Woe to those who pray but are heedless of it"],
-    ["6", "They pray and do good to be seen"],
-    ["7", "They refuse even small help"]
+    [
+     "4–5",
+     "Woe to those who pray but are heedless of it"
+    ],
+    [
+     "6",
+     "They pray and do good to be seen"
+    ],
+    [
+     "7",
+     "They refuse even small help"
+    ]
    ],
    "matters": "The first part showed a heart with no mercy for people. This part shows the same emptiness in worship: prayer without sincerity, and wealth held back from others. Neglecting Allah’s rights and people’s rights go together.",
    "story": "No specific incident is named for these ayat. They describe hypocrites, who prayed in public when people could see them and left prayer when alone.",
@@ -57,10 +75,26 @@
   }
  ],
  "groups": [
-  { "a": 1, "b": 1, "text": "Have you seen the one who denies the Judgement and its reward?" },
-  { "a": 2, "b": 3, "text": "He pushes the orphan away and doesn’t urge anyone to feed the poor." },
-  { "a": 4, "b": 5, "text": "Woe to those who pray but neglect their prayer." },
-  { "a": 6, "b": 7, "text": "They pray to be seen and refuse even small acts of help." }
+  {
+   "a": 1,
+   "b": 1,
+   "text": "Have you seen the one who denies the Judgement and its reward?"
+  },
+  {
+   "a": 2,
+   "b": 3,
+   "text": "He pushes the orphan away and doesn’t urge anyone to feed the poor."
+  },
+  {
+   "a": 4,
+   "b": 5,
+   "text": "Woe to those who pray but neglect their prayer."
+  },
+  {
+   "a": 6,
+   "b": 7,
+   "text": "They pray to be seen and refuse even small acts of help."
+  }
  ],
  "ayat": {
   "1": {

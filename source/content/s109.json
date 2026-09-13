@@ -11,13 +11,25 @@
   {
    "a": 1,
    "b": 6,
-   "title": "No compromise in worship",
+   "title": "To disbelievers: no shared worship, ever; you have your religion, I mine",
    "meaning": "Say to the disbelievers: I do not worship what you worship, and you do not worship what I worship. I will never worship what you worship, and you will not worship what I worship. You have your religion, and I have mine.",
    "points": [
-    ["1", "Say: O disbelievers"],
-    ["2–3", "I don’t worship what you worship; you don’t worship what I worship"],
-    ["4–5", "Nor will I ever; nor will you"],
-    ["6", "You have your religion, and I have mine"]
+    [
+     "1",
+     "Say: O disbelievers"
+    ],
+    [
+     "2–3",
+     "I don’t worship what you worship; you don’t worship what I worship"
+    ],
+    [
+     "4–5",
+     "Nor will I ever; nor will you"
+    ],
+    [
+     "6",
+     "You have your religion, and I have mine"
+    ]
    ],
    "matters": "It draws a clear line in belief and worship. Peaceful dealings with others are allowed, but a deal that mixes Allah’s worship with other worship is not. The Prophet ﷺ taught it as a bedtime recitation that frees one from shirk.",
    "story": "Quraysh’s leaders offered a deal: the Prophet ﷺ would worship their gods for a year and they would worship Allah for a year, or he would just touch their idols. This surah refused every such offer for good.",
@@ -35,10 +47,26 @@
   }
  ],
  "groups": [
-  { "a": 1, "b": 1, "text": "The Prophet ﷺ is told to address the disbelievers openly." },
-  { "a": 2, "b": 3, "text": "I don’t worship what you worship, and you don’t worship what I worship." },
-  { "a": 4, "b": 5, "text": "I will never worship what you worship, and you will not worship what I worship." },
-  { "a": 6, "b": 6, "text": "You have your religion, and I have mine." }
+  {
+   "a": 1,
+   "b": 1,
+   "text": "The Prophet ﷺ is told to address the disbelievers openly."
+  },
+  {
+   "a": 2,
+   "b": 3,
+   "text": "I don’t worship what you worship, and you don’t worship what I worship."
+  },
+  {
+   "a": 4,
+   "b": 5,
+   "text": "I will never worship what you worship, and you will not worship what I worship."
+  },
+  {
+   "a": 6,
+   "b": 6,
+   "text": "You have your religion, and I have mine."
+  }
  ],
  "ayat": {
   "1": {

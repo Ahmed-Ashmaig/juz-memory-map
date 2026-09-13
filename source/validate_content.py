@@ -62,7 +62,9 @@ def check(n):
             errs.append(f"{L}: bad end {s.get('b')}")
             break
         expect = s["b"] + 1
-        txt(f"{L}.title", s.get("title"), 9)
+        txt(f"{L}.title", s.get("title"), 13)
+        if isinstance(s.get("title"), str) and words(s["title"]) < 5:
+            warns.append(f"{L}.title: only {words(s['title'])} words; make it descriptive (7–12)")
         txt(f"{L}.meaning", s.get("meaning"), 60)
         txt(f"{L}.matters", s.get("matters"), 55)
         txt(f"{L}.story", s.get("story"), 55)

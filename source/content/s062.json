@@ -11,13 +11,25 @@
   {
    "a": 1,
    "b": 4,
-   "title": "A Messenger sent to the unlettered",
+   "title": "Allah sent the unlettered a Messenger who recites, purifies and teaches them",
    "meaning": "Everything glorifies Allah, the King, the Holy, the Mighty, the Wise. He sent to the unlettered Arabs a Messenger from among them, reciting His ayat, purifying them, and teaching them the Book and wisdom, though they had been clearly lost. The message also reaches others yet to join them. This is Allah’s favour.",
    "points": [
-    ["1", "Everything glorifies Allah: the King, the Holy, the Mighty, the Wise"],
-    ["2", "A Messenger from the unlettered: recites, purifies, teaches the Book and wisdom"],
-    ["3", "And to others who have not yet joined them"],
-    ["4", "That is Allah’s favour, given to whom He wills"]
+    [
+     "1",
+     "Everything glorifies Allah: the King, the Holy, the Mighty, the Wise"
+    ],
+    [
+     "2",
+     "A Messenger from the unlettered: recites, purifies, teaches the Book and wisdom"
+    ],
+    [
+     "3",
+     "And to others who have not yet joined them"
+    ],
+    [
+     "4",
+     "That is Allah’s favour, given to whom He wills"
+    ]
    ],
    "matters": "It names the three jobs of the Prophet ﷺ: reciting, purifying and teaching. It shows that guidance is Allah’s gift, owned by no nation, and that it reaches every later generation that joins the first believers.",
    "story": "When ayah 3 was recited, the Companions asked who “the others” were. After they asked three times, the Prophet ﷺ put his hand on Salmān al-Fārisī: if faith were at the Pleiades, men from these people would reach it.",
@@ -36,14 +48,29 @@
   {
    "a": 5,
    "b": 8,
-   "title": "Like a donkey carrying books",
+   "title": "Ignoring the Torah: a donkey carrying books; they won’t wish for death",
    "meaning": "Those given the Torah who didn’t live by it are like a donkey loaded with books it cannot use. They claim to be Allah’s favourites; if so, let them wish for death. They never will, because of their deeds. The death they run from will meet them, and then comes the account.",
    "points": [
-    ["5", "Given the Torah but didn’t carry it: a donkey loaded with books"],
-    ["5", "A wretched example; Allah doesn’t guide wrongdoers"],
-    ["6", "If you are Allah’s chosen friends, then wish for death"],
-    ["7", "They never will, because of what their hands sent ahead"],
-    ["8", "The death you flee will meet you; then you return to Allah"]
+    [
+     "5",
+     "Given the Torah but didn’t carry it: a donkey loaded with books"
+    ],
+    [
+     "5",
+     "A wretched example; Allah doesn’t guide wrongdoers"
+    ],
+    [
+     "6",
+     "If you are Allah’s chosen friends, then wish for death"
+    ],
+    [
+     "7",
+     "They never will, because of what their hands sent ahead"
+    ],
+    [
+     "8",
+     "The death you flee will meet you; then you return to Allah"
+    ]
    ],
    "matters": "After praising a people taught by the Messenger ﷺ, it shows what happens when a community holds a scripture but does not act on it. The lesson reaches anyone who carries knowledge without practising it, and reminds everyone that death cannot be escaped.",
    "story": "Reportedly revealed around the conquest of Khaybar, addressing the Jews of Arabia after their last stronghold fell. They claimed to be Allah’s special friends and that Paradise was theirs alone.",
@@ -62,14 +89,29 @@
   {
    "a": 9,
    "b": 11,
-   "title": "Friday: leave trade for Allah’s remembrance",
+   "title": "At Friday’s call leave trade for prayer; some ran to a caravan",
    "meaning": "At the Friday call, go to Allah’s remembrance and leave trade. After the prayer, spread out, seek His bounty and remember Him often. Once, some rushed to a caravan mid-sermon, leaving the Prophet ﷺ standing. What Allah has is better, and He is the best provider.",
    "points": [
-    ["9", "At the Friday call, go to Allah’s remembrance and leave trade"],
-    ["10", "After the prayer, spread out and seek Allah’s bounty"],
-    ["10", "Remember Allah often, so you may succeed"],
-    ["11", "They rushed to trade or amusement and left you standing"],
-    ["11", "What Allah has is better; He is the best provider"]
+    [
+     "9",
+     "At the Friday call, go to Allah’s remembrance and leave trade"
+    ],
+    [
+     "10",
+     "After the prayer, spread out and seek Allah’s bounty"
+    ],
+    [
+     "10",
+     "Remember Allah often, so you may succeed"
+    ],
+    [
+     "11",
+     "They rushed to trade or amusement and left you standing"
+    ],
+    [
+     "11",
+     "What Allah has is better; He is the best provider"
+    ]
    ],
    "matters": "This is the Quran’s command for Jumuʿah. It sets the balance: work is allowed and even encouraged, but when Allah calls, business stops. It closes by correcting a real lapse, reminding that provision comes from Allah, not the marketplace.",
    "story": "One Friday, as the Prophet ﷺ gave the sermon, a caravan arrived during a food shortage, announced with drums. People hurried out to it, leaving only about twelve men. Reportedly the sermon then came after the prayer, and afterwards it was moved before it.",
@@ -88,13 +130,41 @@
   }
  ],
  "groups": [
-  {"a": 1, "b": 1, "text": "Everything in the heavens and earth glorifies Allah, the King, the Holy, the Mighty, the Wise."},
-  {"a": 2, "b": 2, "text": "He sent a Messenger to the unlettered to recite, purify, and teach the Book and wisdom."},
-  {"a": 3, "b": 4, "text": "His message reaches others yet to join them. That is Allah’s great favour."},
-  {"a": 5, "b": 5, "text": "Those who held the Torah but didn’t act on it are like a donkey carrying books."},
-  {"a": 6, "b": 8, "text": "Claim to be Allah’s friends? Then wish for death. They won’t, but death will still meet them."},
-  {"a": 9, "b": 10, "text": "At the Friday call, leave trade for Allah’s remembrance; after prayer, seek His bounty and remember Him often."},
-  {"a": 11, "b": 11, "text": "Some left the Prophet ﷺ standing for a caravan. What Allah has is better; He is the best provider."}
+  {
+   "a": 1,
+   "b": 1,
+   "text": "Everything in the heavens and earth glorifies Allah, the King, the Holy, the Mighty, the Wise."
+  },
+  {
+   "a": 2,
+   "b": 2,
+   "text": "He sent a Messenger to the unlettered to recite, purify, and teach the Book and wisdom."
+  },
+  {
+   "a": 3,
+   "b": 4,
+   "text": "His message reaches others yet to join them. That is Allah’s great favour."
+  },
+  {
+   "a": 5,
+   "b": 5,
+   "text": "Those who held the Torah but didn’t act on it are like a donkey carrying books."
+  },
+  {
+   "a": 6,
+   "b": 8,
+   "text": "Claim to be Allah’s friends? Then wish for death. They won’t, but death will still meet them."
+  },
+  {
+   "a": 9,
+   "b": 10,
+   "text": "At the Friday call, leave trade for Allah’s remembrance; after prayer, seek His bounty and remember Him often."
+  },
+  {
+   "a": 11,
+   "b": 11,
+   "text": "Some left the Prophet ﷺ standing for a caravan. What Allah has is better; He is the best provider."
+  }
  ],
  "ayat": {
   "1": {

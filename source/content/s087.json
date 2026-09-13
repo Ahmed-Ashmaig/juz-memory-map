@@ -11,13 +11,25 @@
   {
    "a": 1,
    "b": 5,
-   "title": "Glorify your Lord, the Most High",
+   "title": "Glorify the Most High, who created, proportioned, guided and grows pasture",
    "meaning": "Declare the perfection of your Lord’s name, the Most High. He created and gave everything its right shape, set a measure for everything and guided it, brought out green pasture, and then turned it into dark, dry stubble.",
    "points": [
-    ["1", "Glorify the name of your Lord, the Most High"],
-    ["2", "Who created, then proportioned"],
-    ["3", "Who measured, then guided"],
-    ["4–5", "Who brings out pasture, then makes it dark stubble"]
+    [
+     "1",
+     "Glorify the name of your Lord, the Most High"
+    ],
+    [
+     "2",
+     "Who created, then proportioned"
+    ],
+    [
+     "3",
+     "Who measured, then guided"
+    ],
+    [
+     "4–5",
+     "Who brings out pasture, then makes it dark stubble"
+    ]
    ],
    "matters": "It opens with tawḥīd in one sentence: remember Allah only in ways that befit Him. Then it shows why: every creature’s design, purpose and life cycle come from Him.",
    "story": "No specific incident. When the Prophet ﷺ recited ayah 1 he would say “Subḥāna rabbiyal-aʿlā”, and he told Muslims to say it in their prostrations.",
@@ -36,14 +48,29 @@
   {
    "a": 6,
    "b": 13,
-   "title": "We will make you recite; so remind",
+   "title": "You won’t forget, so remind: the God-fearing heed, the wretched burn",
    "meaning": "Allah promises the Prophet ﷺ: We will make you recite and you will not forget, except what Allah wills, and We will ease you toward ease. So remind. Whoever fears Allah takes the reminder. The most wretched avoid it and burn in the greatest Fire, neither dying nor living.",
    "points": [
-    ["6–7", "You will recite and not forget, except what Allah wills"],
-    ["8", "We will ease you toward ease"],
-    ["9", "So remind, if the reminder benefits"],
-    ["10", "Whoever fears Allah will take heed"],
-    ["11–13", "The wretched avoid it: the great Fire, neither dying nor living"]
+    [
+     "6–7",
+     "You will recite and not forget, except what Allah wills"
+    ],
+    [
+     "8",
+     "We will ease you toward ease"
+    ],
+    [
+     "9",
+     "So remind, if the reminder benefits"
+    ],
+    [
+     "10",
+     "Whoever fears Allah will take heed"
+    ],
+    [
+     "11–13",
+     "The wretched avoid it: the great Fire, neither dying nor living"
+    ]
    ],
    "matters": "It frees the Prophet ﷺ from two worries: forgetting the revelation, and forcing people to believe. His job is to receive and to remind. The listeners then sort themselves into two groups.",
    "story": "The Prophet ﷺ used to repeat the words before Jibrīl finished, fearing he would forget, and ayah 6 was revealed. Reportedly ayah 10 refers to Ibn Umm Maktūm, and ayah 11 to al-Walīd ibn al-Mughīrah and ʿUtbah ibn Rabīʿah.",
@@ -62,13 +89,25 @@
   {
    "a": 14,
    "b": 19,
-   "title": "Success: purify yourself and pray",
+   "title": "Purity and prayer bring success; the better Hereafter was in early scriptures",
    "meaning": "Whoever purifies himself, remembers his Lord’s name and prays has truly succeeded. But you prefer this life, while the Hereafter is better and lasts forever. This same message was in the earliest scriptures, those of Ibrāhīm and Mūsā.",
    "points": [
-    ["14", "Successful is whoever purifies himself"],
-    ["15", "Remembers his Lord’s name and prays"],
-    ["16–17", "You prefer this world; the Hereafter is better and lasting"],
-    ["18–19", "Also in the scriptures of Ibrāhīm and Mūsā"]
+    [
+     "14",
+     "Successful is whoever purifies himself"
+    ],
+    [
+     "15",
+     "Remembers his Lord’s name and prays"
+    ],
+    [
+     "16–17",
+     "You prefer this world; the Hereafter is better and lasting"
+    ],
+    [
+     "18–19",
+     "Also in the scriptures of Ibrāhīm and Mūsā"
+    ]
    ],
    "matters": "It sums up the whole path in three steps and names the real obstacle: preferring what is near over what lasts. And it shows this is not a new message but the old message of the prophets.",
    "story": "No agreed incident. Some reports link ayat 14–15 to charity before the Eid prayer, though the surah is Makkan. The Prophet ﷺ reportedly told Abū Dharr that these ayat were in the scriptures of Ibrāhīm and Mūsā.",
@@ -86,30 +125,86 @@
   }
  ],
  "groups": [
-  {"a": 1, "b": 1, "text": "Glorify the name of your Lord, the Most High."},
-  {"a": 2, "b": 3, "text": "He created and proportioned, measured and guided."},
-  {"a": 4, "b": 5, "text": "He brings out green pasture, then turns it into dark, dry stubble."},
-  {"a": 6, "b": 7, "text": "We will make you recite and you won’t forget, except what Allah wills. He knows the open and hidden."},
-  {"a": 8, "b": 8, "text": "We will ease you toward the easy way."},
-  {"a": 9, "b": 10, "text": "So remind; whoever fears Allah will take the reminder."},
-  {"a": 11, "b": 13, "text": "The most wretched avoid it, and burn in the great Fire, neither dying nor living."},
-  {"a": 14, "b": 15, "text": "Successful is whoever purifies himself, remembers his Lord’s name and prays."},
-  {"a": 16, "b": 17, "text": "You prefer this world, but the Hereafter is better and lasts."},
-  {"a": 18, "b": 19, "text": "This is in the earliest scriptures, those of Ibrāhīm and Mūsā."}
+  {
+   "a": 1,
+   "b": 1,
+   "text": "Glorify the name of your Lord, the Most High."
+  },
+  {
+   "a": 2,
+   "b": 3,
+   "text": "He created and proportioned, measured and guided."
+  },
+  {
+   "a": 4,
+   "b": 5,
+   "text": "He brings out green pasture, then turns it into dark, dry stubble."
+  },
+  {
+   "a": 6,
+   "b": 7,
+   "text": "We will make you recite and you won’t forget, except what Allah wills. He knows the open and hidden."
+  },
+  {
+   "a": 8,
+   "b": 8,
+   "text": "We will ease you toward the easy way."
+  },
+  {
+   "a": 9,
+   "b": 10,
+   "text": "So remind; whoever fears Allah will take the reminder."
+  },
+  {
+   "a": 11,
+   "b": 13,
+   "text": "The most wretched avoid it, and burn in the great Fire, neither dying nor living."
+  },
+  {
+   "a": 14,
+   "b": 15,
+   "text": "Successful is whoever purifies himself, remembers his Lord’s name and prays."
+  },
+  {
+   "a": 16,
+   "b": 17,
+   "text": "You prefer this world, but the Hereafter is better and lasts."
+  },
+  {
+   "a": 18,
+   "b": 19,
+   "text": "This is in the earliest scriptures, those of Ibrāhīm and Mūsā."
+  }
  ],
  "ayat": {
-  "1": {"explain": "Sabbiḥ: declare His perfection. Ism is His name, kept pure, or Allah Himself. On reciting it, say “Subḥāna rabbiyal-aʿlā”; the Prophet ﷺ told Muslims to say this in sujūd."},
-  "2": {"explain": "Khalaqa fa-sawwā: He created everything and made it well-balanced, every limb and part suited to its purpose."},
-  "3": {"explain": "Qaddara fa-hadā: He set a measure and destiny for everything, then guided each creature to it: animals to their pastures, people to the paths of good and evil."},
-  "4": {"explain": "He brings out al-marʿā, the pasture: every kind of plant that people and animals feed on."},
-  "5": {"explain": "Then He turns it into ghuthāʾ, dry broken stubble, aḥwā, dark after being green. Only He brings both spring and decay."},
+  "1": {
+   "explain": "Sabbiḥ: declare His perfection. Ism is His name, kept pure, or Allah Himself. On reciting it, say “Subḥāna rabbiyal-aʿlā”; the Prophet ﷺ told Muslims to say this in sujūd."
+  },
+  "2": {
+   "explain": "Khalaqa fa-sawwā: He created everything and made it well-balanced, every limb and part suited to its purpose."
+  },
+  "3": {
+   "explain": "Qaddara fa-hadā: He set a measure and destiny for everything, then guided each creature to it: animals to their pastures, people to the paths of good and evil."
+  },
+  "4": {
+   "explain": "He brings out al-marʿā, the pasture: every kind of plant that people and animals feed on."
+  },
+  "5": {
+   "explain": "Then He turns it into ghuthāʾ, dry broken stubble, aḥwā, dark after being green. Only He brings both spring and decay."
+  },
   "6": {
    "explain": "Sanuqriʾuka: We will make you recite the Quran, and you will not forget it. A great promise to the Prophet ﷺ, who could not read or write.",
    "why": "He used to repeat the start of an ayah before Jibrīl had finished it, fearing he would forget. This was revealed, and after it he forgot nothing."
   },
-  "7": {"explain": "Illā mā shāʾ Allāh: except what Allah wills to remove from memory for a wise reason. He knows al-jahr, what is open, and what is hidden, so He legislates what is best."},
-  "8": {"explain": "Nuyassiruka lil-yusrā: We will make the easy way easy for you: good deeds, and a religion and law that are easy and straight."},
-  "9": {"explain": "Fa-dhakkir: so remind with the Quran. “If it benefits” either stresses that reminding always helps, or means remind where it helps, not where it only causes harm."},
+  "7": {
+   "explain": "Illā mā shāʾ Allāh: except what Allah wills to remove from memory for a wise reason. He knows al-jahr, what is open, and what is hidden, so He legislates what is best."
+  },
+  "8": {
+   "explain": "Nuyassiruka lil-yusrā: We will make the easy way easy for you: good deeds, and a religion and law that are easy and straight."
+  },
+  "9": {
+   "explain": "Fa-dhakkir: so remind with the Quran. “If it benefits” either stresses that reminding always helps, or means remind where it helps, not where it only causes harm."
+  },
   "10": {
    "explain": "Sayadhdhakkaru man yakhshā: whoever fears Allah, knowing he will meet Him, takes the reminder and acts on it.",
    "why": "Reportedly revealed about Ibn Umm Maktūm."
@@ -118,16 +213,30 @@
    "explain": "Al-ashqā, the most wretched one, avoids the reminder and pushes it aside.",
    "why": "Reportedly revealed about al-Walīd ibn al-Mughīrah and ʿUtbah ibn Rabīʿah."
   },
-  "12": {"explain": "He enters an-nār al-kubrā, the great Fire of the Hereafter, far hotter than any fire of this world."},
-  "13": {"explain": "He neither dies there and rests, nor lives a life of any benefit. He wishes for death and it never comes."},
+  "12": {
+   "explain": "He enters an-nār al-kubrā, the great Fire of the Hereafter, far hotter than any fire of this world."
+  },
+  "13": {
+   "explain": "He neither dies there and rests, nor lives a life of any benefit. He wishes for death and it never comes."
+  },
   "14": {
    "explain": "Qad aflaḥa: truly successful is whoever tazakkā, purifies himself from shirk, wrongdoing and bad character.",
    "why": "Some reports link it to charity paid before the Eid prayer, though the surah is Makkan and there was no Eid then. Other reports link it to ʿUthmān or Abū Bakr."
   },
-  "15": {"explain": "He remembers his Lord’s name, his heart filled with it, and prays. Prayer is the measure of faith. Some apply it to the Eid prayer."},
-  "16": {"explain": "Bal tuʾthirūn: but you put this world first, choosing its short, spoiled pleasures, because it is right in front of you and the Hereafter is only described."},
-  "17": {"explain": "The Hereafter is khayr, better in everything a person could want, and abqā, lasting forever. This world passes."},
-  "18": {"explain": "Hādhā, “this”, either the whole surah or the message of ayat 14–17, was in aṣ-ṣuḥuf al-ūlā, the scriptures sent before the Quran."},
-  "19": {"explain": "The scriptures of Ibrāhīm and Mūsā. The same call to success and the same warning about this world run through every revealed message."}
+  "15": {
+   "explain": "He remembers his Lord’s name, his heart filled with it, and prays. Prayer is the measure of faith. Some apply it to the Eid prayer."
+  },
+  "16": {
+   "explain": "Bal tuʾthirūn: but you put this world first, choosing its short, spoiled pleasures, because it is right in front of you and the Hereafter is only described."
+  },
+  "17": {
+   "explain": "The Hereafter is khayr, better in everything a person could want, and abqā, lasting forever. This world passes."
+  },
+  "18": {
+   "explain": "Hādhā, “this”, either the whole surah or the message of ayat 14–17, was in aṣ-ṣuḥuf al-ūlā, the scriptures sent before the Quran."
+  },
+  "19": {
+   "explain": "The scriptures of Ibrāhīm and Mūsā. The same call to success and the same warning about this world run through every revealed message."
+  }
  }
 }
