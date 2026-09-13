@@ -1,0 +1,99 @@
+{
+ "n": 66,
+ "name": "At-Tahrim",
+ "ar": "التحريم",
+ "place": "madinah",
+ "order": 107,
+ "ayat": 12,
+ "pages": [
+  560,
+  561
+ ],
+ "juz": [
+  28,
+  28
+ ],
+ "hizb": [
+  56,
+  56
+ ],
+ "bismillah": true,
+ "sajdah": [],
+ "rukus": [
+  [
+   1,
+   7
+  ],
+  [
+   8,
+   12
+  ]
+ ],
+ "prev": "65:12",
+ "next": "67:1",
+ "edges": {
+  "65:12": {
+   "page": 559,
+   "text": "ٱللَّهُ ٱلَّذِي خَلَقَ سَبۡعَ سَمَٰوَٰتٖ وَمِنَ ٱلۡأَرۡضِ مِثۡلَهُنَّۖ يَتَنَزَّلُ ٱلۡأَمۡرُ بَيۡنَهُنَّ لِتَعۡلَمُوٓاْ أَنَّ ٱللَّهَ عَلَىٰ كُلِّ شَيۡءٖ قَدِيرٞ وَأَنَّ ٱللَّهَ قَدۡ أَحَاطَ بِكُلِّ شَيۡءٍ عِلۡمَۢا",
+   "tr": "It is Allāh who has created seven heavens and of the earth, the like of them. [His] command descends among them so you may know that Allāh is over all things competent and that Allāh has encompassed all things in knowledge."
+  },
+  "67:1": {
+   "page": 562,
+   "text": "تَبَٰرَكَ ٱلَّذِي بِيَدِهِ ٱلۡمُلۡكُ وَهُوَ عَلَىٰ كُلِّ شَيۡءٖ قَدِيرٌ",
+   "tr": "Blessed is He in whose hand is dominion, and He is over all things competent -"
+  }
+ },
+ "groupings": {
+  "en-ibn-kathir": [
+   "1-5",
+   "6-8",
+   "9-10",
+   "11-12"
+  ],
+  "en-maarif-ul-quran": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5",
+   "6-7",
+   "8-9",
+   "10",
+   "11",
+   "12"
+  ],
+  "en-tazkirul-quran": [
+   "2",
+   "5",
+   "7",
+   "8",
+   "10",
+   "12"
+  ],
+  "ar-kashaf": [
+   "1-2",
+   "3",
+   "4",
+   "5",
+   "6-7",
+   "8",
+   "9",
+   "10",
+   "11-12"
+  ],
+  "ar-tahrir-wa-tanwir": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5",
+   "6",
+   "7",
+   "8",
+   "9",
+   "10",
+   "11",
+   "12"
+  ]
+ }
+}

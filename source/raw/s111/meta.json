@@ -1,0 +1,65 @@
+{
+ "n": 111,
+ "name": "Al-Masad",
+ "ar": "المسد",
+ "place": "makkah",
+ "order": 6,
+ "ayat": 5,
+ "pages": [
+  603,
+  603
+ ],
+ "juz": [
+  30,
+  30
+ ],
+ "hizb": [
+  60,
+  60
+ ],
+ "bismillah": true,
+ "sajdah": [],
+ "rukus": [
+  [
+   1,
+   5
+  ]
+ ],
+ "prev": "110:3",
+ "next": "112:1",
+ "edges": {
+  "110:3": {
+   "page": 603,
+   "text": "فَسَبِّحۡ بِحَمۡدِ رَبِّكَ وَٱسۡتَغۡفِرۡهُۚ إِنَّهُۥ كَانَ تَوَّابَۢا",
+   "tr": "Then exalt [Him] with praise of your Lord and ask forgiveness of Him. Indeed, He is ever Accepting of Repentance."
+  },
+  "112:1": {
+   "page": 604,
+   "text": "قُلۡ هُوَ ٱللَّهُ أَحَدٌ",
+   "tr": "Say, \"He is Allāh, [who is] One,"
+  }
+ },
+ "groupings": {
+  "en-ibn-kathir": [
+   "1-5"
+  ],
+  "en-maarif-ul-quran": [
+   "1-2",
+   "3",
+   "4",
+   "5"
+  ],
+  "en-tazkirul-quran": [
+   "5"
+  ],
+  "ar-kashaf": [
+   "1-5"
+  ],
+  "ar-tahrir-wa-tanwir": [
+   "1",
+   "2",
+   "3",
+   "4-5"
+  ]
+ }
+}

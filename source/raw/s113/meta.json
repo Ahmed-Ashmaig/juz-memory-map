@@ -1,0 +1,63 @@
+{
+ "n": 113,
+ "name": "Al-Falaq",
+ "ar": "الفلق",
+ "place": "makkah",
+ "order": 20,
+ "ayat": 5,
+ "pages": [
+  604,
+  604
+ ],
+ "juz": [
+  30,
+  30
+ ],
+ "hizb": [
+  60,
+  60
+ ],
+ "bismillah": true,
+ "sajdah": [],
+ "rukus": [
+  [
+   1,
+   5
+  ]
+ ],
+ "prev": "112:4",
+ "next": "114:1",
+ "edges": {
+  "112:4": {
+   "page": 604,
+   "text": "وَلَمۡ يَكُن لَّهُۥ كُفُوًا أَحَدُۢ",
+   "tr": "Nor is there to Him any equivalent.\""
+  },
+  "114:1": {
+   "page": 604,
+   "text": "قُلۡ أَعُوذُ بِرَبِّ ٱلنَّاسِ",
+   "tr": "Say, \"I seek refuge in the Lord of mankind,"
+  }
+ },
+ "groupings": {
+  "en-ibn-kathir": [
+   "1-5"
+  ],
+  "en-maarif-ul-quran": [
+   "1",
+   "2-5"
+  ],
+  "en-tazkirul-quran": [
+   "5"
+  ],
+  "ar-kashaf": [
+   "1-5"
+  ],
+  "ar-tahrir-wa-tanwir": [
+   "1-2",
+   "3",
+   "4",
+   "5"
+  ]
+ }
+}

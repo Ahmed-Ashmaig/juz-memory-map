@@ -1,0 +1,77 @@
+{
+ "n": 87,
+ "name": "Al-A'la",
+ "ar": "الأعلى",
+ "place": "makkah",
+ "order": 8,
+ "ayat": 19,
+ "pages": [
+  591,
+  592
+ ],
+ "juz": [
+  30,
+  30
+ ],
+ "hizb": [
+  60,
+  60
+ ],
+ "bismillah": true,
+ "sajdah": [],
+ "rukus": [
+  [
+   1,
+   19
+  ]
+ ],
+ "prev": "86:17",
+ "next": "88:1",
+ "edges": {
+  "86:17": {
+   "page": 591,
+   "text": "فَمَهِّلِ ٱلۡكَٰفِرِينَ أَمۡهِلۡهُمۡ رُوَيۡدَۢا",
+   "tr": "So allow time for the disbelievers. Leave them awhile."
+  },
+  "88:1": {
+   "page": 592,
+   "text": "هَلۡ أَتَىٰكَ حَدِيثُ ٱلۡغَٰشِيَةِ",
+   "tr": "Has there reached you the report of the Overwhelming [event]?"
+  }
+ },
+ "groupings": {
+  "en-ibn-kathir": [
+   "1-13",
+   "14-19"
+  ],
+  "en-maarif-ul-quran": [
+   "1",
+   "2-3",
+   "4-5",
+   "6-7",
+   "8",
+   "9-13",
+   "14-17",
+   "18-19"
+  ],
+  "en-tazkirul-quran": [
+   "3"
+  ],
+  "ar-kashaf": [
+   "1-5",
+   "6-7",
+   "8-13",
+   "14-17",
+   "18-19"
+  ],
+  "ar-tahrir-wa-tanwir": [
+   "1-5",
+   "6-7",
+   "8",
+   "9-13",
+   "14-15",
+   "16-17",
+   "18-19"
+  ]
+ }
+}

@@ -1,0 +1,83 @@
+{
+ "n": 96,
+ "name": "Al-'Alaq",
+ "ar": "العلق",
+ "place": "makkah",
+ "order": 1,
+ "ayat": 19,
+ "pages": [
+  597,
+  597
+ ],
+ "juz": [
+  30,
+  30
+ ],
+ "hizb": [
+  60,
+  60
+ ],
+ "bismillah": true,
+ "sajdah": [
+  {
+   "verse_key": "96:19",
+   "type": "required",
+   "number": 14
+  }
+ ],
+ "rukus": [
+  [
+   1,
+   19
+  ]
+ ],
+ "prev": "95:8",
+ "next": "97:1",
+ "edges": {
+  "95:8": {
+   "page": 597,
+   "text": "أَلَيۡسَ ٱللَّهُ بِأَحۡكَمِ ٱلۡحَٰكِمِينَ",
+   "tr": "Is not Allāh the most just of judges?"
+  },
+  "97:1": {
+   "page": 598,
+   "text": "إِنَّآ أَنزَلۡنَٰهُ فِي لَيۡلَةِ ٱلۡقَدۡرِ",
+   "tr": "Indeed, We sent it [i.e., the Qur’ān] down during the Night of Decree."
+  }
+ },
+ "groupings": {
+  "en-ibn-kathir": [
+   "1-5",
+   "6-19"
+  ],
+  "en-maarif-ul-quran": [
+   "1",
+   "2",
+   "3",
+   "4-5",
+   "6-7",
+   "8",
+   "9-14",
+   "15-18",
+   "19"
+  ],
+  "en-tazkirul-quran": [
+   "5",
+   "19"
+  ],
+  "ar-kashaf": [
+   "1-5",
+   "6-19"
+  ],
+  "ar-tahrir-wa-tanwir": [
+   "1-2",
+   "3-5",
+   "6-10",
+   "11-12",
+   "13-14",
+   "15-16",
+   "17-18",
+   "19"
+  ]
+ }
+}

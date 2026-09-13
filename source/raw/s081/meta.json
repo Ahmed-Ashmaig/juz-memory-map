@@ -1,0 +1,83 @@
+{
+ "n": 81,
+ "name": "At-Takwir",
+ "ar": "التكوير",
+ "place": "makkah",
+ "order": 7,
+ "ayat": 29,
+ "pages": [
+  586,
+  586
+ ],
+ "juz": [
+  30,
+  30
+ ],
+ "hizb": [
+  59,
+  59
+ ],
+ "bismillah": true,
+ "sajdah": [],
+ "rukus": [
+  [
+   1,
+   29
+  ]
+ ],
+ "prev": "80:42",
+ "next": "82:1",
+ "edges": {
+  "80:42": {
+   "page": 585,
+   "text": "",
+   "tr": "Those are the disbelievers, the wicked ones."
+  },
+  "82:1": {
+   "page": 587,
+   "text": "إِذَا ٱلسَّمَآءُ ٱنفَطَرَتۡ",
+   "tr": "When the sky breaks apart"
+  }
+ },
+ "groupings": {
+  "en-ibn-kathir": [
+   "1-14",
+   "15-29"
+  ],
+  "en-maarif-ul-quran": [
+   "1",
+   "2-3",
+   "4-5",
+   "6",
+   "7",
+   "8-10",
+   "11-13",
+   "14-18",
+   "19-29"
+  ],
+  "en-tazkirul-quran": [
+   "14",
+   "18",
+   "19"
+  ],
+  "ar-kashaf": [
+   "1-14",
+   "15-18",
+   "19-21",
+   "22",
+   "23-25",
+   "26-29"
+  ],
+  "ar-tahrir-wa-tanwir": [
+   "1-14",
+   "15-21",
+   "22",
+   "23",
+   "24",
+   "25",
+   "26",
+   "27-28",
+   "29"
+  ]
+ }
+}

@@ -1,0 +1,125 @@
+{
+ "n": 58,
+ "name": "Al-Mujadila",
+ "ar": "المجادلة",
+ "place": "madinah",
+ "order": 105,
+ "ayat": 22,
+ "pages": [
+  542,
+  545
+ ],
+ "juz": [
+  28,
+  28
+ ],
+ "hizb": [
+  55,
+  55
+ ],
+ "bismillah": true,
+ "sajdah": [],
+ "rukus": [
+  [
+   1,
+   6
+  ],
+  [
+   7,
+   13
+  ],
+  [
+   14,
+   22
+  ]
+ ],
+ "prev": "57:29",
+ "next": "59:1",
+ "edges": {
+  "57:29": {
+   "page": 541,
+   "text": "لِّئَلَّا يَعۡلَمَ أَهۡلُ ٱلۡكِتَٰبِ أَلَّا يَقۡدِرُونَ عَلَىٰ شَيۡءٖ مِّن فَضۡلِ ٱللَّهِ وَأَنَّ ٱلۡفَضۡلَ بِيَدِ ٱللَّهِ يُؤۡتِيهِ مَن يَشَآءُۚ وَٱللَّهُ ذُو ٱلۡفَضۡلِ ٱلۡعَظِيمِ",
+   "tr": "[This is] so that the People of the Scripture may know that they are not able [to obtain] anything from the bounty of Allāh and that [all] bounty is in the hand of Allāh; He gives it to whom He wills. And Allāh is the possessor of great bounty."
+  },
+  "59:1": {
+   "page": 545,
+   "text": "سَبَّحَ لِلَّهِ مَا فِي ٱلسَّمَٰوَٰتِ وَمَا فِي ٱلۡأَرۡضِۖ وَهُوَ ٱلۡعَزِيزُ ٱلۡحَكِيمُ",
+   "tr": "Whatever is in the heavens and whatever is on the earth exalts Allāh, and He is the Exalted in Might, the Wise."
+  }
+ },
+ "groupings": {
+  "en-ibn-kathir": [
+   "1",
+   "2-4",
+   "5-7",
+   "8-10",
+   "11",
+   "12-13",
+   "14-19",
+   "20-22"
+  ],
+  "en-maarif-ul-quran": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5",
+   "6-7",
+   "8",
+   "9-10",
+   "11",
+   "12-13",
+   "14-21",
+   "22"
+  ],
+  "en-tazkirul-quran": [
+   "1",
+   "2",
+   "4",
+   "6",
+   "8",
+   "10",
+   "11",
+   "13",
+   "16",
+   "21",
+   "22"
+  ],
+  "ar-kashaf": [
+   "1",
+   "2-4",
+   "5-6",
+   "7",
+   "8",
+   "9-10",
+   "11",
+   "12-13",
+   "14-19",
+   "20",
+   "21",
+   "22"
+  ],
+  "ar-tahrir-wa-tanwir": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5",
+   "6",
+   "7",
+   "8",
+   "9",
+   "10",
+   "11",
+   "12",
+   "13",
+   "14-15",
+   "16",
+   "17",
+   "18",
+   "19",
+   "20-21",
+   "22"
+  ]
+ }
+}

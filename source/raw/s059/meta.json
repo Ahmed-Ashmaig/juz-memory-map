@@ -1,0 +1,129 @@
+{
+ "n": 59,
+ "name": "Al-Hashr",
+ "ar": "الحشر",
+ "place": "madinah",
+ "order": 101,
+ "ayat": 24,
+ "pages": [
+  545,
+  548
+ ],
+ "juz": [
+  28,
+  28
+ ],
+ "hizb": [
+  55,
+  55
+ ],
+ "bismillah": true,
+ "sajdah": [],
+ "rukus": [
+  [
+   1,
+   10
+  ],
+  [
+   11,
+   17
+  ],
+  [
+   18,
+   24
+  ]
+ ],
+ "prev": "58:22",
+ "next": "60:1",
+ "edges": {
+  "58:22": {
+   "page": 545,
+   "text": "لَّا تَجِدُ قَوۡمٗا يُؤۡمِنُونَ بِٱللَّهِ وَٱلۡيَوۡمِ ٱلۡأٓخِرِ يُوَآدُّونَ مَنۡ حَآدَّ ٱللَّهَ وَرَسُولَهُۥ وَلَوۡ كَانُوٓاْ ءَابَآءَهُمۡ أَوۡ أَبۡنَآءَهُمۡ أَوۡ إِخۡوَٰنَهُمۡ أَوۡ عَشِيرَتَهُمۡۚ أُوْلَٰٓئِكَ كَتَبَ فِي قُلُوبِهِمُ ٱلۡإِيمَٰنَ وَأَيَّدَهُم بِرُوحٖ مِّنۡهُۖ وَيُدۡخِلُهُمۡ جَنَّٰتٖ تَجۡرِي مِن تَحۡتِهَا ٱلۡأَنۡهَٰرُ خَٰلِدِينَ فِيهَاۚ رَضِيَ ٱللَّهُ عَنۡهُمۡ وَرَضُواْ عَنۡهُۚ أُوْلَٰٓئِكَ حِزۡبُ ٱللَّهِۚ أَلَآ إِنَّ حِزۡبَ ٱللَّهِ هُمُ ٱلۡمُفۡلِحُونَ",
+   "tr": "You will not find a people who believe in Allāh and the Last Day having affection for those who oppose Allāh and His Messenger, even if they were their fathers or their sons or their brothers or their kindred. Those - He has decreed within their hearts faith and supported them with spirit from Him. And We will admit them to gardens beneath which rivers flow, wherein they abide eternally. Allāh is pleased with them, and they are pleased with Him - those are the party of Allāh. Unquestionably, the party of Allāh - they are the successful."
+  },
+  "60:1": {
+   "page": 549,
+   "text": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ لَا تَتَّخِذُواْ عَدُوِّي وَعَدُوَّكُمۡ أَوۡلِيَآءَ تُلۡقُونَ إِلَيۡهِم بِٱلۡمَوَدَّةِ وَقَدۡ كَفَرُواْ بِمَا جَآءَكُم مِّنَ ٱلۡحَقِّ يُخۡرِجُونَ ٱلرَّسُولَ وَإِيَّاكُمۡ أَن تُؤۡمِنُواْ بِٱللَّهِ رَبِّكُمۡ إِن كُنتُمۡ خَرَجۡتُمۡ جِهَٰدٗا فِي سَبِيلِي وَٱبۡتِغَآءَ مَرۡضَاتِيۚ تُسِرُّونَ إِلَيۡهِم بِٱلۡمَوَدَّةِ وَأَنَا۠ أَعۡلَمُ بِمَآ أَخۡفَيۡتُمۡ وَمَآ أَعۡلَنتُمۡۚ وَمَن يَفۡعَلۡهُ مِنكُمۡ فَقَدۡ ضَلَّ سَوَآءَ ٱلسَّبِيلِ",
+   "tr": "O you who have believed, do not take My enemies and your enemies as allies, extending to them affection while they have disbelieved in what came to you of the truth, having driven out the Prophet and yourselves [only] because you believe in Allāh, your Lord. If you have come out for jihād [i.e., fighting or striving] in My cause and seeking means to My approval, [take them not as friends]. You confide to them affection [i.e., instruction], but I am most knowing of what you have concealed and what you have declared. And whoever does it among you has certainly strayed from the soundness of the way."
+  }
+ },
+ "groupings": {
+  "en-ibn-kathir": [
+   "1-5",
+   "6-7",
+   "8-10",
+   "11-17",
+   "18-20",
+   "21-24"
+  ],
+  "en-maarif-ul-quran": [
+   "1",
+   "2-4",
+   "5",
+   "6",
+   "7",
+   "8",
+   "9",
+   "10-14",
+   "15",
+   "16-17",
+   "18",
+   "19-20",
+   "21",
+   "22",
+   "23",
+   "24"
+  ],
+  "en-tazkirul-quran": [
+   "2",
+   "5",
+   "8",
+   "10",
+   "12",
+   "14",
+   "17",
+   "20",
+   "24"
+  ],
+  "ar-kashaf": [
+   "1-2",
+   "3-4",
+   "5",
+   "6-7",
+   "8",
+   "9",
+   "10",
+   "11-12",
+   "13-17",
+   "18-19",
+   "20",
+   "21-22",
+   "23-24"
+  ],
+  "ar-tahrir-wa-tanwir": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5",
+   "6",
+   "7",
+   "8",
+   "9",
+   "10",
+   "11",
+   "12",
+   "13",
+   "14",
+   "15",
+   "16-17",
+   "18",
+   "19",
+   "20",
+   "21",
+   "22",
+   "23",
+   "24"
+  ]
+ }
+}

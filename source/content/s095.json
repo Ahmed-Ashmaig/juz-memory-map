@@ -1,0 +1,136 @@
+{
+ "n": 95,
+ "sub": "Named after “the fig” (at-tīn), its first word",
+ "theme": "Man was made in the finest form, yet some sink to the lowest of the low while believers keep an endless reward. So the Judgement must come: Allah is the most just of judges.",
+ "story": [
+  "Mostly counted as Makkan and from the earliest period: it calls Makkah “this city”. One report says it was revealed in Madinah.",
+  "It speaks to people who doubted the Judgement, arguing from what they could see: all humans start in a fine form, then split into two very different kinds.",
+  "If both kinds ended in the dust alike, there would be no justice. So it closes with a question: is Allah not the most just of judges?"
+ ],
+ "sections": [
+  {
+   "a": 1,
+   "b": 3,
+   "title": "Fig, olive, Sinai and Makkah",
+   "meaning": "Allah swears by the fig and the olive, by Mount Sinai, and by this secure city, Makkah. Many link these to lands of prophethood: the land around Jerusalem where ʿĪsā was sent, Sinai where Mūsā was addressed, and Makkah of Muhammad ﷺ.",
+   "points": [
+    [
+     "1",
+     "By the fig and the olive"
+    ],
+    [
+     "2",
+     "By Mount Sinai"
+    ],
+    [
+     "3",
+     "By this secure city, Makkah"
+    ]
+   ],
+   "matters": "These oaths point to blessed places where Allah sent His greatest messages. They set up the claim that follows about how finely man was made.",
+   "story": "No specific incident. The surah is mostly counted as Makkan, since it calls Makkah “this city”; one report says it is Madinan.",
+   "explained": [
+    "The fig and the olive are either the fruits themselves, full of benefit, or the land where they grow, around Jerusalem, where ʿĪsā was sent. Other views: two mountains, or two mosques in Shām.",
+    "Ṭūr Sīnīn is the mountain where Allah spoke to Mūsā. Al-balad al-amīn is Makkah, where people were safe before and after Islam, and where Muhammad ﷺ was sent. The oaths move from a noble place, to a nobler one, to the noblest."
+   ],
+   "teaches": [
+    "Allah honours the places where His messages came down.",
+    "Blessing can be found in simple things, like fruit and oil.",
+    "Makkah is a city of safety."
+   ],
+   "hook": "Four oaths in three ayat: two fruits share ayah 1, then a mountain (2), then a city (3). Only the city gets hādhā, “this”."
+  },
+  {
+   "a": 4,
+   "b": 8,
+   "title": "The finest form and the lowest low",
+   "meaning": "Man was created in the finest form. Then he is returned to the lowest of the low, except those who believe and do good, whose reward never ends. So what makes you deny the Judgement? Isn’t Allah the most just of judges?",
+   "points": [
+    [
+     "4",
+     "Man created in the finest form"
+    ],
+    [
+     "5",
+     "Then returned to the lowest of the low"
+    ],
+    [
+     "6",
+     "Except believers who do good: an unending reward"
+    ],
+    [
+     "7",
+     "So what makes you deny the Recompense?"
+    ],
+    [
+     "8",
+     "Is Allah not the most just of judges?"
+    ]
+   ],
+   "matters": "This is the point of the oaths. People start in the same fine form yet end as two different kinds, and a just Judge cannot treat them alike. So the Day of Recompense is a matter of justice.",
+   "story": "One report says “man” here means a particular disbeliever who denied the resurrection. Another says ayah 6 excused believers in the Prophet’s ﷺ time who grew senile and could no longer do deeds.",
+   "explained": [
+    "Aḥsan taqwīm: upright, balanced and beautiful, with a mind, speech and hands to take hold of things. Asfala sāfilīn is either the Fire, for those who waste this form in disbelief, or frail old age, when body and mind give way.",
+    "Either way, believers who do good lose nothing. Their reward is ghayr mamnūn, never cut off: when old age or illness stops them, what they used to do is still written for them. So after all this, what makes you deny the Judgement?"
+   ],
+   "teaches": [
+    "You were made beautifully; don’t lower yourself.",
+    "Faith and good deeds protect you from the fall.",
+    "Deeds done in health keep counting in weakness.",
+    "A just Judge must reward good and punish evil.",
+    "After ayah 8, reply: “Balā, and I bear witness to that.”"
+   ],
+   "hook": "Aḥsan (4) against asfal (5): best against lowest. Ayah 6 breaks the fall with illā. The surah ends on a question, and the reciter answers it: balā."
+  }
+ ],
+ "groups": [
+  {
+   "a": 1,
+   "b": 3,
+   "text": "By the fig and the olive, by Mount Sinai, and by this secure city of Makkah."
+  },
+  {
+   "a": 4,
+   "b": 5,
+   "text": "Man is made in the finest form, then returned to the lowest of the low."
+  },
+  {
+   "a": 6,
+   "b": 6,
+   "text": "Except believers who do good deeds; their reward never ends."
+  },
+  {
+   "a": 7,
+   "b": 8,
+   "text": "So what makes you deny the Judgement? Is Allah not the most just of judges?"
+  }
+ ],
+ "ayat": {
+  "1": {
+   "explain": "By at-tīn and az-zaytūn: the fig and the olive, trees rich in benefit. Or the land where they grow, around Jerusalem, where ʿĪsā was sent. Other views: two mountains, or two mosques."
+  },
+  "2": {
+   "explain": "By Ṭūr Sīnīn, Mount Sinai, where Allah spoke to Mūsā. Sīnīn means blessed, or beautiful with fruit trees."
+  },
+  "3": {
+   "explain": "By this al-balad al-amīn, Makkah, where people were safe before and after Islam, and where Muhammad ﷺ was sent."
+  },
+  "4": {
+   "explain": "The answer to the oaths: man is made in aḥsan taqwīm, the finest form. Upright, balanced and beautiful, taking food with his hands, with a mind to tell right from wrong.",
+   "why": "One report says “man” here is a disbeliever who denied the resurrection, named as al-Walīd ibn al-Mughīrah or Kildah ibn Usayd. Others take it as all of Adam’s children."
+  },
+  "5": {
+   "explain": "Then We return him asfala sāfilīn, the lowest of the low: either the Fire, for those who disobey and deny, or frail old age, when the body and mind weaken."
+  },
+  "6": {
+   "explain": "Illā: except believers who do good. Their reward is ghayr mamnūn, never cut off. If old age stops their deeds, what they used to do is still written for them.",
+   "why": "Reportedly some people in the Prophet’s ﷺ time reached senile old age. This ayah excused them: they keep the reward of what they did before their minds failed."
+  },
+  "7": {
+   "explain": "Fa-mā yukadhdhibuka: so what makes you, O man, deny ad-dīn, the Recompense, after seeing yourself made, grow strong and weaken? The One who began you can bring you back."
+  },
+  "8": {
+   "explain": "Is Allah not aḥkam al-ḥākimīn, the most just of judges, who wrongs no one? On reciting it, say: “Balā, wa anā ʿalā dhālika min ash-shāhidīn.”"
+  }
+ }
+}

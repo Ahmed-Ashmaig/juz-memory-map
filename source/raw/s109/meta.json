@@ -1,0 +1,62 @@
+{
+ "n": 109,
+ "name": "Al-Kafirun",
+ "ar": "الكافرون",
+ "place": "makkah",
+ "order": 18,
+ "ayat": 6,
+ "pages": [
+  603,
+  603
+ ],
+ "juz": [
+  30,
+  30
+ ],
+ "hizb": [
+  60,
+  60
+ ],
+ "bismillah": true,
+ "sajdah": [],
+ "rukus": [
+  [
+   1,
+   6
+  ]
+ ],
+ "prev": "108:3",
+ "next": "110:1",
+ "edges": {
+  "108:3": {
+   "page": 602,
+   "text": "إِنَّ شَانِئَكَ هُوَ ٱلۡأَبۡتَرُ",
+   "tr": "Indeed, your enemy is the one cut off."
+  },
+  "110:1": {
+   "page": 603,
+   "text": "إِذَا جَآءَ نَصۡرُ ٱللَّهِ وَٱلۡفَتۡحُ",
+   "tr": "When the victory of Allāh has come and the conquest,"
+  }
+ },
+ "groupings": {
+  "en-ibn-kathir": [
+   "1-6"
+  ],
+  "en-maarif-ul-quran": [
+   "1-6"
+  ],
+  "en-tazkirul-quran": [
+   "1"
+  ],
+  "ar-kashaf": [
+   "1-6"
+  ],
+  "ar-tahrir-wa-tanwir": [
+   "1-3",
+   "4",
+   "5",
+   "6"
+  ]
+ }
+}

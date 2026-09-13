@@ -1,0 +1,89 @@
+{
+ "n": 83,
+ "name": "Al-Mutaffifin",
+ "ar": "المطففين",
+ "place": "makkah",
+ "order": 86,
+ "ayat": 36,
+ "pages": [
+  587,
+  589
+ ],
+ "juz": [
+  30,
+  30
+ ],
+ "hizb": [
+  59,
+  59
+ ],
+ "bismillah": true,
+ "sajdah": [],
+ "rukus": [
+  [
+   1,
+   36
+  ]
+ ],
+ "prev": "82:19",
+ "next": "84:1",
+ "edges": {
+  "82:19": {
+   "page": 587,
+   "text": "يَوۡمَ لَا تَمۡلِكُ نَفۡسٞ لِّنَفۡسٖ شَيۡـٔٗاۖ وَٱلۡأَمۡرُ يَوۡمَئِذٖ لِّلَّهِ",
+   "tr": "It is the Day when a soul will not possess for another soul [power to do] a thing; and the command, that Day, is [entirely] with Allāh."
+  },
+  "84:1": {
+   "page": 589,
+   "text": "إِذَا ٱلسَّمَآءُ ٱنشَقَّتۡ",
+   "tr": "When the sky has split [open]"
+  }
+ },
+ "groupings": {
+  "en-ibn-kathir": [
+   "1-6",
+   "7-17",
+   "18-28",
+   "29-36"
+  ],
+  "en-maarif-ul-quran": [
+   "1-6",
+   "7-8",
+   "9-13",
+   "14",
+   "15-17",
+   "18-20",
+   "21-25",
+   "26-28",
+   "29-36"
+  ],
+  "en-tazkirul-quran": [
+   "3",
+   "4",
+   "17",
+   "19",
+   "36"
+  ],
+  "ar-kashaf": [
+   "1-6",
+   "7-9",
+   "10-17",
+   "18-21",
+   "22-28",
+   "29-33",
+   "34-36"
+  ],
+  "ar-tahrir-wa-tanwir": [
+   "1-3",
+   "4-6",
+   "7-9",
+   "10-13",
+   "14",
+   "15-17",
+   "18-21",
+   "22-28",
+   "29-35",
+   "36"
+  ]
+ }
+}

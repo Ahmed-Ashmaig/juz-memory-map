@@ -1,0 +1,90 @@
+{
+ "n": 62,
+ "name": "Al-Jumu'ah",
+ "ar": "الجمعة",
+ "place": "madinah",
+ "order": 110,
+ "ayat": 11,
+ "pages": [
+  553,
+  554
+ ],
+ "juz": [
+  28,
+  28
+ ],
+ "hizb": [
+  56,
+  56
+ ],
+ "bismillah": true,
+ "sajdah": [],
+ "rukus": [
+  [
+   1,
+   8
+  ],
+  [
+   9,
+   11
+  ]
+ ],
+ "prev": "61:14",
+ "next": "63:1",
+ "edges": {
+  "61:14": {
+   "page": 552,
+   "text": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ كُونُوٓاْ أَنصَارَ ٱللَّهِ كَمَا قَالَ عِيسَى ٱبۡنُ مَرۡيَمَ لِلۡحَوَارِيِّـۧنَ مَنۡ أَنصَارِيٓ إِلَى ٱللَّهِۖ قَالَ ٱلۡحَوَارِيُّونَ نَحۡنُ أَنصَارُ ٱللَّهِۖ فَـَٔامَنَت طَّآئِفَةٞ مِّنۢ بَنِيٓ إِسۡرَٰٓءِيلَ وَكَفَرَت طَّآئِفَةٞۖ فَأَيَّدۡنَا ٱلَّذِينَ ءَامَنُواْ عَلَىٰ عَدُوِّهِمۡ فَأَصۡبَحُواْ ظَٰهِرِينَ",
+   "tr": "O you who have believed, be supporters of Allāh, as when Jesus, the son of Mary, said to the disciples, \"Who are my supporters for Allāh?\" The disciples said, \"We are supporters of Allāh.\" And a faction of the Children of Israel believed and a faction disbelieved. So We supported those who believed against their enemy, and they became dominant."
+  },
+  "63:1": {
+   "page": 554,
+   "text": "إِذَا جَآءَكَ ٱلۡمُنَٰفِقُونَ قَالُواْ نَشۡهَدُ إِنَّكَ لَرَسُولُ ٱللَّهِۗ وَٱللَّهُ يَعۡلَمُ إِنَّكَ لَرَسُولُهُۥ وَٱللَّهُ يَشۡهَدُ إِنَّ ٱلۡمُنَٰفِقِينَ لَكَٰذِبُونَ",
+   "tr": "When the hypocrites come to you, [O Muḥammad], they say, \"We testify that you are the Messenger of Allāh.\" And Allāh knows that you are His Messenger, and Allāh testifies that the hypocrites are liars."
+  }
+ },
+ "groupings": {
+  "en-ibn-kathir": [
+   "1-4",
+   "5-8",
+   "9-10",
+   "11"
+  ],
+  "en-maarif-ul-quran": [
+   "1",
+   "2",
+   "3-4",
+   "5",
+   "6",
+   "7",
+   "8",
+   "9",
+   "10",
+   "11"
+  ],
+  "en-tazkirul-quran": [
+   "4",
+   "8",
+   "11"
+  ],
+  "ar-kashaf": [
+   "1-4",
+   "5",
+   "6-8",
+   "9-10",
+   "11"
+  ],
+  "ar-tahrir-wa-tanwir": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5",
+   "6",
+   "7",
+   "8",
+   "9-10",
+   "11"
+  ]
+ }
+}

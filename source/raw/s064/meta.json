@@ -1,0 +1,104 @@
+{
+ "n": 64,
+ "name": "At-Taghabun",
+ "ar": "التغابن",
+ "place": "madinah",
+ "order": 108,
+ "ayat": 18,
+ "pages": [
+  556,
+  557
+ ],
+ "juz": [
+  28,
+  28
+ ],
+ "hizb": [
+  56,
+  56
+ ],
+ "bismillah": true,
+ "sajdah": [],
+ "rukus": [
+  [
+   1,
+   10
+  ],
+  [
+   11,
+   18
+  ]
+ ],
+ "prev": "63:11",
+ "next": "65:1",
+ "edges": {
+  "63:11": {
+   "page": 555,
+   "text": "وَلَن يُؤَخِّرَ ٱللَّهُ نَفۡسًا إِذَا جَآءَ أَجَلُهَاۚ وَٱللَّهُ خَبِيرُۢ بِمَا تَعۡمَلُونَ",
+   "tr": "But never will Allāh delay a soul when its time has come. And Allāh is Aware of what you do."
+  },
+  "65:1": {
+   "page": 558,
+   "text": "يَٰٓأَيُّهَا ٱلنَّبِيُّ إِذَا طَلَّقۡتُمُ ٱلنِّسَآءَ فَطَلِّقُوهُنَّ لِعِدَّتِهِنَّ وَأَحۡصُواْ ٱلۡعِدَّةَۖ وَٱتَّقُواْ ٱللَّهَ رَبَّكُمۡۖ لَا تُخۡرِجُوهُنَّ مِنۢ بُيُوتِهِنَّ وَلَا يَخۡرُجۡنَ إِلَّآ أَن يَأۡتِينَ بِفَٰحِشَةٖ مُّبَيِّنَةٖۚ وَتِلۡكَ حُدُودُ ٱللَّهِۚ وَمَن يَتَعَدَّ حُدُودَ ٱللَّهِ فَقَدۡ ظَلَمَ نَفۡسَهُۥۚ لَا تَدۡرِي لَعَلَّ ٱللَّهَ يُحۡدِثُ بَعۡدَ ذَٰلِكَ أَمۡرٗا",
+   "tr": "O Prophet, when you [Muslims] divorce women, divorce them for [the commencement of] their waiting period and keep count of the waiting period, and fear Allāh, your Lord. Do not turn them out of their [husbands'] houses, nor should they [themselves] leave [during that period] unless they are committing a clear immorality. And those are the limits [set by] Allāh. And whoever transgresses the limits of Allāh has certainly wronged himself. You know not; perhaps Allāh will bring about after that a [different] matter."
+  }
+ },
+ "groupings": {
+  "en-ibn-kathir": [
+   "1-4",
+   "5-6",
+   "7-10",
+   "11-13",
+   "14-18"
+  ],
+  "en-maarif-ul-quran": [
+   "1",
+   "2",
+   "3-5",
+   "6-7",
+   "8",
+   "9-10",
+   "11-13",
+   "14",
+   "15",
+   "16-18"
+  ],
+  "en-tazkirul-quran": [
+   "1",
+   "5",
+   "8",
+   "9",
+   "11",
+   "14"
+  ],
+  "ar-kashaf": [
+   "1-4",
+   "5-6",
+   "7-8",
+   "9-10",
+   "11",
+   "12-13",
+   "14-15",
+   "16",
+   "17-18"
+  ],
+  "ar-tahrir-wa-tanwir": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5",
+   "6",
+   "7",
+   "8",
+   "9-10",
+   "11",
+   "12",
+   "13",
+   "14",
+   "15",
+   "16",
+   "17-18"
+  ]
+ }
+}

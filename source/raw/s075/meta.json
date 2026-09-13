@@ -1,0 +1,95 @@
+{
+ "n": 75,
+ "name": "Al-Qiyamah",
+ "ar": "القيامة",
+ "place": "makkah",
+ "order": 31,
+ "ayat": 40,
+ "pages": [
+  577,
+  578
+ ],
+ "juz": [
+  29,
+  29
+ ],
+ "hizb": [
+  58,
+  58
+ ],
+ "bismillah": true,
+ "sajdah": [],
+ "rukus": [
+  [
+   1,
+   30
+  ],
+  [
+   31,
+   40
+  ]
+ ],
+ "prev": "74:56",
+ "next": "76:1",
+ "edges": {
+  "74:56": {
+   "page": 577,
+   "text": "وَمَا يَذۡكُرُونَ إِلَّآ أَن يَشَآءَ ٱللَّهُۚ هُوَ أَهۡلُ ٱلتَّقۡوَىٰ وَأَهۡلُ ٱلۡمَغۡفِرَةِ",
+   "tr": "And they will not remember except that Allāh wills. He is worthy of fear and adequate for [granting] forgiveness."
+  },
+  "76:1": {
+   "page": 578,
+   "text": "هَلۡ أَتَىٰ عَلَى ٱلۡإِنسَٰنِ حِينٞ مِّنَ ٱلدَّهۡرِ لَمۡ يَكُن شَيۡـٔٗا مَّذۡكُورًا",
+   "tr": "Has there [not] come upon man a period of time when he was not a thing [even] mentioned?"
+  }
+ },
+ "groupings": {
+  "en-ibn-kathir": [
+   "1-15",
+   "16-25",
+   "26-40"
+  ],
+  "en-maarif-ul-quran": [
+   "1",
+   "2-3",
+   "4",
+   "5-6",
+   "7-12",
+   "13",
+   "14-18",
+   "19-21",
+   "22-25",
+   "26-33",
+   "34-39",
+   "40"
+  ],
+  "en-tazkirul-quran": [
+   "15",
+   "19",
+   "30",
+   "40"
+  ],
+  "ar-kashaf": [
+   "1-6",
+   "7-15",
+   "16-25",
+   "26-30",
+   "31-35",
+   "36-40"
+  ],
+  "ar-tahrir-wa-tanwir": [
+   "1-4",
+   "5",
+   "6",
+   "7-13",
+   "14-15",
+   "16-19",
+   "20-22",
+   "23-25",
+   "26-30",
+   "31-35",
+   "36",
+   "37-40"
+  ]
+ }
+}

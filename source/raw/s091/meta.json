@@ -1,0 +1,74 @@
+{
+ "n": 91,
+ "name": "Ash-Shams",
+ "ar": "الشمس",
+ "place": "makkah",
+ "order": 26,
+ "ayat": 15,
+ "pages": [
+  595,
+  595
+ ],
+ "juz": [
+  30,
+  30
+ ],
+ "hizb": [
+  60,
+  60
+ ],
+ "bismillah": true,
+ "sajdah": [],
+ "rukus": [
+  [
+   1,
+   15
+  ]
+ ],
+ "prev": "90:20",
+ "next": "92:1",
+ "edges": {
+  "90:20": {
+   "page": 594,
+   "text": "",
+   "tr": "Over them will be fire closed in."
+  },
+  "92:1": {
+   "page": 595,
+   "text": "وَٱلَّيۡلِ إِذَا يَغۡشَىٰ",
+   "tr": "By the night when it covers"
+  }
+ },
+ "groupings": {
+  "en-ibn-kathir": [
+   "1-10",
+   "11-15"
+  ],
+  "en-maarif-ul-quran": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5",
+   "6",
+   "7",
+   "8",
+   "9-13",
+   "14-15"
+  ],
+  "en-tazkirul-quran": [
+   "10",
+   "15"
+  ],
+  "ar-kashaf": [
+   "1-10",
+   "11-15"
+  ],
+  "ar-tahrir-wa-tanwir": [
+   "1-8",
+   "9-10",
+   "11-13",
+   "14-15"
+  ]
+ }
+}

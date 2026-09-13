@@ -1,0 +1,63 @@
+{
+ "n": 99,
+ "name": "Az-Zalzalah",
+ "ar": "الزلزلة",
+ "place": "madinah",
+ "order": 93,
+ "ayat": 8,
+ "pages": [
+  599,
+  599
+ ],
+ "juz": [
+  30,
+  30
+ ],
+ "hizb": [
+  60,
+  60
+ ],
+ "bismillah": true,
+ "sajdah": [],
+ "rukus": [
+  [
+   1,
+   8
+  ]
+ ],
+ "prev": "98:8",
+ "next": "100:1",
+ "edges": {
+  "98:8": {
+   "page": 599,
+   "text": "جَزَآؤُهُمۡ عِندَ رَبِّهِمۡ جَنَّٰتُ عَدۡنٖ تَجۡرِي مِن تَحۡتِهَا ٱلۡأَنۡهَٰرُ خَٰلِدِينَ فِيهَآ أَبَدٗاۖ رَّضِيَ ٱللَّهُ عَنۡهُمۡ وَرَضُواْ عَنۡهُۚ ذَٰلِكَ لِمَنۡ خَشِيَ رَبَّهُۥ",
+   "tr": "Their reward with their Lord will be gardens of perpetual residence beneath which rivers flow, wherein they will abide forever, Allāh being pleased with them and they with Him. That is for whoever has feared his Lord."
+  },
+  "100:1": {
+   "page": 599,
+   "text": "وَٱلۡعَٰدِيَٰتِ ضَبۡحٗا",
+   "tr": "By the racers, panting,"
+  }
+ },
+ "groupings": {
+  "en-ibn-kathir": [
+   "1-8"
+  ],
+  "en-maarif-ul-quran": [
+   "1",
+   "2-6",
+   "7",
+   "8"
+  ],
+  "en-tazkirul-quran": [
+   "8"
+  ],
+  "ar-kashaf": [
+   "1-8"
+  ],
+  "ar-tahrir-wa-tanwir": [
+   "1-6",
+   "7-8"
+  ]
+ }
+}

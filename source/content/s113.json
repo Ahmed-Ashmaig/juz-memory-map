@@ -1,0 +1,60 @@
+{
+ "n": 113,
+ "sub": "Named after al-falaq, “the daybreak”, in ayah 1",
+ "theme": "Teaches us to seek refuge in the Lord of daybreak from all created evil, and especially from night’s spreading darkness, those who blow on knots, and the envier when he envies.",
+ "story": [
+  "Reports differ on when it came. Some say early Makkah, when hostility to the Prophet ﷺ was intense; others say Madinah. It and An-Nās form a pair, al-muʿawwidhatayn, “the two surahs of seeking refuge”, reportedly revealed together.",
+  "The Madinan reports link them to magic worked on the Prophet ﷺ by a man named Labīd ibn al-Aʿṣam, using a comb and hair hidden in a well. He began to feel he had done things he had not. Allah showed him the cause, and he recovered.",
+  "One report says a cord with eleven knots was found, and a knot came loose with each of the two surahs’ eleven ayat. He said Allah had cured him, and he did not want to stir up harm among people."
+ ],
+ "sections": [
+  {
+   "a": 1,
+   "b": 5,
+   "title": "Refuge in the Lord of daybreak",
+   "meaning": "Say: I seek refuge in the Lord of daybreak, from the evil of everything He created, from the darkness of night when it settles, from those who blow on knots, and from the envier when he acts on his envy.",
+   "points": [
+    ["1", "I seek refuge in the Lord of daybreak"],
+    ["2", "From the evil of all He created"],
+    ["3", "From darkness when it settles in"],
+    ["4", "From those who blow on knots"],
+    ["5", "From the envier when he envies"]
+   ],
+   "matters": "The Prophet ﷺ said nothing like these ayat had been revealed, and he recited them for protection after prayers, before sleep and when ill. They teach that only Allah can shield us from harm we cannot see coming.",
+   "story": "Reports link it to magic worked on the Prophet ﷺ by Labīd ibn al-Aʿṣam. Allah showed him in a dream what had been done and where it was hidden, and he recovered. Others say it first came in Makkah.",
+   "explained": [
+    "Aʿūdhu: I take shelter. Al-falaq is the daybreak, when Allah splits the night with light; the One who clears away darkness can clear away harm. Min sharri mā khalaq covers the evil in everything He created: people, jinn, animals, poisons and more.",
+    "Then three evils are singled out. Ghāsiq idhā waqab: night when its darkness spreads, when harmful creatures and wrongdoers come out. An-naffāthāt fī al-ʿuqad: those who do magic by blowing on knots. Ḥāsid idhā ḥasad: the envier once he acts on his envy."
+   ],
+   "teaches": [
+    "Turn to Allah for protection from every kind of harm.",
+    "Recite the two surahs of refuge morning, evening and before sleep.",
+    "Magic can harm, but nothing harms without Allah’s permission.",
+    "Never wish for others to lose their blessings."
+   ],
+   "hook": "Min sharri, “from the evil of”, repeats four times across ayat 2–5: all creation first, then three specifics. Ayat 3 and 5 add idhā, “when”; ayah 4 does not."
+  }
+ ],
+ "groups": [
+  { "a": 1, "b": 2, "text": "I seek refuge in the Lord of daybreak from the evil of everything He created." },
+  { "a": 3, "b": 5, "text": "And especially from the dark night, from those who blow on knots, and from the envier when he envies." }
+ ],
+ "ayat": {
+  "1": {
+   "explain": "Qul aʿūdhu: say, I seek shelter. Rabb al-falaq: Lord of the daybreak, who splits the night with dawn. He is also described as the One who splits seeds and grains.",
+   "why": "Reports say it and An-Nās came when Labīd ibn al-Aʿṣam worked magic on the Prophet ﷺ with a comb and hair hidden in a well. Other reports say they first came in Makkah."
+  },
+  "2": {
+   "explain": "Min sharri mā khalaq: from the harm in everything Allah created, whether people, jinn, animals or poisons. It covers all evil before three are named."
+  },
+  "3": {
+   "explain": "Ghāsiq: darkness; waqab: when it settles in. Night is when harmful creatures and wrongdoers come out. Another view: the moon when it darkens; the Prophet ﷺ pointed to the moon and said to seek refuge from it."
+  },
+  "4": {
+   "explain": "An-naffāthāt fī al-ʿuqad: those who do magic by tying knots in thread and blowing on them while chanting. The word is feminine: women who practise it, or evil souls in general."
+  },
+  "5": {
+   "explain": "Ḥāsid: one who wants others to lose their blessings. Idhā ḥasad: once he acts on it by word or deed. Until then his envy mainly hurts himself. The evil eye is included."
+  }
+ }
+}

@@ -1,0 +1,94 @@
+{
+ "n": 61,
+ "name": "As-Saf",
+ "ar": "الصف",
+ "place": "madinah",
+ "order": 109,
+ "ayat": 14,
+ "pages": [
+  551,
+  552
+ ],
+ "juz": [
+  28,
+  28
+ ],
+ "hizb": [
+  55,
+  55
+ ],
+ "bismillah": true,
+ "sajdah": [],
+ "rukus": [
+  [
+   1,
+   9
+  ],
+  [
+   10,
+   14
+  ]
+ ],
+ "prev": "60:13",
+ "next": "62:1",
+ "edges": {
+  "60:13": {
+   "page": 551,
+   "text": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ لَا تَتَوَلَّوۡاْ قَوۡمًا غَضِبَ ٱللَّهُ عَلَيۡهِمۡ قَدۡ يَئِسُواْ مِنَ ٱلۡأٓخِرَةِ كَمَا يَئِسَ ٱلۡكُفَّارُ مِنۡ أَصۡحَٰبِ ٱلۡقُبُورِ",
+   "tr": "O you who have believed, do not make allies of a people with whom Allāh has become angry. They have despaired of [reward in] the Hereafter just as the disbelievers have despaired of [meeting] the companions [i.e., inhabitants] of the graves."
+  },
+  "62:1": {
+   "page": 553,
+   "text": "يُسَبِّحُ لِلَّهِ مَا فِي ٱلسَّمَٰوَٰتِ وَمَا فِي ٱلۡأَرۡضِ ٱلۡمَلِكِ ٱلۡقُدُّوسِ ٱلۡعَزِيزِ ٱلۡحَكِيمِ",
+   "tr": "Whatever is in the heavens and whatever is on the earth is exalting Allāh, the Sovereign, the Pure, the Exalted in Might, the Wise."
+  }
+ },
+ "groupings": {
+  "en-ibn-kathir": [
+   "1-4",
+   "5-6",
+   "7-9",
+   "10-13",
+   "14"
+  ],
+  "en-maarif-ul-quran": [
+   "1",
+   "2-3",
+   "4-10",
+   "11-12",
+   "13",
+   "14"
+  ],
+  "en-tazkirul-quran": [
+   "4",
+   "5",
+   "6",
+   "9",
+   "11",
+   "14"
+  ],
+  "ar-kashaf": [
+   "1-4",
+   "5",
+   "6",
+   "7",
+   "8",
+   "9",
+   "10-13",
+   "14"
+  ],
+  "ar-tahrir-wa-tanwir": [
+   "1",
+   "2-3",
+   "4",
+   "5",
+   "6",
+   "7",
+   "8",
+   "9",
+   "10-12",
+   "13",
+   "14"
+  ]
+ }
+}

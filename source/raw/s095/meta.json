@@ -1,0 +1,66 @@
+{
+ "n": 95,
+ "name": "At-Tin",
+ "ar": "التين",
+ "place": "makkah",
+ "order": 28,
+ "ayat": 8,
+ "pages": [
+  597,
+  597
+ ],
+ "juz": [
+  30,
+  30
+ ],
+ "hizb": [
+  60,
+  60
+ ],
+ "bismillah": true,
+ "sajdah": [],
+ "rukus": [
+  [
+   1,
+   8
+  ]
+ ],
+ "prev": "94:8",
+ "next": "96:1",
+ "edges": {
+  "94:8": {
+   "page": 596,
+   "text": "",
+   "tr": "And to your Lord direct [your] longing."
+  },
+  "96:1": {
+   "page": 597,
+   "text": "ٱقۡرَأۡ بِٱسۡمِ رَبِّكَ ٱلَّذِي خَلَقَ",
+   "tr": "Recite in the name of your Lord who created –"
+  }
+ },
+ "groupings": {
+  "en-ibn-kathir": [
+   "1-8"
+  ],
+  "en-maarif-ul-quran": [
+   "1-3",
+   "4",
+   "5",
+   "6",
+   "7-8"
+  ],
+  "en-tazkirul-quran": [
+   "3",
+   "6"
+  ],
+  "ar-kashaf": [
+   "1-8"
+  ],
+  "ar-tahrir-wa-tanwir": [
+   "1-5",
+   "6",
+   "7-8"
+  ]
+ }
+}

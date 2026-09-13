@@ -1,0 +1,59 @@
+{
+ "n": 105,
+ "sub": "Named after aṣḥāb al-fīl, “the people of the elephant”, in ayah 1",
+ "theme": "A reminder of how Allah destroyed the army that came with elephants to demolish the Kaʿbah. The Lord who protected His House can bring down anyone who opposes His Messenger.",
+ "story": [
+  "Revealed in Makkah, very early. It recalls an event every Makkan knew. In the year the Prophet ﷺ was born, according to most reports, Abrahah, the Abyssinian ruler of Yemen, marched on Makkah with a huge army and elephants.",
+  "He had built a grand church in Ṣanʿāʾ to draw the Arabs’ pilgrimage away from the Kaʿbah. When it was defiled, or in another report set on fire, he swore to destroy the Kaʿbah. The Makkans could not fight such an army and withdrew to the mountains.",
+  "At the edge of Makkah his lead elephant knelt and would not move toward the city. Flocks of birds came and pelted the army with stones. The surah only alludes to it, because its first listeners knew the story well."
+ ],
+ "sections": [
+  {
+   "a": 1,
+   "b": 5,
+   "title": "Your Lord and the elephant army",
+   "meaning": "Have you not seen what your Lord did to the people of the elephant? He wrecked their plot against the Kaʿbah, sent flocks of birds to pelt them with stones of baked clay, and left them like chewed-up straw.",
+   "points": [
+    ["1", "Have you not seen what your Lord did to the elephant army?"],
+    ["2", "He turned their plot to ruin"],
+    ["3–4", "Flocks of birds pelting them with stones of baked clay"],
+    ["5", "He left them like eaten straw"]
+   ],
+   "matters": "The Arabs knew it was Allah, not any idol, who saved the House: Quraysh’s leaders prayed to Him alone that day. So the surah asks them to think: why fight the Messenger of that same Lord?",
+   "story": "When Abrahah’s envoy came, ʿAbd al-Muṭṭalib, the Prophet’s ﷺ grandfather, asked only for his seized camels: “I own the camels. The House has a Lord who will protect it.” Then he prayed at the Kaʿbah’s door, and the Makkans left for the mountains.",
+   "explained": [
+    "Alam tara: have you not seen? The Prophet ﷺ was not yet born, but the event was so well known it was as good as seen, and its traces were still visible years later. Allah made kaydahum, their plan to demolish the Kaʿbah, fī taḍlīl: lost and wasted, never reaching its goal.",
+    "Their great elephant knelt facing Makkah. Allah sent ṭayran abābīl, birds in flocks, carrying sijjīl, stones of baked clay. Whoever was hit began to fall apart; some died there, others as they fled, and Abrahah died after the retreat. They became ʿaṣf maʾkūl: straw eaten and scattered by animals."
+   ],
+   "teaches": [
+    "No power can defeat what Allah chooses to protect.",
+    "Plots against Allah’s religion end in ruin for the plotters.",
+    "Allah can use the smallest creatures to bring down the mightiest army.",
+    "Remember Allah’s past help, and let it strengthen your trust in Him."
+   ],
+   "hook": "Two questions open the surah: alam tara (1) and alam yajʿal (2). Then the story runs in order: birds sent (3), stones thrown (4), army left like straw (5)."
+  }
+ ],
+ "groups": [
+  { "a": 1, "b": 2, "text": "Have you not seen what your Lord did to the elephant army, and how He wrecked their plot?" },
+  { "a": 3, "b": 4, "text": "He sent flocks of birds that pelted them with stones of baked clay." },
+  { "a": 5, "b": 5, "text": "He left them like straw that animals have eaten." }
+ ],
+ "ayat": {
+  "1": {
+   "explain": "Alam tara: have you not seen? It was so well known it was as good as witnessed. Aṣḥāb al-fīl: Abrahah’s army, which brought elephants to demolish the Kaʿbah."
+  },
+  "2": {
+   "explain": "Kaydahum: their scheme to destroy the House. Fī taḍlīl: Allah made it go astray and fail, so they never reached the Kaʿbah."
+  },
+  "3": {
+   "explain": "Ṭayran abābīl: birds in flocks, arriving group after group. Abābīl describes their numbers; it is not the name of a kind of bird."
+  },
+  "4": {
+   "explain": "Sijjīl: stones of baked clay, between a lentil and a chickpea in size. They were not heavy, but Allah made them deadly: whoever was struck began to fall apart."
+  },
+  "5": {
+   "explain": "ʿAṣf maʾkūl: leaves or husks of crops after animals have eaten them, broken and scattered. That is what became of the army."
+  }
+ }
+}

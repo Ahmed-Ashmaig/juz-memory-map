@@ -1,0 +1,63 @@
+{
+ "n": 105,
+ "name": "Al-Fil",
+ "ar": "الفيل",
+ "place": "makkah",
+ "order": 19,
+ "ayat": 5,
+ "pages": [
+  601,
+  601
+ ],
+ "juz": [
+  30,
+  30
+ ],
+ "hizb": [
+  60,
+  60
+ ],
+ "bismillah": true,
+ "sajdah": [],
+ "rukus": [
+  [
+   1,
+   5
+  ]
+ ],
+ "prev": "104:9",
+ "next": "106:1",
+ "edges": {
+  "104:9": {
+   "page": 601,
+   "text": "فِي عَمَدٖ مُّمَدَّدَةِۭ",
+   "tr": "In extended columns."
+  },
+  "106:1": {
+   "page": 602,
+   "text": "لِإِيلَٰفِ قُرَيۡشٍ",
+   "tr": "For the accustomed security of the Quraysh -"
+  }
+ },
+ "groupings": {
+  "en-ibn-kathir": [
+   "1-5"
+  ],
+  "en-maarif-ul-quran": [
+   "1-2",
+   "3",
+   "4",
+   "5"
+  ],
+  "en-tazkirul-quran": [
+   "5"
+  ],
+  "ar-kashaf": [
+   "1-5"
+  ],
+  "ar-tahrir-wa-tanwir": [
+   "1",
+   "2-5"
+  ]
+ }
+}

@@ -1,0 +1,84 @@
+{
+ "n": 84,
+ "name": "Al-Inshiqaq",
+ "ar": "الإنشقاق",
+ "place": "makkah",
+ "order": 83,
+ "ayat": 25,
+ "pages": [
+  589,
+  589
+ ],
+ "juz": [
+  30,
+  30
+ ],
+ "hizb": [
+  59,
+  59
+ ],
+ "bismillah": true,
+ "sajdah": [
+  {
+   "verse_key": "84:21",
+   "type": "optional",
+   "number": 13
+  }
+ ],
+ "rukus": [
+  [
+   1,
+   25
+  ]
+ ],
+ "prev": "83:36",
+ "next": "85:1",
+ "edges": {
+  "83:36": {
+   "page": 589,
+   "text": "هَلۡ ثُوِّبَ ٱلۡكُفَّارُ مَا كَانُواْ يَفۡعَلُونَ",
+   "tr": "Have the disbelievers [not] been rewarded [this Day] for what they used to do?"
+  },
+  "85:1": {
+   "page": 590,
+   "text": "وَٱلسَّمَآءِ ذَاتِ ٱلۡبُرُوجِ",
+   "tr": "By the sky containing great stars"
+  }
+ },
+ "groupings": {
+  "en-ibn-kathir": [
+   "1-15",
+   "16-25"
+  ],
+  "en-maarif-ul-quran": [
+   "1-2",
+   "3",
+   "4-5",
+   "6",
+   "7-12",
+   "13-15",
+   "16-20",
+   "21-25"
+  ],
+  "en-tazkirul-quran": [
+   "5",
+   "24"
+  ],
+  "ar-kashaf": [
+   "1-5",
+   "6-15",
+   "16-19",
+   "20-25"
+  ],
+  "ar-tahrir-wa-tanwir": [
+   "1-6",
+   "7-15",
+   "16-19",
+   "20-21",
+   "22",
+   "23",
+   "24",
+   "25"
+  ]
+ }
+}

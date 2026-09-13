@@ -1,0 +1,71 @@
+{
+ "n": 98,
+ "name": "Al-Bayyinah",
+ "ar": "البينة",
+ "place": "madinah",
+ "order": 100,
+ "ayat": 8,
+ "pages": [
+  598,
+  599
+ ],
+ "juz": [
+  30,
+  30
+ ],
+ "hizb": [
+  60,
+  60
+ ],
+ "bismillah": true,
+ "sajdah": [],
+ "rukus": [
+  [
+   1,
+   8
+  ]
+ ],
+ "prev": "97:5",
+ "next": "99:1",
+ "edges": {
+  "97:5": {
+   "page": 598,
+   "text": "سَلَٰمٌ هِيَ حَتَّىٰ مَطۡلَعِ ٱلۡفَجۡرِ",
+   "tr": "Peace it is until the emergence of dawn."
+  },
+  "99:1": {
+   "page": 599,
+   "text": "إِذَا زُلۡزِلَتِ ٱلۡأَرۡضُ زِلۡزَالَهَا",
+   "tr": "When the earth is shaken with its [final] earthquake"
+  }
+ },
+ "groupings": {
+  "en-ibn-kathir": [
+   "1-5",
+   "6-8"
+  ],
+  "en-maarif-ul-quran": [
+   "1",
+   "2-3",
+   "4",
+   "5",
+   "6-7",
+   "8"
+  ],
+  "en-tazkirul-quran": [
+   "3",
+   "8"
+  ],
+  "ar-kashaf": [
+   "1-8"
+  ],
+  "ar-tahrir-wa-tanwir": [
+   "1-3",
+   "4",
+   "5",
+   "6",
+   "7",
+   "8"
+  ]
+ }
+}

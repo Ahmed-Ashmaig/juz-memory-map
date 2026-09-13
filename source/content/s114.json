@@ -1,0 +1,63 @@
+{
+ "n": 114,
+ "sub": "Named after an-nās, “mankind”, which appears five times in the surah",
+ "theme": "Seeking refuge in Allah, the Lord, King and God of mankind, from the whisperer who slips thoughts into people’s hearts and pulls back when Allah is remembered, whether jinn or human.",
+ "story": [
+  "The last surah of the Quran and the pair of Al-Falaq. Reports differ on whether the two came in Makkah or in Madinah, where they are linked to the magic worked on the Prophet ﷺ.",
+  "Al-Falaq seeks protection from harms that come from outside. An-Nās seeks protection from harm within: the whispers that lead to sin and damage a person’s faith and Hereafter.",
+  "The Quran opens with Al-Fātiḥah, asking Allah for guidance to the straight path. It closes here, asking Him for protection from the whisperers who are the greatest obstacle on that path."
+ ],
+ "sections": [
+  {
+   "a": 1,
+   "b": 6,
+   "title": "Refuge from the sneaking whisperer",
+   "meaning": "Say: I seek refuge in the Lord of mankind, the King of mankind, the God of mankind, from the evil of the whisperer who slinks away, who whispers into people’s hearts, whether from among the jinn or from among people.",
+   "points": [
+    ["1–3", "Lord of mankind, King of mankind, God of mankind"],
+    ["4", "From the whisperer who slinks away"],
+    ["5", "He whispers into people’s hearts"],
+    ["6", "From among the jinn and people"]
+   ],
+   "matters": "Three descriptions of Allah are invoked against one enemy, because whispering attacks faith and the Hereafter, not just the body. Harm to the body can be treated; this enemy is hidden, and only Allah’s protection works against it.",
+   "story": "No separate incident for An-Nās. It came with Al-Falaq: reportedly early in Makkah when hostility was intense, or in Madinah when magic was worked on the Prophet ﷺ.",
+   "explained": [
+    "Allah is named three ways. Rabb: the Lord who nurtures and cares for people. Malik: the King who rules them. Ilāh: the only One worthy of their worship. A lord protects those in his care, a king his subjects, a god his worshippers; only Allah is all three.",
+    "Al-waswās al-khannās: the whisperer who slinks back. Everyone has a devil-companion. When a person forgets Allah it whispers, making evil look good; when he remembers Allah it pulls back. Whisperers are jinn, and also people who plant doubts and evil ideas in others."
+   ],
+   "teaches": [
+    "Seek refuge in Allah from Shayṭān’s whispers.",
+    "Remembering Allah drives the whisperer away.",
+    "Beware of people who plant doubts and evil ideas too.",
+    "Passing bad thoughts are not sins unless you act on them or speak them."
+   ],
+   "hook": "An-nās ends ayat 1, 2, 3, 5 and 6; ayah 4 ends with al-khannās, keeping the rhyme. Three titles of Allah come first (Rabb, Malik, Ilāh), then one enemy."
+  }
+ ],
+ "groups": [
+  { "a": 1, "b": 3, "text": "I seek refuge in the Lord of mankind, the King of mankind, the God of mankind." },
+  { "a": 4, "b": 5, "text": "From the evil of the whisperer who slinks away and whispers into people’s hearts." },
+  { "a": 6, "b": 6, "text": "Whether that whisperer is from the jinn or from people." }
+ ],
+ "ayat": {
+  "1": {
+   "explain": "Qul aʿūdhu bi-rabbi an-nās: say, I seek refuge in the Lord of mankind, who creates, nurtures and cares for them. Mankind is named because the whisperer targets them.",
+   "why": "Revealed together with Al-Falaq. Reports link both to the magic worked on the Prophet ﷺ in Madinah; others say they first came in Makkah."
+  },
+  "2": {
+   "explain": "Malik an-nās: the King of mankind. Not every lord or owner is a king, so this adds that He rules all people completely."
+  },
+  "3": {
+   "explain": "Ilāh an-nās: the God of mankind. Not every king deserves worship; He alone does. Only Allah is Lord, King and God together, so His protection is the strongest."
+  },
+  "4": {
+   "explain": "Al-waswās: the whisperer, Shayṭān, named for the whispering he never stops doing. Al-khannās: he slinks back when Allah is remembered, and returns when a person grows heedless."
+  },
+  "5": {
+   "explain": "He whispers into ṣudūr an-nās, people’s hearts, when they forget Allah. The whisper is silent: its meaning reaches the heart without a sound, making evil look attractive."
+  },
+  "6": {
+   "explain": "Min al-jinnati wa an-nās: whisperers come from the jinn and from people. Human whisperers plant doubts indirectly. Another view includes a person’s own lower self."
+  }
+ }
+}

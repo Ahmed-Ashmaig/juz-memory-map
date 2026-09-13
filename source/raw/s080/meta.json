@@ -1,0 +1,85 @@
+{
+ "n": 80,
+ "name": "'Abasa",
+ "ar": "عبس",
+ "place": "makkah",
+ "order": 24,
+ "ayat": 42,
+ "pages": [
+  585,
+  585
+ ],
+ "juz": [
+  30,
+  30
+ ],
+ "hizb": [
+  59,
+  59
+ ],
+ "bismillah": true,
+ "sajdah": [],
+ "rukus": [
+  [
+   1,
+   42
+  ]
+ ],
+ "prev": "79:46",
+ "next": "81:1",
+ "edges": {
+  "79:46": {
+   "page": 584,
+   "text": "كَأَنَّهُمۡ يَوۡمَ يَرَوۡنَهَا لَمۡ يَلۡبَثُوٓاْ إِلَّا عَشِيَّةً أَوۡ ضُحَىٰهَا",
+   "tr": "It will be, on the Day they see it, as though they had not remained [in the world] except for an afternoon or a morning thereof."
+  },
+  "81:1": {
+   "page": 586,
+   "text": "إِذَا ٱلشَّمۡسُ كُوِّرَتۡ",
+   "tr": "When the sun is wrapped up [in darkness]"
+  }
+ },
+ "groupings": {
+  "en-ibn-kathir": [
+   "1-16",
+   "17-32",
+   "33-42"
+  ],
+  "en-maarif-ul-quran": [
+   "1-2",
+   "3-12",
+   "13-14",
+   "15-17",
+   "18",
+   "19",
+   "20",
+   "21-22",
+   "23-32",
+   "33",
+   "34-42"
+  ],
+  "en-tazkirul-quran": [
+   "20",
+   "24",
+   "42"
+  ],
+  "ar-kashaf": [
+   "1-10",
+   "11-16",
+   "17-23",
+   "24-31",
+   "32-42"
+  ],
+  "ar-tahrir-wa-tanwir": [
+   "1-4",
+   "5-6",
+   "7",
+   "8-10",
+   "11-16",
+   "17-22",
+   "23",
+   "24-32",
+   "33-42"
+  ]
+ }
+}

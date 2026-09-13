@@ -1,0 +1,63 @@
+{
+ "n": 104,
+ "name": "Al-Humazah",
+ "ar": "الهمزة",
+ "place": "makkah",
+ "order": 32,
+ "ayat": 9,
+ "pages": [
+  601,
+  601
+ ],
+ "juz": [
+  30,
+  30
+ ],
+ "hizb": [
+  60,
+  60
+ ],
+ "bismillah": true,
+ "sajdah": [],
+ "rukus": [
+  [
+   1,
+   9
+  ]
+ ],
+ "prev": "103:3",
+ "next": "105:1",
+ "edges": {
+  "103:3": {
+   "page": 601,
+   "text": "إِلَّا ٱلَّذِينَ ءَامَنُواْ وَعَمِلُواْ ٱلصَّٰلِحَٰتِ وَتَوَاصَوۡاْ بِٱلۡحَقِّ وَتَوَاصَوۡاْ بِٱلصَّبۡرِ",
+   "tr": "Except for those who have believed and done righteous deeds and advised each other to truth and advised each other to patience."
+  },
+  "105:1": {
+   "page": 601,
+   "text": "أَلَمۡ تَرَ كَيۡفَ فَعَلَ رَبُّكَ بِأَصۡحَٰبِ ٱلۡفِيلِ",
+   "tr": "Have you not considered, [O Muḥammad], how your Lord dealt with the companions of the elephant?"
+  }
+ },
+ "groupings": {
+  "en-ibn-kathir": [
+   "1-9"
+  ],
+  "en-maarif-ul-quran": [
+   "1",
+   "2-6",
+   "7-9"
+  ],
+  "en-tazkirul-quran": [
+   "9"
+  ],
+  "ar-kashaf": [
+   "1-9"
+  ],
+  "ar-tahrir-wa-tanwir": [
+   "1-3",
+   "4-7",
+   "8-9"
+  ]
+ }
+}

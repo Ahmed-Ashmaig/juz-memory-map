@@ -1,0 +1,66 @@
+{
+ "n": 102,
+ "name": "At-Takathur",
+ "ar": "التكاثر",
+ "place": "makkah",
+ "order": 16,
+ "ayat": 8,
+ "pages": [
+  600,
+  600
+ ],
+ "juz": [
+  30,
+  30
+ ],
+ "hizb": [
+  60,
+  60
+ ],
+ "bismillah": true,
+ "sajdah": [],
+ "rukus": [
+  [
+   1,
+   8
+  ]
+ ],
+ "prev": "101:11",
+ "next": "103:1",
+ "edges": {
+  "101:11": {
+   "page": 600,
+   "text": "نَارٌ حَامِيَةُۢ",
+   "tr": "It is a Fire, intensely hot."
+  },
+  "103:1": {
+   "page": 601,
+   "text": "وَٱلۡعَصۡرِ",
+   "tr": "By time,"
+  }
+ },
+ "groupings": {
+  "en-ibn-kathir": [
+   "1-8"
+  ],
+  "en-maarif-ul-quran": [
+   "1",
+   "2-4",
+   "5",
+   "6",
+   "7-8"
+  ],
+  "en-tazkirul-quran": [
+   "8"
+  ],
+  "ar-kashaf": [
+   "1-8"
+  ],
+  "ar-tahrir-wa-tanwir": [
+   "1-4",
+   "5",
+   "6-7",
+   "8"
+  ]
+ }
+}

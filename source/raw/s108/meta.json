@@ -1,0 +1,62 @@
+{
+ "n": 108,
+ "name": "Al-Kawthar",
+ "ar": "الكوثر",
+ "place": "makkah",
+ "order": 15,
+ "ayat": 3,
+ "pages": [
+  602,
+  602
+ ],
+ "juz": [
+  30,
+  30
+ ],
+ "hizb": [
+  60,
+  60
+ ],
+ "bismillah": true,
+ "sajdah": [],
+ "rukus": [
+  [
+   1,
+   3
+  ]
+ ],
+ "prev": "107:7",
+ "next": "109:1",
+ "edges": {
+  "107:7": {
+   "page": 602,
+   "text": "وَيَمۡنَعُونَ ٱلۡمَاعُونَ",
+   "tr": "And withhold [simple] assistance."
+  },
+  "109:1": {
+   "page": 603,
+   "text": "قُلۡ يَٰٓأَيُّهَا ٱلۡكَٰفِرُونَ",
+   "tr": "Say, \"O disbelievers,"
+  }
+ },
+ "groupings": {
+  "en-ibn-kathir": [
+   "1-3"
+  ],
+  "en-maarif-ul-quran": [
+   "1",
+   "2",
+   "3"
+  ],
+  "en-tazkirul-quran": [
+   "3"
+  ],
+  "ar-kashaf": [
+   "1-3"
+  ],
+  "ar-tahrir-wa-tanwir": [
+   "1-2",
+   "3"
+  ]
+ }
+}

@@ -1,0 +1,62 @@
+{
+ "n": 110,
+ "name": "An-Nasr",
+ "ar": "النصر",
+ "place": "madinah",
+ "order": 114,
+ "ayat": 3,
+ "pages": [
+  603,
+  603
+ ],
+ "juz": [
+  30,
+  30
+ ],
+ "hizb": [
+  60,
+  60
+ ],
+ "bismillah": true,
+ "sajdah": [],
+ "rukus": [
+  [
+   1,
+   3
+  ]
+ ],
+ "prev": "109:6",
+ "next": "111:1",
+ "edges": {
+  "109:6": {
+   "page": 603,
+   "text": "لَكُمۡ دِينُكُمۡ وَلِيَ دِينِ",
+   "tr": "For you is your religion, and for me is my religion.\""
+  },
+  "111:1": {
+   "page": 603,
+   "text": "تَبَّتۡ يَدَآ أَبِي لَهَبٖ وَتَبَّ",
+   "tr": "May the hands of Abū Lahab be ruined, and ruined is he."
+  }
+ },
+ "groupings": {
+  "en-ibn-kathir": [
+   "1-3"
+  ],
+  "en-maarif-ul-quran": [
+   "1",
+   "2",
+   "3"
+  ],
+  "en-tazkirul-quran": [
+   "3"
+  ],
+  "ar-kashaf": [
+   "1-3"
+  ],
+  "ar-tahrir-wa-tanwir": [
+   "1-2",
+   "3"
+  ]
+ }
+}

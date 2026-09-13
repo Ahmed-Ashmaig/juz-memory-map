@@ -1,0 +1,65 @@
+{
+ "n": 112,
+ "name": "Al-Ikhlas",
+ "ar": "الإخلاص",
+ "place": "makkah",
+ "order": 22,
+ "ayat": 4,
+ "pages": [
+  604,
+  604
+ ],
+ "juz": [
+  30,
+  30
+ ],
+ "hizb": [
+  60,
+  60
+ ],
+ "bismillah": true,
+ "sajdah": [],
+ "rukus": [
+  [
+   1,
+   4
+  ]
+ ],
+ "prev": "111:5",
+ "next": "113:1",
+ "edges": {
+  "111:5": {
+   "page": 603,
+   "text": "فِي جِيدِهَا حَبۡلٞ مِّن مَّسَدِۭ",
+   "tr": "Around her neck is a rope of [twisted] fiber."
+  },
+  "113:1": {
+   "page": 604,
+   "text": "قُلۡ أَعُوذُ بِرَبِّ ٱلۡفَلَقِ",
+   "tr": "Say, \"I seek refuge in the Lord of daybreak"
+  }
+ },
+ "groupings": {
+  "en-ibn-kathir": [
+   "1-4"
+  ],
+  "en-maarif-ul-quran": [
+   "1",
+   "2",
+   "3",
+   "4"
+  ],
+  "en-tazkirul-quran": [
+   "4"
+  ],
+  "ar-kashaf": [
+   "1-4"
+  ],
+  "ar-tahrir-wa-tanwir": [
+   "1",
+   "2",
+   "3",
+   "4"
+  ]
+ }
+}

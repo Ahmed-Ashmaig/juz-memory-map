@@ -1,0 +1,64 @@
+{
+ "n": 109,
+ "sub": "Named after al-kāfirūn, “the disbelievers”, addressed in ayah 1",
+ "theme": "A clear, final answer to offers of compromise in worship. The Prophet ﷺ declares that his worship and theirs will never be mixed: they have their religion, and he has his.",
+ "story": [
+  "Revealed in Makkah according to most, though one view says Madinah. Quraysh’s leaders had not yet given up hope of striking a deal with the Prophet ﷺ, and made offers at different times.",
+  "Reportedly al-Walīd ibn al-Mughīrah, al-ʿĀṣ ibn Wāʾil, Umayyah ibn Khalaf and others proposed: “You worship our gods for a year, and we will worship your God for a year.” Another offer was: “Just touch some of our idols and we will believe you.”",
+  "The Prophet ﷺ said he would wait for his Lord’s command, and this surah came. He recited it to them at the Kaʿbah, and they gave up hope of any compromise."
+ ],
+ "sections": [
+  {
+   "a": 1,
+   "b": 6,
+   "title": "No compromise in worship",
+   "meaning": "Say to the disbelievers: I do not worship what you worship, and you do not worship what I worship. I will never worship what you worship, and you will not worship what I worship. You have your religion, and I have mine.",
+   "points": [
+    ["1", "Say: O disbelievers"],
+    ["2–3", "I don’t worship what you worship; you don’t worship what I worship"],
+    ["4–5", "Nor will I ever; nor will you"],
+    ["6", "You have your religion, and I have mine"]
+   ],
+   "matters": "It draws a clear line in belief and worship. Peaceful dealings with others are allowed, but a deal that mixes Allah’s worship with other worship is not. The Prophet ﷺ taught it as a bedtime recitation that frees one from shirk.",
+   "story": "Quraysh’s leaders offered a deal: the Prophet ﷺ would worship their gods for a year and they would worship Allah for a year, or he would just touch their idols. This surah refused every such offer for good.",
+   "explained": [
+    "Qul: say it openly. The repetition is not empty. In one view, ayat 2–3 are about now and 4–5 about the future: no deal today, and none ever. In another, 2–3 deny sharing the same object of worship and 4–5 deny sharing the same way of worship.",
+    "Their worship, mixed with shirk, is not true worship of Allah, and the Prophet ﷺ worships only as Allah taught. The repetition also answers how often they repeated their offer. Lakum dīnukum wa-liya dīn: you have your religion and I have mine, and each will answer for his own deeds."
+   ],
+   "teaches": [
+    "Worship belongs to Allah alone, with no bargaining.",
+    "Be clear and firm about your beliefs.",
+    "Fair dealings with others are fine; mixing religions is not.",
+    "Recite this surah before sleeping, as the Prophet ﷺ taught."
+   ],
+   "hook": "Ayat 3 and 5 are word-for-word the same. Ayah 2 uses a verb, lā aʿbudu, while ayah 4 uses a noun and past tense: lā ana ʿābidun mā ʿabadtum."
+  }
+ ],
+ "groups": [
+  { "a": 1, "b": 1, "text": "The Prophet ﷺ is told to address the disbelievers openly." },
+  { "a": 2, "b": 3, "text": "I don’t worship what you worship, and you don’t worship what I worship." },
+  { "a": 4, "b": 5, "text": "I will never worship what you worship, and you will not worship what I worship." },
+  { "a": 6, "b": 6, "text": "You have your religion, and I have mine." }
+ ],
+ "ayat": {
+  "1": {
+   "explain": "Qul: say it publicly and firmly. Yā ayyuhā al-kāfirūn: addressed first to the Quraysh leaders who offered a deal, and through them to disbelief in every form.",
+   "why": "Quraysh’s leaders offered that the Prophet ﷺ worship their gods for a year and they would worship Allah for a year, or that he touch some of their idols. He waited for his Lord’s command, and this surah came."
+  },
+  "2": {
+   "explain": "Lā aʿbudu mā taʿbudūn: I do not worship the idols and false gods you worship, openly or inwardly. In one view, this is about the present."
+  },
+  "3": {
+   "explain": "Nor do you worship the One I worship: Allah alone. Worship mixed with shirk is not true worship of Him."
+  },
+  "4": {
+   "explain": "Nor will I ever worship what you worship. Either this looks to the future, or it rejects their way of worship, which they invented themselves."
+  },
+  "5": {
+   "explain": "Nor will you worship what I worship. Repeated to show this has become their fixed state; it addresses those Allah knew would never believe."
+  },
+  "6": {
+   "explain": "Lakum dīnukum wa-liya dīn: your religion is yours and mine is mine. It rejects any mixing of the two, and each will be judged by his own deeds."
+  }
+ }
+}

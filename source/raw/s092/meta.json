@@ -1,0 +1,74 @@
+{
+ "n": 92,
+ "name": "Al-Layl",
+ "ar": "الليل",
+ "place": "makkah",
+ "order": 9,
+ "ayat": 21,
+ "pages": [
+  595,
+  596
+ ],
+ "juz": [
+  30,
+  30
+ ],
+ "hizb": [
+  60,
+  60
+ ],
+ "bismillah": true,
+ "sajdah": [],
+ "rukus": [
+  [
+   1,
+   21
+  ]
+ ],
+ "prev": "91:15",
+ "next": "93:1",
+ "edges": {
+  "91:15": {
+   "page": 595,
+   "text": "وَلَا يَخَافُ عُقۡبَٰهَا",
+   "tr": "And He does not fear the consequence thereof."
+  },
+  "93:1": {
+   "page": 596,
+   "text": "وَٱلضُّحَىٰ",
+   "tr": "By the morning brightness"
+  }
+ },
+ "groupings": {
+  "en-ibn-kathir": [
+   "1-11",
+   "12-21"
+  ],
+  "en-maarif-ul-quran": [
+   "1-3",
+   "4-6",
+   "7-10",
+   "11-14",
+   "15-16",
+   "17-18",
+   "19-21"
+  ],
+  "en-tazkirul-quran": [
+   "3",
+   "16"
+  ],
+  "ar-kashaf": [
+   "1-4",
+   "5-7",
+   "8-11",
+   "12-13",
+   "14-21"
+  ],
+  "ar-tahrir-wa-tanwir": [
+   "1-4",
+   "5-11",
+   "12-13",
+   "14-21"
+  ]
+ }
+}

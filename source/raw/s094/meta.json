@@ -1,0 +1,68 @@
+{
+ "n": 94,
+ "name": "Ash-Sharh",
+ "ar": "الشرح",
+ "place": "makkah",
+ "order": 12,
+ "ayat": 8,
+ "pages": [
+  596,
+  596
+ ],
+ "juz": [
+  30,
+  30
+ ],
+ "hizb": [
+  60,
+  60
+ ],
+ "bismillah": true,
+ "sajdah": [],
+ "rukus": [
+  [
+   1,
+   8
+  ]
+ ],
+ "prev": "93:11",
+ "next": "95:1",
+ "edges": {
+  "93:11": {
+   "page": 596,
+   "text": "وَأَمَّا بِنِعۡمَةِ رَبِّكَ فَحَدِّثۡ",
+   "tr": "But as for the favor of your Lord, report [it]."
+  },
+  "95:1": {
+   "page": 597,
+   "text": "وَٱلتِّينِ وَٱلزَّيۡتُونِ",
+   "tr": "By the fig and the olive"
+  }
+ },
+ "groupings": {
+  "en-ibn-kathir": [
+   "1-8"
+  ],
+  "en-maarif-ul-quran": [
+   "1",
+   "2-3",
+   "4",
+   "5-6",
+   "7-8"
+  ],
+  "en-tazkirul-quran": [
+   "8"
+  ],
+  "ar-kashaf": [
+   "1-4",
+   "5-6",
+   "7-8"
+  ],
+  "ar-tahrir-wa-tanwir": [
+   "1-4",
+   "5-6",
+   "7",
+   "8"
+  ]
+ }
+}

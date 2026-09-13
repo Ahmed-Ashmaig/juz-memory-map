@@ -1,0 +1,74 @@
+{
+ "n": 90,
+ "name": "Al-Balad",
+ "ar": "البلد",
+ "place": "makkah",
+ "order": 35,
+ "ayat": 20,
+ "pages": [
+  594,
+  594
+ ],
+ "juz": [
+  30,
+  30
+ ],
+ "hizb": [
+  60,
+  60
+ ],
+ "bismillah": true,
+ "sajdah": [],
+ "rukus": [
+  [
+   1,
+   20
+  ]
+ ],
+ "prev": "89:30",
+ "next": "91:1",
+ "edges": {
+  "89:30": {
+   "page": 594,
+   "text": "وَٱدۡخُلِي جَنَّتِي",
+   "tr": "And enter My Paradise.\""
+  },
+  "91:1": {
+   "page": 595,
+   "text": "وَٱلشَّمۡسِ وَضُحَىٰهَا",
+   "tr": "By the sun and its brightness"
+  }
+ },
+ "groupings": {
+  "en-ibn-kathir": [
+   "1-10",
+   "11-20"
+  ],
+  "en-maarif-ul-quran": [
+   "1",
+   "2",
+   "3",
+   "4-7",
+   "8-10",
+   "11-16",
+   "17-20"
+  ],
+  "en-tazkirul-quran": [
+   "4",
+   "10"
+  ],
+  "ar-kashaf": [
+   "1-7",
+   "8-16",
+   "17-20"
+  ],
+  "ar-tahrir-wa-tanwir": [
+   "1-4",
+   "5",
+   "6-7",
+   "8-10",
+   "11-17",
+   "18-20"
+  ]
+ }
+}

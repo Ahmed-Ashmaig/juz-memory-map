@@ -1,0 +1,57 @@
+{
+ "n": 114,
+ "name": "An-Nas",
+ "ar": "الناس",
+ "place": "makkah",
+ "order": 21,
+ "ayat": 6,
+ "pages": [
+  604,
+  604
+ ],
+ "juz": [
+  30,
+  30
+ ],
+ "hizb": [
+  60,
+  60
+ ],
+ "bismillah": true,
+ "sajdah": [],
+ "rukus": [
+  [
+   1,
+   6
+  ]
+ ],
+ "prev": "113:5",
+ "next": null,
+ "edges": {
+  "113:5": {
+   "page": 604,
+   "text": "وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ",
+   "tr": "And from the evil of an envier when he envies.\""
+  }
+ },
+ "groupings": {
+  "en-ibn-kathir": [
+   "1-6"
+  ],
+  "en-maarif-ul-quran": [
+   "1-2",
+   "3",
+   "4-5",
+   "6"
+  ],
+  "en-tazkirul-quran": [
+   "6"
+  ],
+  "ar-kashaf": [
+   "1-6"
+  ],
+  "ar-tahrir-wa-tanwir": [
+   "1-6"
+  ]
+ }
+}

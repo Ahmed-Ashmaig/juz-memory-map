@@ -1,0 +1,94 @@
+{
+ "n": 79,
+ "name": "An-Nazi'at",
+ "ar": "النازعات",
+ "place": "makkah",
+ "order": 81,
+ "ayat": 46,
+ "pages": [
+  583,
+  584
+ ],
+ "juz": [
+  30,
+  30
+ ],
+ "hizb": [
+  59,
+  59
+ ],
+ "bismillah": true,
+ "sajdah": [],
+ "rukus": [
+  [
+   1,
+   26
+  ],
+  [
+   27,
+   46
+  ]
+ ],
+ "prev": "78:40",
+ "next": "80:1",
+ "edges": {
+  "78:40": {
+   "page": 583,
+   "text": "إِنَّآ أَنذَرۡنَٰكُمۡ عَذَابٗا قَرِيبٗا يَوۡمَ يَنظُرُ ٱلۡمَرۡءُ مَا قَدَّمَتۡ يَدَاهُ وَيَقُولُ ٱلۡكَافِرُ يَٰلَيۡتَنِي كُنتُ تُرَٰبَۢا",
+   "tr": "Indeed, We have warned you of an impending punishment on the Day when a man will observe what his hands have put forth and the disbeliever will say, \"Oh, I wish that I were dust!\""
+  },
+  "80:1": {
+   "page": 585,
+   "text": "عَبَسَ وَتَوَلَّىٰٓ",
+   "tr": "He [i.e., the Prophet (ﷺ) ] frowned and turned away"
+  }
+ },
+ "groupings": {
+  "en-ibn-kathir": [
+   "1-14",
+   "15-26",
+   "27-33",
+   "34-46"
+  ],
+  "en-maarif-ul-quran": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5-24",
+   "25-36",
+   "37-39",
+   "40-46"
+  ],
+  "en-tazkirul-quran": [
+   "14",
+   "26",
+   "33",
+   "46"
+  ],
+  "ar-kashaf": [
+   "1-14",
+   "15-26",
+   "27-33",
+   "34-36",
+   "37-39",
+   "40-41",
+   "42-46"
+  ],
+  "ar-tahrir-wa-tanwir": [
+   "1-9",
+   "10-11",
+   "12",
+   "13-14",
+   "15-19",
+   "20-24",
+   "25-26",
+   "27-29",
+   "30-32",
+   "33",
+   "34-41",
+   "42-45",
+   "46"
+  ]
+ }
+}

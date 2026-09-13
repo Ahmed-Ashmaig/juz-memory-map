@@ -1,0 +1,62 @@
+{
+ "n": 106,
+ "name": "Quraysh",
+ "ar": "قريش",
+ "place": "makkah",
+ "order": 29,
+ "ayat": 4,
+ "pages": [
+  602,
+  602
+ ],
+ "juz": [
+  30,
+  30
+ ],
+ "hizb": [
+  60,
+  60
+ ],
+ "bismillah": true,
+ "sajdah": [],
+ "rukus": [
+  [
+   1,
+   4
+  ]
+ ],
+ "prev": "105:5",
+ "next": "107:1",
+ "edges": {
+  "105:5": {
+   "page": 601,
+   "text": "فَجَعَلَهُمۡ كَعَصۡفٖ مَّأۡكُولِۭ",
+   "tr": "And He made them like eaten straw."
+  },
+  "107:1": {
+   "page": 602,
+   "text": "أَرَءَيۡتَ ٱلَّذِي يُكَذِّبُ بِٱلدِّينِ",
+   "tr": "Have you seen the one who denies the Recompense?"
+  }
+ },
+ "groupings": {
+  "en-ibn-kathir": [
+   "1-4"
+  ],
+  "en-maarif-ul-quran": [
+   "1",
+   "2",
+   "3",
+   "4"
+  ],
+  "en-tazkirul-quran": [
+   "4"
+  ],
+  "ar-kashaf": [
+   "1-4"
+  ],
+  "ar-tahrir-wa-tanwir": [
+   "1-4"
+  ]
+ }
+}
