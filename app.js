@@ -176,11 +176,10 @@ const Surah = (() => {
       page.className = "page"; page.id = "p" + pg.p;
       const byN = {};
       pg.lines.forEach(l => (byN[l.n] = l));
+      // surah title / basmala lines, placed at build time (a surah that starts at the top of a page
+      // has its title on the last line of the previous page)
       const special = {};
-      pg.headers.forEach(h => {
-        if (h.bism) { special[h.before - 2] = { k: "name", h }; special[h.before - 1] = { k: "bism" }; }
-        else special[h.before - 1] = { k: "name", h };
-      });
+      (pg.specials || []).forEach(x => (special[x.n] = { k: x.k, h: { ar: x.ar } }));
       for (let ln = 1; ln <= 15; ln++) {
         const row = document.createElement("div");
         row.className = "ln";
