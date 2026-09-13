@@ -1,4 +1,4 @@
-<title>Juz 25–30 Memory Map</title>
+<title>QuranFlow</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya:wght@700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Amiri+Quran&display=swap">
@@ -50,6 +50,9 @@ p{margin:0}
 .crumb b{color:var(--ink)}
 .navbtns{margin-inline-start:auto;display:flex;gap:.35rem}
 .navbtns a{font-size:.85rem;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:.25rem .7rem;color:var(--ink);white-space:nowrap}
+.navbtns{min-width:0;align-items:center}
+.navbtns a,.navbtns .here{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.navbtns .here{font-size:.88rem;font-weight:700;color:var(--ink);padding:.25rem .75rem;border-radius:999px;background:var(--sheet);border:1px solid var(--ink)}
 
 /* ---- home ---- */
 .homehead h1{margin:0;font:700 clamp(1.8rem,5vw,2.6rem)/1.05 var(--display);text-wrap:balance}
@@ -117,14 +120,14 @@ h1.stitle .ar{font:400 .95em/1.2 var(--q);color:var(--green)}
 .featmenu b{font-weight:700}
 .featmenu span{font-size:.84rem;color:var(--muted)}
 .hint{font-size:.9rem;color:var(--muted)}
-.strip{direction:rtl;display:grid;gap:4px}
-.blk{border:0;border-radius:6px;padding:.5rem .5rem .45rem;cursor:pointer;text-align:center;display:grid;gap:.15rem;align-content:start;min-width:0;border-bottom:4px solid transparent;transition:transform .12s}
-.blk b{font-size:1.15rem;line-height:1.1}
-.blk em{font-style:normal;font-size:.82rem;line-height:1.25;direction:ltr;overflow:hidden;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical}
-.strip{overflow-x:auto}
-.blk span{font-size:.74rem;color:var(--muted);direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+/* section list: every section down the side, top to bottom; the ones on the page in view stand out */
+.strip{display:grid;align-content:start;gap:4px;max-height:15rem;overflow-y:auto;padding:3px;scroll-snap-type:y proximity;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+.blk{border:0;border-radius:6px;padding:.45rem .6rem;cursor:pointer;text-align:start;display:grid;grid-template-columns:1.8rem minmax(0,1fr);column-gap:.5rem;row-gap:.1rem;align-items:center;min-width:0;border-inline-start:5px solid transparent;transition:opacity .15s;scroll-snap-align:start}
+.blk b{grid-row:1 / span 3;font-size:1.15rem;line-height:1;text-align:center}
+.blk em{font-style:normal;font-size:.86rem;line-height:1.25;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.blk span{font-size:.72rem;color:var(--muted);white-space:nowrap}
 .blk .weak{font-style:normal;font-size:.7rem;font-weight:700;color:var(--red)}
-.blk:hover{transform:translateY(-1px)}
+.blk:hover{filter:brightness(.96)}
 .blk.right{outline:3px solid var(--green)} .blk.wrong{outline:3px solid var(--red)}
 .b1{background:var(--s1)} .b2{background:var(--s2)} .b3{background:var(--s3)} .b4{background:var(--s4)}
 .b5{background:var(--s5)} .b6{background:var(--s6)} .b7{background:var(--s7)} .b8{background:var(--s8)}
@@ -135,9 +138,25 @@ h1.stitle .ar{font:400 .95em/1.2 var(--q);color:var(--green)}
 
 /* ---- muṣḥaf pages ---- */
 .stage{display:grid;gap:1.2rem;align-items:start;grid-template-columns:minmax(0,1fr)}
-@media (min-width:1100px){.stage{grid-template-columns:minmax(0,1fr) 25rem}.pages{grid-column:1;grid-row:1}.panel{grid-column:2;grid-row:1 / span 2;align-self:start}.deep{grid-column:1;grid-row:2}}
-.pages{direction:rtl;display:grid;grid-auto-flow:column;grid-auto-columns:minmax(18rem,1fr);gap:.8rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.4rem;-webkit-overflow-scrolling:touch}
-.page{direction:rtl;background:var(--sheet);border:1px solid var(--line);padding:.9rem .9rem .5rem;container-type:inline-size;scroll-snap-align:start}
+@media (min-width:1100px){
+  .stage{grid-template-columns:15rem minmax(0,1fr) 25rem}
+  .strip{grid-column:1;grid-row:1 / span 2;align-self:start;position:sticky;top:3.6rem;max-height:calc(100vh - 10rem)}
+  .pagewrap{grid-column:2;grid-row:1}
+  .panel{grid-column:3;grid-row:1 / span 2;align-self:start}
+  .deep{grid-column:1 / 3;grid-row:2}
+  .stage.sim .pagewrap{grid-column:1 / 3}
+}
+/* wide screens show two pages side by side, so a section that runs over a page break is all in view */
+@media (min-width:1300px){.pagewrap .pages{grid-auto-columns:calc(50% - .4rem)}.pagewrap .page{scroll-snap-align:start}}
+.pagewrap{display:grid;gap:.45rem;min-width:0}
+.pagebar{display:grid;gap:.3rem}
+.pips{direction:rtl;display:flex;gap:4px}
+.pips button{flex:1;height:10px;border:0;border-radius:5px;background:var(--line);cursor:pointer;padding:0;min-width:0}
+.pips button.on{background:var(--green)}
+.pips button:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+.pagetxt{font-size:.8rem;color:var(--muted);text-align:center}
+.pages{direction:rtl;display:grid;grid-auto-flow:column;grid-auto-columns:100%;gap:.8rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.4rem;-webkit-overflow-scrolling:touch}
+.page{direction:rtl;background:var(--sheet);border:1px solid var(--line);padding:.9rem .9rem .5rem;container-type:inline-size;scroll-snap-align:center;justify-self:center;width:100%;max-width:30rem}
 .ln{display:flex;justify-content:space-between;align-items:center;white-space:nowrap;font:400 4.3cqi/2.15 var(--q);min-height:9.3cqi}
 .ln.center{justify-content:center}
 .w{padding-inline:.08em;border-radius:3px;cursor:pointer;transition:opacity .2s, background-color .2s, color .2s}
@@ -182,8 +201,95 @@ h1.stitle .ar{font:400 .95em/1.2 var(--q);color:var(--green)}
 .btn.ghost{background:none;color:var(--ink);border-color:var(--line)}
 .btn.stuckbtn{background:var(--red);border-color:var(--red);color:var(--sheet)}
 .btn:disabled{opacity:.4;cursor:default}
-.navrow{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:.5rem;position:sticky;top:-1.1rem;z-index:2;background:var(--sheet);margin:-1.1rem -1.15rem 0;padding:1.1rem 1.15rem .6rem;border-bottom:1px solid var(--line)}
-.navrow .btn{min-width:6.6rem}
+/* Learn: previous / next ayah pinned to the bottom of the screen, whatever the scroll position */
+.anav{position:fixed;z-index:7;left:50%;transform:translateX(-50%);bottom:calc(12px + env(safe-area-inset-bottom));width:min(40rem,calc(100% - 24px));display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:.5rem;padding:.5rem;background:var(--sheet);border:1px solid var(--line);border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.16)}
+.anav .btn{white-space:nowrap}
+.anav-mid{display:grid;justify-items:center;gap:.2rem;min-width:0}
+.anav-where{all:unset;cursor:pointer;font-size:.98rem;font-variant-numeric:tabular-nums;padding:0 .4rem;border-radius:6px;white-space:nowrap}
+.anav-where:hover{background:var(--paper)}
+.anav-mark{all:unset;cursor:pointer;font-size:.76rem;font-weight:700;color:var(--red);border:1px solid var(--red);border-radius:999px;padding:.1rem .55rem;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis}
+.anav-mark.on{background:var(--red);color:var(--sheet)}
+.anav-view{all:unset;cursor:pointer;grid-column:1 / -1;justify-self:center;font-size:.78rem;font-weight:700;color:var(--red);padding:.1rem .6rem;border-radius:999px;text-decoration:underline;text-underline-offset:.2em}
+.anav-view:hover{background:var(--redsoft)}
+.anav-view:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+.btn.okbtn{background:var(--green);border-color:var(--green);color:var(--sheet)}
+.anav .btn.stuckbtn,.anav .btn.okbtn{font-weight:700}
+.anav-where:focus-visible,.anav-mark:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+/* Learn panel tabs: the ayah, its section, or the sections around it */
+.ltabs{display:flex;gap:3px;padding:3px;border:1px solid var(--line);border-radius:999px;background:var(--paper)}
+.ltabs button{flex:1;min-width:0;border:0;background:none;border-radius:999px;padding:.45rem .5rem;cursor:pointer;font-weight:700;font-size:.9rem;color:var(--muted);white-space:nowrap}
+.ltabs button[aria-selected="true"]{background:var(--ink);color:var(--paper)}
+.ltabs button i{font-style:normal;display:inline-block;min-width:1.3em;padding-inline:.3em;margin-inline-start:.2em;border-radius:999px;background:var(--red);color:var(--sheet);font-size:.75rem;line-height:1.5;text-align:center}
+.lbody{display:grid;gap:.9rem}
+/* Ayah tab: the ayah before and after are buttons that step, like the bar */
+.ctxbtn{all:unset;box-sizing:border-box;display:block;cursor:pointer;border-radius:8px}
+.ctxbtn:hover .ctx.dim,.ctxbtn:focus-visible .ctx.dim{opacity:1;box-shadow:inset 0 0 0 1px var(--gold)}
+.ctxbtn:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+/* Section tab: the full section card sits between its neighbours */
+.strio .here.secmain{gap:.8rem;padding:.8rem .9rem}
+.secmain .ptitle{margin-top:-.2rem}
+.folds.one{border-bottom:0}
+.folds.one .fold{border-top:0}
+.folds.one .fold>summary{font:700 .92rem/1.3 var(--ui);padding:.3rem .3rem;color:var(--green)}
+.folds.one .fold>summary::before{color:var(--green)}
+.kp{display:grid;gap:.2rem}
+.kp details.grpd:first-of-type{border-top:0}
+/* Weak spots tab */
+.wlist{display:grid;gap:.4rem}
+.wrow{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:auto minmax(0,1fr);gap:.1rem .6rem;padding:.55rem .7rem;border:1px solid var(--line);border-inline-start:4px solid var(--red);border-radius:8px;background:var(--paper)}
+.wrow:hover,.wrow:focus-visible{border-color:var(--red)}
+.wrow .wn{font-weight:700}
+.wrow .wc{font-size:.8rem;color:var(--muted);align-self:center}
+.wrow .mid-ar,.wrow .tr{grid-column:1 / -1}
+.wrow .tr{font-size:.86rem}
+.note{border-inline-start:3px solid var(--green);background:var(--paper);padding:.5rem .8rem;border-radius:0 6px 6px 0;font-weight:700;color:var(--green)}
+.streak{font-size:.95rem;color:var(--muted)}
+.streak b{color:var(--ink);font-size:1.1rem}
+.ctx.veiled .veilbox{letter-spacing:.1em;color:var(--line)}
+.aid{background:var(--paper);border-radius:8px;padding:.8rem .95rem;display:grid;gap:.55rem}
+.aid h3{margin:0;font:700 1.05rem/1.3 var(--display);color:var(--gold)}
+.aid dl{margin:0;display:grid;gap:.5rem}
+.aid dt{font:700 .72rem/1.2 var(--ui);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.aid dd{margin:0;line-height:1.55}
+/* a weak ayah hidden on the page while it is being recited */
+.w.veil{color:transparent!important;background:var(--hide)!important;box-shadow:none!important;text-decoration:none!important}
+.w.veil .e{border-color:transparent;color:transparent}
+.brandlbl{color:var(--green)}
+/* opening, once per launch: a closed muṣḥaf settles in, its cover swings open, and the page reveals the
+   basmala in Arabic, then in English, then the name. A tap skips it. */
+.splash{position:fixed;inset:0;z-index:50;display:grid;place-items:center;background:var(--paper);animation:splashOut .6s ease 3.1s forwards;cursor:pointer}
+.splash .book{position:relative;width:min(72vw,300px);aspect-ratio:4 / 5;perspective:1400px;animation:bookIn .6s cubic-bezier(.2,.7,.2,1) both;filter:drop-shadow(0 18px 24px rgba(0,0,0,.18))}
+.splash .leafp{position:absolute;inset:0;background:var(--sheet);border:1px solid var(--line);border-radius:4px 12px 12px 4px;display:grid;place-content:center;justify-items:center;gap:.55rem;text-align:center;padding:1.2rem 1.1rem;box-shadow:inset 10px 0 16px -12px rgba(0,0,0,.3)}
+.splash .bism{font:400 clamp(1.25rem,5.4vw,1.7rem)/1.9 var(--q);color:var(--ink);direction:rtl;opacity:0;animation:fadeUp .8s ease 1.15s forwards}
+.splash .bism-en{font:italic 400 .9rem/1.4 var(--ui);color:var(--muted);max-width:22ch;opacity:0;animation:fadeUp .7s ease 1.65s forwards}
+.splash .rule{width:2.4rem;height:2px;background:var(--gold);border-radius:1px;opacity:0;animation:fadeUp .5s ease 2.05s forwards}
+.splash .leafp b{font:700 clamp(1.2rem,5vw,1.5rem)/1.1 var(--display);color:var(--green);letter-spacing:.01em;opacity:0;animation:fadeUp .6s ease 2.2s forwards}
+.splash .cover{position:absolute;inset:0;background:linear-gradient(135deg,color-mix(in srgb,var(--green) 88%,white) 0%,var(--green) 55%,color-mix(in srgb,var(--green) 80%,black) 100%);border:2px solid var(--gold);border-radius:4px 12px 12px 4px;transform-origin:left center;display:grid;place-content:center;justify-items:center;gap:.6rem;color:var(--gold);box-shadow:4px 6px 18px rgba(0,0,0,.25);animation:coverOpen 1.3s cubic-bezier(.55,0,.2,1) .55s forwards}
+.splash .cover::before{content:"";position:absolute;inset:.7rem;border:1px solid color-mix(in srgb,var(--gold) 70%,transparent);border-radius:3px 9px 9px 3px}
+.splash .cover .mark{font:400 3.2rem/1 var(--q)}
+.splash .cover .cname{font:700 1.05rem/1 var(--display);letter-spacing:.06em;text-transform:uppercase}
+@keyframes bookIn{from{opacity:0;transform:translateY(18px) scale(.94)}to{opacity:1;transform:none}}
+@keyframes coverOpen{to{transform:rotateY(-165deg)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@keyframes splashOut{to{opacity:0;visibility:hidden}}
+/* opening a surah: a few pages flip over while it loads */
+.flip{position:fixed;inset:0;z-index:40;display:grid;place-items:center;background:color-mix(in srgb,var(--paper) 82%,transparent);pointer-events:none}
+.flip .stack{position:relative;width:min(38vw,150px);aspect-ratio:3 / 4;perspective:1000px}
+.flip .leaf{position:absolute;inset:0;background:var(--sheet);border:1px solid var(--line);border-radius:3px 8px 8px 3px;transform-origin:left center;box-shadow:2px 3px 10px rgba(0,0,0,.15);animation:leafFlip .65s ease-in-out forwards}
+.flip .leaf:nth-child(2){animation-delay:.14s}
+.flip .leaf:nth-child(3){animation-delay:.28s}
+@keyframes leafFlip{to{transform:rotateY(-180deg)}}
+@media (prefers-reduced-motion:reduce){.splash,.flip{display:none!important}}
+/* home: weak spots across surahs */
+.wsum{display:grid;gap:.45rem;margin-top:.6rem;padding-top:.6rem;border-top:1px solid var(--line)}
+.wsumrows{display:flex;flex-wrap:wrap;gap:.35rem}
+.wsumrows a{display:inline-flex;gap:.45rem;align-items:center;text-decoration:none;color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:.2rem .7rem;font-size:.88rem}
+.wsumrows a:hover{border-color:var(--red)}
+.wsumrows a b{color:var(--red)}
+@media (min-width:1100px){.ltabs{position:sticky;top:0;z-index:2;box-shadow:0 0 0 .55rem var(--sheet)}}
+.surah-nav{padding-bottom:6rem}
+@media (min-width:1100px){.surah-nav .panel{max-height:calc(100vh - 10rem)}}
+#panel{scroll-margin-top:7rem}
 .ayat{display:grid;gap:.2rem;border-top:1px solid var(--line);padding-top:.5rem}
 .ay{all:unset;box-sizing:border-box;display:grid;gap:.05rem;padding:.35rem .4rem;border-radius:6px;cursor:pointer}
 .ay:hover{background:var(--paper)}
@@ -195,8 +301,7 @@ h1.stitle .ar{font:400 .95em/1.2 var(--q);color:var(--green)}
 .ctx.cur{border:1px solid var(--gold)}
 .ctx.cur.is-stuck{border-color:var(--red)}
 /* ayah view: before / this / after stacked, with the eye drawn to the current ayah */
-.navrow #b-back{justify-self:center;white-space:normal;line-height:1.2;min-width:0}
-@media (max-width:700px){.navrow .btn{min-width:0;padding-inline:.6rem;font-size:.9rem}}
+@media (max-width:700px){.anav .btn{padding-inline:.6rem;font-size:.9rem}}
 .trio{display:grid;gap:.4rem}
 .trio .ctx.dim{opacity:.55;padding:.35rem .6rem}
 .trio .ctx.dim .mid-ar{font-size:1.02rem;line-height:1.8}
@@ -248,6 +353,8 @@ details.grpd>summary::-webkit-details-marker{display:none}
 details.grpd>summary:hover{background:var(--paper)}
 details.grpd>summary b{font-variant-numeric:tabular-nums;color:var(--muted);font-weight:500;white-space:nowrap}
 details.grpd>summary p{line-height:1.6;max-width:68ch}
+.grpd.plainpt{display:grid;grid-template-columns:3.8rem minmax(0,1fr);gap:.2rem .8rem;padding-block:.65rem}
+.grpd.plainpt b{font-variant-numeric:tabular-nums;color:var(--muted);font-weight:500;white-space:nowrap}
 .more{grid-column:2;font-size:.86rem;font-weight:700;color:var(--green)}
 .more::before{content:"▸ Open each ayah"}
 details[open]>summary .more::before{content:"▾ Close"}
@@ -262,25 +369,37 @@ details[open]>summary .more::before{content:"▾ Close"}
 .whyr p{font-size:.95rem}
 
 /* ---- phone ---- */
-.dock{position:fixed;left:0;right:0;bottom:0;z-index:7;display:flex;align-items:center;gap:.5rem;padding:.6rem 16px calc(.6rem + env(safe-area-inset-bottom));background:var(--sheet);border-top:1px solid var(--line);box-shadow:0 -6px 18px rgba(0,0,0,.08)}
-.dock .big{margin-inline-start:auto;font-size:1.2rem}
-@media (min-width:1100px){.dock{display:none!important}}
-@media (max-width:1099px){.surah-test{padding-bottom:5.5rem}}
+/* Test me: one set of controls, in a bar pinned to the bottom like Learn's */
+.dock{position:fixed;z-index:7;left:50%;transform:translateX(-50%);bottom:calc(12px + env(safe-area-inset-bottom));width:min(40rem,calc(100% - 24px));display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;padding:.5rem;background:var(--sheet);border:1px solid var(--line);border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.16)}
+.dock .big{margin-inline-start:auto;font-size:1.2rem;padding-inline:.4rem}
+.surah-test{padding-bottom:7rem}
+@media (min-width:1100px){.surah-test .panel{max-height:calc(100vh - 11rem)}}
 @media (max-width:700px){
   .card{padding:.85rem .9rem}
   .bar{flex-direction:column;align-items:stretch}
   .topbar{flex-wrap:wrap;row-gap:.45rem}
-  .feat{order:9;flex-basis:100%;margin-inline-start:0}
-  .feat:not([hidden]) + .navbtns{margin-inline-start:auto}
-  .featbtn{width:100%;justify-content:space-between}
-  .featmenu{inset-inline:0;min-width:0}
+  .crumb{display:none}
+  .feat{margin-inline-start:auto}
+  .featmenu{min-width:min(18rem,calc(100vw - 32px))}
+  .navbtns{order:9;flex-basis:100%;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:.3rem}
+  .feat:not([hidden]) + .navbtns{margin-inline-start:0}
+  .navbtns a{text-align:center}
   .hint{text-align:center}
-  .strip{grid-template-columns:none!important;grid-auto-flow:column;grid-auto-columns:minmax(11rem,1fr);overflow-x:auto;scroll-snap-type:x proximity;padding-bottom:.4rem;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
-  .blk{padding:.55rem .6rem .5rem;scroll-snap-align:start}
-  .blk em{-webkit-line-clamp:4;font-size:.86rem}
+  .strip{max-height:11.5rem}
+}
+/* phones: the surah screen snaps in three screens — the intro, the sections with the page, then the tabs */
+.scrollhint{display:none}
+@media (max-width:1099px){
+  html{scroll-snap-type:y proximity;scroll-padding-top:var(--topbar,5.6rem)}
+  .intro{scroll-snap-align:start}
+  .scrollhint{display:block;padding-top:.4rem;text-align:center;font-size:.85rem;color:var(--muted)}
+  #sBar{scroll-snap-align:start}
+  .panel{scroll-snap-align:start}
+  /* Section tab: before, this and after all fit one screen — neighbours compact, this section scrolls inside its card */
+  .strio .nbc .mid-ar,.strio .nbc .t ~ .d{display:none}
+  .strio .here.secmain{max-height:calc(100vh - 29rem);max-height:calc(100dvh - 29rem);min-height:11rem;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
   .deep{padding:1rem}
   .ayds{margin-inline-start:0}
-  .pages{grid-auto-columns:92%}
   .points li{grid-template-columns:3rem 1fr}
   .neigh{font-size:.8rem}
   .navbtns a{padding:.25rem .55rem}
@@ -301,8 +420,23 @@ details[open]>summary .more::before{content:"▾ Close"}
 .replink{all:unset;cursor:pointer;color:var(--rep);font-weight:700;text-decoration:underline;padding-inline:.12rem}
 .replink:focus-visible{outline:2px solid var(--rep);outline-offset:1px}
 .reppill{justify-self:start;font-size:.75rem;font-weight:700;color:var(--rep)}
-.btn.readbtn{padding:.4rem .8rem;font-size:.9rem}
-.btn.readbtn[aria-pressed="true"]{border-color:var(--green);color:var(--green);font-weight:700}
+/* Learn: words outside the current ayah's group are plain, so the group and the ayah stand out */
+.w.s.plain{background:transparent}
+/* Before & after tab: the sections either side are tinted lighter than the one you're on */
+.w.s1.near{background:color-mix(in srgb,var(--s1) 40%,transparent)} .w.s2.near{background:color-mix(in srgb,var(--s2) 40%,transparent)}
+.w.s3.near{background:color-mix(in srgb,var(--s3) 40%,transparent)} .w.s4.near{background:color-mix(in srgb,var(--s4) 40%,transparent)}
+.w.s5.near{background:color-mix(in srgb,var(--s5) 40%,transparent)} .w.s6.near{background:color-mix(in srgb,var(--s6) 40%,transparent)}
+.w.s7.near{background:color-mix(in srgb,var(--s7) 40%,transparent)} .w.s8.near{background:color-mix(in srgb,var(--s8) 40%,transparent)}
+/* Ayah tab: the ayah you're on keeps its section's full colour with a thick underline in the section's strong colour */
+.w.s1.curayah{box-shadow:inset 0 -.26em 0 var(--s1e)} .w.s2.curayah{box-shadow:inset 0 -.26em 0 var(--s2e)}
+.w.s3.curayah{box-shadow:inset 0 -.26em 0 var(--s3e)} .w.s4.curayah{box-shadow:inset 0 -.26em 0 var(--s4e)}
+.w.s5.curayah{box-shadow:inset 0 -.26em 0 var(--s5e)} .w.s6.curayah{box-shadow:inset 0 -.26em 0 var(--s6e)}
+.w.s7.curayah{box-shadow:inset 0 -.26em 0 var(--s7e)} .w.s8.curayah{box-shadow:inset 0 -.26em 0 var(--s8e)}
+.w.curayah{color:var(--ink)}
+.w.curayah .e{border-color:var(--ink);color:var(--ink)}
+/* section strip in Learn: what you're on stands out, the rest fades */
+.blk.faded{opacity:.4}
+.blk[aria-pressed="true"]{box-shadow:0 0 0 2px var(--ink)}
 .btn.clearbtn{background:none;border-color:var(--red);color:var(--red);padding:.4rem .8rem;font-size:.9rem}
 .btn.clearbtn.armed{background:var(--red);color:var(--sheet)}
 /* ---- similars tab ---- */
@@ -334,6 +468,19 @@ mark.simdiff{background:var(--repsoft);color:var(--rep);border-radius:3px;paddin
 .strio .here .d{font-size:.88rem;color:var(--muted)}
 </style>
 
+<div class="splash" id="splash" role="presentation">
+  <div class="book">
+    <div class="leafp">
+      <div class="bism" lang="ar" id="splashBism"></div>
+      <div class="bism-en">In the name of Allah, the Most Gracious, the Most Merciful</div>
+      <div class="rule"></div>
+      <b>QuranFlow</b>
+    </div>
+    <div class="cover"><span class="mark" lang="ar">۞</span><span class="cname">QuranFlow</span></div>
+  </div>
+</div>
+<script>try { if (sessionStorage.getItem("qf-splash")) document.getElementById("splash").hidden = true; } catch (e) {}</script>
+<div class="flip" id="flip" aria-hidden="true" hidden></div>
 <div class="app" id="app">
   <nav class="topbar" aria-label="App">
     <a class="homebtn here" id="homebtn" href="#"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1" y="1" width="6" height="6" rx="1.2"/><rect x="9" y="1" width="6" height="6" rx="1.2"/><rect x="1" y="9" width="6" height="6" rx="1.2"/><rect x="9" y="9" width="6" height="6" rx="1.2"/></svg>All surahs</a>
@@ -352,11 +499,10 @@ mark.simdiff{background:var(--repsoft);color:var(--rep);border-radius:3px;paddin
 
   <section id="home" hidden>
     <div class="card homehead">
+      <span class="lbl brandlbl">QuranFlow</span>
       <h1>All surahs</h1>
-      <p class="sub">Pick a surah. They run in muṣḥaf order, top to bottom. Red counts are your weak spots.</p>
-      <p class="src">Quran text and muṣḥaf layout: Quran Foundation (quran.com) · Translation: Sahih International · Explanations condensed from classical tafsir</p>
       <div id="resume"></div>
-      <div class="row" id="clearAllWrap"></div>
+      <div id="weakSummary"></div>
     </div>
     <div id="juzList" style="display:grid;gap:3rem"></div>
   </section>
@@ -381,20 +527,31 @@ mark.simdiff{background:var(--repsoft);color:var(--rep);border-radius:3px;paddin
             </div>
           </details>
         </div>
+        <div class="scrollhint" aria-hidden="true">Scroll down for the sections and the page ↓</div>
       </div>
       <div class="bar" id="sBar">
         <div class="hint" id="hint"></div>
-        <button type="button" class="btn ghost readbtn" id="readAll" aria-pressed="false" hidden></button>
-        <button type="button" class="btn clearbtn" id="clearWeak" hidden></button>
       </div>
-      <div class="strip" id="strip" role="group" aria-label="Sections"></div>
       <div class="stage" id="stage">
-        <div class="pages" id="pages"></div>
+        <div class="strip" id="strip" role="group" aria-label="Sections"></div>
+        <div class="pagewrap">
+          <div class="pages" id="pages"></div>
+          <div class="pagebar"><div class="pips" id="pagepips" role="group" aria-label="Pages"></div><div class="pagetxt" id="pagetxt"></div></div>
+        </div>
         <aside class="panel" id="panel" aria-live="polite"></aside>
         <section class="deep" id="deep" aria-label="Go deeper"></section>
       </div>
     </div>
     <div class="dock" id="dock" hidden></div>
+    <nav class="anav" id="anav" aria-label="Step through ayat" hidden>
+      <button type="button" class="anav-view" id="a-view" hidden></button>
+      <button type="button" class="btn ghost" id="a-prev">‹ Previous ayah</button>
+      <div class="anav-mid">
+        <button type="button" class="anav-where" id="a-where" aria-label="Show the current ayah"><b id="a-num"></b></button>
+        <button type="button" class="anav-mark" id="a-mark">Mark weak spot</button>
+      </div>
+      <button type="button" class="btn" id="a-next">Next ayah ›</button>
+    </nav>
   </section>
 </div>
 

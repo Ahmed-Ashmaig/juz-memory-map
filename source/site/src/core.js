@@ -1,11 +1,30 @@
 "use strict";
-/* Juz 28–30 Memory Map — app shell: routing, home screen, weak-spot store, surah loading. */
+/* QuranFlow — app shell: routing, home screen, weak-spot store, surah loading. */
 const IDX = window.JUZAPP_INDEX;
 const $ = id => document.getElementById(id);
 const esc = t => String(t ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const toAr = n => String(n).replace(/\d/g, d => "٠١٢٣٤٥٦٧٨٩"[d]);
 const pad = n => String(n).padStart(3, "0");
 const nameOf = n => (IDX.surahs[n]?.name || `Surah ${n}`).replace(/'/g, "ʿ");
+const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+// Pages flipping over while a surah opens from the list (kept on screen long enough to finish).
+const flip = {
+  t: 0,
+  show() {
+    if (reduceMotion) return;
+    const el = $("flip");
+    el.innerHTML = '<div class="stack"><div class="leaf"></div><div class="leaf"></div><div class="leaf"></div></div>';
+    el.hidden = false; this.t = Date.now();
+  },
+  hide() {
+    const el = $("flip");
+    if (el.hidden) return;
+    setTimeout(() => (el.hidden = true), Math.max(0, 800 - (Date.now() - this.t)));
+  },
+};
+// The top bar is sticky and changes height between screens; scroll snapping and anchors offset by it.
+const setTopbar = () => document.documentElement.style.setProperty("--topbar", document.querySelector(".topbar").offsetHeight + "px");
+window.addEventListener("resize", setTopbar);
 const store = {
   get(k, d) { try { const v = localStorage.getItem(k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } },
   set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* storage unavailable */ } },
@@ -111,9 +130,11 @@ function showHome() {
   const last = store.get("juzapp-last", null);
   $("resume").innerHTML = last && IDX.ready.includes(last)
     ? `<div class="row" style="margin-top:.4rem"><a class="btn" href="#${last}">Continue with ${esc(nameOf(last))}</a></div>` : "";
-  const allWeak = Object.keys(Weak.local).reduce((sum, k) => sum + Weak.total(k), 0);
-  $("clearAllWrap").innerHTML = allWeak ? `<button type="button" class="btn clearbtn" id="clearAll"></button>` : "";
-  if (allWeak) armClear($("clearAll"), `Clear all weak spots (${allWeak})`, () => Weak.clearAll());
+  // Weak spots across the app, one link per surah into its Weak spots tab (clearing happens there, per surah).
+  const withWeak = Object.keys(Weak.local).map(Number).filter(k => IDX.surahs[k] && Weak.total(k)).sort((a, b) => a - b);
+  const allWeak = withWeak.reduce((sum, k) => sum + Weak.total(k), 0);
+  $("weakSummary").innerHTML = allWeak ? `<div class="wsum"><span class="lbl red">Your weak spots · ${allWeak} in ${withWeak.length} surah${withWeak.length > 1 ? "s" : ""}</span>
+    <div class="wsumrows">${withWeak.map(k => `<a href="#${k}/weak">${k}. ${esc(nameOf(k))}<b>${Weak.total(k)}</b></a>`).join("")}</div></div>` : "";
   // Every juz the app covers, in order. A surah that runs across two juz is listed under the first.
   const listed = new Set(), nums = Object.keys(IDX.juz).map(Number).sort((a, b) => a - b);
   const blocks = nums.map(j => {
@@ -141,8 +162,9 @@ function loadSurah(n) {
   return loading[n];
 }
 let routeToken = 0;
-async function openSurah(n) {
+async function openSurah(n, tab) {
   const token = ++routeToken;
+  if (!$("home").hidden && Surah.n !== n) flip.show();
   $("home").hidden = true; $("surah").hidden = false;
   $("homebtn").classList.remove("here"); $("homebtn").removeAttribute("aria-current");   // now a clear way back to every surah
   $("feat").hidden = false;
@@ -152,22 +174,28 @@ async function openSurah(n) {
   }
   let data;
   try { data = await loadSurah(n); }
-  catch (e) { if (token === routeToken) $("loading").textContent = "This surah couldn’t load. Check your connection, then reload the page."; return; }
+  catch (e) { if (token === routeToken) { $("loading").textContent = "This surah couldn’t load. Check your connection, then reload the page."; flip.hide(); } return; }
   if (token !== routeToken) return;
   store.set("juzapp-last", n);
   const s = IDX.surahs[n];
-  $("crumb").innerHTML = `<b>${n}. ${esc(nameOf(n))}</b> · Juz ${s.juz[0]}`;
-  const later = IDX.ready.includes(n + 1) ? `<a href="#${n + 1}" aria-label="Next surah">‹ ${n + 1}</a>` : "";
-  const earlier = IDX.ready.includes(n - 1) ? `<a href="#${n - 1}" aria-label="Previous surah">${n - 1} ›</a>` : "";
-  $("navbtns").innerHTML = later + earlier;
+  // Surah arrows with names, the open surah between them (next surah on the left, as in the muṣḥaf).
+  const empty = `<span class="nb-empty"></span>`;
+  const later = IDX.ready.includes(n + 1) ? `<a href="#${n + 1}" aria-label="Next surah: ${esc(nameOf(n + 1))}">‹ ${n + 1} ${esc(nameOf(n + 1))}</a>` : empty;
+  const earlier = IDX.ready.includes(n - 1) ? `<a href="#${n - 1}" aria-label="Previous surah: ${esc(nameOf(n - 1))}">${n - 1} ${esc(nameOf(n - 1))} ›</a>` : empty;
+  $("crumb").innerHTML = "";
+  $("navbtns").innerHTML = `${later}<span class="here" aria-current="page" title="Juz ${s.juz[0]}">${n} ${esc(nameOf(n))}</span>${earlier}`;
   if (Surah.n !== n) {
     try { Surah.mount(n, data); }
-    catch (e) { $("loading").textContent = "This surah couldn’t open. Please try another one."; console.error(e); return; }
+    catch (e) { $("loading").textContent = "This surah couldn’t open. Please try another one."; console.error(e); flip.hide(); return; }
   }
   $("loading").hidden = true; $("surahBody").hidden = false;
+  if (tab) Surah.setTab(tab);   // e.g. #70/weak opens straight into that surah's weak spots
+  setTopbar();
+  flip.hide();
 }
 function route() {
-  const m = location.hash.match(/^#(\d{1,3})$/);
+  const m = location.hash.match(/^#(\d{1,3})(?:\/(ayah|section|weak))?$/);
   const n = m ? Number(m[1]) : null;
-  if (n && IDX.ready.includes(n)) openSurah(n); else showHome();
+  if (n && IDX.ready.includes(n)) openSurah(n, m[2]); else showHome();
+  requestAnimationFrame(setTopbar);
 }

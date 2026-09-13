@@ -1,7 +1,7 @@
 {
- "name": "Juz 25–30 Memory Map",
- "short_name": "Juz 25–30",
- "description": "Memorize every surah in Juz 25 to 30: sections on the real muṣḥaf pages, meanings, deeper explanations, self-tests and weak spots.",
+ "name": "QuranFlow",
+ "short_name": "QuranFlow",
+ "description": "Memorize the Quran surah by surah: sections on the real muṣḥaf pages, meanings, deeper explanations, self-tests and weak-spot practice.",
  "start_url": "./",
  "scope": "./",
  "display": "standalone",

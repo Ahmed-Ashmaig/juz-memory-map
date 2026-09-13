@@ -1,11 +1,30 @@
 "use strict";
-/* Juz 28–30 Memory Map — app shell: routing, home screen, weak-spot store, surah loading. */
+/* QuranFlow — app shell: routing, home screen, weak-spot store, surah loading. */
 const IDX = window.JUZAPP_INDEX;
 const $ = id => document.getElementById(id);
 const esc = t => String(t ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const toAr = n => String(n).replace(/\d/g, d => "٠١٢٣٤٥٦٧٨٩"[d]);
 const pad = n => String(n).padStart(3, "0");
 const nameOf = n => (IDX.surahs[n]?.name || `Surah ${n}`).replace(/'/g, "ʿ");
+const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+// Pages flipping over while a surah opens from the list (kept on screen long enough to finish).
+const flip = {
+  t: 0,
+  show() {
+    if (reduceMotion) return;
+    const el = $("flip");
+    el.innerHTML = '<div class="stack"><div class="leaf"></div><div class="leaf"></div><div class="leaf"></div></div>';
+    el.hidden = false; this.t = Date.now();
+  },
+  hide() {
+    const el = $("flip");
+    if (el.hidden) return;
+    setTimeout(() => (el.hidden = true), Math.max(0, 800 - (Date.now() - this.t)));
+  },
+};
+// The top bar is sticky and changes height between screens; scroll snapping and anchors offset by it.
+const setTopbar = () => document.documentElement.style.setProperty("--topbar", document.querySelector(".topbar").offsetHeight + "px");
+window.addEventListener("resize", setTopbar);
 const store = {
   get(k, d) { try { const v = localStorage.getItem(k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } },
   set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* storage unavailable */ } },
@@ -111,9 +130,11 @@ function showHome() {
   const last = store.get("juzapp-last", null);
   $("resume").innerHTML = last && IDX.ready.includes(last)
     ? `<div class="row" style="margin-top:.4rem"><a class="btn" href="#${last}">Continue with ${esc(nameOf(last))}</a></div>` : "";
-  const allWeak = Object.keys(Weak.local).reduce((sum, k) => sum + Weak.total(k), 0);
-  $("clearAllWrap").innerHTML = allWeak ? `<button type="button" class="btn clearbtn" id="clearAll"></button>` : "";
-  if (allWeak) armClear($("clearAll"), `Clear all weak spots (${allWeak})`, () => Weak.clearAll());
+  // Weak spots across the app, one link per surah into its Weak spots tab (clearing happens there, per surah).
+  const withWeak = Object.keys(Weak.local).map(Number).filter(k => IDX.surahs[k] && Weak.total(k)).sort((a, b) => a - b);
+  const allWeak = withWeak.reduce((sum, k) => sum + Weak.total(k), 0);
+  $("weakSummary").innerHTML = allWeak ? `<div class="wsum"><span class="lbl red">Your weak spots · ${allWeak} in ${withWeak.length} surah${withWeak.length > 1 ? "s" : ""}</span>
+    <div class="wsumrows">${withWeak.map(k => `<a href="#${k}/weak">${k}. ${esc(nameOf(k))}<b>${Weak.total(k)}</b></a>`).join("")}</div></div>` : "";
   // Every juz the app covers, in order. A surah that runs across two juz is listed under the first.
   const listed = new Set(), nums = Object.keys(IDX.juz).map(Number).sort((a, b) => a - b);
   const blocks = nums.map(j => {
@@ -141,8 +162,9 @@ function loadSurah(n) {
   return loading[n];
 }
 let routeToken = 0;
-async function openSurah(n) {
+async function openSurah(n, tab) {
   const token = ++routeToken;
+  if (!$("home").hidden && Surah.n !== n) flip.show();
   $("home").hidden = true; $("surah").hidden = false;
   $("homebtn").classList.remove("here"); $("homebtn").removeAttribute("aria-current");   // now a clear way back to every surah
   $("feat").hidden = false;
@@ -152,47 +174,86 @@ async function openSurah(n) {
   }
   let data;
   try { data = await loadSurah(n); }
-  catch (e) { if (token === routeToken) $("loading").textContent = "This surah couldn’t load. Check your connection, then reload the page."; return; }
+  catch (e) { if (token === routeToken) { $("loading").textContent = "This surah couldn’t load. Check your connection, then reload the page."; flip.hide(); } return; }
   if (token !== routeToken) return;
   store.set("juzapp-last", n);
   const s = IDX.surahs[n];
-  $("crumb").innerHTML = `<b>${n}. ${esc(nameOf(n))}</b> · Juz ${s.juz[0]}`;
-  const later = IDX.ready.includes(n + 1) ? `<a href="#${n + 1}" aria-label="Next surah">‹ ${n + 1}</a>` : "";
-  const earlier = IDX.ready.includes(n - 1) ? `<a href="#${n - 1}" aria-label="Previous surah">${n - 1} ›</a>` : "";
-  $("navbtns").innerHTML = later + earlier;
+  // Surah arrows with names, the open surah between them (next surah on the left, as in the muṣḥaf).
+  const empty = `<span class="nb-empty"></span>`;
+  const later = IDX.ready.includes(n + 1) ? `<a href="#${n + 1}" aria-label="Next surah: ${esc(nameOf(n + 1))}">‹ ${n + 1} ${esc(nameOf(n + 1))}</a>` : empty;
+  const earlier = IDX.ready.includes(n - 1) ? `<a href="#${n - 1}" aria-label="Previous surah: ${esc(nameOf(n - 1))}">${n - 1} ${esc(nameOf(n - 1))} ›</a>` : empty;
+  $("crumb").innerHTML = "";
+  $("navbtns").innerHTML = `${later}<span class="here" aria-current="page" title="Juz ${s.juz[0]}">${n} ${esc(nameOf(n))}</span>${earlier}`;
   if (Surah.n !== n) {
     try { Surah.mount(n, data); }
-    catch (e) { $("loading").textContent = "This surah couldn’t open. Please try another one."; console.error(e); return; }
+    catch (e) { $("loading").textContent = "This surah couldn’t open. Please try another one."; console.error(e); flip.hide(); return; }
   }
   $("loading").hidden = true; $("surahBody").hidden = false;
+  if (tab) Surah.setTab(tab);   // e.g. #70/weak opens straight into that surah's weak spots
+  setTopbar();
+  flip.hide();
 }
 function route() {
-  const m = location.hash.match(/^#(\d{1,3})$/);
+  const m = location.hash.match(/^#(\d{1,3})(?:\/(ayah|section|weak))?$/);
   const n = m ? Number(m[1]) : null;
-  if (n && IDX.ready.includes(n)) openSurah(n); else showHome();
+  if (n && IDX.ready.includes(n)) openSurah(n, m[2]); else showHome();
+  requestAnimationFrame(setTopbar);
 }
 
-/* Surah view: muṣḥaf pages, section strip, Learn (one card per section) / Test me / Quiz / Similars. */
+/* Surah view: muṣḥaf pages, section list, Learn (Ayah / Section / Weak spots) / Test me / Quiz / Similars. */
 const Surah = (() => {
   let n = null, D = null, C = null, meta = null, N = 0, S = [], AY = {};
-  let mode = "learn", sel = 1, view = "section", cur = null, revealed = 0;
+  let mode = "learn", sel = 1, cur = 1, revealed = 0;   // Learn always sits on a current ayah
   let quizA = 0, lastQuiz = 0, answered = false, lastOk = false;
   let REP = {};   // ayah -> repeat group from data (ayat repeated within this surah)
-  let readAll = !!store.get("juzapp-readall", false);   // Learn: show every section in full colour
   let simSel = 0;       // Similars: selected group
   const score = [0, 0];
   const stuckThisPass = new Set();
   const openGroups = new Set();
   const openFolds = new Set(store.get("juzapp-folds", []));   // which folded rows of the section card stay open
+  const TABS = ["ayah", "section", "weak"];
+  let ltab = store.get("juzapp-ltab", "ayah");                // Learn panel tab: ayah | section | weak
+  if (!TABS.includes(ltab)) ltab = ltab === "around" ? "section" : "ayah";
+  // Weak-spot practice: the spot being drilled, the steps around it, and how many passes in a row (kept per ayah).
+  let drill = null, drillNote = "", allClear = false;
+  const streaks = store.get("juzapp-streak-v1", {});
+  const PASSES = 5;
+
   // The intro card's folded rows (why it was revealed, where it sits) remember their state the same way.
+  // "Where it sits" starts open (remembered as "!where" once someone closes it); the other rows start closed.
+  const openByDefault = id => id === "where";
   document.querySelectorAll("#sHead details.fold").forEach(d => {
-    d.open = openFolds.has(d.dataset.f);
+    const id = d.dataset.f;
+    d.open = openByDefault(id) ? !openFolds.has("!" + id) : openFolds.has(id);
     d.addEventListener("toggle", () => {
-      if (d.open) openFolds.add(d.dataset.f); else openFolds.delete(d.dataset.f);
+      if (openByDefault(id)) { if (d.open) openFolds.delete("!" + id); else openFolds.add("!" + id); }
+      else if (d.open) openFolds.add(id); else openFolds.delete(id);
       store.set("juzapp-folds", [...openFolds]);
-      if (d.open && d.dataset.f === "where") centerIn($("jline").parentElement, $("jline").querySelector(".me"));
+      if (d.open && id === "where") centerIn($("jline").parentElement, $("jline").querySelector(".me"));
     });
   });
+
+  /* ---------- the bar pinned to the bottom of the screen (Learn) ---------- */
+  // Ayah tab steps by ayah, Section tab by section, Weak spots tab through the practice steps. Past either end: next surah.
+  function stepLearn(dir) {
+    if (ltab === "weak") {
+      if (drill) { if (!drill.done) drillStep(dir); return; }
+      if (dir > 0 && weakList().length) return startDrill(weakList()[0]);
+      if (dir > 0 && allClear) { sel = 1; allClear = false; return setMode("test"); }   // every spot passed: recite it all
+    } else if (ltab === "ayah") {
+      if (cur + dir >= 1 && cur + dir <= N) return openAyah(cur + dir, true, "ayah");
+    } else if (sel + dir >= 1 && sel + dir <= S.length) return openAyah(S[sel + dir - 1].a, true, "section");
+    if (IDX.ready.includes(n + dir)) location.hash = "#" + (n + dir);
+  }
+  $("a-prev").onclick = () => (drill && drill.done ? drillAnswer(false) : stepLearn(-1));
+  $("a-next").onclick = () => (drill && drill.done ? drillAnswer(true) : stepLearn(1));
+  $("a-mark").onclick = () => (weak(cur) ? Weak.clear(n, cur) : Weak.mark(n, cur));
+  $("a-view").onclick = () => setTab("weak");
+  $("a-where").onclick = () => {
+    const P = $("panel");
+    if (P.scrollHeight > P.clientHeight) P.scrollTo({ top: 0, behavior: "smooth" });
+    else P.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   const range = (a, b) => Array.from({ length: Math.max(0, b - a + 1) }, (_, i) => a + i);
   const secOf = a => S.find(s => a >= s.a && a <= s.b);
@@ -205,23 +266,94 @@ const Surah = (() => {
   const prevKey = a => (a === 1 ? meta.prev : key(a - 1));
   const nextKey = a => (a === N ? meta.next : key(a + 1));
   const weak = a => Weak.count(n, a);
+  const weakList = () => range(1, N).filter(a => weak(a));
+  const streakOf = a => streaks[key(a)] || 0;
   const ayatLabel = (a, b) => (a === b ? `ayah ${a}` : `ayat ${a}–${b}`);
   const firstSentence = t => { const m = String(t || "").match(/^.*?[.!?](\s|$)/); return m ? m[0].trim() : String(t || ""); };
   const whyBox = x => (x && x.why ? `<div class="whyr"><b>Why it was revealed</b><p>${esc(x.why)}</p></div>` : "");
 
-  function centerIn(container, el) {
+  function centerIn(container, el, behavior = "smooth") {
     if (!container || !el || container.scrollWidth <= container.clientWidth + 4) return;
     const c = container.getBoundingClientRect(), r = el.getBoundingClientRect();
-    container.scrollBy({ left: r.left + r.width / 2 - (c.left + c.width / 2), behavior: "smooth" });
+    container.scrollBy({ left: r.left + r.width / 2 - (c.left + c.width / 2), behavior });
   }
-  // Scroll only when the target is mostly out of view, so stepping through ayat keeps the pages and strip still.
-  function showIn(container, el) {
+  // Scroll only when the target is mostly out of view, so stepping through ayat keeps the pages still.
+  function showIn(container, el, behavior) {
     if (!container || !el) return;
     const c = container.getBoundingClientRect(), r = el.getBoundingClientRect();
     const visible = Math.min(r.right, c.right) - Math.max(r.left, c.left);
-    if (visible < Math.min(r.width, c.width) * 0.9) centerIn(container, el);
+    if (visible < Math.min(r.width, c.width) * 0.9) centerIn(container, el, behavior);
+  }
+  // Same idea for the vertical section list.
+  function revealY(container, el) {
+    if (!container || !el || container.scrollHeight <= container.clientHeight + 4) return;
+    const c = container.getBoundingClientRect(), r = el.getBoundingClientRect();
+    if (r.top < c.top) container.scrollBy({ top: r.top - c.top - 4, behavior: "smooth" });
+    else if (r.bottom > c.bottom) container.scrollBy({ top: r.bottom - c.bottom + 4, behavior: "smooth" });
   }
   const scrollToPage = p => showIn($("pages"), $("p" + p));
+
+  /* ---------- pages ⇄ section list ⇄ page bar, kept in step ---------- */
+  let viewPage = 0, onPageSecs = new Set();
+  function pageInView() {
+    const box = $("pages").getBoundingClientRect(), mid = box.left + box.width / 2;
+    const el = [...$("pages").children].find(el => { const r = el.getBoundingClientRect(); return r.left <= mid && r.right >= mid; });
+    return el ? +el.id.slice(1) : viewPage;
+  }
+  // The section list keeps every section; the ones on the page in view stand out, and the list scrolls to them.
+  function syncStrip(force) {
+    if (!D) return;
+    const p = pageInView(), moved = p !== viewPage;
+    if (!force && !moved) return;
+    viewPage = p;
+    onPageSecs = new Set(S.filter(s => s.from[0] <= p && s.to[0] >= p).map(s => s.n));
+    paintStrip();
+    paintPagebar();
+    tintOnPage();
+    const strip = $("strip"), first = S.find(s => onPageSecs.has(s.n));
+    if (moved && first && strip.scrollHeight > strip.clientHeight + 4) {
+      // show the page's sections from the first one down, but never let the selected one slip out of view
+      const top = $("blk" + first.n).getBoundingClientRect().top - strip.getBoundingClientRect().top + strip.scrollTop - 4;
+      const selB = onPageSecs.has(sel) ? $("blk" + sel).getBoundingClientRect().bottom - strip.getBoundingClientRect().top + strip.scrollTop + 4 : 0;
+      strip.scrollTo({ top: Math.max(top, selB - strip.clientHeight), behavior: "smooth" });
+    }
+  }
+  // As the pages move, tint the words of the sections now in view (the solid selection is left alone).
+  function tintOnPage() {
+    if (mode !== "learn") return;
+    document.querySelectorAll("#pages .w.s:not(.lit)").forEach(w => {
+      const on = w.classList.contains("keep") || onPageSecs.has(secOf(+w.dataset.a).n);
+      w.classList.toggle("near", on);
+      w.classList.toggle("plain", !on);
+    });
+  }
+  // Learn: sections on the page in view and the one you're on stay bright; the rest fade.
+  function paintStrip() {
+    const learnTab = mode === "learn" ? ltab : null;
+    document.querySelectorAll("#strip .blk").forEach((b, i) => {
+      const k = i + 1;
+      b.setAttribute("aria-pressed", mode !== "quiz" && k === sel ? "true" : "false");
+      b.classList.toggle("faded", !!learnTab && k !== sel && !onPageSecs.has(k));
+      let c = 0;
+      for (let a = S[i].a; a <= S[i].b; a++) if (weak(a)) c++;
+      const w = b.querySelector(".weak");
+      w.hidden = !c; w.textContent = c ? `${c} weak` : "";
+    });
+  }
+  // A bar under the pages: one pip per page (right to left, like the pages), the one in view filled.
+  function paintPagebar() {
+    const pages = D.pages.map(pg => pg.p), i = pages.indexOf(viewPage);
+    $("pagepips").querySelectorAll("button").forEach(b => b.classList.toggle("on", +b.dataset.p === viewPage));
+    $("pagetxt").textContent = pages.length > 1
+      ? `Page ${viewPage} · ${i + 1} of ${pages.length} in this surah · swipe the page for the others`
+      : `Page ${viewPage} · the whole surah is on this page`;
+  }
+  let syncAt = 0, syncTimer = 0;
+  $("pages").addEventListener("scroll", () => {
+    clearTimeout(syncTimer);
+    if (Date.now() - syncAt > 120) { syncAt = Date.now(); syncStrip(); }
+    syncTimer = setTimeout(syncStrip, 120);   // and once more when the swipe settles
+  }, { passive: true });
 
   /* ---------- build once per surah ---------- */
   function buildPages() {
@@ -245,7 +377,8 @@ const Surah = (() => {
             if (s === n) {
               sp.className = `w s s${secOf(a).color}`;
               sp.dataset.a = a;
-              sp.addEventListener("click", () => { if (mode === "learn") openAyah(a, true); });
+              // a tap on the page follows the open tab: the Ayah tab jumps to that ayah, the Section tab to its section
+              sp.addEventListener("click", () => { if (mode === "learn") openAyah(a, true, ltab === "section" ? "section" : "ayah"); });
             } else sp.className = "w o";
             const rec = (AY[k] = AY[k] || { words: [], start: [pg.p, ln], els: [] });
             rec.end = [pg.p, ln];
@@ -274,6 +407,9 @@ const Surah = (() => {
       s.from = AY[key(s.a)].start; s.to = AY[key(s.b)].end;
       s.marker = text(key(s.a)).includes("۞");
     });
+    const pips = $("pagepips");
+    pips.innerHTML = D.pages.map(pg => `<button type="button" data-p="${pg.p}" aria-label="Page ${pg.p}" title="Page ${pg.p}"></button>`).join("");
+    pips.querySelectorAll("button").forEach(b => (b.onclick = () => centerIn($("pages"), $("p" + b.dataset.p))));
   }
 
   function buildHeader() {
@@ -307,7 +443,6 @@ const Surah = (() => {
   function buildStrip() {
     const strip = $("strip");
     strip.innerHTML = "";
-    strip.style.gridTemplateColumns = S.map(s => `minmax(7.5rem, ${s.words}fr)`).join(" ");
     S.forEach(s => {
       const b = document.createElement("button");
       b.type = "button"; b.className = `blk b${s.color}`; b.id = "blk" + s.n;
@@ -324,7 +459,10 @@ const Surah = (() => {
     REP = {};
     (data.repeats || []).forEach(g => g.ayat.forEach(a => (REP[a] = g)));
     AY = {};
-    mode = "learn"; sel = 1; view = "section"; cur = null; revealed = 0;
+    mode = "learn"; sel = 1; cur = 1; revealed = 0; viewPage = 0;
+    ltab = "ayah";   // every surah opens on the Ayah tab with its rows closed
+    drill = null; drillNote = ""; allClear = false;
+    $("surah").style.minHeight = "";
     quizA = 0; lastQuiz = 0; answered = false; score[0] = score[1] = 0;
     stuckThisPass.clear(); openGroups.clear();
     buildPages(); buildHeader(); buildStrip();
@@ -336,6 +474,7 @@ const Surah = (() => {
     requestAnimationFrame(() => {
       centerIn($("jline").parentElement, $("jline").querySelector(".me"));
       $("pages").scrollBy({ left: 0 });
+      syncStrip(true);
     });
   }
 
@@ -348,9 +487,28 @@ const Surah = (() => {
     const G = D.similars || [];
     const SIMK = new Set(mode === "sim" && G[simSel] ? G[simSel].members.filter(m => surahOfKey(m.k) === n).map(m => +m.k.split(":")[1]) : []);
     $("surah").classList.toggle("surah-test", mode === "test");
+    // What Learn lights up on the pages, solid: Ayah tab = the ayah (underlined too); Section tab = the whole
+    // section; Weak spots = the weak ayat, or the current step of a drill. Around that, the sections on the page
+    // in view show their colours lightly (matching the section list), so a swipe through the pages reads as a map.
+    const learnTab = mode === "learn" ? ltab : null, wk = new Set(learnTab === "weak" ? weakList() : []);
+    const steps = new Set(drill && learnTab === "weak" ? drill.steps : []);
+    const veilA = drill && learnTab === "weak" && !drill.done && drill.idx <= drill.steps.indexOf(drill.a) ? drill.a : 0;
     document.querySelectorAll("#pages .w.s").forEach(w => {
       const a = +w.dataset.a, inSel = a >= s.a && a <= s.b;
-      w.classList.toggle("dim", mode !== "quiz" && mode !== "sim" && !inSel && !(mode === "learn" && readAll));
+      let lit = inSel, isCur = false, keep = false;
+      if (learnTab === "ayah") { lit = a === cur; isCur = lit; }
+      else if (learnTab === "weak") {
+        if (drill) { lit = a === cur; isCur = lit; keep = steps.has(a) && !lit; }
+        else lit = wk.has(a);
+      }
+      const near = !!learnTab && !lit && (keep || onPageSecs.has(secOf(a).n));
+      w.classList.toggle("dim", mode === "test" && !inSel);
+      w.classList.toggle("lit", !!learnTab && lit);
+      w.classList.toggle("keep", keep);
+      w.classList.toggle("plain", !!learnTab && !lit && !near);
+      w.classList.toggle("near", near);
+      w.classList.toggle("curayah", isCur);
+      w.classList.toggle("veil", a === veilA);
       w.classList.toggle("sel", mode === "test" && inSel);
       w.classList.toggle("shown", mode === "test" && inSel && a < s.a + revealed);
       w.classList.toggle("stuck", weak(a) > 0);
@@ -358,27 +516,11 @@ const Surah = (() => {
       w.classList.toggle("simfocus", SIMK.has(a));
       w.classList.remove("focus");
     });
-    if (mode === "test") {
-      AY[key(s.a)].els[0].classList.add("shown");
-      if (revealed < s.b - s.a + 1) AY[key(s.a + revealed)].els[0].classList.add("shown");
-    }
-    const fk = mode === "learn" && view === "ayah" ? key(cur) : mode === "quiz" && answered ? key(quizA) : null;
+    // Test me: the next ayah's first word only shows after "I'm stuck"
+    if (mode === "test" && revealed < s.b - s.a + 1 && stuckThisPass.has(s.a + revealed)) AY[key(s.a + revealed)].els[0].classList.add("shown");
+    const fk = mode === "quiz" && answered ? key(quizA) : null;
     if (fk) AY[fk].els.forEach(w => w.classList.add("focus"));
-    document.querySelectorAll("#strip .blk").forEach((b, i) => {
-      b.setAttribute("aria-pressed", mode !== "quiz" && i + 1 === sel ? "true" : "false");
-      let c = 0;
-      for (let a = S[i].a; a <= S[i].b; a++) if (weak(a)) c++;
-      const w = b.querySelector(".weak");
-      w.hidden = !c; w.textContent = c ? `${c} weak` : "";
-    });
-    const rb = $("readAll");
-    rb.hidden = mode !== "learn";
-    rb.setAttribute("aria-pressed", readAll ? "true" : "false");
-    rb.textContent = readAll ? "✓ Reading whole surah" : "Read whole surah";
-    rb.onclick = () => { readAll = !readAll; store.set("juzapp-readall", readAll); render(); };
-    const total = Weak.total(n), cb = $("clearWeak");
-    cb.hidden = !total;
-    if (total) armClear(cb, `Clear red marks (${total})`, () => Weak.clearSurah(n));
+    paintStrip();
   }
 
   function neighbourCard(dir, s) {
@@ -416,117 +558,264 @@ const Surah = (() => {
   }
   const spanTxt = s => (s.from[0] === s.to[0] ? `p.${s.from[0]} · lines ${s.from[1]}–${s.to[1]}` : `p.${s.from[0]} line ${s.from[1]} → p.${s.to[0]} line ${s.to[1]}`);
 
-  function renderSection() {
-    const s = S[sel - 1], cnt = s.b - s.a + 1;
+  /* ---------- Learn · Section tab: the section before, this one in full, the one after ---------- */
+  function sectionBlock(s) {
+    const cnt = s.b - s.a + 1;
     const sajdah = (meta.sajdah || []).filter(x => { const a = +x.verse_key.split(":")[1]; return a >= s.a && a <= s.b; });
-    // One card per section: the essentials stay visible, everything else folds away until tapped.
+    // The essentials stay visible; everything else folds away until tapped.
     const fold = (id, title, hint, body) => `<details class="fold" data-f="${id}"${openFolds.has(id) ? " open" : ""}>
       <summary>${title}<span class="d">${hint}</span></summary><div class="foldbody">${body}</div></details>`;
-    const P = $("panel");
-    P.innerHTML = `
+    return `
       <div class="lbl">Section ${s.n} of ${S.length} · ${ayatLabel(s.a, s.b)}</div>
-      <h2 class="ptitle">${esc(s.title)}</h2>
-      <p class="meaning">${esc(s.meaning)}</p>
-      <div class="facts"><span class="fact">${spanTxt(s)}</span><span class="fact">${cnt} ${cnt > 1 ? "ayat" : "ayah"}</span>${s.marker ? `<span class="fact key">Starts at the ۞ mark</span>` : ""}${sajdah.map(x => `<span class="fact key">Sajdah at ayah ${x.verse_key.split(":")[1]}</span>`).join("")}</div>
-      ${weakRow(s)}
-      <div class="hook"><span class="lbl">Memory hook</span><p>${esc(s.hook)}</p></div>
-      <div><span class="lbl">Opens with</span><div class="mid-ar" lang="ar">${text(key(s.a))}</div><div class="tr">“${esc(meaning(key(s.a)))}”</div></div>
-      <div class="folds">
-        ${fold("points", "Key points", `${(s.points || []).length} points`, `<ul class="points">${(s.points || []).map(([r, t]) => `<li><b>${esc(r)}</b><span>${esc(t)}</span></li>`).join("")}</ul>`)}
-        ${fold("ayat", "Ayah by ayah", `${cnt} ${cnt > 1 ? "ayat" : "ayah"} with meanings`, C.groups.filter(g => g.a >= s.a && g.b <= s.b).map(groupDetails).join(""))}
-        ${fold("deeper", "Go deeper", "why it matters, the story, lessons", `
-          <div class="dblock"><h3>Why it matters</h3><p>${esc(s.matters)}</p></div>
-          <div class="dblock"><h3>The story behind it</h3><p>${esc(s.story)}</p></div>
-          <div class="dblock"><h3>The meaning, explained</h3>${(s.explained || []).map(p => `<p>${esc(p)}</p>`).join("")}</div>
-          <div class="dblock"><h3>What it teaches us</h3><ul>${(s.teaches || []).map(t => `<li>${esc(t)}</li>`).join("")}</ul></div>`)}
-        ${fold("around", "Before and after", "the sections around this one", `<div class="strio">
-          ${neighbourCard("prev", s)}
-          <div class="here" style="border-inline-start-width:5px;border-inline-start-color:var(--s${s.color}e)"><span class="k">This section · ${ayatLabel(s.a, s.b)}</span>
-            <span class="t">Section ${s.n}: ${esc(s.title)}</span><span class="d">${esc(firstSentence(s.meaning))}</span></div>
-          ${neighbourCard("next", s)}
+      <div class="strio">
+        ${neighbourCard("prev", s)}
+        <div class="here secmain" style="border-inline-start-width:5px;border-inline-start-color:var(--s${s.color}e)">
+          <span class="k">This section · ${ayatLabel(s.a, s.b)}</span>
+          <h2 class="ptitle">${esc(s.title)}</h2>
+          <p class="meaning">${esc(s.meaning)}</p>
+          <div class="facts"><span class="fact">${spanTxt(s)}</span><span class="fact">${cnt} ${cnt > 1 ? "ayat" : "ayah"}</span>${s.marker ? `<span class="fact key">Starts at the ۞ mark</span>` : ""}${sajdah.map(x => `<span class="fact key">Sajdah at ayah ${x.verse_key.split(":")[1]}</span>`).join("")}</div>
+          <div class="folds one">
+            ${fold("deeper", "Go deeper", "why it matters, the story, lessons", `
+              <div class="dblock"><h3>Why it matters</h3><p>${esc(s.matters)}</p></div>
+              <div class="dblock"><h3>The story behind it</h3><p>${esc(s.story)}</p></div>
+              <div class="dblock"><h3>The meaning, explained</h3>${(s.explained || []).map(p => `<p>${esc(p)}</p>`).join("")}</div>
+              <div class="dblock"><h3>What it teaches us</h3><ul>${(s.teaches || []).map(t => `<li>${esc(t)}</li>`).join("")}</ul></div>`)}
+          </div>
+          ${weakRow(s)}
+          <div class="hook"><span class="lbl">Memory hook</span><p>${esc(s.hook)}</p></div>
+          <div class="kp"><span class="lbl">Key points · ${(s.points || []).length} · open one for its ayat</span>${pointDetails(s)}</div>
+          <div class="row"><button class="btn" type="button" id="b-test">Test this section</button></div>
         </div>
-        ${S[s.n] ? `<div class="row" style="justify-content:flex-end"><button class="btn" type="button" data-go="${s.n + 1}">Next section ›</button></div>` : ""}`)}
+        ${neighbourCard("next", s)}
       </div>
-      <div class="row"><button class="btn" type="button" id="b-test">Test this section</button></div>
       <div class="src">Translation: Sahih International · Explanations condensed from classical tafsir: Ibn Kathīr, al-Saʿdī, al-Jalālayn, al-Baghawī, al-Qurṭubī and Maʿāriful Qurʾān.</div>`;
+  }
+
+  function ctx(label, k, big, extra = "") {
+    if (!k) return "";
+    const m = surahOfKey(k), other = m !== n ? ` (${esc(nameOf(m))})` : "";
+    const stuck = big && m === n && weak(+k.split(":")[1]);
+    return `<div class="ctx ${big ? "cur" : "dim"}${stuck ? " is-stuck" : ""}${extra}"><span class="k">${label} · ${k}${other}</span>
+      <div class="${big ? "big-ar" : "mid-ar"}" lang="ar">${text(k)}</div>
+      <div class="tr"${big ? ' style="color:var(--ink)"' : ""}>“${esc(meaning(k))}”</div></div>`;
+  }
+  // The ayah before / after are buttons that step, the same as the bar at the bottom.
+  const stepCard = (label, k, dir) => (k ? `<button type="button" class="ctxbtn" data-step="${dir}">${ctx(label, k, false)}</button>` : "");
+
+  /* ---------- Learn · Ayah tab ---------- */
+  function ayahBlock() {
+    const s = secOf(cur), k = key(cur), x = C.ayat[cur], g = groupOf(cur);
+    return `
+      <div class="lbl">Ayah ${cur} of ${N} · section ${s.n} · ${pos(k)}</div>
+      <div class="trio">
+        ${stepCard("Ayah before", prevKey(cur), -1)}
+        ${ctx("This ayah", k, true)}
+        ${stepCard("Ayah after", nextKey(cur), 1)}
+      </div>
+      ${repInfo(cur)}
+      ${x ? `<div class="ctx gx"><span class="k">Ayah ${cur} in depth</span><p>${esc(x.explain)}</p>${whyBox(x)}</div>` : ""}
+      ${g && g.a !== g.b ? `<div class="ctx gx"><span class="k">What ayat ${g.a}–${g.b} mean</span><p>${esc(g.text)}</p></div>` : ""}`;
+  }
+
+  /* ---------- Learn · Weak spots tab: list, memory aids and the practice drill ---------- */
+  // A memory aid built from what the app already knows about the ayah: what leads into it, what it means,
+  // what follows, its first word, and any look-alikes to watch for.
+  function memoryAid(a) {
+    const x = C.ayat[a] || {}, g = groupOf(a), s = secOf(a), pk = prevKey(a), nk = nextKey(a);
+    const items = [];
+    if (pk) items.push(["It comes right after", `“${esc(meaning(pk))}”`]);
+    items.push(["It means", `“${esc(meaning(key(a)))}”`]);
+    if (x.explain) items.push(["The point of it", esc(x.explain)]);
+    if (g && g.a !== g.b) items.push([`Ayat ${g.a}–${g.b} together`, esc(g.text)]);
+    if (nk) items.push(["Then comes", `“${esc(meaning(nk))}”`]);
+    items.push(["It starts with", `<span class="mid-ar" lang="ar">${AY[key(a)].words[0]}</span>`]);
+    if (REP[a]) items.push(["Watch out", REP[a].exact
+      ? `This ayah comes ${REP[a].ayat.length}× in this surah (ayat ${REP[a].ayat.join(", ")}). Know which time you're on, and what follows each.`
+      : `Nearly the same as ayah ${REP[a].ayat.filter(y => y !== a).join(", ")}. Only the first word differs.`]);
+    const simCue = (D.similars || []).flatMap(gr => gr.members).find(m => m.k === key(a) && m.cue);
+    if (simCue) items.push(["Look-alike elsewhere", esc(simCue.cue)]);
+    if (s.hook) items.push(["The section's hook", esc(s.hook)]);
+    if (x.why) items.push(["Why it was revealed", esc(x.why)]);
+    return `<div class="aid"><h3>How to remember ayah ${a}</h3><dl>${items.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join("")}</dl></div>`;
+  }
+  function startDrill(a, note = "") {
+    const steps = [a - 2, a - 1, a, a + 1].filter(x => x >= 1 && x <= N);
+    drill = { a, steps, idx: 0, done: false };
+    drillNote = note;
+    cur = steps[0]; sel = secOf(cur).n;
+    holdHeight(); render();
+    scrollToPage(AY[key(cur)].start[0]);
+  }
+  function drillStep(dir) {
+    if (!drill) return;
+    drillNote = "";
+    const i = drill.idx + dir;
+    if (i < 0) { drill = null; render(); return; }
+    if (i >= drill.steps.length) { drill.done = true; cur = drill.a; }
+    else { drill.idx = i; drill.done = false; cur = drill.steps[i]; }
+    sel = secOf(cur).n;
+    holdHeight(); render();
+    scrollToPage(AY[key(cur)].start[0]);
+  }
+  function drillAnswer(ok) {
+    if (!drill) return;
+    const a = drill.a, k = key(a);
+    if (!ok) {
+      streaks[k] = 0; store.set("juzapp-streak-v1", streaks);
+      return startDrill(a, `Not this time. Start again from ayah ${drill.steps[0]}: the count is back to 0 of ${PASSES}.`);
+    }
+    const st = (streaks[k] || 0) + 1;
+    if (st < PASSES) {
+      streaks[k] = st; store.set("juzapp-streak-v1", streaks);
+      return startDrill(a, `Good: ${st} of ${PASSES} in a row. Once more from ayah ${drill.steps[0]}.`);
+    }
+    delete streaks[k]; store.set("juzapp-streak-v1", streaks);
+    Weak.clear(n, a);   // passed five times in a row: the weak spot clears itself
+    const rest = weakList(), next = rest.find(x => x > a) || rest[0];
+    if (next) return startDrill(next, `Ayah ${a} cleared. On to ayah ${next}.`);
+    drill = null; allClear = true; render();
+  }
+  function skipSpot() {
+    const list = weakList(), next = list.find(x => x > drill.a) || list[0];
+    if (next && next !== drill.a) startDrill(next, `Skipped ayah ${drill.a}. Now ayah ${next}.`);
+  }
+  function weakBlock() {
+    const list = weakList(), K = list.length;
+    if (!drill) {
+      if (!K) return `
+        <div class="lbl">Weak spots</div>
+        <h2 class="ptitle">${allClear ? "All clear" : "No weak spots yet"}</h2>
+        <p class="tr">${allClear ? "You passed every weak spot in this surah. Now go back to the start and recite the whole surah."
+          : "Mark an ayah with the bar at the bottom of the Ayah tab, or tap “I’m stuck” in Test me, and it shows up here."}</p>
+        ${allClear ? `<div class="row"><button class="btn" type="button" id="b-recite">Recite the whole surah</button></div>` : ""}`;
+      return `
+        <div class="lbl red">Weak spots · ${K} in this surah</div>
+        <h2 class="ptitle">Practise each one until it sticks</h2>
+        <p class="tr">Each spot is drilled in context: read the two ayat before it, recite it, read the one after, then say how it went. Get it right ${PASSES} times in a row and it clears itself.</p>
+        <div class="wlist">${list.map(a => `<button type="button" class="wrow" data-drill="${a}">
+          <span class="wn">Ayah ${a}</span><span class="wc">stuck ${weak(a)}× · ${streakOf(a)} of ${PASSES} passed</span>
+          <span class="mid-ar" lang="ar">${text(key(a))}</span><span class="tr">“${esc(meaning(key(a)))}”</span></button>`).join("")}</div>
+        <div class="row"><button class="btn" type="button" data-drill="${list[0]}">Start practising</button><button class="btn clearbtn" type="button" id="b-clearall"></button></div>`;
+    }
+    const { a, steps, idx, done } = drill, aIdx = steps.indexOf(a), st = streakOf(a), spot = list.indexOf(a) + 1;
+    const cards = steps.map((x, i) => {
+      const k = key(x), veiled = x === a && !done && idx <= aIdx, big = !done && i === idx;
+      if (veiled) return `<div class="ctx ${big ? "cur" : "dim"} veiled"><span class="k">Ayah ${x} · recite it from memory</span>
+        <div class="big-ar" lang="ar"><span class="veilbox">${AY[k].words.map(() => "▬").join(" ")}</span></div>
+        <button type="button" class="replink" id="b-peek">Show the first word</button></div>`;
+      return ctx(x === a ? "The weak spot" : i < aIdx ? `Ayah ${x} · read it` : "Ayah after", k, big || (done && x === a));
+    });
+    return `
+      <div class="lbl red">Practising · weak spot ${spot} of ${K} · ayah ${a}</div>
+      ${drillNote ? `<div class="note">${esc(drillNote)}</div>` : ""}
+      <div class="streak"><b>${st} of ${PASSES}</b> in a row${st ? "" : " · your first pass"}</div>
+      ${done ? `<h2 class="ptitle">Did you recite ayah ${a} correctly?</h2><p class="tr">Answer with the bar at the bottom.</p>` : ""}
+      <div class="trio">${cards.join("")}</div>
+      ${memoryAid(a)}
+      <div class="row"><button type="button" class="replink" id="b-skip"${K > 1 ? "" : " hidden"}>Skip to the next weak spot</button><button type="button" class="replink" id="b-stop">Stop practising</button></div>`;
+  }
+
+  // Hold the page at its tallest while stepping, so shorter content doesn't make the page snap upward.
+  function holdHeight() {
+    const page = $("surah");
+    page.style.minHeight = Math.max(page.offsetHeight, parseFloat(page.style.minHeight) || 0) + "px";
+  }
+
+  /* ---------- Learn: tabs, the panel and the bar ---------- */
+  function renderLearn() {
+    const s = S[sel - 1], P = $("panel"), K = weakList().length;
+    const tab = (id, label) => `<button type="button" role="tab" data-tab="${id}" aria-selected="${ltab === id}">${label}</button>`;
+    const body = ltab === "section" ? sectionBlock(s) : ltab === "weak" ? weakBlock() : ayahBlock();
+    P.innerHTML = `<div class="ltabs" role="tablist" aria-label="Show">${tab("ayah", `Ayah ${cur}`)}${tab("section", `Section ${s.n}`)}${tab("weak", `Weak spots${K ? ` <i>${K}</i>` : ""}`)}</div>
+      <div class="lbody">${body}</div>`;
+    P.querySelectorAll("[data-tab]").forEach(b => (b.onclick = () => setTab(b.dataset.tab)));
     P.querySelectorAll("details.fold").forEach(d => d.addEventListener("toggle", () => {
       if (d.open) openFolds.add(d.dataset.f); else openFolds.delete(d.dataset.f);
       store.set("juzapp-folds", [...openFolds]);
     }));
     P.querySelectorAll("details.grpd").forEach(d => d.addEventListener("toggle", () => (d.open ? openGroups.add(d.dataset.k) : openGroups.delete(d.dataset.k))));
-    P.querySelectorAll(".ayd-go").forEach(b => (b.onclick = () => openAyah(+b.dataset.a, true)));
-    P.querySelectorAll("[data-go]").forEach(b => (b.onclick = () => choose(+b.dataset.go, true)));
-    P.querySelectorAll("[data-weak]").forEach(b => (b.onclick = () => openAyah(+b.dataset.weak, true)));
-    P.querySelectorAll(".replink").forEach(b => (b.onclick = () => openAyah(+b.dataset.a, true)));
-    $("b-test").onclick = () => setMode("test");
+    P.querySelectorAll(".ayd-go, .replink[data-a]").forEach(b => (b.onclick = () => openAyah(+b.dataset.a, true, "ayah")));
+    P.querySelectorAll("[data-weak]").forEach(b => (b.onclick = () => openAyah(+b.dataset.weak, true, "ayah")));
+    P.querySelectorAll("[data-go]").forEach(b => (b.onclick = () => openAyah(S[+b.dataset.go - 1].a, true, "section")));
+    P.querySelectorAll("[data-step]").forEach(b => (b.onclick = () => stepLearn(+b.dataset.step)));
+    P.querySelectorAll("[data-drill]").forEach(b => (b.onclick = () => startDrill(+b.dataset.drill)));
+    if ($("b-test")) $("b-test").onclick = () => setMode("test");
+    if ($("b-recite")) $("b-recite").onclick = () => { sel = 1; allClear = false; setMode("test"); };
+    if ($("b-clearall")) armClear($("b-clearall"), `Clear all ${K} weak spot${K > 1 ? "s" : ""} in this surah`, () => Weak.clearSurah(n));
+    if ($("b-skip")) $("b-skip").onclick = skipSpot;
+    if ($("b-stop")) $("b-stop").onclick = () => { drill = null; drillNote = ""; render(); };
+    if ($("b-peek")) $("b-peek").onclick = () => { $("b-peek").outerHTML = `<div class="big-ar" lang="ar">${AY[key(drill.a)].words[0]} …</div>`; };
+    paintBar();
+  }
+  function paintBar() {
+    const K = weakList().length, prev = $("a-prev"), next = $("a-next"), mk = $("a-mark"), num = $("a-num"), view = $("a-view");
+    prev.className = "btn ghost"; next.className = "btn"; prev.disabled = next.disabled = false;
+    mk.hidden = ltab !== "ayah";
+    view.hidden = ltab === "weak" || !K;
+    view.textContent = `View ${K} weak spot${K > 1 ? "s" : ""}`;
+    const surahBtn = (dir) => { const b = dir < 0 ? prev : next; b.textContent = dir < 0 ? "‹ Previous surah" : "Next surah ›"; b.disabled = !IDX.ready.includes(n + dir); };
+    if (ltab === "weak") {
+      if (!drill) {
+        surahBtn(-1);
+        num.textContent = K ? `${K} weak spot${K > 1 ? "s" : ""}` : allClear ? "All clear" : "No weak spots";
+        if (K) next.textContent = "Start practising ›";
+        else if (allClear) next.textContent = "Recite the whole surah ›";
+        else surahBtn(1);
+        return;
+      }
+      const { steps, idx, done, a } = drill;
+      num.textContent = done ? `Ayah ${a} · ${streakOf(a)} of ${PASSES}` : `Ayah ${cur} · step ${idx + 1} of ${steps.length}`;
+      if (done) { prev.textContent = "I made a mistake"; prev.className = "btn stuckbtn"; next.textContent = "No mistake ✓"; next.className = "btn okbtn"; }
+      else { prev.textContent = idx === 0 ? "Stop" : "‹ Back"; next.textContent = idx === steps.length - 1 ? "How did it go? ›" : "Next ›"; }
+      return;
+    }
+    const bySection = ltab === "section", unit = bySection ? "section" : "ayah";
+    const atStart = bySection ? sel <= 1 : cur <= 1, atEnd = bySection ? sel >= S.length : cur >= N;
+    if (atStart) surahBtn(-1); else prev.textContent = `‹ Previous ${unit}`;
+    if (atEnd) surahBtn(1); else next.textContent = `Next ${unit} ›`;
+    num.textContent = bySection ? `Section ${sel} of ${S.length}` : `Ayah ${cur} of ${N}`;
+    const c = weak(cur);
+    mk.textContent = c ? `Marked ${c}× · undo` : "Mark weak spot";
+    mk.classList.toggle("on", !!c);
+  }
+  function setTab(t) {
+    if (!TABS.includes(t)) return;
+    if (mode !== "learn") { mode = "learn"; revealed = 0; stuckThisPass.clear(); syncFeat(); }
+    if (t !== "weak") { drill = null; drillNote = ""; }
+    if (t !== ltab) { ltab = t; store.set("juzapp-ltab", ltab); }
+    $("surah").style.minHeight = "";
+    render();
   }
 
-  function ctx(label, k, big) {
-    if (!k) return "";
-    const m = surahOfKey(k), other = m !== n ? ` (${esc(nameOf(m))})` : "";
-    const stuck = big && m === n && weak(+k.split(":")[1]);
-    return `<div class="ctx ${big ? "cur" : "dim"}${stuck ? " is-stuck" : ""}"><span class="k">${label} · ${k}${other}</span>
-      <div class="${big ? "big-ar" : "mid-ar"}" lang="ar">${text(k)}</div>
-      <div class="tr"${big ? ' style="color:var(--ink)"' : ""}>“${esc(meaning(k))}”</div></div>`;
-  }
-
-  function renderAyah() {
-    const s = secOf(cur), k = key(cur), x = C.ayat[cur], g = groupOf(cur), c = weak(cur);
-    const P = $("panel");
-    P.innerHTML = `
-      <div class="navrow">
-        <button class="btn ghost" type="button" id="b-prev" ${cur === 1 ? "disabled" : ""}>‹ Previous ayah</button>
-        <button class="btn" type="button" id="b-back">Back to section ${s.n}</button>
-        <button class="btn ghost" type="button" id="b-next" ${cur === N ? "disabled" : ""}>Next ayah ›</button>
-      </div>
-      <div class="lbl">Ayah ${cur} · section ${s.n} · ${pos(k)}</div>
-      <h2 class="ptitle" style="font-size:1.15rem">${esc(s.title)}</h2>
-      <div class="trio">
-        ${ctx("Ayah before", prevKey(cur), false)}
-        ${ctx("This ayah", k, true)}
-        ${ctx("Ayah after", nextKey(cur), false)}
-      </div>
-      ${repInfo(cur)}
-      ${c ? `<div class="stuckbox"><b>You got stuck here ${c}×</b><button class="btn ghost" type="button" id="b-clear">Clear red mark</button></div>`
-          : `<div class="row"><button class="btn ghost" type="button" id="b-mark">Mark as a weak spot</button></div>`}
-      ${x ? `<div class="ctx gx"><span class="k">Ayah ${cur} in depth</span><p>${esc(x.explain)}</p>${whyBox(x)}</div>` : ""}
-      ${g && g.a !== g.b ? `<div class="ctx gx"><span class="k">What ayat ${g.a}–${g.b} mean</span><p>${esc(g.text)}</p></div>` : ""}`;
-    $("b-prev").onclick = () => openAyah(cur - 1, true);
-    $("b-next").onclick = () => openAyah(cur + 1, true);
-    $("b-back").onclick = () => { view = "section"; render(); };
-    P.querySelectorAll(".replink").forEach(b => (b.onclick = () => openAyah(+b.dataset.a, true)));
-    if ($("b-clear")) $("b-clear").onclick = () => Weak.clear(n, cur);
-    if ($("b-mark")) $("b-mark").onclick = () => Weak.mark(n, cur);
-  }
-
+  /* ---------- Test me ---------- */
   function renderTest() {
     const s = S[sel - 1], total = s.b - s.a + 1, last = s.a + revealed - 1, next = s.a + revealed;
     const marked = stuckThisPass.has(next);
     const tag = a => (weak(a) ? ` · stuck ${weak(a)}×` : "");
-    const controls = `<button class="btn" type="button" data-act="rev" ${revealed >= total ? "disabled" : ""}>${revealed ? "Reveal next ayah" : `Reveal ayah ${s.a}`}</button>
-      <button class="btn stuckbtn" type="button" data-act="stuck" ${revealed >= total || marked ? "disabled" : ""}>${marked ? `Ayah ${next} marked` : "I’m stuck"}</button>`;
     $("panel").innerHTML = `
       <div class="lbl">Test · section ${s.n} · ${ayatLabel(s.a, s.b)}</div>
       <h2 class="ptitle">${esc(s.title)}</h2>
-      <p>Recite out loud and reveal each ayah to check yourself. The next ayah’s first word is your cue. If you get stuck, tap “I’m stuck” to mark that ayah red.</p>
-      <div class="row" style="align-items:center">${controls}
-        <button class="btn ghost" type="button" data-act="hide">Hide again</button>
-        <span class="big" style="margin-inline-start:auto">${revealed} / ${total}</span>
-      </div>
+      <p>Recite each ayah from memory, then tap “Reveal next ayah” in the bar at the bottom to check yourself. Stuck? Tap “I’m stuck” to see the ayah’s first word; that ayah is marked red as a weak spot.</p>
       ${revealed ? `<div class="ctx cur${weak(last) ? " is-stuck" : ""}"><span class="k">Ayah ${last}${revealed >= total ? " · end of the section" : ""}${tag(last)}</span>
         <div class="big-ar" lang="ar">${text(key(last))} <span class="e">${toAr(last)}</span></div>
         <div class="tr">“${esc(meaning(key(last)))}”</div></div>` : ""}
-      ${revealed < total ? `<div class="ctx dim"><span class="k">Ayah ${next} starts with${tag(next)}</span>
-        <div class="big-ar${weak(next) ? " red" : ""}" lang="ar">${AY[key(next)].words[0]} …</div></div>` : ""}
+      ${revealed < total ? (marked
+        ? `<div class="ctx dim"><span class="k">Ayah ${next} starts with${tag(next)}</span>
+        <div class="big-ar red" lang="ar">${AY[key(next)].words[0]} …</div></div>`
+        : `<div class="ctx dim"><span class="k">Next: ayah ${next}${tag(next)}</span><p class="tr">Recite it from memory.</p></div>`) : ""}
       ${revealed > 1 ? `<div class="ayat"><span class="lbl">Revealed so far</span>${range(s.a, last - 1).map(a => `<div class="mid-ar${weak(a) ? " red" : ""}" lang="ar">${text(key(a))} <span class="e">${toAr(a)}</span></div>`).join("")}</div>` : ""}`;
+    // One set of controls, in the bar pinned to the bottom of the screen.
     const dock = $("dock");
     dock.hidden = false;
-    dock.innerHTML = `${controls}<span class="big">${revealed}/${total}</span>`;
-    [$("panel"), dock].forEach(root => root.querySelectorAll("[data-act]").forEach(b => (b.onclick = () => act(b.dataset.act, s, total, next))));
+    dock.innerHTML = `<button class="btn" type="button" data-act="rev" ${revealed >= total ? "disabled" : ""}>${revealed ? "Reveal next ayah" : `Reveal ayah ${s.a}`}</button>
+      <button class="btn stuckbtn" type="button" data-act="stuck" ${revealed >= total || marked ? "disabled" : ""}>${marked ? "First word shown" : "I’m stuck · show first word"}</button>
+      <button class="btn ghost" type="button" data-act="hide" ${revealed ? "" : "disabled"}>Hide again</button>
+      <span class="big">${revealed}/${total}</span>`;
+    dock.querySelectorAll("[data-act]").forEach(b => (b.onclick = () => act(b.dataset.act, s, total, next)));
   }
   function act(what, s, total, next) {
     if (what === "rev") { revealed = Math.min(total, revealed + 1); render(); scrollToPage(AY[key(s.a + revealed - 1)].start[0]); }
-    if (what === "stuck") { stuckThisPass.add(next); Weak.mark(n, next); }
+    if (what === "stuck") { stuckThisPass.add(next); Weak.mark(n, next); scrollToPage(AY[key(next)].start[0]); }
     if (what === "hide") { revealed = 0; stuckThisPass.clear(); render(); }
   }
 
@@ -578,14 +867,15 @@ const Surah = (() => {
       ${g.flow ? `<div class="dblock hook"><h3>How to remember the order</h3><p>${esc(g.flow)}</p></div>` : ""}
       <ol class="simocc">${g.members.map(simOcc).join("")}</ol>
       ${g.more ? `<p class="src">${g.more} more similar ayat elsewhere in the Quran aren’t shown.</p>` : ""}`;
-    el.querySelectorAll("[data-go-ayah]").forEach(b => (b.onclick = () => { setMode("learn"); openAyah(+b.dataset.goAyah, true); }));
+    el.querySelectorAll("[data-go-ayah]").forEach(b => (b.onclick = () => { setMode("learn"); openAyah(+b.dataset.goAyah, true, "ayah"); }));
   }
 
+  /* ---------- Quiz ---------- */
   function renderQuiz() {
     const k = key(quizA), s = secOf(quizA);
     $("panel").innerHTML = `
       <div class="lbl">Quiz · ${score[0]} of ${score[1]} right</div>
-      <p>Which section is this ayah in? Tap it in the strip.</p>
+      <p>Which section is this ayah in? Tap it in the section list.</p>
       <div class="big-ar" lang="ar">${text(k)}</div>
       ${answered ? `<div class="result ${lastOk ? "ok" : "no"}">${lastOk ? "Right" : "Not quite"}: section ${s.n}, ayah ${quizA}, ${pos(k)}</div>
         <div class="tr">“${esc(meaning(k))}”</div><div><b>${esc(s.title)}</b></div>` : ""}
@@ -609,11 +899,24 @@ const Surah = (() => {
     scrollToPage(AY[key(quizA)].start[0]);
   }
 
+  // Key points, each opening into its ayat. A point's range ("5–6") maps onto the ayat it covers.
+  function pointDetails(s) {
+    const parse = r => {
+      const m = String(r).replace(/[–—]/g, "-").match(/^\s*(\d+)\s*(?:-\s*(\d+))?\s*$/);
+      if (!m) return null;
+      const a = +m[1], b = +(m[2] || m[1]);
+      return a >= s.a && b <= s.b && a <= b ? [a, b] : null;
+    };
+    return (s.points || []).map(([r, t]) => {
+      const ab = parse(r);
+      return ab ? groupDetails({ a: ab[0], b: ab[1], text: t }) : `<div class="grpd plainpt"><b>${esc(r)}</b><p>${esc(t)}</p></div>`;
+    }).join("");
+  }
   function groupDetails(g) {
-    const gk = `${g.a}-${g.b}`;
+    const gk = `${g.a}-${g.b}`, open = openGroups.has(gk);   // rows stay closed until tapped
     const ayat = range(g.a, g.b).map(a => {
       const x = C.ayat[a] || {};
-      return `<div class="ayd${view === "ayah" && cur === a ? " cur" : ""}${weak(a) ? " is-stuck" : ""}">
+      return `<div class="ayd${cur === a ? " cur" : ""}${weak(a) ? " is-stuck" : ""}">
         <button type="button" class="ayd-go" data-a="${a}">Ayah ${a} · show on page</button>
         ${weak(a) ? `<span class="stuckpill">Stuck ${weak(a)}×</span>` : ""}
         ${REP[a] ? `<span class="reppill">${REP[a].exact ? `Repeated ${REP[a].ayat.length}× in this surah` : `Nearly the same as ayah ${REP[a].ayat.filter(x => x !== a).join(", ")}`}</span>` : ""}
@@ -621,24 +924,28 @@ const Surah = (() => {
         <div class="tr">“${esc(meaning(key(a)))}”</div>
         ${x.explain ? `<p>${esc(x.explain)}</p>` : ""}${whyBox(x)}</div>`;
     }).join("");
-    return `<details class="grpd" data-k="${gk}"${openGroups.has(gk) ? " open" : ""}>
+    return `<details class="grpd" data-k="${gk}"${open ? " open" : ""}>
       <summary><b>${g.a === g.b ? g.a : `${g.a}–${g.b}`}</b><p>${esc(g.text)}</p><span class="more"></span></summary>
       <div class="ayds">${ayat}</div></details>`;
   }
-  // Learn keeps everything in the one section card, so the area under the pages is only used by Similars.
+  // Learn keeps everything in the panel, so the area under the pages is only used by Similars.
   function renderDeep() { $("deep").hidden = true; }
 
   function render() {
     if (!D) return;
+    if (weakList().length) allClear = false;
     // Only the chosen feature shows. Learn opens with the surah's intro card; the others go straight to the pages.
     $("sHead").hidden = mode !== "learn";
     $("strip").hidden = mode === "sim";
     paint();
+    syncStrip(true);
     renderDeep();
     $("dock").hidden = mode !== "test";
-    $("hint").innerHTML = (mode === "learn" ? "Tap a section, or any word on the page" : mode === "test" ? "Pick a section, then recite it" : mode === "sim" ? "Look-alike ayat: pick one to see every place it appears" : "Find the ayah’s section")
+    $("anav").hidden = mode !== "learn";
+    $("surah").classList.toggle("surah-nav", mode === "learn");
+    $("hint").innerHTML = (mode === "learn" ? "Tap any word to jump to that ayah, or step with the bar at the bottom" : mode === "test" ? "Pick a section, then recite it" : mode === "sim" ? "Look-alike ayat: pick one to see every place it appears" : "Find the ayah’s section")
       + (Object.keys(REP).length ? ' · <span class="replegend">violet underline = repeated ayah</span>' : "");
-    if (mode === "learn") (view === "ayah" ? renderAyah() : renderSection());
+    if (mode === "learn") renderLearn();
     else if (mode === "test") renderTest();
     else if (mode === "sim") renderSim();
     else if (mode === "quiz") renderQuiz();
@@ -649,41 +956,51 @@ const Surah = (() => {
     document.querySelectorAll("#featMenu button").forEach(b => b.setAttribute("aria-current", b.dataset.mode === mode ? "true" : "false"));
   }
   function choose(sn, scroll) {
-    sel = sn; view = "section"; revealed = 0; stuckThisPass.clear();
+    if (mode === "learn") return openAyah(S[sn - 1].a, scroll, "section");   // show the section, sitting on its first ayah
+    sel = sn; revealed = 0; stuckThisPass.clear();
     render();
-    showIn($("strip"), $("blk" + sn));
+    revealY($("strip"), $("blk" + sn));
     if (scroll) scrollToPage(S[sn - 1].from[0]);
   }
-  function openAyah(a, scroll) {
-    cur = a; sel = secOf(a).n; view = "ayah";
-    const g = groupOf(a);
-    if (g) openGroups.add(`${g.a}-${g.b}`);
+  function openAyah(a, scroll, tab) {
+    if (tab && tab !== ltab) { ltab = tab; store.set("juzapp-ltab", ltab); $("surah").style.minHeight = ""; }
+    if (ltab !== "weak") { drill = null; drillNote = ""; }
+    cur = a; sel = secOf(a).n;
+    holdHeight();
     render();
-    showIn($("strip"), $("blk" + sel));
+    const P = $("panel");
+    if (P.scrollHeight > P.clientHeight) P.scrollTop = 0;   // wide screens: keep the current ayah in sight
+    revealY($("strip"), $("blk" + sel));
     if (scroll) scrollToPage(AY[key(a)].start[0]);
   }
   function setMode(m) {
     if (!D) return;
     if (m === "quiz" && S.length < 2) m = "learn";
     if (m === "sim" && !(D.similars || []).length) m = "learn";
-    mode = m; view = "section"; revealed = 0; stuckThisPass.clear();
+    mode = m; revealed = 0; stuckThisPass.clear();
+    drill = null; drillNote = "";
+    $("surah").style.minHeight = "";
     syncFeat();
     document.querySelectorAll("#strip .blk").forEach(b => b.classList.remove("right", "wrong"));
     if (m === "quiz") newQuiz(); else render();
   }
   function leave() {
     $("dock").hidden = true;
-    $("surah").classList.remove("surah-test");
+    $("anav").hidden = true;
+    $("surah").classList.remove("surah-test", "surah-nav");
+    $("surah").style.minHeight = "";
+    drill = null; drillNote = "";
   }
-  // Arrow keys step through ayat in the ayah view, matching the buttons: ← previous, → next.
+  // Arrow keys step through Learn, matching the bar: ← previous, → next.
   document.addEventListener("keydown", e => {
-    if (!D || $("surah").hidden || mode !== "learn" || view !== "ayah" || e.altKey || e.metaKey || e.ctrlKey) return;
+    if (!D || $("surah").hidden || mode !== "learn" || e.altKey || e.metaKey || e.ctrlKey) return;
     if (e.target.closest && e.target.closest("input, textarea, select")) return;
-    if (e.key === "ArrowRight" && cur < N) { e.preventDefault(); openAyah(cur + 1, true); }
-    if (e.key === "ArrowLeft" && cur > 1) { e.preventDefault(); openAyah(cur - 1, true); }
+    if (drill && drill.done) return;
+    if (e.key === "ArrowRight") { e.preventDefault(); stepLearn(1); }
+    if (e.key === "ArrowLeft") { e.preventDefault(); stepLearn(-1); }
   });
 
-  return { get n() { return n; }, mount, setMode, refresh: render, leave };
+  return { get n() { return n; }, mount, setMode, setTab, refresh: render, leave };
 })();
 
 /* Wire up the shell once everything is defined. */
@@ -707,6 +1024,13 @@ Weak.listeners.add(() => {
   if (!$("home").hidden) showHome();
   else if (Surah.n) Surah.refresh();
 });
+// The opening animation plays once per launch; a tap skips it.
+const splash = $("splash");
+if (splash && !splash.hidden) {
+  $("splashBism").textContent = IDX.basmala;   // the basmala as it is drawn in the muṣḥaf data, not typed by hand
+  const done = () => { splash.hidden = true; try { sessionStorage.setItem("qf-splash", "1"); } catch (e) { /* storage unavailable */ } };
+  if (reduceMotion) done(); else { splash.addEventListener("click", done); setTimeout(done, 3800); }
+}
 window.addEventListener("hashchange", route);
 Weak.connect();
 route();

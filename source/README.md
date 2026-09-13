@@ -1,4 +1,4 @@
-# Source for the Juz 25–30 Memory Map
+# Source for QuranFlow
 
 Everything needed to rebuild the app at the repo root. The raw tafsir downloads are not included
 (they are copyrighted). `fetch_all.py` can download them again from quran-mcp if content needs rewriting.
