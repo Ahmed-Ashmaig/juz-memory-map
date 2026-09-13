@@ -1,0 +1,24 @@
+{
+  "n": 67,
+  "groups": {
+    "g1": {
+      "flow": "Same ayah, different first word. Al-Muʾminūn has a run of 'and it is He who' ayat (hearing and vision, this, then life and death), so it opens wa huwa. In Al-Mulk, 'Say' comes before it (67:23) and after (67:26), so it opens qul huwa. Hook: wa chain in Al-Muʾminūn, qul chain in Al-Mulk.",
+      "cues": {
+        "23:79": "In a chain of 'and it is He who': opens wa huwa, then life and death.",
+        "67:24": "After 'Say, it is He who produced you'; opens qul huwa, then 'when is this promise?'"
+      }
+    },
+    "g2": {
+      "flow": "Seven times, in surah order 10, 21, 27, 32, 34, 36, 67. Six say matā hādha l-waʿdu; As-Sajdah alone says l-fatḥu, and its next ayah answers with the Day of Conquest. Recall each by the ayah before: nations and messengers, man made of haste, grieve not, water to barren land, sent to all mankind, spend from provision, gathered to Him.",
+      "cues": {
+        "10:48": "After 'every nation has a messenger, judged in justice'; next, 'I possess no harm or benefit'.",
+        "21:38": "After man created of haste; next, the Fire they can't avert from faces and backs.",
+        "27:71": "After 'grieve not over them'; next, 'perhaps it is close behind you'.",
+        "32:28": "The odd one: l-fatḥu, not l-waʿdu. After water to barren land; next, the Day of Conquest.",
+        "34:29": "After 'sent to mankind as bringer of good tidings and warner'; next, an appointed Day.",
+        "36:48": "After 'spend from what Allāh provided' and their refusal to feed; next, they await one blast.",
+        "67:25": "After 'to Him you will be gathered'; next, 'the knowledge is only with Allāh'."
+      }
+    }
+  }
+}

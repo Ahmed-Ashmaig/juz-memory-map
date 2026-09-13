@@ -1,0 +1,13 @@
+{
+  "n": 58,
+  "groups": {
+    "g1": {
+      "flow": "Āl ʿImrān has it twice, both opening inna lladhīna kafarū. 3:10 ends wa ulāʾika hum waqūdu n-nār, fuel for the Fire. 3:116 ends wa ulāʾika aṣḥābu n-nāri hum fīhā khālidūn. Al-Mujādilah keeps that second ending but drops the opening, starting at lan tughniya after the false oath-takers, and says ulāʾika without wa. Hook: fuel, then companions, then the shortened copy.",
+      "cues": {
+        "3:10": "After 'Our Lord, You will gather the people for a Day'; ends hum waqūdu n-nār.",
+        "3:116": "After good deeds never being denied them; ends aṣḥābu n-nāri hum fīhā khālidūn.",
+        "58:17": "After false oaths used as cover; no opening, starts lan tughniya, and ulāʾika has no wa."
+      }
+    }
+  }
+}

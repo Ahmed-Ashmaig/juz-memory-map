@@ -1,0 +1,20 @@
+{
+  "n": 84,
+  "groups": {
+    "g1": {
+      "flow": "The same closing line for two 'when' scenes. First the sky splits and responds to its Lord. Then the earth is extended, casts out what is within it, and responds too. After the second, the surah turns to 'O mankind'. Hook: sky first, earth second, one response line each.",
+      "cues": {
+        "84:2": "Sky's line: after 'when the sky has split'; next, 'when the earth has been extended'.",
+        "84:5": "Earth's line: after it casts out what is within it; next, 'O mankind'."
+      }
+    },
+    "g2": {
+      "flow": "One promise, three openings. Fuṣṣilat starts with inna, after those who give no zakāh. Al-Inshiqāq and At-Tīn start with illā, an exception right after punishment: 'painful punishment' in 84, 'lowest of the low' in 95. Only At-Tīn adds fa, fa-lahum. Hook in order: inna lahum, illā lahum, illā fa-lahum. Al-Inshiqāq's closes the surah.",
+      "cues": {
+        "41:8": "Inna, not illā: after those who give no zakāh and disbelieve in the Hereafter.",
+        "84:25": "Illā with lahum: exception to the painful punishment; last ayah of the surah.",
+        "95:6": "Illā with fa-lahum: after 'lowest of the low'; next, 'what causes you to deny the Recompense?'"
+      }
+    }
+  }
+}

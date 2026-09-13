@@ -1,0 +1,19 @@
+{
+  "n": 74,
+  "groups": {
+    "g1": {
+      "flow": "Two back-to-back curses on the man who 'thought and deliberated' (74:18). The first opens with fa: fa-qutila kayfa qaddar, flowing straight from his deliberating. The second opens with thumma: thumma qutila kayfa qaddar. The ayah after keeps the thumma going: 'then he considered'. Hook: fa first, then thumma, and thumma carries on into the next ayah.",
+      "cues": {
+        "74:19": "First curse, fa-qutila: straight after 'he thought and deliberated'.",
+        "74:20": "Second curse, thumma qutila: right after the first; next, 'then he considered'."
+      }
+    },
+    "g2": {
+      "flow": "Same words in both, each after 'No! Indeed, it is a reminder'. Tell them apart by what comes next. Al-Muddaththir (page 577): 'they will not remember except that Allāh wills'. ʿAbasa (page 585): 'in honored sheets'. Don't stretch it: here fa-man shāʾa ends with dhakarah, not the longer ittakhadha ilā rabbihi sabīlā of Al-Muzzammil and Al-Insān.",
+      "cues": {
+        "74:55": "Al-Muddaththir: after 'it is a reminder'; next, 'they will not remember except that Allāh wills'.",
+        "80:12": "ʿAbasa: after 'they are a reminder'; next, 'in honored sheets'."
+      }
+    }
+  }
+}

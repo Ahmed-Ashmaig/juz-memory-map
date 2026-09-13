@@ -1,0 +1,49 @@
+{
+  "n": 69,
+  "groups": {
+    "g1": {
+      "flow": "Identical in both. Al-Ḥāqqah 69:21 comes after a speaker's words, 'I was certain I would be meeting my account', and flows into 'in an elevated garden'. Al-Qāriʿah 101:7 comes after 'one whose scales are heavy', then turns to 'one whose scales are light'. Hook: in Al-Ḥāqqah it leads on to the garden; in Al-Qāriʿah it leads to the light scales.",
+      "cues": {
+        "69:21": "After 'I was certain I would meet my account'; next, 'in an elevated garden.'",
+        "101:7": "After 'one whose scales are heavy'; next, 'one whose scales are light.'"
+      }
+    },
+    "g2": {
+      "flow": "Identical in both. Al-Ḥāqqah 69:22 follows 'a pleasant life' and is followed by 'its fruit hanging near'. Al-Ghāshiyah 88:10 follows 'with their effort satisfied' and is followed by 'they will hear no unsuitable speech'. Hook: in Al-Ḥāqqah the garden comes with fruit to pick; in Al-Ghāshiyah, with no bad speech to hear.",
+      "cues": {
+        "69:22": "After 'so he will be in a pleasant life'; next, fruit hanging near.",
+        "88:10": "After 'with their effort satisfied'; next, 'they hear no unsuitable speech.'"
+      }
+    },
+    "g3": {
+      "flow": "Three occurrences. Al-Ḥāqqah 69:34 and Al-Māʿūn 107:3 say yaḥuḍḍu (he does not encourage). Al-Fajr 89:18 says taḥāḍḍūna (you do not encourage one another), matching the 'you' around it: 'you do not honor the orphan', 'you consume inheritance'. Before it, Al-Ḥāqqah has not believing in Allāh the Most Great; Al-Fajr and Al-Māʿūn have the orphan. Hook: he, you, he.",
+      "cues": {
+        "69:34": "Yaḥuḍḍu; after 'he did not believe in Allāh, the Most Great.'",
+        "89:18": "Taḥāḍḍūna; after 'you do not honor the orphan'; next, 'you consume inheritance.'",
+        "107:3": "Yaḥuḍḍu; after 'the one who drives away the orphan'; next, 'woe to those who pray.'"
+      }
+    },
+    "g4": {
+      "flow": "Identical in both. Al-Ḥāqqah 69:40 follows 'and what you do not see', then says it is not 'the word of a poet', nor a soothsayer. At-Takwīr 81:19 follows 'by the dawn when it breathes', then describes the messenger: 'possessed of power, with the Owner of the Throne'. Hook: Al-Ḥāqqah says what it is not; At-Takwīr says who the messenger is.",
+      "cues": {
+        "69:40": "After 'and what you do not see'; next, 'not the word of a poet.'",
+        "81:19": "After 'by the dawn when it breathes'; next, 'possessed of power, with the Throne's Owner.'"
+      }
+    },
+    "g5": {
+      "flow": "Identical in both. Al-Wāqiʿah 56:80 follows 'none touch it except the purified', then asks 'is it to this statement that you are indifferent?'. Al-Ḥāqqah 69:43 follows 'nor the word of a soothsayer', then 'if he had made up sayings about Us'. Hook: both surahs later end with fa-sabbiḥ bismi rabbika l-ʿaẓīm, and in both this ayah comes first.",
+      "cues": {
+        "56:80": "After 'none touch it except the purified'; next, 'to this statement you are indifferent?'",
+        "69:43": "After 'nor the word of a soothsayer; little do you remember.'"
+      }
+    },
+    "g6": {
+      "flow": "Al-Wāqiʿah has it twice, Al-Ḥāqqah once. 56:74 is mid-surah, after 'a reminder and provision for the travelers' and before 'I swear by the setting of the stars'. 56:96 and 69:52 are each the surah's last ayah, straight after a line about certainty: 'the true certainty', 'the truth of certainty'. Hook: middle and end in Al-Wāqiʿah; only the end in Al-Ḥāqqah.",
+      "cues": {
+        "56:74": "Mid-surah; after 'a reminder and provision for the travelers'; next, 'I swear by the setting stars.'",
+        "56:96": "Al-Wāqiʿah's last ayah, after 'indeed, this is the true certainty.'",
+        "69:52": "Al-Ḥāqqah's last ayah, after 'indeed, it is the truth of certainty.'"
+      }
+    }
+  }
+}

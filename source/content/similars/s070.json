@@ -1,0 +1,47 @@
+{
+  "n": 70,
+  "groups": {
+    "g1": {
+      "flow": "Same words in both lists, so the ayah before tells you which list you are in. Al-Muʾminūn reaches it straight after zakāh; Al-Maʿārij reaches it after 'the punishment of their Lord is not safe from'. From here both run identically (wives, beyond that, trusts), then split: Al-Muʾminūn goes to prayers, Al-Maʿārij adds testimonies first.",
+      "cues": {
+        "23:5": "Al-Muʾminūn, page 342: comes right after the zakāh ayah.",
+        "70:29": "Al-Maʿārij, page 569: comes right after 'their Lord's punishment is not safe from'."
+      }
+    },
+    "g2": {
+      "flow": "Identical in both surahs, and so are its neighbours: guarding private parts before, 'whoever seeks beyond that' after. Nothing here tells the lists apart. Carry your place in from the ayah before the chain (zakāh in Al-Muʾminūn, the unsafe punishment in Al-Maʿārij) and hold it until trusts, where the lists part.",
+      "cues": {
+        "23:6": "Al-Muʾminūn: follows guarding private parts; no word differs, keep your place from zakāh.",
+        "70:30": "Al-Maʿārij: follows guarding private parts; no word differs, keep your place from 70:28."
+      }
+    },
+    "g3": {
+      "flow": "Word for word the same, and the next ayah (trusts and promises) is the same too. This is the last fully shared step. Hook: 'whoever seeks beyond that' is the boundary. Once you cross it and recite trusts, stop and ask which surah you are in, because the very next ayah differs.",
+      "cues": {
+        "23:7": "Al-Muʾminūn: after the wives ayah; trusts comes next, then prayers.",
+        "70:31": "Al-Maʿārij: after the wives ayah; trusts comes next, then testimonies."
+      }
+    },
+    "g4": {
+      "flow": "Same words in both; what follows differs. Al-Muʾminūn goes straight from trusts to prayers (23:9). Al-Maʿārij inserts one extra ayah, 'in their testimonies upright' (70:33), before prayer (70:34). Hook: Al-Maʿārij has the extra witness: trusts, testimonies, then prayer. Al-Muʾminūn: trusts, then prayers.",
+      "cues": {
+        "23:8": "Al-Muʾminūn: trusts and promises, then straight to prayers. No testimonies ayah here.",
+        "70:32": "Al-Maʿārij: trusts and promises, then testimonies upright, and only then prayer."
+      }
+    },
+    "g5": {
+      "flow": "One word differs. Al-Muʾminūn: ʿalā ṣalawātihim (plural, prayers), straight after trusts, then 'those are the inheritors'. Al-Maʿārij: ʿalā ṣalātihim (singular, prayer), after testimonies, then 'they will be in gardens, honored'. Hook: the list with the extra testimonies ayah gets the shorter word, ṣalātihim; Al-Muʾminūn, with no extra ayah, gets the longer ṣalawātihim.",
+      "cues": {
+        "23:9": "Al-Muʾminūn: plural ṣalawātihim, straight after trusts; next, 'those are the inheritors'.",
+        "70:34": "Al-Maʿārij: singular ṣalātihim, after testimonies upright; next, 'in gardens, honored'."
+      }
+    },
+    "g6": {
+      "flow": "Same words in both; the neighbours tell them apart. Az-Zukhruf: after 'Exalted is the Lord of the heavens and the earth', and next comes 'it is He who is deity in heaven and on earth'. Al-Maʿārij: after 'replace them with better than them', and next comes the Day they rush from the graves. Hook: in Al-Maʿārij the promised Day is described straight away.",
+      "cues": {
+        "43:83": "Az-Zukhruf: after 'Exalted is the Lord of the heavens and earth, above what they describe'.",
+        "70:42": "Al-Maʿārij: after 'replace them with better than them'; next, emerging from the graves."
+      }
+    }
+  }
+}

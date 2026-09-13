@@ -12,3 +12,6 @@ source/raw/s*/wrapped
 source/pwa-src/fonts/google.css
 source/fetch.log
 __pycache__/
+
+# full-Quran pages used only to find similar ayat
+source/raw/quran-pages/

@@ -1,0 +1,12 @@
+{
+  "n": 64,
+  "groups": {
+    "g1": {
+      "flow": "Both say wa aṭīʿu llāha wa aṭīʿu r-rasūl and end ʿalā rasūlina l-balāghu l-mubīn. Al-Māʾidah, right after Satan's intoxicants and gambling, adds wa ḥdharū (and beware), then fa-ʿlamū annamā (then know). At-Taghābun, after 'no disaster strikes except by permission of Allāh', has neither: just fa-innamā. Hook: 'beware' sits beside the warning about Satan; At-Taghābun is the plain one.",
+      "cues": {
+        "5:92": "After intoxicants and gambling, 'will you not desist?'; adds wa ḥdharū and fa-ʿlamū annamā.",
+        "64:12": "After 'no disaster strikes except by permission of Allāh'; no 'beware', just fa-innamā."
+      }
+    }
+  }
+}

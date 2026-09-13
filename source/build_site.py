@@ -53,6 +53,76 @@ for p in sorted(PAGES):
                 KEY_WORDS[f"{s}:{a}"]["pages"].append(p)
             if not end:
                 KEY_WORDS[f"{s}:{a}"]["words"].append(t)
+# ---------- Similars tab: groups of similar ayat across the whole Quran (see similars.py) ----------
+SIM_DIR = os.path.join(RAW, "similars")
+QWORDS = {}
+qdir = os.path.join(RAW, "quran-pages")
+if os.path.isdir(qdir):
+    for f in sorted(os.listdir(qdir)):
+        for ln in load(os.path.join(qdir, f))["lines"]:
+            for t, s, a, end in ln["w"]:
+                if not end:
+                    QWORDS.setdefault(f"{s}:{a}", []).append(t)
+LAST_AYAH = {}
+for k in list(QWORDS) + list(KEY_WORDS):
+    s_, a_ = map(int, k.split(":"))
+    LAST_AYAH[s_] = max(LAST_AYAH.get(s_, 0), a_)
+CHAPTERS = load(os.path.join(RAW, "chapters.json")) if os.path.exists(os.path.join(RAW, "chapters.json")) else {}
+TR_EXTRA = load(os.path.join(SIM_DIR, "tr_extra.json")) if os.path.exists(os.path.join(SIM_DIR, "tr_extra.json")) else {}
+_tr_cache = {}
+
+
+def tr_of(k):
+    s_, a_ = k.split(":")
+    if 58 <= int(s_) <= 114:
+        if s_ not in _tr_cache:
+            _tr_cache[s_] = load(os.path.join(RAW, f"s{int(s_):03d}", "tr.json"))
+        return _tr_cache[s_].get(a_, "")
+    return TR_EXTRA.get(k, "")
+
+
+def text_of(k):
+    return " ".join(KEY_WORDS[k]["words"]) if k in KEY_WORDS else " ".join(QWORDS.get(k, []))
+
+
+def step_key(k, d):
+    s_, a_ = map(int, k.split(":"))
+    a_ += d
+    if a_ < 1:
+        s_ -= 1
+        if s_ < 1:
+            return None
+        a_ = LAST_AYAH.get(s_, 0)
+    elif a_ > LAST_AYAH.get(s_, 0):
+        s_, a_ = s_ + 1, 1
+        if s_ > 114:
+            return None
+    return f"{s_}:{a_}"
+
+
+def ayah_ref(k):
+    return {"k": k, "text": text_of(k), "tr": tr_of(k)} if k else None
+
+
+def similars_for(n):
+    f = os.path.join(SIM_DIR, f"s{n:03d}.json")
+    if not os.path.exists(f):
+        return []
+    cf = os.path.join(CONTENT, "similars", f"s{n:03d}.json")
+    flows = load(cf).get("groups", {}) if os.path.exists(cf) else {}
+    out = []
+    for g in load(f)["groups"]:
+        fl = flows.get(g["id"], {})
+        out.append({
+            "id": g["id"], "kind": g["kind"], "more": g["more"], "flow": fl.get("flow", ""),
+            "members": [{**m, "name": CHAPTERS.get(m["k"].split(":")[0], {}).get("name", ""),
+                         "text": text_of(m["k"]), "tr": tr_of(m["k"]), "cue": fl.get("cues", {}).get(m["k"], ""),
+                         "before": ayah_ref(step_key(m["k"], -1)), "after": ayah_ref(step_key(m["k"], 1))}
+                        for m in g["members"]],
+        })
+    return out
+
+
 surahs, ready, skipped = {}, [], []
 for n in range(58, 115):
     mf = os.path.join(RAW, f"s{n:03d}", "meta.json")
@@ -91,6 +161,7 @@ for n in sorted(k for k in surahs if k >= 58):
         "edges": m["edges"],
         "content": c,
         "repeats": find_repeats({a: KEY_WORDS[f"{n}:{a}"]["words"] for a in range(1, m["ayat"] + 1)}),
+        "similars": similars_for(n),
     }
     js = f"(window.JUZAPP_SURAH = window.JUZAPP_SURAH || {{}})[{n}] = " + json.dumps(data, ensure_ascii=False, separators=(",", ":")) + ";\n"
     open(os.path.join(SITE, "data", f"s{n:03d}.js"), "w", encoding="utf-8").write(js)

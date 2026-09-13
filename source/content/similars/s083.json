@@ -1,0 +1,49 @@
+{
+  "n": 83,
+  "groups": {
+    "g1": {
+      "flow": "Two matching questions get the same answer, kitābun marqūm. First 'what is sijjīn?', and next comes woe to the deniers. Later 'what is ʿilliyyūn?', and next comes 'witnessed by those brought near'. Hook: sijjīn before ʿilliyyūn, woe before witnesses.",
+      "cues": {
+        "83:9": "Answers 'what is sijjīn?'; next, woe, that Day, to the deniers.",
+        "83:20": "Answers 'what is ʿilliyyūn?'; next, witnessed by those brought near."
+      }
+    },
+    "g2": {
+      "flow": "Al-Mursalāt repeats wayl yawmaʾidhin lil-mukadhdhibīn ten times, one after each scene: the Day of Judgement, the criminals, 'We determined', mountains and water, yellowish camels, no excuse, 'plan against Me', the good rewarded, 'eat a little', 'they do not bow'. Al-Muṭaffifīn says it once only, straight after kitābun marqūm for sijjīn, and its next ayah names the deniers: those who deny the Day of Recompense.",
+      "cues": {
+        "77:15": "First in Al-Mursalāt: after 'what is the Day of Judgement?'; next, former peoples destroyed.",
+        "77:19": "After 'thus do We deal with the criminals'; next, created from a liquid disdained.",
+        "77:24": "After 'excellent are We to determine'; next, the earth made a container.",
+        "77:28": "After lofty mountains and sweet water; next, 'proceed to what you used to deny'.",
+        "77:34": "After the yellowish camels; next, a Day they will not speak.",
+        "77:37": "After 'no excuse permitted'; next, 'this is the Day of Judgement'.",
+        "77:40": "After 'if you have a plan, plan against Me'; next, the righteous among shades.",
+        "77:45": "After 'thus We reward the doers of good'; next, 'eat and enjoy a little'.",
+        "77:47": "After 'eat and enjoy a little, you are criminals'; next, they do not bow.",
+        "77:49": "Last in Al-Mursalāt: after 'they do not bow'; next, 'in what statement will they believe?'",
+        "83:10": "Al-Muṭaffifīn's only one: after kitābun marqūm for sijjīn; next, who deny the Day of Recompense."
+      }
+    },
+    "g3": {
+      "flow": "Word for word the same in both. What differs is the man described before it and the reply after. Al-Qalam: he owns wealth and children, and next he is branded upon the snout. Al-Muṭaffifīn: he is the sinful transgressor who denies, and next the stain has covered their hearts. Hook: Qalam brands the snout, Muṭaffifīn stains the heart.",
+      "cues": {
+        "68:15": "After 'possessor of wealth and children'; next, 'We will brand him upon the snout'.",
+        "83:13": "After 'every sinful transgressor'; next, 'No! Rather, the stain has covered their hearts'."
+      }
+    },
+    "g4": {
+      "flow": "Same words in both. In Al-Muṭaffifīn it opens a long picture of the righteous: after the ʿilliyyūn register witnessed by those brought near, then adorned couches and radiant faces. In Al-Infiṭār it stands one ayah, then flips to the wicked in Hellfire. Hook: Muṭaffifīn lingers on the reward, Infiṭār contrasts at once.",
+      "cues": {
+        "82:13": "Al-Infiṭār: after 'they know whatever you do'; next, the wicked in Hellfire.",
+        "83:22": "Al-Muṭaffifīn: after 'witnessed by those brought near'; next, adorned couches, observing."
+      }
+    },
+    "g5": {
+      "flow": "Twice in this surah. First it follows 'the righteous will be in pleasure' and leads to the radiance of pleasure in their faces. Near the end it follows the believers laughing at the disbelievers and leads to the closing question: have the disbelievers been rewarded? Hook: first with glowing faces, then with laughter.",
+      "cues": {
+        "83:23": "After 'the righteous will be in pleasure'; next, radiance of pleasure in their faces.",
+        "83:35": "After believers laughing at the disbelievers; next, 'have the disbelievers been rewarded?'"
+      }
+    }
+  }
+}

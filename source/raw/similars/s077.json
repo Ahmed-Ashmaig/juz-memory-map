@@ -1,0 +1,211 @@
+{
+ "surah": 77,
+ "groups": [
+  {
+   "kind": "cross",
+   "anchor": "77:14",
+   "more": 0,
+   "members": [
+    {
+     "k": "77:14",
+     "page": 580,
+     "exact": true,
+     "diff": []
+    },
+    {
+     "k": "82:17",
+     "page": 587,
+     "exact": false,
+     "diff": [
+      4
+     ]
+    },
+    {
+     "k": "82:18",
+     "page": 587,
+     "exact": false,
+     "diff": [
+      0,
+      1,
+      5
+     ]
+    }
+   ],
+   "id": "g1"
+  },
+  {
+   "kind": "both",
+   "anchor": "77:15",
+   "more": 0,
+   "members": [
+    {
+     "k": "77:15",
+     "page": 580,
+     "exact": true,
+     "diff": []
+    },
+    {
+     "k": "77:19",
+     "page": 580,
+     "exact": true,
+     "diff": []
+    },
+    {
+     "k": "77:24",
+     "page": 581,
+     "exact": true,
+     "diff": []
+    },
+    {
+     "k": "77:28",
+     "page": 581,
+     "exact": true,
+     "diff": []
+    },
+    {
+     "k": "77:34",
+     "page": 581,
+     "exact": true,
+     "diff": []
+    },
+    {
+     "k": "77:37",
+     "page": 581,
+     "exact": true,
+     "diff": []
+    },
+    {
+     "k": "77:40",
+     "page": 581,
+     "exact": true,
+     "diff": []
+    },
+    {
+     "k": "77:45",
+     "page": 581,
+     "exact": true,
+     "diff": []
+    },
+    {
+     "k": "77:47",
+     "page": 581,
+     "exact": true,
+     "diff": []
+    },
+    {
+     "k": "77:49",
+     "page": 581,
+     "exact": true,
+     "diff": []
+    },
+    {
+     "k": "83:10",
+     "page": 588,
+     "exact": true,
+     "diff": []
+    }
+   ],
+   "id": "g2"
+  },
+  {
+   "kind": "cross",
+   "anchor": "77:41",
+   "more": 0,
+   "members": [
+    {
+     "k": "15:45",
+     "page": 264,
+     "exact": false,
+     "diff": [
+      3
+     ]
+    },
+    {
+     "k": "51:15",
+     "page": 521,
+     "exact": false,
+     "diff": [
+      3
+     ]
+    },
+    {
+     "k": "52:17",
+     "page": 524,
+     "exact": false,
+     "diff": [
+      3,
+      4
+     ]
+    },
+    {
+     "k": "54:54",
+     "page": 531,
+     "exact": false,
+     "diff": [
+      3,
+      4
+     ]
+    },
+    {
+     "k": "77:41",
+     "page": 581,
+     "exact": true,
+     "diff": []
+    }
+   ],
+   "id": "g3"
+  },
+  {
+   "kind": "cross",
+   "anchor": "77:43",
+   "more": 0,
+   "members": [
+    {
+     "k": "52:19",
+     "page": 524,
+     "exact": true,
+     "diff": []
+    },
+    {
+     "k": "77:43",
+     "page": 581,
+     "exact": true,
+     "diff": []
+    }
+   ],
+   "id": "g4"
+  },
+  {
+   "kind": "cross",
+   "anchor": "77:44",
+   "more": 0,
+   "members": [
+    {
+     "k": "37:80",
+     "page": 449,
+     "exact": true,
+     "diff": []
+    },
+    {
+     "k": "37:121",
+     "page": 450,
+     "exact": true,
+     "diff": []
+    },
+    {
+     "k": "37:131",
+     "page": 451,
+     "exact": true,
+     "diff": []
+    },
+    {
+     "k": "77:44",
+     "page": 581,
+     "exact": true,
+     "diff": []
+    }
+   ],
+   "id": "g5"
+  }
+ ]
+}

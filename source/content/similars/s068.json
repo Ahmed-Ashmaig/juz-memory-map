@@ -1,0 +1,78 @@
+{
+  "n": 68,
+  "groups": {
+    "g1": {
+      "flow": "Two versions of 'your Lord is most knowing of who strays'. Al-Anʿām 6:117 says man yaḍillu (who strays), after a warning that obeying most people on earth would mislead you. Al-Qalam 68:7 says bi-man ḍalla (who has gone astray), after 'which of you is the afflicted'. Hook: the earlier surah keeps the verb ongoing, yaḍillu; the later one has it done, ḍalla.",
+      "cues": {
+        "6:117": "Man yaḍillu, no bi-: follows 'obey most on earth and they will mislead you.'",
+        "68:7": "Bi-man ḍalla: follows 'which of you is the afflicted'; next, 'do not obey the deniers.'"
+      }
+    },
+    "g2": {
+      "flow": "Word for word the same. Al-Qalam 68:15 describes a man who has 'wealth and children', and the next ayah threatens to brand his snout. Al-Muṭaffifīn 83:13 follows 'none deny it except every sinful transgressor', and the next ayah is 'No! The stain has covered their hearts.' Hook: wealth and snout in Al-Qalam; sin and stain in Al-Muṭaffifīn.",
+      "cues": {
+        "68:15": "After 'possessor of wealth and children'; next, 'We will brand him upon the snout.'",
+        "83:13": "After 'none deny it except every sinful transgressor'; next, 'No! The stain covers their hearts.'"
+      }
+    },
+    "g3": {
+      "flow": "Identical words, each finishing a lament. Al-Wāqiʿah 56:67 completes 'we are in debt', then the surah moves on to 'the water that you drink'. Al-Qalam 68:27 completes 'when they saw it: we are lost', then the most moderate of them speaks. Hook: debt in Al-Wāqiʿah, lost in Al-Qalam; the Qalam group keeps talking, the Wāqiʿah scene ends.",
+      "cues": {
+        "56:67": "Finishes 'we are in debt'; next ayah asks about the water you drink.",
+        "68:27": "Finishes 'when they saw it: we are lost'; next, the most moderate of them speaks."
+      }
+    },
+    "g4": {
+      "flow": "Four scenes of people turning to one another. Aṣ-Ṣāffāt 37:27: those in surrender that Day. 37:50: after 'well-protected eggs'. Aṭ-Ṭūr 52:25: after 'pearls well-protected'. Al-Qalam 68:30: after 'we were wrongdoers', and only here it ends yatalāwamūn (blaming); the others end yatasāʾalūn. Hook: the opening word alternates in muṣḥaf order: wa-aqbala, fa-aqbala, wa-aqbala, fa-aqbala.",
+      "cues": {
+        "37:27": "Wa-aqbala … yatasāʾalūn, after 'that Day, in surrender'; next, 'you came at us from the right.'",
+        "37:50": "Fa-aqbala … yatasāʾalūn, after 'as if delicate eggs'; next, 'I had a companion.'",
+        "52:25": "Wa-aqbala … yatasāʾalūn, after boys 'like pearls well-protected'; next, 'we were fearful among our people.'",
+        "68:30": "Fa-aqbala … yatalāwamūn (blaming), right after 'Exalted is our Lord! We were wrongdoers.'"
+      }
+    },
+    "g5": {
+      "flow": "Same cry, different last word. Al-Anbiyāʾ 21:14 ends ẓālimīn (wrongdoers), after the people are told not to flee but return to their luxury. Al-Qalam 68:31 ends ṭāghīn (transgressors): 'we were wrongdoers' was already said two ayat earlier at 68:29, so here the word is transgressors. Hook: Al-Anbiyāʾ says ẓālimīn; Al-Qalam goes from wrongdoers to ṭāghīn.",
+      "cues": {
+        "21:14": "Ends ẓālimīn; after 'do not flee, return to your luxury and homes.'",
+        "68:31": "Ends ṭāghīn; right after they blame each other, just past 'we were wrongdoers.'"
+      }
+    },
+    "g6": {
+      "flow": "Same words in both, each after a 'this versus that' question. Aṣ-Ṣāffāt 37:154 follows 'has He chosen daughters over sons?'. Al-Qalam 68:36 follows 'will We treat the Muslims like the criminals?'. After it, Aṣ-Ṣāffāt asks 'will you not be reminded?' while Al-Qalam asks 'or do you have a scripture?'. Hook: daughters and sons in Aṣ-Ṣāffāt; Muslims and criminals in Al-Qalam.",
+      "cues": {
+        "37:154": "After 'has He chosen daughters over sons?'; next, 'will you not be reminded?'",
+        "68:36": "After 'will We treat the Muslims like the criminals?'; next, 'or do you have a scripture?'"
+      }
+    },
+    "g7": {
+      "flow": "Identical, and the ayah before is nearly the same too: deniers led on 'from where they do not know'. Al-Aʿrāf 7:183: 'those who deny Our signs', then 'no madness in their companion'. Al-Qalam 68:45: 'leave Me with whoever denies this statement', then the 'or' questions begin: 'or do you ask of them a payment?'. Hook: signs in Al-Aʿrāf, statement in Al-Qalam.",
+      "cues": {
+        "7:183": "Before: 'those who deny Our signs'; next, 'no madness in their companion.'",
+        "68:45": "Before: 'leave Me with whoever denies this statement'; next, 'or do you ask a payment?'"
+      }
+    },
+    "g8": {
+      "flow": "Identical, and in both surahs the next ayah is the same too: 'or have they the unseen, so they write it down?'. The difference is around the pair. Aṭ-Ṭūr 52:40 follows 'has He daughters while you have sons?', and a plan is mentioned after the pair. Al-Qalam 68:46 follows 'My plan (kaydī) is firm'. Hook: in Al-Qalam the plan comes before; in Aṭ-Ṭūr, after.",
+      "cues": {
+        "52:40": "After 'has He daughters while you have sons?'; part of a long run of 'or' questions.",
+        "68:46": "Right after 'I will give them time; My plan (kaydī) is firm.'"
+      }
+    },
+    "g9": {
+      "flow": "Identical, and always straight after the 'payment' ayah. Aṭ-Ṭūr 52:41 keeps the 'or' questions going: 'or do they intend a plan?'. Al-Qalam 68:47 ends the questions and turns to the Prophet ﷺ: 'be patient, and be not like the companion of the fish'. Hook: Aṭ-Ṭūr keeps asking; Al-Qalam turns to patience and Jonah.",
+      "cues": {
+        "52:41": "After the payment question; next, 'or do they intend a plan?'",
+        "68:47": "After the payment question; next, 'be patient, not like the companion of the fish.'"
+      }
+    },
+    "g10": {
+      "flow": "Three times 'a reminder to the worlds'. Ṣād 38:87 and At-Takwīr 81:27 open with in huwa; only Al-Qalam 68:52 opens with wa-mā huwa, as the surah's last ayah, straight after 'they say, indeed he is mad'. Muṣḥaf order: Ṣād, Al-Qalam, At-Takwīr. Hook: in, wa-mā, in; the odd one sits in the middle.",
+      "cues": {
+        "38:87": "In huwa; after 'I ask you no payment, and I am not pretentious.'",
+        "68:52": "Wa-mā huwa; last ayah of the surah, after 'they say, indeed he is mad.'",
+        "81:27": "In huwa; after 'so where are you going?'; next, 'for whoever wills… a right course.'"
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "n": 102,
+  "groups": {
+    "g1": {
+      "flow": "The warning comes twice, back to back. First plain: kallā sawfa taʿlamūn, right after 'until you visit the graveyards'. Then again with thumma ('then') added in front. Hook: thumma means 'then', so it can only be the second one. After it, a third 'No!' changes course: 'If you only knew with knowledge of certainty'.",
+      "cues": {
+        "102:3": "Plain kallā, no thumma: right after 'until you visit the graveyards'.",
+        "102:4": "Thumma kallā: the repeat; next, 'No! If you only knew with knowledge of certainty'."
+      }
+    }
+  }
+}

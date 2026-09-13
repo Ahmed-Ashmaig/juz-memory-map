@@ -1,0 +1,19 @@
+{
+  "n": 78,
+  "groups": {
+    "g1": {
+      "flow": "Two warnings back to back, after 'that over which they are in disagreement'. The first is bare: kallā sayaʿlamūn. The second adds thumma ('then') and leads straight into 'Have We not made the earth a resting place?'. Hook: say it once, then thumma, say it again.",
+      "cues": {
+        "78:4": "1st, no thumma: right after 'that over which they are in disagreement'.",
+        "78:5": "2nd, opens with thumma; next, the earth made a resting place."
+      }
+    },
+    "g2": {
+      "flow": "Same opening, lā yasmaʿūna fīhā laghwan wa lā, then a different last word. Al-Wāqiʿah ends taʾthīmā (sin), after 'reward for what they used to do', then 'peace, peace'. An-Nabaʾ ends kidhdhābā (falsehood), after 'a full cup', then 'reward from your Lord'. Hook: kidhdhābā sounds like mukadhdhibīn, the deniers of Al-Mursalāt just before.",
+      "cues": {
+        "56:25": "Al-Wāqiʿah: ends taʾthīmā (sin); after 'reward for what they used to do'.",
+        "78:35": "An-Nabaʾ: ends kidhdhābā (falsehood); after 'a full cup', then reward from your Lord."
+      }
+    }
+  }
+}

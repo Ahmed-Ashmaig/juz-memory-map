@@ -1,0 +1,27 @@
+{
+ "surah": 102,
+ "groups": [
+  {
+   "kind": "within",
+   "anchor": "102:3",
+   "more": 0,
+   "members": [
+    {
+     "k": "102:3",
+     "page": 600,
+     "exact": true,
+     "diff": []
+    },
+    {
+     "k": "102:4",
+     "page": 600,
+     "exact": false,
+     "diff": [
+      0
+     ]
+    }
+   ],
+   "id": "g1"
+  }
+ ]
+}

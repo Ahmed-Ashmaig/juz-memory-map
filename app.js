@@ -168,6 +168,7 @@ const Surah = (() => {
   let quizA = 0, lastQuiz = 0, answered = false, lastOk = false;
   let REP = {};   // ayah -> repeat group from data (ayat repeated within this surah)
   let readAll = !!store.get("juzapp-readall", false);   // Learn: show every section in full colour
+  let simSel = 0;       // Similars: selected group
   const score = [0, 0];
   const stuckThisPass = new Set();
   const openGroups = new Set();
@@ -298,6 +299,8 @@ const Surah = (() => {
     stuckThisPass.clear(); openGroups.clear();
     buildPages(); buildHeader(); buildStrip();
     $("m-quiz").hidden = S.length < 2;
+    simSel = 0;
+    $("m-sim").hidden = !(data.similars || []).length;
     document.querySelectorAll(".modes button").forEach(b => b.setAttribute("aria-pressed", b.dataset.mode === "learn" ? "true" : "false"));
     render();
     requestAnimationFrame(() => {
@@ -311,14 +314,18 @@ const Surah = (() => {
     const st = $("stage"), s = S[sel - 1];
     st.classList.toggle("test", mode === "test");
     st.classList.toggle("quiz", mode === "quiz");
+    st.classList.toggle("sim", mode === "sim");
+    const G = D.similars || [];
+    const SIMK = new Set(mode === "sim" && G[simSel] ? G[simSel].members.filter(m => surahOfKey(m.k) === n).map(m => +m.k.split(":")[1]) : []);
     $("surah").classList.toggle("surah-test", mode === "test");
     document.querySelectorAll("#pages .w.s").forEach(w => {
       const a = +w.dataset.a, inSel = a >= s.a && a <= s.b;
-      w.classList.toggle("dim", mode !== "quiz" && !inSel && !(mode === "learn" && readAll));
+      w.classList.toggle("dim", mode !== "quiz" && mode !== "sim" && !inSel && !(mode === "learn" && readAll));
       w.classList.toggle("sel", mode === "test" && inSel);
       w.classList.toggle("shown", mode === "test" && inSel && a < s.a + revealed);
       w.classList.toggle("stuck", weak(a) > 0);
       w.classList.toggle("rep", !!REP[a]);
+      w.classList.toggle("simfocus", SIMK.has(a));
       w.classList.remove("focus");
     });
     if (mode === "test") {
@@ -483,6 +490,57 @@ const Surah = (() => {
     if (what === "hide") { revealed = 0; stuckThisPass.clear(); render(); }
   }
 
+  /* ---------- Similars: look-alike ayat here and elsewhere, in muṣḥaf order ---------- */
+  const simName = (s, m) => (IDX.surahs[s] ? nameOf(s) : (m.name || `Surah ${s}`).replace(/'/g, "ʿ"));
+  function simLabel(g) {
+    const total = g.members.length + (g.more || 0);
+    return `${total} places · ${g.kind === "within" ? "in this surah" : g.kind === "cross" ? "in other surahs" : "here and in other surahs"}`;
+  }
+  const markDiff = (t, diff) => (!diff || !diff.length ? t : t.split(" ").map((w, i) => (diff.includes(i) ? `<mark class="simdiff">${w}</mark>` : w)).join(" "));
+  function simOcc(m, j) {
+    const s = surahOfKey(m.k), here = s === n, a = +m.k.split(":")[1];
+    const link = here ? `<button type="button" class="replink" data-go-ayah="${a}">open in Learn</button>`
+      : IDX.ready.includes(s) ? `<a class="replink" href="#${s}">open surah</a>` : "";
+    const side = (lbl, r) => (r ? `<div class="simctx"><span class="k">${lbl} · ${r.k}</span><div class="mid-ar" lang="ar">${r.text}</div><div class="tr">“${esc(r.tr)}”</div></div>` : "");
+    return `<li class="simcard${here ? " here" : ""}">
+      <div class="simhead"><b>${j + 1}. ${here ? "This surah" : `${esc(simName(s, m))} (${s})`} · ayah ${a}</b><span class="d">p.${m.page} · ${m.exact ? "same words" : "words differ"}</span>${link}</div>
+      ${m.cue ? `<p class="simcue">${esc(m.cue)}</p>` : ""}
+      ${side("Before", m.before)}
+      <div class="simmain"><span class="k">The ayah · ${m.k}</span><div class="big-ar" lang="ar">${markDiff(m.text, m.diff)}</div><div class="tr" style="color:var(--ink)">“${esc(m.tr)}”</div></div>
+      ${side("After", m.after)}
+    </li>`;
+  }
+  function renderSim() {
+    const G = D.similars || [], P = $("panel");
+    P.innerHTML = `
+      <div class="lbl">Similars · ${G.length} group${G.length > 1 ? "s" : ""}</div>
+      <h2 class="ptitle">Look-alike ayat</h2>
+      <p class="tr">Ayat that repeat or nearly repeat, here and elsewhere in the Quran. Pick one to see every place it appears, in order, with the ayah before and after.</p>
+      <div class="simlist">${G.map((g, i) => {
+        const m = g.members.find(x => surahOfKey(x.k) === n) || g.members[0];
+        return `<button type="button" class="simbtn${i === simSel ? " on" : ""}" data-i="${i}"><span class="mid-ar" lang="ar">${m.text}</span><span class="d">Ayah ${m.k.split(":")[1]} · ${simLabel(g)}</span></button>`;
+      }).join("")}</div>`;
+    P.querySelectorAll(".simbtn").forEach(b => (b.onclick = () => {
+      simSel = +b.dataset.i;
+      render();
+      const mine = G[simSel].members.find(x => surahOfKey(x.k) === n);
+      if (mine && AY[mine.k]) scrollToPage(AY[mine.k].start[0]);
+      // on phones the details sit below the list, so bring them into view
+      if (window.innerWidth < 1100) $("deep").scrollIntoView({ behavior: "smooth", block: "start" });
+    }));
+    const el = $("deep"), g = G[simSel];
+    if (!g) { el.hidden = true; return; }
+    el.hidden = false;
+    el.style.borderTopColor = "var(--rep)";
+    el.innerHTML = `
+      <div class="lbl rep">Similars · group ${simSel + 1} of ${G.length}</div>
+      <h2 class="dtitle">${esc(simLabel(g))}</h2>
+      ${g.flow ? `<div class="dblock hook"><h3>How to remember the order</h3><p>${esc(g.flow)}</p></div>` : ""}
+      <ol class="simocc">${g.members.map(simOcc).join("")}</ol>
+      ${g.more ? `<p class="src">${g.more} more similar ayat elsewhere in the Quran aren’t shown.</p>` : ""}`;
+    el.querySelectorAll("[data-go-ayah]").forEach(b => (b.onclick = () => { setMode("learn"); openAyah(+b.dataset.goAyah, true); }));
+  }
+
   function renderQuiz() {
     const k = key(quizA), s = secOf(quizA);
     $("panel").innerHTML = `
@@ -556,10 +614,11 @@ const Surah = (() => {
     paint();
     renderDeep();
     $("dock").hidden = mode !== "test";
-    $("hint").innerHTML = (mode === "learn" ? "Tap a section, or any word on the page" : mode === "test" ? "Pick a section, then recite it" : "Find the ayah’s section")
+    $("hint").innerHTML = (mode === "learn" ? "Tap a section, or any word on the page" : mode === "test" ? "Pick a section, then recite it" : mode === "sim" ? "Look-alike ayat: pick one to see every place it appears" : "Find the ayah’s section")
       + (Object.keys(REP).length ? ' · <span class="replegend">violet underline = repeated ayah</span>' : "");
     if (mode === "learn") (view === "ayah" ? renderAyah() : renderSection());
     else if (mode === "test") renderTest();
+    else if (mode === "sim") renderSim();
     else renderQuiz();
   }
   function choose(sn, scroll) {
@@ -579,6 +638,7 @@ const Surah = (() => {
   function setMode(m) {
     if (!D) return;
     if (m === "quiz" && S.length < 2) m = "learn";
+    if (m === "sim" && !(D.similars || []).length) m = "learn";
     mode = m; view = "section"; revealed = 0; showAll = false; stuckThisPass.clear();
     document.querySelectorAll(".modes button").forEach(b => b.setAttribute("aria-pressed", b.dataset.mode === m ? "true" : "false"));
     document.querySelectorAll("#strip .blk").forEach(b => b.classList.remove("right", "wrong"));

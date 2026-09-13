@@ -1,0 +1,27 @@
+{
+  "n": 79,
+  "groups": {
+    "g1": {
+      "flow": "Ṭā Hā opens with wa: wa hal atāka ḥadīthu Mūsā, after 'To Him belong the best names', then Moses sees a fire. An-Nāziʿāt has plain hal, no wa, after 'suddenly they will be alert upon the earth's surface', then his Lord calls him in Ṭuwā. Hook: wa joins on to Allāh's names in Ṭā Hā; An-Nāziʿāt starts fresh.",
+      "cues": {
+        "20:9": "Ṭā Hā: wa hal, with wa; after 'To Him belong the best names'.",
+        "79:15": "An-Nāziʿāt: plain hal, no wa; after 'alert upon the earth's surface'."
+      }
+    },
+    "g2": {
+      "flow": "Ṭā Hā has it twice. First idhhab (singular) to Moses, after 'Our greater signs'; he then asks for his breast to be expanded. Later idhhabā (both of you), after 'you and your brother', then 'speak to him gently'. An-Nāziʿāt has one idhhab, straight after the call in Ṭuwā, then 'would you purify yourself'. Hook: once the brother is named, the verb becomes dual.",
+      "cues": {
+        "20:24": "Ṭā Hā, 1st: idhhab (singular), after 'Our greater signs'; Moses asks for an expanded breast.",
+        "20:43": "Ṭā Hā, 2nd: idhhabā (both), after 'you and your brother'; next, gentle speech.",
+        "79:17": "An-Nāziʿāt: idhhab (singular), after the call in the sacred valley of Ṭuwā."
+      }
+    },
+    "g3": {
+      "flow": "Identical words, matāʿan lakum wa li-anʿāmikum, closing a list of provisions in both. An-Nāziʿāt: after the mountains set firmly; next, 'the greatest Overwhelming Calamity'. ʿAbasa: after fruit and grass; next, 'the Deafening Blast'. Hook: mountains lead to the Calamity; fruit and grass lead to the Blast.",
+      "cues": {
+        "79:33": "An-Nāziʿāt: after 'the mountains He set firmly'; next, the greatest Overwhelming Calamity.",
+        "80:32": "ʿAbasa: after 'fruit and grass'; next, the Deafening Blast."
+      }
+    }
+  }
+}

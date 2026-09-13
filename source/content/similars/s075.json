@@ -1,0 +1,12 @@
+{
+  "n": 75,
+  "groups": {
+    "g1": {
+      "flow": "A double warning to the man who went to his people swaggering (75:33). The first is bare: awlā laka fa-awlā. The second repeats it with thumma in front: thumma awlā laka fa-awlā. Then the surah turns to a question: 'Does man think he will be left neglected?' Hook: plain first, thumma second, like fa-qutila then thumma qutila in Al-Muddaththir.",
+      "cues": {
+        "75:34": "First, no thumma: right after he went to his people swaggering.",
+        "75:35": "Second, starts with thumma; next asks if man thinks he'll be left neglected."
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+ "surah": 74,
+ "groups": [
+  {
+   "kind": "within",
+   "anchor": "74:19",
+   "more": 0,
+   "members": [
+    {
+     "k": "74:19",
+     "page": 576,
+     "exact": true,
+     "diff": []
+    },
+    {
+     "k": "74:20",
+     "page": 576,
+     "exact": false,
+     "diff": [
+      0,
+      1
+     ]
+    }
+   ],
+   "id": "g1"
+  },
+  {
+   "kind": "cross",
+   "anchor": "74:55",
+   "more": 0,
+   "members": [
+    {
+     "k": "74:55",
+     "page": 577,
+     "exact": true,
+     "diff": []
+    },
+    {
+     "k": "80:12",
+     "page": 585,
+     "exact": true,
+     "diff": []
+    }
+   ],
+   "id": "g2"
+  }
+ ]
+}

@@ -1,0 +1,75 @@
+{
+ "surah": 79,
+ "groups": [
+  {
+   "kind": "cross",
+   "anchor": "79:15",
+   "more": 0,
+   "members": [
+    {
+     "k": "20:9",
+     "page": 312,
+     "exact": false,
+     "diff": [
+      0
+     ]
+    },
+    {
+     "k": "79:15",
+     "page": 583,
+     "exact": true,
+     "diff": []
+    }
+   ],
+   "id": "g1"
+  },
+  {
+   "kind": "cross",
+   "anchor": "79:17",
+   "more": 0,
+   "members": [
+    {
+     "k": "20:24",
+     "page": 313,
+     "exact": true,
+     "diff": []
+    },
+    {
+     "k": "20:43",
+     "page": 314,
+     "exact": false,
+     "diff": [
+      0
+     ]
+    },
+    {
+     "k": "79:17",
+     "page": 584,
+     "exact": true,
+     "diff": []
+    }
+   ],
+   "id": "g2"
+  },
+  {
+   "kind": "cross",
+   "anchor": "79:33",
+   "more": 0,
+   "members": [
+    {
+     "k": "79:33",
+     "page": 584,
+     "exact": true,
+     "diff": []
+    },
+    {
+     "k": "80:32",
+     "page": 585,
+     "exact": true,
+     "diff": []
+    }
+   ],
+   "id": "g3"
+  }
+ ]
+}

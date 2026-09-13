@@ -1,0 +1,12 @@
+{
+  "n": 73,
+  "groups": {
+    "g1": {
+      "flow": "Word for word the same: inna hādhihi tadhkiratun, fa-man shāʾa ttakhadha ilā rabbihi sabīlā. Know them by the neighbours. Al-Muzzammil (page 574): after the heaven breaking apart, before the long ayah 'your Lord knows you stand at night'. Al-Insān (page 580): after 'We created them and strengthened their forms', before 'you do not will except that Allāh wills'. Hook: sky then night prayer; creation then Allāh's will.",
+      "cues": {
+        "73:19": "Al-Muzzammil: after the heaven breaking apart; next, the long ayah on standing at night.",
+        "76:29": "Al-Insān: after 'We created them and strengthened their forms'; next, 'you do not will'."
+      }
+    }
+  }
+}

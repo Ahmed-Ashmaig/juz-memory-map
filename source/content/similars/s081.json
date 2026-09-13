@@ -1,0 +1,20 @@
+{
+  "n": 81,
+  "groups": {
+    "g1": {
+      "flow": "Word for word the same in both, and each comes straight after an oath. In Al-Ḥāqqah it follows 'and what you do not see' and is followed by 'not the word of a poet'. In At-Takwīr it follows the dawn that breathes and is followed by the messenger's power with the Owner of the Throne. Hook: Ḥāqqah denies the poet, Takwīr describes the messenger.",
+      "cues": {
+        "69:40": "After 'and what you do not see'; next, 'not the word of a poet'.",
+        "81:19": "After the dawn when it breathes; next, possessed of power with the Owner of the Throne."
+      }
+    },
+    "g2": {
+      "flow": "One core line, huwa illā dhikrun lil-ʿālamīn, with two openings. Ṣād and At-Takwīr start with in; Al-Qalam alone starts wa mā, answering 'Indeed, he is mad' and closing its surah. Ṣād's follows 'I do not ask you any payment'; At-Takwīr's follows 'So where are you going?'. Hook in muṣḥaf order: in, wa mā, in.",
+      "cues": {
+        "38:87": "In huwa illā: after 'I ask no payment' and 'I am not of the pretentious'.",
+        "68:52": "Wa mā huwa illā: answers 'Indeed, he is mad'; last ayah of Al-Qalam.",
+        "81:27": "In huwa illā: after 'So where are you going?'; next, whoever wills a right course."
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "n": 82,
+  "groups": {
+    "g1": {
+      "flow": "Same words both times; the neighbours tell them apart. Al-Infiṭār gives it one ayah, then flips straight to its opposite: the wicked in Hellfire. Al-Muṭaffifīn stays with the righteous: the register witnessed by those brought near before it, adorned couches after it. Hook: Infiṭār contrasts at once, Muṭaffifīn keeps describing.",
+      "cues": {
+        "82:13": "After 'they know whatever you do'; next line flips to the wicked in Hellfire.",
+        "83:22": "After the register witnessed by those brought near; next, adorned couches, observing."
+      }
+    },
+    "g2": {
+      "flow": "Al-Mursalāt asks once, about yawm al-faṣl, and answers with 'woe, that Day, to the deniers'. Al-Infiṭār asks about yawm ad-dīn twice in a row: first wa mā adrāka, then thumma mā adrāka, and only then answers: the Day no soul can do a thing for another. Hook: faṣl once in 77; dīn twice in 82, the second opening with thumma.",
+      "cues": {
+        "77:14": "Yawm al-faṣl: the ayah before already names the Day of Judgement; woe follows.",
+        "82:17": "Yawm ad-dīn, first ask with wa mā: after 'never will they be absent'.",
+        "82:18": "Second ask opens thumma mā; next, the answer: no soul avails another."
+      }
+    }
+  }
+}

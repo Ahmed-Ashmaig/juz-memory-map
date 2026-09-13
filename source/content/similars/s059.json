@@ -1,0 +1,20 @@
+{
+  "n": 59,
+  "groups": {
+    "g1": {
+      "flow": "Three surahs open with sabbaḥa lillāhi, in order 57, 59, 61, all ending wa huwa l-ʿazīzu l-ḥakīm. Only the first, Al-Ḥadīd, has one mā: mā fi s-samāwāti wa l-arḍ. Al-Ḥashr and Aṣ-Ṣaff add a second: wa mā fi l-arḍ. Hook: the first is the shortest. Split the later two by ayah 2: expulsion from homes, or 'why say what you do not do?'",
+      "cues": {
+        "57:1": "After 'exalt the name of your Lord'; one mā only: wa l-arḍ. Then dominion, life, death.",
+        "59:1": "After 'the party of Allāh are the successful'; wa mā fi l-arḍ, then expulsion from homes.",
+        "61:1": "Opens Aṣ-Ṣaff: wa mā fi l-arḍ, then 'why do you say what you do not do?'"
+      }
+    },
+    "g2": {
+      "flow": "Both begin dhālika bi-annahum shāqqu llāha wa rasūlah. Al-Anfāl, after angels are told to strike necks and fingertips, gives the full form: wa man yushāqiqi llāha wa rasūlahu. Al-Ḥashr, after the decree of evacuation, is shorter: wa man yushāqqi llāha, with no second wa rasūlah. Hook: the earlier surah stretches the verb and keeps the Messenger; the later one squeezes both.",
+      "cues": {
+        "8:13": "After angels told to strike necks; full form: wa man yushāqiqi llāha wa rasūlahu.",
+        "59:4": "After the decree of evacuation; short form: wa man yushāqqi llāha, no second wa rasūlah."
+      }
+    }
+  }
+}

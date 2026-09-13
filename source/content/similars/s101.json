@@ -1,0 +1,12 @@
+{
+  "n": 101,
+  "groups": {
+    "g1": {
+      "flow": "Same words in both: fa-huwa fī ʿīshatin rāḍiyah. Al-Qāriʿah sets it between the scales: heavy scales before it, light scales after it. Al-Ḥāqqah sets it after a speaker's own words, 'I was certain I would be meeting my account', and follows it with 'In an elevated garden'. Hook: Al-Qāriʿah's pleasant life sits on the scales; Al-Ḥāqqah's leads into the garden.",
+      "cues": {
+        "69:21": "After 'I was certain I would be meeting my account'; next, an elevated garden.",
+        "101:7": "After 'scales are heavy'; next, the turn to one whose scales are light."
+      }
+    }
+  }
+}

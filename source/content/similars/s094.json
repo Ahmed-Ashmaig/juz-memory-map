@@ -1,0 +1,12 @@
+{
+  "n": 94,
+  "groups": {
+    "g1": {
+      "flow": "The same promise twice in a row. The first opens fa-inna ('For indeed'): its fa ties it to the ayah before, 'raised high for you your repute'. The second repeats it plain, inna, with nothing in front. Hook: fa comes first, then it drops off on the echo. After the plain inna, the surah turns to 'So when you have finished'.",
+      "cues": {
+        "94:5": "Fa-inna: straight after 'raised high for you your repute'.",
+        "94:6": "Plain inna: right after the fa-inna line; next, 'So when you have finished'."
+      }
+    }
+  }
+}

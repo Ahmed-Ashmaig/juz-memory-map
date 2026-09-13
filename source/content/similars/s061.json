@@ -1,0 +1,20 @@
+{
+  "n": 61,
+  "groups": {
+    "g1": {
+      "flow": "Three surahs open with sabbaḥa lillāhi, in order 57, 59, 61, all ending wa huwa l-ʿazīzu l-ḥakīm. Only the first, Al-Ḥadīd, has one mā: mā fi s-samāwāti wa l-arḍ. Al-Ḥashr and Aṣ-Ṣaff add a second: wa mā fi l-arḍ. Hook: the first is the shortest. Split the later two by ayah 2: expulsion from homes, or 'why say what you do not do?'",
+      "cues": {
+        "57:1": "After 'exalt the name of your Lord'; one mā only: wa l-arḍ. Then dominion, life, death.",
+        "59:1": "After 'the party of Allāh are the successful'; wa mā fi l-arḍ, then expulsion from homes.",
+        "61:1": "Opens Aṣ-Ṣaff: wa mā fi l-arḍ, then 'why do you say what you do not do?'"
+      }
+    },
+    "g2": {
+      "flow": "Word for word the same, and both follow 'they want to extinguish the light of Allāh with their mouths'. Tell them apart by what comes next: At-Tawbah turns to scholars and monks devouring wealth and hoarding gold; Aṣ-Ṣaff turns to 'shall I guide you to a transaction?' Both end wa law kariha l-mushrikūn, while the ayah before ended with the disbelievers.",
+      "cues": {
+        "9:33": "After 'Allāh refuses except to perfect His light'; next come scholars and monks devouring wealth.",
+        "61:9": "After 'Allāh will perfect His light'; next, 'shall I guide you to a transaction?'"
+      }
+    }
+  }
+}

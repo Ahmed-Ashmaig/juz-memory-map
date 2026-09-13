@@ -1,0 +1,19 @@
+{
+  "n": 80,
+  "groups": {
+    "g1": {
+      "flow": "Same words, fa man shāʾa dhakarah, both after 'No! Indeed, … a reminder'. Al-Muddaththir says 'it is a reminder' and follows with 'they will not remember except that Allāh wills'. ʿAbasa says 'they are a reminder' and follows with 'in honored sheets'. Hook: Al-Muddaththir moves to Allāh's will; ʿAbasa moves to the honored sheets.",
+      "cues": {
+        "74:55": "Al-Muddaththir: after 'it is a reminder'; next, none remember unless Allāh wills.",
+        "80:12": "ʿAbasa: after 'they are a reminder'; next, recorded in honored sheets."
+      }
+    },
+    "g2": {
+      "flow": "Identical words, matāʿan lakum wa li-anʿāmikum, closing a list of provisions in both. An-Nāziʿāt: after the mountains set firmly; next, 'the greatest Overwhelming Calamity'. ʿAbasa: after fruit and grass; next, 'the Deafening Blast'. Hook: mountains lead to the Calamity; fruit and grass lead to the Blast.",
+      "cues": {
+        "79:33": "An-Nāziʿāt: after 'the mountains He set firmly'; next, the greatest Overwhelming Calamity.",
+        "80:32": "ʿAbasa: after 'fruit and grass'; next, the Deafening Blast."
+      }
+    }
+  }
+}

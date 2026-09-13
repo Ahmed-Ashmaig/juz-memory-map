@@ -1,0 +1,13 @@
+{
+  "n": 95,
+  "groups": {
+    "g1": {
+      "flow": "Three near-matches that change one piece at a time, in muṣḥaf order. Fuṣṣilat: inna lladhīna … lahum, after those who do not give zakāh. Al-Inshiqāq: illā lladhīna … lahum, after 'tidings of a painful punishment'. At-Tīn: illā lladhīna … fa-lahum, after 'the lowest of the low'. Hook: inna, then illā, then illā plus fa. The last surah gets the extra fa.",
+      "cues": {
+        "41:8": "Inna, no fa: after those who do not give zakāh and disbelieve in the Hereafter.",
+        "84:25": "Illā … lahum, no fa: after 'tidings of a painful punishment'; last ayah of the surah.",
+        "95:6": "Illā … fa-lahum: after 'lowest of the low'; next, what causes you to deny the Recompense?"
+      }
+    }
+  }
+}

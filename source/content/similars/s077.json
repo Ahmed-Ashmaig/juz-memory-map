@@ -1,0 +1,55 @@
+{
+  "n": 77,
+  "groups": {
+    "g1": {
+      "flow": "Al-Mursalāt asks it once with yawmul-faṣl (Judgement), between 'For the Day of Judgement' and the first woe. Al-Infiṭār asks it twice with yawmud-dīn (Recompense); the second one opens with thumma instead of wa. Hook: faṣl stays in Al-Mursalāt, which says 'Day of Judgement' again at 77:38; dīn comes as a pair in Al-Infiṭār.",
+      "cues": {
+        "77:14": "Al-Mursalāt: yawmul-faṣl, right after 'For the Day of Judgement'; the first woe follows.",
+        "82:17": "Al-Infiṭār, 1st: wa mā adrāka … yawmud-dīn, after 'never will they be absent'.",
+        "82:18": "Al-Infiṭār, 2nd: thumma replaces wa; next, no soul can help another."
+      }
+    },
+    "g2": {
+      "flow": "Ten wayl yawmaʾidhin here, each closing a scene: the Day of Judgement, destroyed peoples, birth from a liquid, earth, mountains and water, the march to what they denied, no speech or excuse, the dare to plot, the righteous rewarded, 'eat a little', refusing to bow. Chant: Day, Nations, Birth, Earth; March, Silence, Plot; Reward, Eat, Bow. The last three sit two ayat apart. Al-Muṭaffifīn has one, after the inscribed register.",
+      "cues": {
+        "77:15": "1st: right after 'what can make you know the Day of Judgement?'",
+        "77:19": "2nd: after 'Thus do We deal with the criminals', closing the destroyed former peoples.",
+        "77:24": "3rd: after 'excellent are We to determine', closing creation from a disdained liquid.",
+        "77:28": "4th: after lofty mountains and sweet water, closing the earth as a container.",
+        "77:34": "5th: after 'as if yellowish camels', closing 'proceed to what you used to deny'.",
+        "77:37": "6th: after 'nor permitted to make an excuse', closing the Day they will not speak.",
+        "77:40": "7th: after 'if you have a plan, plan against Me'; the righteous in shades follow.",
+        "77:45": "8th: after 'We thus reward the doers of good', closing fruits and drink.",
+        "77:47": "9th: after 'eat and enjoy a little; you are criminals'. Two ayat after the 8th.",
+        "77:49": "10th, last: after 'told to bow, they do not bow'; then 'in what statement…?'",
+        "83:10": "Al-Muṭaffifīn, only once: after 'a register inscribed'; next, who deny the Day of Recompense."
+      }
+    },
+    "g3": {
+      "flow": "All open inna al-muttaqīna fī, then split. Al-Ḥijr and Adh-Dhāriyāt: jannātin wa ʿuyūn (gardens and springs). Aṭ-Ṭūr: jannātin wa naʿīm (pleasure). Al-Qamar: jannātin wa nahar (rivers). Al-Mursalāt alone has ẓilālin wa ʿuyūn (shades), straight after the seventh woe. Hook in muṣḥaf order: springs, springs, pleasure, rivers, then shades.",
+      "cues": {
+        "15:45": "Al-Ḥijr: jannātin wa ʿuyūn, after Hell's seven gates; next, 'Enter it in peace'.",
+        "51:15": "Adh-Dhāriyāt: jannātin wa ʿuyūn, after 'Taste your torment'.",
+        "52:17": "Aṭ-Ṭūr: jannātin wa naʿīm (pleasure), after 'burn therein, patient or impatient'.",
+        "54:54": "Al-Qamar: jannātin wa nahar (rivers), after every small and great thing is inscribed.",
+        "77:41": "Al-Mursalāt: ẓilālin wa ʿuyūn (shades), straight after the seventh woe; fruits follow."
+      }
+    },
+    "g4": {
+      "flow": "Same words in both. In Aṭ-Ṭūr it comes after being protected from Hellfire and leads on to reclining on thrones. In Al-Mursalāt it comes after fruits they desire and leads on to 'We thus reward the doers of good', then a woe. Hook: Ṭūr moves on to thrones; Mursalāt moves on to reward, then woe.",
+      "cues": {
+        "52:19": "Aṭ-Ṭūr: after protection from Hellfire; next, reclining on thrones lined up.",
+        "77:43": "Al-Mursalāt: after fruits they desire; next, 'We thus reward the doers of good'."
+      }
+    },
+    "g5": {
+      "flow": "Aṣ-Ṣāffāt uses innā kadhālika najzil-muḥsinīn three times, each after 'peace upon' a prophet and before 'of Our believing servants': Noah, then Moses and Aaron, then Elias. Al-Mursalāt uses it once, after 'eat and drink in satisfaction', right before the eighth woe. Hook: in Aṣ-Ṣāffāt a greeting of peace comes first; in Al-Mursalāt food comes first.",
+      "cues": {
+        "37:80": "Aṣ-Ṣāffāt, 1st: after 'Peace upon Noah among the worlds'.",
+        "37:121": "Aṣ-Ṣāffāt, 2nd: after 'Peace upon Moses and Aaron'; 'they were' follows.",
+        "37:131": "Aṣ-Ṣāffāt, 3rd: after 'Peace upon Elias'.",
+        "77:44": "Al-Mursalāt: after 'eat and drink in satisfaction'; the eighth woe follows."
+      }
+    }
+  }
+}

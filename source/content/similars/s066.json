@@ -1,0 +1,12 @@
+{
+  "n": 66,
+  "groups": {
+    "g1": {
+      "flow": "Word for word the same: yā ayyuha n-nabiyyu jāhidi l-kuffāra wa l-munāfiqīn. Both follow an ayah about gardens beneath which rivers flow, so use the details. At-Tawbah: believing men and women, 'approval from Allāh is greater', then they swear by Allāh they said nothing. At-Taḥrīm: sincere repentance, 'perfect for us our light', then the wives of Noah and Lot. Hook: 9 moves on to oaths, 66 to two wives.",
+      "cues": {
+        "9:73": "After gardens and 'approval from Allāh is greater'; next, they swear they said nothing.",
+        "66:9": "After sincere repentance and 'perfect for us our light'; next, the wives of Noah and Lot."
+      }
+    }
+  }
+}
