@@ -245,8 +245,8 @@ details[open]>summary .more::before{content:"▾ Close"}
   .modes{display:flex}
   .modes button{flex:1}
   .hint{text-align:center}
-  .strip{grid-template-columns:repeat(auto-fit,minmax(9rem,1fr))!important}
-  .blk{padding:.55rem .6rem .5rem}
+  .strip{grid-template-columns:none!important;grid-auto-flow:column;grid-auto-columns:minmax(9.5rem,1fr);overflow-x:auto;scroll-snap-type:x proximity;padding-bottom:.4rem;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+  .blk{padding:.55rem .6rem .5rem;scroll-snap-align:start}
   .blk em{-webkit-line-clamp:3;font-size:.86rem}
   .deep{padding:1rem}
   .ayds{margin-inline-start:0}

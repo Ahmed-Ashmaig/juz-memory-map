@@ -508,6 +508,7 @@ const Surah = (() => {
   function choose(sn, scroll) {
     sel = sn; view = "section"; revealed = 0; showAll = false; stuckThisPass.clear();
     render();
+    centerIn($("strip"), $("blk" + sn));
     if (scroll) scrollToPage(S[sn - 1].from[0]);
   }
   function openAyah(a, scroll) {
@@ -515,6 +516,7 @@ const Surah = (() => {
     const g = groupOf(a);
     if (g) openGroups.add(`${g.a}-${g.b}`);
     render();
+    centerIn($("strip"), $("blk" + sel));
     if (scroll) scrollToPage(AY[key(a)].start[0]);
   }
   function setMode(m) {
