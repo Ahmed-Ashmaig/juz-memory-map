@@ -127,7 +127,10 @@ async function openSurah(n) {
   const later = IDX.ready.includes(n + 1) ? `<a href="#${n + 1}" aria-label="Next surah">‹ ${n + 1}</a>` : "";
   const earlier = IDX.ready.includes(n - 1) ? `<a href="#${n - 1}" aria-label="Previous surah">${n - 1} ›</a>` : "";
   $("navbtns").innerHTML = later + earlier;
-  if (Surah.n !== n) Surah.mount(n, data);
+  if (Surah.n !== n) {
+    try { Surah.mount(n, data); }
+    catch (e) { $("loading").textContent = "This surah couldn’t open. Please try another one."; console.error(e); return; }
+  }
   $("loading").hidden = true; $("surahBody").hidden = false;
 }
 function route() {
