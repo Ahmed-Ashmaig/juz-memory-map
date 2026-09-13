@@ -376,6 +376,11 @@ const Surah = (() => {
     const s = secOf(cur), k = key(cur), x = C.ayat[cur], g = groupOf(cur), c = weak(cur);
     const P = $("panel");
     P.innerHTML = `
+      <div class="navrow">
+        <button class="btn ghost" type="button" id="b-next" ${cur === N ? "disabled" : ""}>‹ Next</button>
+        <button class="btn ghost" type="button" id="b-prev" ${cur === 1 ? "disabled" : ""}>Previous ›</button>
+        <button class="btn" type="button" id="b-back">Back to section ${s.n}</button>
+      </div>
       <div class="lbl">Ayah ${cur} · section ${s.n} · ${pos(k)}</div>
       <h2 class="ptitle" style="font-size:1.15rem">${esc(s.title)}</h2>
       ${ctx("Ayah before", prevKey(cur), false)}
@@ -384,12 +389,7 @@ const Surah = (() => {
           : `<div class="row"><button class="btn ghost" type="button" id="b-mark">Mark as a weak spot</button></div>`}
       ${x ? `<div class="ctx gx"><span class="k">Ayah ${cur} in depth</span><p>${esc(x.explain)}</p>${whyBox(x)}</div>` : ""}
       ${g && g.a !== g.b ? `<div class="ctx gx"><span class="k">What ayat ${g.a}–${g.b} mean</span><p>${esc(g.text)}</p></div>` : ""}
-      ${ctx("Ayah after", nextKey(cur), false)}
-      <div class="row">
-        <button class="btn ghost" type="button" id="b-next" ${cur === N ? "disabled" : ""}>‹ Next</button>
-        <button class="btn ghost" type="button" id="b-prev" ${cur === 1 ? "disabled" : ""}>Previous ›</button>
-        <button class="btn" type="button" id="b-back">Back to section ${s.n}</button>
-      </div>`;
+      ${ctx("Ayah after", nextKey(cur), false)}`;
     $("b-prev").onclick = () => openAyah(cur - 1, true);
     $("b-next").onclick = () => openAyah(cur + 1, true);
     $("b-back").onclick = () => { view = "section"; render(); };
@@ -531,6 +531,14 @@ const Surah = (() => {
     $("dock").hidden = true;
     $("surah").classList.remove("surah-test");
   }
+  // Arrow keys step through ayat in the ayah view, following the muṣḥaf: ← next, → previous.
+  document.addEventListener("keydown", e => {
+    if (!D || $("surah").hidden || mode !== "learn" || view !== "ayah" || e.altKey || e.metaKey || e.ctrlKey) return;
+    if (e.target.closest && e.target.closest("input, textarea, select")) return;
+    if (e.key === "ArrowLeft" && cur < N) { e.preventDefault(); openAyah(cur + 1, true); }
+    if (e.key === "ArrowRight" && cur > 1) { e.preventDefault(); openAyah(cur - 1, true); }
+  });
+
   return { get n() { return n; }, mount, setMode, refresh: render, leave };
 })();
 
