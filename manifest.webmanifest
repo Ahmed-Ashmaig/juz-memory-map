@@ -1,0 +1,28 @@
+{
+ "name": "Juz 28–30 Memory Map",
+ "short_name": "Juz 28–30",
+ "description": "Memorize every surah in Juz 28, 29 and 30: sections on the real muṣḥaf pages, meanings, deeper explanations, self-tests and weak spots.",
+ "start_url": "./",
+ "scope": "./",
+ "display": "standalone",
+ "background_color": "#F6F1E4",
+ "theme_color": "#0E5A45",
+ "icons": [
+  {
+   "src": "icons/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "icons/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  },
+  {
+   "src": "icons/icon-maskable-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ]
+}
