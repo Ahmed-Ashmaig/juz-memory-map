@@ -38,6 +38,16 @@ const Weak = {
       if (e && e.code === "unavailable") setTimeout(() => ref.set(body).catch(() => {}), 600 + Math.random() * 900);
     });
   },
+  clearSurah(n) {
+    this.local = { ...this.local, [n]: {} };
+    this.save(n); this.emit();
+  },
+  clearAll() {
+    const ns = Object.keys(this.local).filter(n => Object.keys(this.local[n] || {}).length);
+    this.local = Object.fromEntries(Object.keys(this.local).map(n => [n, {}]));
+    ns.forEach(n => this.save(n));
+    this.emit();
+  },
   emit() { this.listeners.forEach(f => f()); },
   async connect() {
     const db = window.claude && window.claude.use ? await window.claude.use("db") : null;
@@ -81,6 +91,15 @@ function chip(n, last) {
     <span class="jen">${esc(nameOf(n))}</span><span class="jpg">${s.ayat} ayat · p.${s.pages[0]}</span>
     <span class="weak">${w ? `${w} weak spot${w > 1 ? "s" : ""}` : ready ? "" : "coming soon"}</span></a>`;
 }
+/* Destructive buttons ask for a second tap within 4 seconds instead of a pop-up. */
+function armClear(btn, label, onConfirm) {
+  if (!btn.dataset.armed) btn.textContent = label;
+  btn.onclick = () => {
+    if (btn.dataset.armed) { delete btn.dataset.armed; btn.classList.remove("armed"); onConfirm(); return; }
+    btn.dataset.armed = "1"; btn.classList.add("armed"); btn.textContent = "Tap again to clear";
+    setTimeout(() => { if (btn.dataset.armed) { delete btn.dataset.armed; btn.classList.remove("armed"); btn.textContent = label; } }, 4000);
+  };
+}
 function showHome() {
   $("home").hidden = false; $("surah").hidden = true;
   $("crumb").innerHTML = ""; $("navbtns").innerHTML = "";
@@ -88,6 +107,9 @@ function showHome() {
   const last = store.get("juzapp-last", null);
   $("resume").innerHTML = last && IDX.ready.includes(last)
     ? `<div class="row" style="margin-top:.4rem"><a class="btn" href="#${last}">Continue with ${esc(nameOf(last))}</a></div>` : "";
+  const allWeak = Object.keys(Weak.local).reduce((sum, k) => sum + Weak.total(k), 0);
+  $("clearAllWrap").innerHTML = allWeak ? `<button type="button" class="btn clearbtn" id="clearAll"></button>` : "";
+  if (allWeak) armClear($("clearAll"), `Clear all weak spots (${allWeak})`, () => Weak.clearAll());
   $("juzList").innerHTML = [30, 29, 28].map(j => {
     const J = IDX.juz[j];
     return `<div class="juzblock"><h2>Juz ${j}<span class="src">pages ${J.pages[0]}–${J.pages[1]} · ${J.surahs.length} surahs</span></h2>
@@ -144,6 +166,7 @@ const Surah = (() => {
   let n = null, D = null, C = null, meta = null, N = 0, S = [], AY = {};
   let mode = "learn", sel = 1, view = "section", cur = null, revealed = 0, showAll = false;
   let quizA = 0, lastQuiz = 0, answered = false, lastOk = false;
+  let REP = {};   // ayah -> repeat group from data (ayat repeated within this surah)
   const score = [0, 0];
   const stuckThisPass = new Set();
   const openGroups = new Set();
@@ -266,6 +289,8 @@ const Surah = (() => {
   function mount(num, data) {
     n = num; D = data; C = data.content; meta = data.meta; N = meta.ayat;
     S = C.sections.map((s, i) => ({ ...s, n: i + 1, color: (i % 8) + 1 }));
+    REP = {};
+    (data.repeats || []).forEach(g => g.ayat.forEach(a => (REP[a] = g)));
     AY = {};
     mode = "learn"; sel = 1; view = "section"; cur = null; revealed = 0; showAll = false;
     quizA = 0; lastQuiz = 0; answered = false; score[0] = score[1] = 0;
@@ -292,6 +317,7 @@ const Surah = (() => {
       w.classList.toggle("sel", mode === "test" && inSel);
       w.classList.toggle("shown", mode === "test" && inSel && a < s.a + revealed);
       w.classList.toggle("stuck", weak(a) > 0);
+      w.classList.toggle("rep", !!REP[a]);
       w.classList.remove("focus");
     });
     if (mode === "test") {
@@ -307,6 +333,9 @@ const Surah = (() => {
       const w = b.querySelector(".weak");
       w.hidden = !c; w.textContent = c ? `${c} weak` : "";
     });
+    const total = Weak.total(n), cb = $("clearWeak");
+    cb.hidden = !total;
+    if (total) armClear(cb, `Clear red marks (${total})`, () => Weak.clearSurah(n));
   }
 
   function neighbourCard(dir, s) {
@@ -329,6 +358,22 @@ const Surah = (() => {
       : `<div class="nbc" style="border-inline-start:4px solid var(--line);cursor:default">${inner}</div>`;
   }
 
+  const ordinal = i => i + (["th", "st", "nd", "rd"][(i % 100 > 10 && i % 100 < 14) ? 0 : (i % 10 < 4 ? i % 10 : 0)]);
+  const repLinks = (ayat, skip) => ayat.filter(x => x !== skip).map(x => `<button type="button" class="replink" data-a="${x}">${x}</button>`).join(" · ");
+  function repInfo(a) {
+    const g = REP[a];
+    if (!g) return "";
+    return g.exact
+      ? `<div class="repbox"><b>Repeated ${g.ayat.length}× in this surah</b><span>This is the ${ordinal(g.ayat.indexOf(a) + 1)} time. Also at ayah ${repLinks(g.ayat, a)}</span></div>`
+      : `<div class="repbox"><b>Nearly the same as ayah ${g.ayat.filter(x => x !== a).join(", ")}</b><span>Only the start differs, so watch the first word. Compare: ayah ${repLinks(g.ayat, a)}</span></div>`;
+  }
+  function repRow(s) {
+    const gs = Object.values(REP).filter((g, i, all) => all.indexOf(g) === i && g.ayat.some(a => a >= s.a && a <= s.b));
+    if (!gs.length) return "";
+    return `<div class="reprow"><span class="lbl rep">Repeated ayat</span>${gs.map(g => `<div class="repitem">
+      <span class="mid-ar" lang="ar">${text(key(g.ayat[0]))}</span>
+      <span class="d">${g.exact ? `${g.ayat.length}× exactly` : "nearly the same (first word differs)"} · ayat ${repLinks(g.ayat)}</span></div>`).join("")}</div>`;
+  }
   function weakRow(s) {
     const list = range(s.a, s.b).filter(a => weak(a));
     return list.length ? `<div class="weakrow"><span class="lbl red">Weak spots</span>${list.map(a => `<button type="button" class="pill-red" data-weak="${a}">Ayah ${a} · ${weak(a)}×</button>`).join("")}</div>` : "";
@@ -345,6 +390,7 @@ const Surah = (() => {
       <p class="meaning">${esc(s.meaning)}</p>
       <div class="facts"><span class="fact">${spanTxt(s)}</span><span class="fact">${cnt} ${cnt > 1 ? "ayat" : "ayah"}</span>${s.marker ? `<span class="fact key">Starts at the ۞ mark</span>` : ""}${sajdah.map(x => `<span class="fact key">Sajdah at ayah ${x.verse_key.split(":")[1]}</span>`).join("")}</div>
       ${weakRow(s)}
+      ${repRow(s)}
       <ul class="points">${(s.points || []).map(([r, t]) => `<li><b>${esc(r)}</b><span>${esc(t)}</span></li>`).join("")}</ul>
       <div class="lbl">Opens with</div>
       <div><div class="big-ar" lang="ar">${text(key(s.a))}</div><div class="tr">“${esc(meaning(key(s.a)))}”</div></div>
@@ -359,6 +405,7 @@ const Surah = (() => {
     P.querySelectorAll("[data-go]").forEach(b => (b.onclick = () => choose(+b.dataset.go, true)));
     P.querySelectorAll(".ay").forEach(b => (b.onclick = () => openAyah(+b.dataset.a, true)));
     P.querySelectorAll("[data-weak]").forEach(b => (b.onclick = () => openAyah(+b.dataset.weak, true)));
+    P.querySelectorAll(".replink").forEach(b => (b.onclick = () => openAyah(+b.dataset.a, true)));
     $("b-all").onclick = () => { showAll = !showAll; render(); };
     $("b-test").onclick = () => setMode("test");
   }
@@ -385,6 +432,7 @@ const Surah = (() => {
       <h2 class="ptitle" style="font-size:1.15rem">${esc(s.title)}</h2>
       ${ctx("Ayah before", prevKey(cur), false)}
       ${ctx("This ayah", k, true)}
+      ${repInfo(cur)}
       ${c ? `<div class="stuckbox"><b>You got stuck here ${c}×</b><button class="btn ghost" type="button" id="b-clear">Clear red mark</button></div>`
           : `<div class="row"><button class="btn ghost" type="button" id="b-mark">Mark as a weak spot</button></div>`}
       ${x ? `<div class="ctx gx"><span class="k">Ayah ${cur} in depth</span><p>${esc(x.explain)}</p>${whyBox(x)}</div>` : ""}
@@ -393,6 +441,7 @@ const Surah = (() => {
     $("b-prev").onclick = () => openAyah(cur - 1, true);
     $("b-next").onclick = () => openAyah(cur + 1, true);
     $("b-back").onclick = () => { view = "section"; render(); };
+    P.querySelectorAll(".replink").forEach(b => (b.onclick = () => openAyah(+b.dataset.a, true)));
     if ($("b-clear")) $("b-clear").onclick = () => Weak.clear(n, cur);
     if ($("b-mark")) $("b-mark").onclick = () => Weak.mark(n, cur);
   }
@@ -463,6 +512,7 @@ const Surah = (() => {
       return `<div class="ayd${view === "ayah" && cur === a ? " cur" : ""}${weak(a) ? " is-stuck" : ""}">
         <button type="button" class="ayd-go" data-a="${a}">Ayah ${a} · show on page</button>
         ${weak(a) ? `<span class="stuckpill">Stuck ${weak(a)}×</span>` : ""}
+        ${REP[a] ? `<span class="reppill">${REP[a].exact ? `Repeated ${REP[a].ayat.length}× in this surah` : `Nearly the same as ayah ${REP[a].ayat.filter(x => x !== a).join(", ")}`}</span>` : ""}
         <div class="mid-ar" lang="ar">${text(key(a))} <span class="e">${toAr(a)}</span></div>
         <div class="tr">“${esc(meaning(key(a)))}”</div>
         ${x.explain ? `<p>${esc(x.explain)}</p>` : ""}${whyBox(x)}</div>`;
@@ -500,7 +550,8 @@ const Surah = (() => {
     paint();
     renderDeep();
     $("dock").hidden = mode !== "test";
-    $("hint").textContent = mode === "learn" ? "Tap a section, or any word on the page" : mode === "test" ? "Pick a section, then recite it" : "Find the ayah’s section";
+    $("hint").innerHTML = (mode === "learn" ? "Tap a section, or any word on the page" : mode === "test" ? "Pick a section, then recite it" : "Find the ayah’s section")
+      + (mode === "learn" && Object.keys(REP).length ? ' · <span class="replegend">violet underline = repeated ayah</span>' : "");
     if (mode === "learn") (view === "ayah" ? renderAyah() : renderSection());
     else if (mode === "test") renderTest();
     else renderQuiz();
