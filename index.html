@@ -271,6 +271,8 @@ details[open]>summary .more::before{content:"▾ Close"}
 .replink{all:unset;cursor:pointer;color:var(--rep);font-weight:700;text-decoration:underline;padding-inline:.12rem}
 .replink:focus-visible{outline:2px solid var(--rep);outline-offset:1px}
 .reppill{justify-self:start;font-size:.75rem;font-weight:700;color:var(--rep)}
+.btn.readbtn{padding:.4rem .8rem;font-size:.9rem}
+.btn.readbtn[aria-pressed="true"]{border-color:var(--green);color:var(--green);font-weight:700}
 .btn.clearbtn{background:none;border-color:var(--red);color:var(--red);padding:.4rem .8rem;font-size:.9rem}
 .btn.clearbtn.armed{background:var(--red);color:var(--sheet)}
 </style>
@@ -322,6 +324,7 @@ details[open]>summary .more::before{content:"▾ Close"}
           <button type="button" id="m-quiz" data-mode="quiz" aria-pressed="false">Quiz</button>
         </div>
         <div class="hint" id="hint"></div>
+        <button type="button" class="btn ghost readbtn" id="readAll" aria-pressed="false" hidden></button>
         <button type="button" class="btn clearbtn" id="clearWeak" hidden></button>
       </div>
       <div class="strip" id="strip" role="group" aria-label="Sections"></div>

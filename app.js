@@ -167,6 +167,7 @@ const Surah = (() => {
   let mode = "learn", sel = 1, view = "section", cur = null, revealed = 0, showAll = false;
   let quizA = 0, lastQuiz = 0, answered = false, lastOk = false;
   let REP = {};   // ayah -> repeat group from data (ayat repeated within this surah)
+  let readAll = !!store.get("juzapp-readall", false);   // Learn: show every section in full colour
   const score = [0, 0];
   const stuckThisPass = new Set();
   const openGroups = new Set();
@@ -313,7 +314,7 @@ const Surah = (() => {
     $("surah").classList.toggle("surah-test", mode === "test");
     document.querySelectorAll("#pages .w.s").forEach(w => {
       const a = +w.dataset.a, inSel = a >= s.a && a <= s.b;
-      w.classList.toggle("dim", mode !== "quiz" && !inSel);
+      w.classList.toggle("dim", mode !== "quiz" && !inSel && !(mode === "learn" && readAll));
       w.classList.toggle("sel", mode === "test" && inSel);
       w.classList.toggle("shown", mode === "test" && inSel && a < s.a + revealed);
       w.classList.toggle("stuck", weak(a) > 0);
@@ -333,6 +334,11 @@ const Surah = (() => {
       const w = b.querySelector(".weak");
       w.hidden = !c; w.textContent = c ? `${c} weak` : "";
     });
+    const rb = $("readAll");
+    rb.hidden = mode !== "learn";
+    rb.setAttribute("aria-pressed", readAll ? "true" : "false");
+    rb.textContent = readAll ? "✓ Reading whole surah" : "Read whole surah";
+    rb.onclick = () => { readAll = !readAll; store.set("juzapp-readall", readAll); render(); };
     const total = Weak.total(n), cb = $("clearWeak");
     cb.hidden = !total;
     if (total) armClear(cb, `Clear red marks (${total})`, () => Weak.clearSurah(n));
