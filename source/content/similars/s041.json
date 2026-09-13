@@ -1,0 +1,35 @@
+{
+  "n": 41,
+  "groups": {
+    "g1": {
+      "flow": "Fuṣṣilat opens with inna (indeed), after those who do not give zakāh and deny the Hereafter. Al-Inshiqāq and At-Tīn open with illā (except), each an exception to a threat just before it: 'tidings of a painful punishment', then 'lowest of the low'. Only At-Tīn adds fa-: fa-lahum. Hook in muṣḥaf order: inna, then illā twice, and the extra fa- comes last.",
+      "cues": {
+        "41:8": "Fuṣṣilat: inna … lahum; after those who give no zakāh; next, earth created in two days.",
+        "84:25": "Al-Inshiqāq: illā … lahum; after 'tidings of a painful punishment'; last ayah of the surah.",
+        "95:6": "At-Tīn: illā … fa-lahum; after 'lowest of the low'; next asks why you deny the Recompense."
+      }
+    },
+    "g2": {
+      "flow": "Yūnus has the bare phrase, describing the allies of Allāh, with good tidings next. An-Naml and Fuṣṣilat put 'And We saved' in front, each after a ruined people: An-Naml's wa anjaynā follows houses left desolate, then Lot; Fuṣṣilat's wa najjaynā follows Thamūd's thunderbolt, then the enemies of Allāh gathered to the Fire. Hook: Fuṣṣilat, with its doubled ṣṣ, takes najjaynā with a doubled jj.",
+      "cues": {
+        "10:63": "Yūnus: starts alladhīna, no 'saved'; after the allies of Allāh; next, good tidings.",
+        "27:53": "An-Naml: wa anjaynā; after houses left desolate for their wrong; next, Lot and his people.",
+        "41:18": "Fuṣṣilat: wa najjaynā; after Thamūd's thunderbolt; next, Allāh's enemies gathered to the Fire."
+      }
+    },
+    "g3": {
+      "flow": "Word for word the same: Moses given the Scripture, disagreement over it, a word that preceded, disquieting doubt. Hūd 11:110 follows 'they worship only as their fathers worshipped', and next, your Lord fully repays each for their deeds. Fuṣṣilat 41:45 follows the 'foreign Qurʾān' ayah, and next, 'whoever does righteousness, it is for his soul'. Hook: fathers, then repayment in Hūd; foreign Qurʾān, then one's own soul in Fuṣṣilat.",
+      "cues": {
+        "11:110": "Hūd: after 'they worship as their fathers worshipped'; next, your Lord fully repays each one.",
+        "41:45": "Fuṣṣilat: after the 'foreign Qurʾān' objection; next, 'whoever does righteousness, it is for his soul'."
+      }
+    },
+    "g4": {
+      "flow": "Same opening: when We favour man he turns away and distances himself; when evil touches him… Then it splits. Al-Isrāʾ ends kāna yaʾūsā (ever despairing), after the Qurʾān as healing that adds wrongdoers only loss. Fuṣṣilat ends fa-dhū duʿāʾin ʿarīḍ (full of extensive supplication), after man says 'this is due to me'. Hook: loss, then despair in Al-Isrāʾ; the man who talks keeps talking, in long supplication, in Fuṣṣilat.",
+      "cues": {
+        "17:83": "Al-Isrāʾ: ends kāna yaʾūsā, despairing; follows the Qurʾān as healing, and loss for wrongdoers.",
+        "41:51": "Fuṣṣilat: ends fa-dhū duʿāʾin ʿarīḍ (extensive supplication); after man says 'this is due to me'."
+      }
+    }
+  }
+}

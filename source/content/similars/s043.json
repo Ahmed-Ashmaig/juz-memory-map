@@ -1,0 +1,41 @@
+{
+  "n": 43,
+  "groups": {
+    "g1": {
+      "flow": "Identical, and in both the ayah before is Ḥā Mīm; the surahs sit side by side, Az-Zukhruf then Ad-Dukhān. The difference is the next ayah. Az-Zukhruf: 'We have made it an Arabic Qurʾān that you might understand'. Ad-Dukhān: 'We sent it down during a blessed night'. Hook: Az-Zukhruf goes on to the Qurʾān's language, Arabic; Ad-Dukhān goes on to its time, a blessed night.",
+      "cues": {
+        "43:2": "Az-Zukhruf: after Ḥā Mīm; next, 'We have made it an Arabic Qurʾān'.",
+        "44:2": "Ad-Dukhān: after Ḥā Mīm; next, 'We sent it down during a blessed night'."
+      }
+    },
+    "g2": {
+      "flow": "One word differs. Yūsuf says anzalnāhu (We sent it down), after Alif Lām Rā and 'the verses of the clear Book', and next comes 'the best of stories'. Az-Zukhruf says jaʿalnāhu (We made it), after the oath 'By the clear Book', and next, it is in the Mother of the Book, exalted. Hook: Alif Lām Rā goes with anzalnāhu, both starting with a; Ḥā Mīm goes with jaʿalnāhu.",
+      "cues": {
+        "12:2": "Yūsuf: anzalnāhu (sent it down); after Alif Lām Rā; next, the best of stories.",
+        "43:3": "Az-Zukhruf: jaʿalnāhu (made it); after 'By the clear Book'; next, the Mother of the Book."
+      }
+    },
+    "g3": {
+      "flow": "One word differs. Al-Ḥijr 15:11 says rasūl (messenger), after 'We had sent [messengers] before you among the sects of the former peoples', and next, denial is inserted into the criminals' hearts. Az-Zukhruf 43:7 says nabiyy (prophet), after 'how many a prophet We sent among the former peoples', and next, We destroyed those greater in power. Hook: each repeats the word of the ayah before: messengers, then rasūl; prophet, then nabiyy.",
+      "cues": {
+        "15:11": "Al-Ḥijr: min rasūlin; after messengers sent among the sects of former peoples; next, criminals' hearts.",
+        "43:7": "Az-Zukhruf: min nabiyyin; after 'how many a prophet We sent'; next, stronger peoples destroyed."
+      }
+    },
+    "g4": {
+      "flow": "Jesus's words in three versions. Āl ʿImrān: inna llāha rabbī, plain. Maryam: wa-inna, after 'Be, and it is'. Az-Zukhruf: inna llāha huwa rabbī, the only one with huwa. Āl ʿImrān and Az-Zukhruf both follow 'so fear Allāh and obey me'; Maryam and Az-Zukhruf both lead to 'the factions differed… so woe'. Hook in muṣḥaf order: plain, then plus wa, then plus huwa.",
+      "cues": {
+        "3:51": "Āl ʿImrān: no wa, no huwa; after the Torah and 'fear Allāh and obey me'.",
+        "19:36": "Maryam: wa-inna; after 'Be, and it is'; next, factions differ, woe to those who disbelieved.",
+        "43:64": "Az-Zukhruf: adds huwa; after 'I have come with wisdom… obey me'; next, woe to wrongdoers."
+      }
+    },
+    "g5": {
+      "flow": "Identical. Az-Zukhruf 43:83 sits between two ayat about Allāh: before, Lord of the heavens, the earth and the Throne, above what they describe; after, the only deity in the heaven and on the earth. Al-Maʿārij 70:42 follows 'replace them with better; We are not to be outdone', and runs into the Day they emerge from the graves. Hook: heaven and earth around it in Az-Zukhruf; graves after it in Al-Maʿārij.",
+      "cues": {
+        "43:83": "Az-Zukhruf: after 'Lord of the Throne, above what they describe'; next, deity in heaven and earth.",
+        "70:42": "Al-Maʿārij: after 'We are not to be outdone'; next, the Day they emerge from graves."
+      }
+    }
+  }
+}

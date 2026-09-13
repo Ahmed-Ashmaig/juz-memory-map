@@ -11,7 +11,7 @@ if git diff --cached --quiet; then
   exit 0
 fi
 READY=$(python3 -c "import json;print(len(json.loads(open('data/index.js').read().split('=',1)[1].rstrip().rstrip(';'))['ready']))")
-git commit -q -m "Add surahs: ${READY} of 57 ready
+git commit -q -m "Update app: ${READY} surahs ready
 
 Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>"
 git push -q origin main

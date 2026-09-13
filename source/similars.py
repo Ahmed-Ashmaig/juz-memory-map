@@ -21,7 +21,7 @@ from repeats import norm_tokens, core  # noqa: E402
 RAW = os.path.join(SP, "raw")
 OUT = os.path.join(RAW, "similars")
 os.makedirs(OUT, exist_ok=True)
-FIRST, LAST = 58, 114
+FIRST, LAST = 41, 114
 MAX_MEMBERS = 16
 RATIO = 0.8
 
@@ -35,7 +35,8 @@ for d in ("quran-pages", "pages"):
             for t, s, a, end in ln["w"]:
                 k = (s, a)
                 page_of.setdefault(k, pg["p"])
-                if not end and (d == "pages" or pg["p"] <= 540):
+                # pages 1–540 come from quran-pages, 541+ from pages (raw/pages also holds 477–540 now)
+                if not end and (pg["p"] > 540 if d == "pages" else pg["p"] <= 540):
                     words[k].append(t)
 missing_pages = [p for p in range(1, 605) if not os.path.exists(os.path.join(RAW, "quran-pages" if p <= 540 else "pages", f"p{p:03d}.json"))]
 if missing_pages:

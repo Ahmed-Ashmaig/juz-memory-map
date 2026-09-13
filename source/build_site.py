@@ -13,6 +13,7 @@ import validate_content as V  # noqa: E402
 from repeats import find_repeats  # noqa: E402
 
 RAW, CONTENT, SITE = (os.path.join(SP, x) for x in ("raw", "content", "site"))
+FIRST = 41   # Fussilat: the first surah reaching Juz 25
 os.makedirs(os.path.join(SITE, "data"), exist_ok=True)
 BASMALA = json.load(open(os.path.join(RAW, "basmala.json"), encoding="utf-8"))["basmala"]
 
@@ -74,7 +75,7 @@ _tr_cache = {}
 
 def tr_of(k):
     s_, a_ = k.split(":")
-    if 58 <= int(s_) <= 114:
+    if os.path.exists(os.path.join(RAW, f"s{int(s_):03d}", "tr.json")):
         if s_ not in _tr_cache:
             _tr_cache[s_] = load(os.path.join(RAW, f"s{int(s_):03d}", "tr.json"))
         return _tr_cache[s_].get(a_, "")
@@ -124,7 +125,7 @@ def similars_for(n):
 
 
 surahs, ready, skipped = {}, [], []
-for n in range(58, 115):
+for n in range(FIRST, 115):
     mf = os.path.join(RAW, f"s{n:03d}", "meta.json")
     if not os.path.exists(mf):
         continue
@@ -132,9 +133,13 @@ for n in range(58, 115):
     pages_n = sorted(SURAH_PAGES.get(n, [])) or m["pages"]
     surahs[n] = {"n": n, "name": m["name"], "ar": m["ar"], "place": m["place"], "ayat": m["ayat"],
                  "pages": [pages_n[0], pages_n[-1]], "juz": m["juz"], "hizb": m["hizb"]}
-surahs[57] = {"n": 57, "name": "Al-Hadid", "ar": "", "ayat": 29, "pages": [537, 541], "juz": [27, 27], "hizb": [54, 54]}
+# The surah just before the first one only needs a name, for the "before this section" card.
+if FIRST - 1 not in surahs and str(FIRST - 1) in CHAPTERS:
+    ch = CHAPTERS[str(FIRST - 1)]
+    surahs[FIRST - 1] = {"n": FIRST - 1, "name": ch["name"], "ar": ch["ar"], "ayat": ch["ayat"],
+                         "pages": sorted(SURAH_PAGES.get(FIRST - 1, []))[:1] * 2, "juz": [], "hizb": []}
 
-for n in sorted(k for k in surahs if k >= 58):
+for n in sorted(k for k in surahs if k >= FIRST):
     cf = os.path.join(CONTENT, f"s{n:03d}.json")
     if not os.path.exists(cf):
         continue
@@ -170,6 +175,10 @@ for n in sorted(k for k in surahs if k >= 58):
     ready.append(n)
 
 for k, v in juz.items():
+    # a juz that starts or ends mid-surah gives its first and last ayah; take their pages from the layout
+    if v.get("start") in KEY_WORDS and v.get("end") in KEY_WORDS:
+        v["pages"] = [KEY_WORDS[v["start"]]["pages"][0], KEY_WORDS[v["end"]]["pages"][-1]]
+        continue
     ps = [p for s in v["surahs"] if s in surahs for p in surahs[s]["pages"]]
     if ps:
         v["pages"] = [min(ps), max(ps)]

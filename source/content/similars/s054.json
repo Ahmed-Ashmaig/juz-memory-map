@@ -1,0 +1,33 @@
+{
+  "n": 54,
+  "groups": {
+    "g1": {
+      "flow": "Four fa-kayfa kāna ʿadhābī wa nudhur, all inside the stories of peoples who denied. 1st closes Noah's story, after 'We left it as a sign'. 2nd opens ʿĀd, with kadhdhabat ʿĀdun in front. 3rd closes ʿĀd, after uprooted palm trunks. 4th closes Thamūd, after their companion hamstrung her. Hook: Noah once, ʿĀd twice (open and close), Thamūd once; Lot and Pharaoh get none.",
+      "cues": {
+        "54:16": "1st, Noah's story: after 'We left it as a sign, is there any who will remember?'",
+        "54:18": "2nd, opens ʿĀd: starts kadhdhabat ʿĀdun; the screaming wind follows.",
+        "54:21": "3rd, closes ʿĀd: after people pulled out like uprooted palm trunks.",
+        "54:30": "4th, Thamūd: after their companion dared and hamstrung her; next, one shriek."
+      }
+    },
+    "g2": {
+      "flow": "Four wa laqad yassarnā l-Qurʾāna lidh-dhikr, each closing a story, and each time the next ayah names the next people who denied: ʿĀd, Thamūd, the people of Lot, the people of Pharaoh. The first two come straight after 'how were My punishment and warning'; the third after one shriek; the fourth after 'so taste My punishment'. Hook: ʿĀd, Thamūd, Lot, Pharaoh.",
+      "cues": {
+        "54:17": "1st, ends Noah: after the first 'how were My punishment'; next, ʿĀd denied.",
+        "54:22": "2nd, ends ʿĀd: after ʿĀd's closing 'how were My punishment'; next, Thamūd denied.",
+        "54:32": "3rd, ends Thamūd: after one shriek, like dry twigs of a pen; next, Lot's people.",
+        "54:40": "4th, ends Lot: after 'so taste My punishment and warning'; next, Pharaoh's people."
+      }
+    },
+    "g3": {
+      "flow": "All open inna l-muttaqīna fī, then split. Al-Ḥijr and Adh-Dhāriyāt: jannātin wa ʿuyūn (springs). Aṭ-Ṭūr: jannātin wa naʿīm (pleasure). Al-Qamar: jannātin wa nahar (rivers). Al-Mursalāt: ẓilālin wa ʿuyūn (shades). Hook for Al-Qamar: its ayat end on r, like nudhur and muddakir, so here it is nahar, after 'every small and great thing is inscribed'.",
+      "cues": {
+        "15:45": "Al-Ḥijr: jannātin wa ʿuyūn, after Hell's seven gates; next, 'enter it in peace'.",
+        "51:15": "Adh-Dhāriyāt: jannātin wa ʿuyūn, after 'taste your torment'; next, accepting what their Lord gives.",
+        "52:17": "Aṭ-Ṭūr: jannātin wa naʿīm (pleasure), after 'burn therein, patient or impatient'.",
+        "54:54": "Al-Qamar: jannātin wa nahar (rivers), rhymes with nudhur; after every small and great thing inscribed.",
+        "77:41": "Al-Mursalāt: ẓilālin wa ʿuyūn (shades, not gardens), right after a woe to the deniers."
+      }
+    }
+  }
+}

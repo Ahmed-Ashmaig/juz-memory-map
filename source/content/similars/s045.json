@@ -1,0 +1,22 @@
+{
+  "n": 45,
+  "groups": {
+    "g1": {
+      "flow": "Four surah openings. Az-Zumar 39:1 alone has no Ḥā Mīm before it; next, 'We sent down to you the Book in truth'. Ghāfir 40:2 alone ends al-ʿalīm (the Knowing); next, 'forgiver of sin'. Al-Jāthiyah 45:2 and Al-Aḥqāf 46:2 match word for word: Al-Jāthiyah moves to signs in the heavens and earth, Al-Aḥqāf to 'not created except in truth'. Hook: ḥakīm, ʿalīm, ḥakīm, ḥakīm; Ghāfir is the odd one.",
+      "cues": {
+        "39:1": "Az-Zumar: first ayah, no Ḥā Mīm before; ends al-ḥakīm; next, 'sent down to you in truth'.",
+        "40:2": "Ghāfir: ends al-ʿalīm (the Knowing); next, 'forgiver of sin, acceptor of repentance'.",
+        "45:2": "Al-Jāthiyah: ends al-ḥakīm; next, 'within the heavens and earth are signs for the believers'.",
+        "46:2": "Al-Aḥqāf: ends al-ḥakīm; next, 'We did not create the heavens and earth except in truth'."
+      }
+    },
+    "g2": {
+      "flow": "All end wa ḥāqa bihim mā kānū bihi yastahziʾūn; two words change. An-Naḥl 16:34: fa-aṣābahum (they were struck) … mā ʿamilū, after 'they had been wronging themselves'. Az-Zumar 39:48: wa badā lahum … mā kasabū (earned), after the ransom ayah. Al-Jāthiyah 45:33: wa badā lahum … mā ʿamilū, after 'we know not what the Hour is'. Hook: Al-Jāthiyah takes badā from Az-Zumar and ʿamilū from An-Naḥl.",
+      "cues": {
+        "16:34": "Fa-aṣābahum … ʿamilū: after 'Allāh wronged them not, they wronged themselves'.",
+        "39:48": "Badā lahum … kasabū: after the ransom ayah, which also says 'there will appear to them'.",
+        "45:33": "Badā … ʿamilū: after 'we know not what the Hour is'; next, 'Today We forget you'."
+      }
+    }
+  }
+}

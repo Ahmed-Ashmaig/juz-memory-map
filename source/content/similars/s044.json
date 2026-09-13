@@ -1,0 +1,40 @@
+{
+  "n": 44,
+  "groups": {
+    "g1": {
+      "flow": "Identical, and in both it is the second ayah, straight after Ḥā Mīm. The surahs sit side by side: Az-Zukhruf, then Ad-Dukhān. The next ayah separates them. Az-Zukhruf goes on 'We have made it an Arabic Qurʾān, that you might understand'. Ad-Dukhān goes on 'We sent it down during a blessed night'. Hook: Zukhruf says what it was made (Arabic); Dukhān says when it came down (a night).",
+      "cues": {
+        "43:2": "Az-Zukhruf, after Ḥā Mīm; next, 'We made it an Arabic Qurʾān that you might understand'.",
+        "44:2": "Ad-Dukhān, after Ḥā Mīm; next, 'We sent it down during a blessed night'."
+      }
+    },
+    "g2": {
+      "flow": "Ash-Shuʿarāʾ opens qāla rabbu: Moses answering Pharaoh's 'what is the Lord of the worlds?', and Pharaoh then turns to those around him: 'do you not hear?'. Ad-Dukhān has no qāla; rabbi carries straight on from 'mercy from your Lord… the Hearing, the Knowing', and 'no deity except Him' follows. Hook: the conversation gets qāla; in Ad-Dukhān the sentence about your Lord simply keeps going.",
+      "cues": {
+        "26:24": "Qāla rabbu: Moses replies to Pharaoh's 'what is the Lord of the worlds?'",
+        "44:7": "No qāla, rabbi: after 'the Hearing, the Knowing'; next, 'no deity except Him'."
+      }
+    },
+    "g3": {
+      "flow": "Same frame, faʾtū bi… in kuntum ṣādiqīn, but a different thing is demanded. Aṣ-Ṣāffāt 37:157 says bi-kitābikum (your scripture), after 'or do you have a clear authority?'. Ad-Dukhān 44:36 says bi-ābāʾinā (our forefathers), in the deniers' own words, after 'only our first death; we will not be resurrected'. Hook: a clear authority calls for a book; denying resurrection brings the dare to bring back the forefathers.",
+      "cues": {
+        "37:157": "Bi-kitābikum (your scripture), after 'or do you have a clear authority?'",
+        "44:36": "Bi-ābāʾinā (our forefathers), their dare after 'we will not be resurrected'; Tubbaʿ follows."
+      }
+    },
+    "g4": {
+      "flow": "One word apart. Al-Anbiyāʾ 21:16 says as-samāʾa (the heaven, singular), after a people made like a mown harvest, then 'had We intended a diversion'. Ad-Dukhān 44:38 says as-samāwāti (the heavens), after the people of Tubbaʿ destroyed as criminals, then 'We did not create them except in truth'. Hook: Ad-Dukhān already said rabbi s-samāwāti wal-arḍi wa mā baynahumā at 44:7, so it keeps the plural.",
+      "cues": {
+        "21:16": "As-samāʾa, singular: after a people made a mown harvest; next, 'had We intended a diversion'.",
+        "44:38": "As-samāwāti, plural: after Tubbaʿ's people destroyed; next, 'not created except in truth'."
+      }
+    },
+    "g5": {
+      "flow": "Identical, and in both the ayah before says 'secure'. Ash-Shuʿarāʾ 26:147 sits inside the question 'will you be left secure in what is here?', with fields of crops and palm trees next. Ad-Dukhān 44:52 follows 'the righteous will be in a secure place', with fine silk and brocade next, facing each other. Hook: palm trees in Ash-Shuʿarāʾ; silk in Ad-Dukhān.",
+      "cues": {
+        "26:147": "Inside 'will you be left secure in what is here?'; next, crops and palm trees.",
+        "44:52": "After 'the righteous in a secure place'; next, fine silk and brocade, facing each other."
+      }
+    }
+  }
+}

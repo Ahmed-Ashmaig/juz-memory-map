@@ -47,7 +47,7 @@ def init():
 
 
 have = {}
-for n in range(58, 115):
+for n in range(41, 115):
     f = os.path.join(RAW, f"s{n:03d}", "tr.json")
     if os.path.exists(f):
         for a, t in json.load(open(f, encoding="utf-8")).items():

@@ -86,10 +86,12 @@ const Weak = {
 /* ---------- home ---------- */
 function chip(n, last) {
   const s = IDX.surahs[n], ready = IDX.ready.includes(n), w = Weak.total(n);
+  const pages = s.pages[1] !== s.pages[0] ? `pages ${s.pages[0]}–${s.pages[1]}` : `page ${s.pages[0]}`;
+  const note = w ? ` · <span class="weak">${w} weak spot${w > 1 ? "s" : ""}</span>` : ready ? "" : " · coming soon";
   return `<a class="chip${ready ? "" : " pending"}${n === last ? " last" : ""}" href="#${n}"${ready ? "" : ' aria-disabled="true" tabindex="-1"'}>
-    <span class="jn">${n}</span><span class="jar" lang="ar">${esc(s.ar)}</span>
-    <span class="jen">${esc(nameOf(n))}</span><span class="jpg">${s.ayat} ayat · p.${s.pages[0]}</span>
-    <span class="weak">${w ? `${w} weak spot${w > 1 ? "s" : ""}` : ready ? "" : "coming soon"}</span></a>`;
+    <span class="jn">${n}</span>
+    <span class="jtx"><span class="jen">${esc(nameOf(n))}</span><span class="jpg">${s.ayat} ayat · ${pages}${note}</span></span>
+    <span class="jar" lang="ar">${esc(s.ar)}</span></a>`;
 }
 /* Destructive buttons ask for a second tap within 4 seconds instead of a pop-up. */
 function armClear(btn, label, onConfirm) {
@@ -102,6 +104,8 @@ function armClear(btn, label, onConfirm) {
 }
 function showHome() {
   $("home").hidden = false; $("surah").hidden = true;
+  $("homebtn").classList.add("here"); $("homebtn").setAttribute("aria-current", "page");
+  $("feat").hidden = true; $("featMenu").hidden = true;
   $("crumb").innerHTML = ""; $("navbtns").innerHTML = "";
   Surah.leave();
   const last = store.get("juzapp-last", null);
@@ -110,11 +114,16 @@ function showHome() {
   const allWeak = Object.keys(Weak.local).reduce((sum, k) => sum + Weak.total(k), 0);
   $("clearAllWrap").innerHTML = allWeak ? `<button type="button" class="btn clearbtn" id="clearAll"></button>` : "";
   if (allWeak) armClear($("clearAll"), `Clear all weak spots (${allWeak})`, () => Weak.clearAll());
-  $("juzList").innerHTML = [30, 29, 28].map(j => {
-    const J = IDX.juz[j];
-    return `<div class="juzblock"><h2>Juz ${j}<span class="src">pages ${J.pages[0]}–${J.pages[1]} · ${J.surahs.length} surahs</span></h2>
-      <div class="chips">${J.surahs.map(n => chip(n, last)).join("")}</div></div>`;
-  }).join("");
+  // Every juz the app covers, in order. A surah that runs across two juz is listed under the first.
+  const listed = new Set(), nums = Object.keys(IDX.juz).map(Number).sort((a, b) => a - b);
+  const blocks = nums.map(j => {
+    const J = IDX.juz[j], list = J.surahs.filter(n => IDX.surahs[n] && !listed.has(n));
+    list.forEach(n => listed.add(n));
+    return list.length ? `<div class="juzblock"><h2>Juz ${j}<span class="src">pages ${J.pages[0]}–${J.pages[1]} · ${list.length} surah${list.length > 1 ? "s" : ""}</span></h2>
+      <div class="chips">${list.map(n => chip(n, last)).join("")}</div></div>` : "";
+  });
+  const soon = nums[0] > 1 ? `<div class="soon"><b>Juz 1${nums[0] > 2 ? `–${nums[0] - 1}` : ""}</b><span>Coming soon</span></div>` : "";
+  $("juzList").innerHTML = soon + blocks.join("");
 }
 
 /* ---------- surah loading + routing ---------- */
@@ -135,6 +144,8 @@ let routeToken = 0;
 async function openSurah(n) {
   const token = ++routeToken;
   $("home").hidden = true; $("surah").hidden = false;
+  $("homebtn").classList.remove("here"); $("homebtn").removeAttribute("aria-current");   // now a clear way back to every surah
+  $("feat").hidden = false;
   if (Surah.n !== n) {
     $("surahBody").hidden = true; $("loading").hidden = false; $("loading").textContent = "Loading…";
     window.scrollTo(0, 0);

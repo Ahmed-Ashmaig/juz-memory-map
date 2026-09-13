@@ -1,0 +1,14 @@
+{
+  "n": 46,
+  "groups": {
+    "g1": {
+      "flow": "Four surah openings. Az-Zumar 39:1 alone has no Ḥā Mīm before it; next, 'We sent down to you the Book in truth'. Ghāfir 40:2 alone ends al-ʿalīm (the Knowing); next, 'forgiver of sin'. Al-Jāthiyah 45:2 and Al-Aḥqāf 46:2 match word for word, so the next ayah decides: Al-Jāthiyah turns to signs for the believers, Al-Aḥqāf to creation 'in truth and a specified term'. Hook: ḥakīm, ʿalīm, ḥakīm, ḥakīm.",
+      "cues": {
+        "39:1": "Az-Zumar: first ayah, no Ḥā Mīm before; ends al-ḥakīm; next, 'sent down to you in truth'.",
+        "40:2": "Ghāfir: ends al-ʿalīm (the Knowing); next, 'forgiver of sin, acceptor of repentance'.",
+        "45:2": "Al-Jāthiyah: ends al-ḥakīm; next, 'within the heavens and earth are signs for the believers'.",
+        "46:2": "Al-Aḥqāf: ends al-ḥakīm; next, heavens and earth created only in truth and for a specified term."
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "n": 51,
+  "groups": {
+    "g1": {
+      "flow": "All open inna l-muttaqīna fī, then split. Al-Ḥijr and Adh-Dhāriyāt share jannātin wa ʿuyūn (gardens and springs). Aṭ-Ṭūr has jannātin wa naʿīm (pleasure), Al-Qamar jannātin wa nahar (rivers), and Al-Mursalāt ẓilālin wa ʿuyūn (shades). Adh-Dhāriyāt's comes after 'Taste your torment'; its next ayah says 'accepting what their Lord has given them', where Aṭ-Ṭūr's says 'enjoying'. Hook in muṣḥaf order: springs, springs, pleasure, rivers, shades.",
+      "cues": {
+        "15:45": "Al-Ḥijr: jannātin wa ʿuyūn, after Hell's seven gates; next, 'Enter it in peace'.",
+        "51:15": "Adh-Dhāriyāt: jannātin wa ʿuyūn, after 'Taste your torment'; next, 'accepting what their Lord has given'.",
+        "52:17": "Aṭ-Ṭūr: jannātin wa naʿīm (pleasure), after 'burn therein'; next, 'enjoying what their Lord has given'.",
+        "54:54": "Al-Qamar: jannātin wa nahar (rivers), after every small and great thing is inscribed.",
+        "77:41": "Al-Mursalāt: ẓilālin wa ʿuyūn (shades), straight after a 'woe, that Day'; fruits follow."
+      }
+    },
+    "g2": {
+      "flow": "Word for word the same: qāla fa-mā khaṭbukum ayyuha l-mursalūn, Abraham asking the messengers their business. In Al-Ḥijr 15:57 Abraham has just spoken, asking who despairs of his Lord's mercy, so 'he said' comes twice in a row. In Adh-Dhāriyāt 51:31 the messengers have just spoken, 'Thus has said your Lord', and the ۞ sign sits on this ayah. Hook: Al-Ḥijr, he said, he said; Adh-Dhāriyāt, they said, he said.",
+      "cues": {
+        "15:57": "Al-Ḥijr: Abraham speaks again, after 'who despairs of his Lord's mercy except those astray?'",
+        "51:31": "Adh-Dhāriyāt, marked ۞: after the messengers say 'Thus has said your Lord, the Wise, the Knowing'."
+      }
+    },
+    "g3": {
+      "flow": "Word for word the same: qālū innā ursilnā ilā qawmin mujrimīn. Both answer the same question, 'what is your business, O messengers?', so only the next ayah tells them apart. Al-Ḥijr 15:58 goes to the saved: 'except the family of Lot; we will save them all'. Adh-Dhāriyāt 51:32 goes to the punishment: 'to send down upon them stones of clay'. Hook: Al-Ḥijr, rescue; Adh-Dhāriyāt, stones.",
+      "cues": {
+        "15:58": "Al-Ḥijr: answers Abraham; next, 'except the family of Lot, we will save them all'.",
+        "51:32": "Adh-Dhāriyāt: answers Abraham; next, 'to send down upon them stones of clay'."
+      }
+    }
+  }
+}

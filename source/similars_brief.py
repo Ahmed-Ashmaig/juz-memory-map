@@ -14,7 +14,7 @@ for d in ("quran-pages", "pages"):
     folder = os.path.join(RAW, d)
     for f in sorted(os.listdir(folder)):
         pg = json.load(open(os.path.join(folder, f), encoding="utf-8"))
-        if d == "quran-pages" and pg["p"] > 540:
+        if (d == "quran-pages") == (pg["p"] > 540):   # each page read once: 1–540 from quran-pages, the rest from pages
             continue
         for ln in pg["lines"]:
             for t, s, a, end in ln["w"]:
@@ -26,7 +26,7 @@ for k in words:
     last[s] = max(last[s], a)
 chapters = json.load(open(os.path.join(RAW, "chapters.json"), encoding="utf-8"))
 tr = dict(json.load(open(os.path.join(SIM, "tr_extra.json"), encoding="utf-8")))
-for n in range(58, 115):
+for n in range(41, 115):
     for a, t in json.load(open(os.path.join(RAW, f"s{n:03d}", "tr.json"), encoding="utf-8")).items():
         tr[f"{n}:{a}"] = t
 
@@ -42,7 +42,7 @@ def step(k, d):
 
 
 made = 0
-for n in [int(x) for x in sys.argv[1:]] or range(58, 115):
+for n in [int(x) for x in sys.argv[1:]] or range(41, 115):
     groups = json.load(open(os.path.join(SIM, f"s{n:03d}.json"), encoding="utf-8"))["groups"]
     if not groups:
         continue

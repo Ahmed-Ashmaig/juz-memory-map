@@ -1,0 +1,153 @@
+{
+ "surah": 56,
+ "groups": [
+  {
+   "kind": "cross",
+   "anchor": "56:12",
+   "more": 0,
+   "members": [
+    {
+     "k": "37:43",
+     "page": 447,
+     "exact": true,
+     "diff": []
+    },
+    {
+     "k": "56:12",
+     "page": 534,
+     "exact": true,
+     "diff": []
+    }
+   ],
+   "id": "g1"
+  },
+  {
+   "kind": "within",
+   "anchor": "56:13",
+   "more": 0,
+   "members": [
+    {
+     "k": "56:13",
+     "page": 534,
+     "exact": true,
+     "diff": []
+    },
+    {
+     "k": "56:39",
+     "page": 535,
+     "exact": true,
+     "diff": []
+    }
+   ],
+   "id": "g2"
+  },
+  {
+   "kind": "cross",
+   "anchor": "56:25",
+   "more": 0,
+   "members": [
+    {
+     "k": "56:25",
+     "page": 535,
+     "exact": true,
+     "diff": []
+    },
+    {
+     "k": "78:35",
+     "page": 583,
+     "exact": false,
+     "diff": [
+      5
+     ]
+    }
+   ],
+   "id": "g3"
+  },
+  {
+   "kind": "cross",
+   "anchor": "56:48",
+   "more": 0,
+   "members": [
+    {
+     "k": "37:17",
+     "page": 446,
+     "exact": true,
+     "diff": []
+    },
+    {
+     "k": "56:48",
+     "page": 535,
+     "exact": true,
+     "diff": []
+    }
+   ],
+   "id": "g4"
+  },
+  {
+   "kind": "cross",
+   "anchor": "56:67",
+   "more": 0,
+   "members": [
+    {
+     "k": "56:67",
+     "page": 536,
+     "exact": true,
+     "diff": []
+    },
+    {
+     "k": "68:27",
+     "page": 565,
+     "exact": true,
+     "diff": []
+    }
+   ],
+   "id": "g5"
+  },
+  {
+   "kind": "both",
+   "anchor": "56:74",
+   "more": 0,
+   "members": [
+    {
+     "k": "56:74",
+     "page": 536,
+     "exact": true,
+     "diff": []
+    },
+    {
+     "k": "56:96",
+     "page": 537,
+     "exact": true,
+     "diff": []
+    },
+    {
+     "k": "69:52",
+     "page": 568,
+     "exact": true,
+     "diff": []
+    }
+   ],
+   "id": "g6"
+  },
+  {
+   "kind": "cross",
+   "anchor": "56:80",
+   "more": 0,
+   "members": [
+    {
+     "k": "56:80",
+     "page": 537,
+     "exact": true,
+     "diff": []
+    },
+    {
+     "k": "69:43",
+     "page": 568,
+     "exact": true,
+     "diff": []
+    }
+   ],
+   "id": "g7"
+  }
+ ]
+}

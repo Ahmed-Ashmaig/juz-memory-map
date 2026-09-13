@@ -1,0 +1,12 @@
+{
+  "n": 42,
+  "groups": {
+    "g1": {
+      "flow": "Both say you cannot cause Allāh failure and have no protector or helper. Al-ʿAnkabūt adds wa lā fis-samāʾ (nor in the heaven), after 'He punishes whom He wills and has mercy upon whom He wills'. Ash-Shūrā stops at fil-arḍ (upon the earth), after disaster coming from what your hands earned, then ships in the sea. Hook: Ash-Shūrā's version stays on the earth, and its next ayah moves to the sea.",
+      "cues": {
+        "29:22": "Al-ʿAnkabūt: adds wa lā fis-samāʾ; after He punishes or shows mercy to whom He wills.",
+        "42:31": "Ash-Shūrā: earth only, no heaven; after disaster for what your hands earned; next, ships like mountains."
+      }
+    }
+  }
+}

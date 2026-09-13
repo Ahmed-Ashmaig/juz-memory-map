@@ -1,0 +1,52 @@
+{
+  "n": 52,
+  "groups": {
+    "g1": {
+      "flow": "All open inna l-muttaqīna fī. Aṭ-Ṭūr alone has jannātin wa naʿīm (pleasure), after 'burn therein; be patient or impatient'. Al-Ḥijr and Adh-Dhāriyāt have jannātin wa ʿuyūn (springs), Al-Qamar jannātin wa nahar (rivers), Al-Mursalāt ẓilālin wa ʿuyūn (shades). The next ayat look alike: 'enjoying what their Lord has given them' here, 'accepting' in Adh-Dhāriyāt. Hook: naʿīm leads into 'enjoying'. Muṣḥaf order: springs, springs, pleasure, rivers, shades.",
+      "cues": {
+        "15:45": "Al-Ḥijr: wa ʿuyūn (springs), after Hell's seven gates; next, 'Enter it in peace'.",
+        "51:15": "Adh-Dhāriyāt: wa ʿuyūn (springs), after 'Taste your torment'; next, 'accepting what their Lord gave'.",
+        "52:17": "Aṭ-Ṭūr: wa naʿīm (pleasure), after 'burn therein, patient or impatient'; next, 'enjoying'.",
+        "54:54": "Al-Qamar: wa nahar (rivers), after every small and great thing is inscribed.",
+        "77:41": "Al-Mursalāt: ẓilālin wa ʿuyūn (shades), straight after a woe; fruits follow."
+      }
+    },
+    "g2": {
+      "flow": "Identical: kulū wa-shrabū hanīʾan bimā kuntum taʿmalūn. Both sit two ayat after the inna l-muttaqīna ayah. In Aṭ-Ṭūr it follows 'their Lord protected them from the punishment of Hellfire' and leads to reclining on thrones. In Al-Mursalāt it follows 'fruits from whatever they desire' and leads to 'We thus reward the doers of good', then a woe. Hook: Ṭūr eats then reclines; Mursalāt eats then is rewarded.",
+      "cues": {
+        "52:19": "Aṭ-Ṭūr: after protection from Hellfire; next, reclining on thrones lined up.",
+        "77:43": "Al-Mursalāt: after fruits they desire; next, 'We thus reward the doers of good'."
+      }
+    },
+    "g3": {
+      "flow": "Four scenes of people turning to one another. Aṣ-Ṣāffāt 37:27: after 'that Day, in surrender'. 37:50: after 'eggs, well-protected'. Aṭ-Ṭūr 52:25: after boys 'like pearls well-protected'. Al-Qalam 68:30: after 'we were wrongdoers', and only it ends yatalāwamūn (blaming); the rest end yatasāʾalūn. Hook: the opener alternates in muṣḥaf order: wa-aqbala, fa-aqbala, wa-aqbala, fa-aqbala. Eggs take fa; pearls, here in Aṭ-Ṭūr, take wa.",
+      "cues": {
+        "37:27": "Aṣ-Ṣāffāt: wa-aqbala … yatasāʾalūn, after 'that Day, in surrender'; next, 'from the right'.",
+        "37:50": "Aṣ-Ṣāffāt: fa-aqbala … yatasāʾalūn, after 'eggs, well-protected'; next, 'I had a companion'.",
+        "52:25": "Aṭ-Ṭūr: wa-aqbala … yatasāʾalūn, after boys 'like pearls well-protected'; next, 'we were fearful'.",
+        "68:30": "Al-Qalam: fa-aqbala … yatalāwamūn (blaming), right after 'Exalted is our Lord! We were wrongdoers'."
+      }
+    },
+    "g4": {
+      "flow": "Identical: am tasʾaluhum ajran fa-hum min maghramin muthqalūn. The next ayah matches too, 'or have they the unseen?', so only the ayah before differs. Aṭ-Ṭūr 52:40 follows 'or has He daughters while you have sons?', inside a long run of 'or' questions. Al-Qalam 68:46 follows 'I will give them time; My plan is firm'. Hook: Al-Qalam mentions the plan before the pair; Aṭ-Ṭūr, right after it.",
+      "cues": {
+        "52:40": "Aṭ-Ṭūr: after 'or has He daughters while you have sons?'; 'or' questions all around.",
+        "68:46": "Al-Qalam: right after 'I will give them time; My plan is firm'."
+      }
+    },
+    "g5": {
+      "flow": "Identical: am ʿindahumu l-ghaybu fa-hum yaktubūn, always straight after the payment ayah. Aṭ-Ṭūr 52:41 keeps the 'or' questions going: 'or do they intend a plan?'. Al-Qalam 68:47 ends them and turns to the Prophet ﷺ: 'be patient, and be not like the companion of the fish'. Hook: both reach 'be patient for the decision of your Lord' at ayah 48: Al-Qalam at once, Aṭ-Ṭūr seven ayat later.",
+      "cues": {
+        "52:41": "Aṭ-Ṭūr: after the payment question; next, 'or do they intend a plan?'",
+        "68:47": "Al-Qalam: after the payment question; next, 'be patient, not like the companion of the fish'."
+      }
+    },
+    "g6": {
+      "flow": "Both begin wa mina l-layli fa-sabbiḥhu. Aṭ-Ṭūr's is its last ayah and ends wa idbāra n-nujūm (after the stars), following 'be patient for the decision of your Lord; you are in Our eyes'. Qāf 50:40 ends wa adbāra s-sujūd (after prostration), following praise before sunrise and sunset, and goes on to the Caller. Hook: Aṭ-Ṭūr's stars lead straight into the next surah's 'By the star'; Qāf's sun leads to sujūd.",
+      "cues": {
+        "50:40": "Qāf: adbāra (a) s-sujūd, after praise before sunrise and sunset; next, the Caller calls from near.",
+        "52:49": "Aṭ-Ṭūr, last ayah: idbāra (i) n-nujūm (stars), after 'you are in Our eyes'."
+      }
+    }
+  }
+}

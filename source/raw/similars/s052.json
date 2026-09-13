@@ -1,0 +1,171 @@
+{
+ "surah": 52,
+ "groups": [
+  {
+   "kind": "cross",
+   "anchor": "52:17",
+   "more": 0,
+   "members": [
+    {
+     "k": "15:45",
+     "page": 264,
+     "exact": false,
+     "diff": [
+      4
+     ]
+    },
+    {
+     "k": "51:15",
+     "page": 521,
+     "exact": false,
+     "diff": [
+      4
+     ]
+    },
+    {
+     "k": "52:17",
+     "page": 524,
+     "exact": true,
+     "diff": []
+    },
+    {
+     "k": "54:54",
+     "page": 531,
+     "exact": false,
+     "diff": [
+      4
+     ]
+    },
+    {
+     "k": "77:41",
+     "page": 581,
+     "exact": false,
+     "diff": [
+      3,
+      4
+     ]
+    }
+   ],
+   "id": "g1"
+  },
+  {
+   "kind": "cross",
+   "anchor": "52:19",
+   "more": 0,
+   "members": [
+    {
+     "k": "52:19",
+     "page": 524,
+     "exact": true,
+     "diff": []
+    },
+    {
+     "k": "77:43",
+     "page": 581,
+     "exact": true,
+     "diff": []
+    }
+   ],
+   "id": "g2"
+  },
+  {
+   "kind": "cross",
+   "anchor": "52:25",
+   "more": 0,
+   "members": [
+    {
+     "k": "37:27",
+     "page": 447,
+     "exact": true,
+     "diff": []
+    },
+    {
+     "k": "37:50",
+     "page": 447,
+     "exact": false,
+     "diff": [
+      0
+     ]
+    },
+    {
+     "k": "52:25",
+     "page": 524,
+     "exact": true,
+     "diff": []
+    },
+    {
+     "k": "68:30",
+     "page": 565,
+     "exact": false,
+     "diff": [
+      0,
+      4
+     ]
+    }
+   ],
+   "id": "g3"
+  },
+  {
+   "kind": "cross",
+   "anchor": "52:40",
+   "more": 0,
+   "members": [
+    {
+     "k": "52:40",
+     "page": 525,
+     "exact": true,
+     "diff": []
+    },
+    {
+     "k": "68:46",
+     "page": 566,
+     "exact": true,
+     "diff": []
+    }
+   ],
+   "id": "g4"
+  },
+  {
+   "kind": "cross",
+   "anchor": "52:41",
+   "more": 0,
+   "members": [
+    {
+     "k": "52:41",
+     "page": 525,
+     "exact": true,
+     "diff": []
+    },
+    {
+     "k": "68:47",
+     "page": 566,
+     "exact": true,
+     "diff": []
+    }
+   ],
+   "id": "g5"
+  },
+  {
+   "kind": "cross",
+   "anchor": "52:49",
+   "more": 0,
+   "members": [
+    {
+     "k": "50:40",
+     "page": 520,
+     "exact": false,
+     "diff": [
+      4
+     ]
+    },
+    {
+     "k": "52:49",
+     "page": 525,
+     "exact": true,
+     "diff": []
+    }
+   ],
+   "id": "g6"
+  }
+ ]
+}

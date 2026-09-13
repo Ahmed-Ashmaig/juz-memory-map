@@ -1,0 +1,28 @@
+{
+ "surah": 48,
+ "groups": [
+  {
+   "kind": "cross",
+   "anchor": "48:8",
+   "more": 0,
+   "members": [
+    {
+     "k": "33:45",
+     "page": 424,
+     "exact": false,
+     "diff": [
+      0,
+      1
+     ]
+    },
+    {
+     "k": "48:8",
+     "page": 511,
+     "exact": true,
+     "diff": []
+    }
+   ],
+   "id": "g1"
+  }
+ ]
+}

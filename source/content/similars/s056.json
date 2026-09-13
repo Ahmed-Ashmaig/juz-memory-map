@@ -1,0 +1,55 @@
+{
+  "n": 56,
+  "groups": {
+    "g1": {
+      "flow": "Same words, fī jannāti n-naʿīm. Aṣ-Ṣāffāt 37:43 sits in a list of rewards: fruits and honor before it, thrones facing one another after. Al-Wāqiʿah 56:12 follows 'those are the ones brought near' and leads into who they are: a large company of the former peoples. Hook: Aṣ-Ṣāffāt goes from fruits to thrones; Al-Wāqiʿah goes from the brought near to a company.",
+      "cues": {
+        "37:43": "Aṣ-Ṣāffāt: after 'fruits, and they will be honored'; next, thrones facing one another.",
+        "56:12": "Al-Wāqiʿah: after 'those are the ones brought near'; next, a company of the former peoples."
+      }
+    },
+    "g2": {
+      "flow": "Same words, thullatun mina l-awwalīn; the difference is the next ayah. At 56:13, for the ones brought near, wa qalīlun mina l-ākhirīn follows (a few of the later). At 56:39, for the companions of the right, wa thullatun mina l-ākhirīn follows (a company of the later). Hook: the brought near get a company then a few; the right get a company twice.",
+      "cues": {
+        "56:13": "The brought near, in Gardens of Pleasure; next, wa qalīlun: only a few of the later.",
+        "56:39": "After 'for the companions of the right'; next, wa thullatun: a company of the later too."
+      }
+    },
+    "g3": {
+      "flow": "Both open lā yasmaʿūna fīhā laghwan wa lā, then split. Al-Wāqiʿah 56:25 ends taʾthīmā (sin), after 'as reward for what they used to do', and 'peace, peace' follows. An-Naba 78:35 ends kidhdhābā (falsehood), after 'a full cup', and 'reward from your Lord' follows. Hook: Al-Wāqiʿah mentions the reward before it; An-Naba mentions the reward after.",
+      "cues": {
+        "56:25": "Al-Wāqiʿah: wa lā taʾthīmā (sin); after 'reward for what they used to do'; next, 'peace, peace'.",
+        "78:35": "An-Naba: wa lā kidhdhābā (falsehood); after 'a full cup'; next, reward from your Lord."
+      }
+    },
+    "g4": {
+      "flow": "Word for word the same, after the same doubt: 'when we die and become dust and bones, are we to be resurrected?'. Al-Wāqiʿah opens that doubt with 'they used to say'. The replies differ: Aṣ-Ṣāffāt answers 'Yes, and you will be contemptible'; Al-Wāqiʿah answers 'the former and later peoples', a pair the surah has already used at 56:13-14 and 56:39-40. Hook: Al-Wāqiʿah keeps returning to former and later.",
+      "cues": {
+        "37:17": "Aṣ-Ṣāffāt: after 'dust and bones… resurrected?'; reply next: 'Yes, and you will be contemptible.'",
+        "56:48": "Al-Wāqiʿah: after 'they used to say… dust and bones'; reply next: 'the former and later peoples'."
+      }
+    },
+    "g5": {
+      "flow": "Identical, each finishing a lament. Al-Wāqiʿah 56:67 completes 'indeed, we are now in debt', and the surah moves on to 'have you seen the water that you drink?'. Al-Qalam 68:27 completes 'when they saw it: indeed, we are lost', and the most moderate of them speaks next. Hook: debt then water in Al-Wāqiʿah; lost then the moderate one in Al-Qalam.",
+      "cues": {
+        "56:67": "Al-Wāqiʿah: finishes 'we are now in debt'; next, the water that you drink.",
+        "68:27": "Al-Qalam: finishes 'when they saw it: we are lost'; next, the most moderate of them speaks."
+      }
+    },
+    "g6": {
+      "flow": "Three times fa-sabbiḥ bi-smi rabbika l-ʿaẓīm. Al-Wāqiʿah has it twice: first after 'a reminder and provision for the travelers', leading into the oath by the setting of the stars; then as its last ayah, after 'this is the true certainty'. Al-Ḥāqqah ends the same way, after 'indeed, it is the truth of certainty'. Hook: certainty comes before both endings; only Al-Wāqiʿah has an earlier one too.",
+      "cues": {
+        "56:74": "Al-Wāqiʿah, 1st: after 'provision for the travelers'; next, 'I swear by the setting of the stars'.",
+        "56:96": "Al-Wāqiʿah, last ayah: after 'this is the true certainty'; Al-Ḥadīd opens with exalting Allāh.",
+        "69:52": "Al-Ḥāqqah, last ayah: after 'and indeed, it is the truth of certainty'."
+      }
+    },
+    "g7": {
+      "flow": "Identical, tanzīlun min rabbi l-ʿālamīn. Al-Wāqiʿah 56:80 follows 'none touch it except the purified', then asks 'is it to this statement that you are indifferent?'. Al-Ḥāqqah 69:43 follows 'nor the word of a soothsayer', then says 'if he had made up sayings about Us'. Hook: both surahs have this line and then end on fa-sabbiḥ bi-smi rabbika l-ʿaẓīm.",
+      "cues": {
+        "56:80": "Al-Wāqiʿah: after 'none touch it except the purified'; next, 'to this statement you are indifferent?'",
+        "69:43": "Al-Ḥāqqah: after 'nor the word of a soothsayer'; next, 'if he had made up sayings'."
+      }
+    }
+  }
+}

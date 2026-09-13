@@ -1,0 +1,12 @@
+{
+  "n": 48,
+  "groups": {
+    "g1": {
+      "flow": "Al-Aḥzāb 33:45 alone opens with the call yā ayyuha n-nabiyyu and keeps describing him: 'one who invites to Allāh … an illuminating lamp'. Al-Fatḥ 48:8 has no call; it follows 'to Allāh belong the soldiers of the heavens and the earth' and turns to the people: 'that you may believe … and exalt Him morning and afternoon'. Hook: Al-Aḥzāb calls out and adds the lamp; Al-Fatḥ goes straight to believing.",
+      "cues": {
+        "33:45": "Opens yā ayyuha n-nabiyyu; after the greeting 'Peace'; next, inviter to Allāh, illuminating lamp.",
+        "48:8": "No 'O Prophet'; after the soldiers of the heavens and earth; next, 'that you may believe'."
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "n": 50,
+  "groups": {
+    "g1": {
+      "flow": "Both open wa l-arḍa madadnāhā wa alqaynā fīhā rawāsiya wa anbatnā fīhā min kulli, then split. Al-Ḥijr 15:19 ends shayʾin mawzūn (every well-balanced thing), after one who steals a hearing, and moves on to means of living. Qāf 50:7 ends zawjin bahīj (every beautiful kind), right after the heaven 'adorned' with no rifts. Hook: Qāf pairs an adorned sky with a beautiful earth; Al-Ḥijr weighs things out for living.",
+      "cues": {
+        "15:19": "Al-Ḥijr: shayʾin mawzūn (well-balanced), after the hearing-thief chased by a flame; next, means of living.",
+        "50:7": "Qāf: zawjin bahīj (beautiful kind), after the heaven adorned with no rifts; next, insight and reminder."
+      }
+    },
+    "g2": {
+      "flow": "Both open wa mina l-layli fa-sabbiḥhu, then split. Qāf 50:40 ends wa adbāra s-sujūd (after prostration), following praise before sunrise and sunset; then 'listen for the Day the Caller calls'. Aṭ-Ṭūr 52:49 ends wa idbāra n-nujūm (after the stars), following 'you are in Our eyes', and closes that surah just before 'By the star'. Hook: in Qāf, sun then sujūd; in Aṭ-Ṭūr, stars then 'the star'.",
+      "cues": {
+        "50:40": "Qāf: adbāra (a) s-sujūd, after praise before sunrise and sunset; next, the Caller calls from near.",
+        "52:49": "Aṭ-Ṭūr, last ayah: idbāra (i) n-nujūm (stars), after 'you are in Our eyes'."
+      }
+    }
+  }
+}

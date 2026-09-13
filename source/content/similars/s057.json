@@ -1,0 +1,13 @@
+{
+  "n": 57,
+  "groups": {
+    "g1": {
+      "flow": "Three surahs open with sabbaḥa lillāhi and end wa huwa l-ʿazīzu l-ḥakīm: Al-Ḥadīd, Al-Ḥashr, Aṣ-Ṣaff. Al-Ḥadīd, the first, has one mā: mā fi s-samāwāti wa l-arḍ. Al-Ḥashr and Aṣ-Ṣaff add a second: wa mā fi l-arḍ. Hook: the first is the shortest, right after 'So exalt the name of your Lord'. Split the later two by ayah 2: expulsion from homes, or 'why say what you do not do?'",
+      "cues": {
+        "57:1": "Al-Ḥadīd: one mā, wa l-arḍ; after 'exalt the name of your Lord'; then dominion, life, death.",
+        "59:1": "Al-Ḥashr: wa mā fi l-arḍ, after 'the party of Allāh… successful'; then expulsion from homes.",
+        "61:1": "Aṣ-Ṣaff: wa mā…, after 'do not make allies'; next, 'why say what you do not do?'"
+      }
+    }
+  }
+}
