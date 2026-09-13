@@ -22,8 +22,14 @@ const flip = {
     setTimeout(() => (el.hidden = true), Math.max(0, 800 - (Date.now() - this.t)));
   },
 };
-// The top bar is sticky and changes height between screens; scroll snapping and anchors offset by it.
-const setTopbar = () => document.documentElement.style.setProperty("--topbar", document.querySelector(".topbar").offsetHeight + "px");
+// The top bar and the bar pinned to the bottom both change height; on phones the surah scroller is sized to
+// sit exactly between them, so nothing is ever covered by either.
+const setTopbar = () => {
+  const root = document.documentElement.style;
+  root.setProperty("--topbar", document.querySelector(".topbar").offsetHeight + "px");
+  const bar = [$("anav"), $("dock")].find(b => b && !b.hidden);
+  root.setProperty("--bar", bar ? Math.max(0, Math.ceil(window.innerHeight - bar.getBoundingClientRect().top)) + "px" : "0px");
+};
 window.addEventListener("resize", setTopbar);
 const store = {
   get(k, d) { try { const v = localStorage.getItem(k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } },
@@ -219,7 +225,7 @@ async function openSurah(n, tab) {
     catch (e) { $("loading").textContent = "This surah couldn’t open. Please try another one."; console.error(e); flip.hide(); return; }
   }
   $("loading").hidden = true; $("surahBody").hidden = false;
-  if (fresh) $("stage").scrollTop = 0;   // phones: a new surah starts on its first screen (only works once it is visible)
+  if (fresh) { $("stage").scrollTop = 0; Surah.syncBar(); }   // phones: a new surah starts on its first screen (only works once it is visible)
   if (tab) Surah.setTab(tab);   // e.g. #70/weak opens straight into that surah's weak spots
   setTopbar();
   flip.hide();
@@ -250,19 +256,6 @@ const Surah = (() => {
   const streaks = store.get("juzapp-streak-v1", {});
   const PASSES = 5;
 
-  // The intro card's folded rows (why it was revealed, where it sits) remember their state the same way.
-  // "Where it sits" starts open (remembered as "!where" once someone closes it); the other rows start closed.
-  const openByDefault = id => id === "where";
-  document.querySelectorAll("#sHead details.fold").forEach(d => {
-    const id = d.dataset.f;
-    d.open = openByDefault(id) ? !openFolds.has("!" + id) : openFolds.has(id);
-    d.addEventListener("toggle", () => {
-      if (openByDefault(id)) { if (d.open) openFolds.delete("!" + id); else openFolds.add("!" + id); }
-      else if (d.open) openFolds.add(id); else openFolds.delete(id);
-      store.set("juzapp-folds", [...openFolds]);
-      if (d.open && id === "where") centerIn($("jline").parentElement, $("jline").querySelector(".me"));
-    });
-  });
 
   /* ---------- the bar pinned to the bottom of the screen (Learn) ---------- */
   // Ayah tab steps by ayah, Section tab by section, Weak spots tab through the practice steps. Past either end: next surah.
@@ -315,23 +308,16 @@ const Surah = (() => {
     const visible = Math.min(r.right, c.right) - Math.max(r.left, c.left);
     if (visible < Math.min(r.width, c.width) * 0.9) centerIn(container, el, behavior);
   }
-  // Same idea for the vertical section list.
-  function revealY(container, el) {
-    if (!container || !el || container.scrollHeight <= container.clientHeight + 4) return;
-    const c = container.getBoundingClientRect(), r = el.getBoundingClientRect();
-    if (r.top < c.top) container.scrollBy({ top: r.top - c.top - 4, behavior: "smooth" });
-    else if (r.bottom > c.bottom) container.scrollBy({ top: r.bottom - c.bottom + 4, behavior: "smooth" });
-  }
   const scrollToPage = p => showIn($("pages"), $("p" + p));
 
-  /* ---------- pages ⇄ section list ⇄ page bar, kept in step ---------- */
+  /* ---------- pages ⇄ section strip ⇄ page bar, kept in step ---------- */
   let viewPage = 0, onPageSecs = new Set();
   function pageInView() {
     const box = $("pages").getBoundingClientRect(), mid = box.left + box.width / 2;
     const el = [...$("pages").children].find(el => { const r = el.getBoundingClientRect(); return r.left <= mid && r.right >= mid; });
     return el ? +el.id.slice(1) : viewPage;
   }
-  // The section list keeps every section; the ones on the page in view stand out, and the list scrolls to them.
+  // The strip keeps every section in one row; the ones on the page in view stand out, and the row slides to them.
   function syncStrip(force) {
     if (!D) return;
     const p = pageInView(), moved = p !== viewPage;
@@ -342,11 +328,11 @@ const Surah = (() => {
     paintPagebar();
     tintOnPage();
     const strip = $("strip"), first = S.find(s => onPageSecs.has(s.n));
-    if (moved && first && strip.scrollHeight > strip.clientHeight + 4) {
-      // show the page's sections from the first one down, but never let the selected one slip out of view
-      const top = $("blk" + first.n).getBoundingClientRect().top - strip.getBoundingClientRect().top + strip.scrollTop - 4;
-      const selB = onPageSecs.has(sel) ? $("blk" + sel).getBoundingClientRect().bottom - strip.getBoundingClientRect().top + strip.scrollTop + 4 : 0;
-      strip.scrollTo({ top: Math.max(top, selB - strip.clientHeight), behavior: "smooth" });
+    if (moved && first && strip.scrollWidth > strip.clientWidth + 4) {
+      // line the page's first section up at the start of the row (its right edge: the row reads right to left),
+      // then make sure the selected section, if it is on this page, is still in view
+      strip.scrollBy({ left: $("blk" + first.n).getBoundingClientRect().right - strip.getBoundingClientRect().right, behavior: "auto" });
+      if (onPageSecs.has(sel)) showIn(strip, $("blk" + sel), "auto");
     }
   }
   // As the pages move, tint the words of the sections now in view (the solid selection is left alone).
@@ -451,16 +437,11 @@ const Surah = (() => {
     const [p0, p1] = meta.pages;
     $("qbar").innerHTML = `<i style="right:${((p0 - 1) / 604 * 100).toFixed(2)}%;width:${((p1 - p0 + 1) / 604 * 100).toFixed(2)}%"></i>`;
     $("posTxt").textContent = `Juz ${meta.juz[0]} · Hizb ${meta.hizb[0]} · ${p0 === p1 ? `page ${p0}` : `pages ${p0}–${p1}`}`;
-    const link = m => {
-      if (!IDX.surahs[m]) return "";
-      return IDX.ready.includes(m) ? `<a href="#${m}">${esc(nameOf(m))} (${m})</a>` : `${esc(nameOf(m))} (${m})`;
-    };
-    $("neigh").innerHTML = `<span>${n < 114 ? `← ${link(n + 1)}` : ""}</span><span class="me">${esc(nameOf(n))} (${n})</span><span class="r">${n > 1 ? `${link(n - 1)} →` : ""}</span>`;
     // a surah can start in a juz the app doesn't cover (Fussilat starts in Juz 24), so use the first one it has
     const jn = range(meta.juz[0], meta.juz[1]).find(j => IDX.juz[j]?.surahs.includes(n)) ?? meta.juz[0];
     const J = IDX.juz[jn];
-    $("jLbl").textContent = `Surahs of Juz ${jn}, in order`;
-    $("jRange").textContent = `Pages ${J.pages[0]}–${J.pages[1]} · reads right to left`;
+    $("jLbl").textContent = `Surahs of Juz ${jn}`;
+    $("jRange").textContent = `pages ${J.pages[0]}–${J.pages[1]}`;
     $("jline").innerHTML = J.surahs.map((m, k) => {
       const x = IDX.surahs[m];
       const nextStart = k + 1 < J.surahs.length ? IDX.surahs[J.surahs[k + 1]].pages[0] : J.pages[1] + 1;
@@ -779,26 +760,27 @@ const Surah = (() => {
     mk.hidden = ltab !== "ayah";
     view.hidden = ltab === "weak" || !K;
     view.textContent = `View ${K} weak spot${K > 1 ? "s" : ""}`;
-    const surahBtn = (dir) => { const b = dir < 0 ? prev : next; b.textContent = dir < 0 ? "‹ Previous surah" : "Next surah ›"; b.disabled = !IDX.ready.includes(n + dir); };
+    // Muṣḥaf order: next is on the left, previous on the right, chevrons pointing outward.
+    const surahBtn = (dir) => { const b = dir < 0 ? prev : next; b.textContent = dir < 0 ? "Previous surah ›" : "‹ Next surah"; b.disabled = !IDX.ready.includes(n + dir); };
     if (ltab === "weak") {
       if (!drill) {
         surahBtn(-1);
         num.textContent = K ? `${K} weak spot${K > 1 ? "s" : ""}` : allClear ? "All clear" : "No weak spots";
-        if (K) next.textContent = "Start practising ›";
-        else if (allClear) next.textContent = "Recite the whole surah ›";
+        if (K) next.textContent = "‹ Start practising";
+        else if (allClear) next.textContent = "‹ Recite the whole surah";
         else surahBtn(1);
         return;
       }
       const { steps, idx, done, a } = drill;
       num.textContent = done ? `Ayah ${a} · ${streakOf(a)} of ${PASSES}` : `Ayah ${cur} · step ${idx + 1} of ${steps.length}`;
       if (done) { prev.textContent = "I made a mistake"; prev.className = "btn stuckbtn"; next.textContent = "No mistake ✓"; next.className = "btn okbtn"; }
-      else { prev.textContent = idx === 0 ? "Stop" : "‹ Back"; next.textContent = idx === steps.length - 1 ? "How did it go? ›" : "Next ›"; }
+      else { prev.textContent = idx === 0 ? "Stop" : "Back ›"; next.textContent = idx === steps.length - 1 ? "‹ How did it go?" : "‹ Next"; }
       return;
     }
     const bySection = ltab === "section", unit = bySection ? "section" : "ayah";
     const atStart = bySection ? sel <= 1 : cur <= 1, atEnd = bySection ? sel >= S.length : cur >= N;
-    if (atStart) surahBtn(-1); else prev.textContent = `‹ Previous ${unit}`;
-    if (atEnd) surahBtn(1); else next.textContent = `Next ${unit} ›`;
+    if (atStart) surahBtn(-1); else prev.textContent = `Previous ${unit} ›`;
+    if (atEnd) surahBtn(1); else next.textContent = `‹ Next ${unit}`;
     num.textContent = bySection ? `Section ${sel} of ${S.length}` : `Ayah ${cur} of ${N}`;
     const c = weak(cur);
     mk.textContent = c ? `Marked ${c}× · undo` : "Mark weak spot";
@@ -971,7 +953,9 @@ const Surah = (() => {
     if (!D) return;
     const restore = screenAnchor();
     renderNow();
+    setTopbar();   // the bottom bar's height may have changed; the phone scroller is sized around it
     restore();
+    syncBar();
   }
   function renderNow() {
     if (weakList().length) allClear = false;
@@ -1000,7 +984,7 @@ const Surah = (() => {
     if (mode === "learn") return openAyah(S[sn - 1].a, scroll, "section");   // show the section, sitting on its first ayah
     sel = sn; revealed = 0; stuckThisPass.clear();
     render();
-    revealY($("strip"), $("blk" + sn));
+    showIn($("strip"), $("blk" + sn));
     if (scroll) scrollToPage(S[sn - 1].from[0]);
   }
   function openAyah(a, scroll, tab) {
@@ -1010,7 +994,7 @@ const Surah = (() => {
     render();
     const P = $("panel");
     if (P.scrollHeight > P.clientHeight) P.scrollTop = 0;   // wide screens: keep the current ayah in sight
-    revealY($("strip"), $("blk" + sel));
+    showIn($("strip"), $("blk" + sel));
     if (scroll) scrollToPage(AY[key(a)].start[0]);
   }
   function setMode(m) {
@@ -1029,16 +1013,25 @@ const Surah = (() => {
     $("surah").classList.remove("surah-test", "surah-nav");
     drill = null; drillNote = "";
   }
-  // Arrow keys step through Learn, matching the bar: ← previous, → next.
+  // Phones: the bar at the bottom only shows on the sections screen and the tabs screen, not on the intro.
+  function syncBar() {
+    const st = $("stage"), phone = matchMedia("(max-width: 1099px)").matches;
+    const t2 = $("scr2").offsetTop - st.offsetTop;
+    const away = phone && !$("scr1").hidden && st.scrollTop < t2 - 40;
+    [$("anav"), $("dock")].forEach(b => b.classList.toggle("away", away));
+  }
+  $("stage").addEventListener("scroll", syncBar, { passive: true });
+
+  // Arrow keys step through Learn, matching the bar and the muṣḥaf: ← next, → previous.
   document.addEventListener("keydown", e => {
     if (!D || $("surah").hidden || mode !== "learn" || e.altKey || e.metaKey || e.ctrlKey) return;
     if (e.target.closest && e.target.closest("input, textarea, select")) return;
     if (drill && drill.done) return;
-    if (e.key === "ArrowRight") { e.preventDefault(); stepLearn(1); }
-    if (e.key === "ArrowLeft") { e.preventDefault(); stepLearn(-1); }
+    if (e.key === "ArrowLeft") { e.preventDefault(); stepLearn(1); }
+    if (e.key === "ArrowRight") { e.preventDefault(); stepLearn(-1); }
   });
 
-  return { get n() { return n; }, mount, setMode, setTab, refresh: render, leave };
+  return { get n() { return n; }, mount, setMode, setTab, refresh: render, leave, syncBar };
 })();
 
 /* Wire up the shell once everything is defined. */

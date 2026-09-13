@@ -22,8 +22,14 @@ const flip = {
     setTimeout(() => (el.hidden = true), Math.max(0, 800 - (Date.now() - this.t)));
   },
 };
-// The top bar is sticky and changes height between screens; scroll snapping and anchors offset by it.
-const setTopbar = () => document.documentElement.style.setProperty("--topbar", document.querySelector(".topbar").offsetHeight + "px");
+// The top bar and the bar pinned to the bottom both change height; on phones the surah scroller is sized to
+// sit exactly between them, so nothing is ever covered by either.
+const setTopbar = () => {
+  const root = document.documentElement.style;
+  root.setProperty("--topbar", document.querySelector(".topbar").offsetHeight + "px");
+  const bar = [$("anav"), $("dock")].find(b => b && !b.hidden);
+  root.setProperty("--bar", bar ? Math.max(0, Math.ceil(window.innerHeight - bar.getBoundingClientRect().top)) + "px" : "0px");
+};
 window.addEventListener("resize", setTopbar);
 const store = {
   get(k, d) { try { const v = localStorage.getItem(k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } },
@@ -219,7 +225,7 @@ async function openSurah(n, tab) {
     catch (e) { $("loading").textContent = "This surah couldn’t open. Please try another one."; console.error(e); flip.hide(); return; }
   }
   $("loading").hidden = true; $("surahBody").hidden = false;
-  if (fresh) $("stage").scrollTop = 0;   // phones: a new surah starts on its first screen (only works once it is visible)
+  if (fresh) { $("stage").scrollTop = 0; Surah.syncBar(); }   // phones: a new surah starts on its first screen (only works once it is visible)
   if (tab) Surah.setTab(tab);   // e.g. #70/weak opens straight into that surah's weak spots
   setTopbar();
   flip.hide();

@@ -79,7 +79,10 @@ p{margin:0}
 /* ---- surah header ---- */
 .head{display:grid;gap:1rem;grid-template-columns:minmax(0,1fr)}
 @media (min-width:900px){.head{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr)}}
-h1.stitle{margin:0;font:700 clamp(1.7rem,4vw,2.6rem)/1.05 var(--display);display:flex;align-items:baseline;gap:.55rem;flex-wrap:wrap}
+h1.stitle{margin:0;font:700 clamp(1.7rem,4vw,2.6rem)/1.05 var(--display);display:flex;align-items:baseline;justify-content:center;gap:.55rem;flex-wrap:wrap;text-align:center}
+/* the intro's name, summary line and main theme sit centred; the longer "why it was revealed" stays left for reading */
+.intro .sub,.intro .themelbl,.intro .theme{text-align:center}
+.intro .theme{margin-inline:auto}
 h1.stitle .ar{font:400 .95em/1.2 var(--q);color:var(--green)}
 .sub{color:var(--muted);font-size:.95rem}
 .theme{font-size:1.06rem;max-width:62ch}
@@ -96,13 +99,14 @@ h1.stitle .ar{font:400 .95em/1.2 var(--q);color:var(--green)}
 .jhead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:.3rem 1rem}
 [hidden]{display:none!important}
 .juzline-wrap{direction:rtl;overflow-x:auto;padding-bottom:.2rem;-webkit-overflow-scrolling:touch}
-.juzline{direction:rtl;display:flex;gap:4px}
-.js{min-width:5.6rem;display:grid;justify-items:center;align-content:start;gap:.05rem;padding:.5rem .3rem .45rem;border-radius:6px;background:var(--paper);border-top:4px solid var(--line);text-align:center;text-decoration:none;color:var(--ink)}
+.juzline{direction:rtl;display:flex;gap:6px;padding-block:2px}
+.js{min-width:5.6rem;display:grid;justify-items:center;align-content:start;gap:.05rem;padding:.5rem .3rem .45rem;border-radius:8px;background:var(--sheet);border:1px solid var(--line);border-top-width:4px;text-align:center;text-decoration:none;color:var(--ink)}
 .js .jn{font:700 .78rem/1.2 var(--ui);color:var(--muted);font-variant-numeric:tabular-nums}
 .js .jar{font:400 1.3rem/2.1 var(--q);margin-bottom:.15rem}
 .js .jen{font:500 .8rem/1.2 var(--ui);direction:ltr}
 .js .jpg{font-size:.7rem;color:var(--muted);direction:ltr;unicode-bidi:isolate}
-.js.me{background:var(--green);border-top-color:var(--gold)}
+.js.me{background:var(--green);border-color:var(--green);border-top-color:var(--gold)}
+a.js:hover{border-color:var(--gold)}
 .js.me .jn,.js.me .jar,.js.me .jen,.js.me .jpg{color:var(--sheet)}
 
 /* ---- modes + strip ---- */
@@ -121,10 +125,11 @@ h1.stitle .ar{font:400 .95em/1.2 var(--q);color:var(--green)}
 .featmenu span{font-size:.84rem;color:var(--muted)}
 .hint{font-size:.9rem;color:var(--muted)}
 /* section list: every section down the side, top to bottom; the ones on the page in view stand out */
-.strip{display:grid;align-content:start;gap:4px;max-height:15rem;overflow-y:auto;padding:3px;scroll-snap-type:y proximity;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
-.blk{border:0;border-radius:6px;padding:.45rem .6rem;cursor:pointer;text-align:start;display:grid;grid-template-columns:1.8rem minmax(0,1fr);column-gap:.5rem;row-gap:.1rem;align-items:center;min-width:0;border-inline-start:5px solid transparent;transition:opacity .15s;scroll-snap-align:start}
-.blk b{grid-row:1 / span 3;font-size:1.15rem;line-height:1;text-align:center}
-.blk em{font-style:normal;font-size:.86rem;line-height:1.25;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+/* section strip: one row, section 1 on the right, later sections to the left (swipe left), like the muṣḥaf */
+.strip{direction:rtl;display:grid;grid-auto-flow:column;grid-auto-columns:minmax(9.5rem,1fr);gap:4px;overflow-x:auto;padding:3px 3px 7px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+.blk{direction:ltr;border:0;border-radius:6px;padding:.5rem .55rem .45rem;cursor:pointer;text-align:center;display:grid;gap:.15rem;align-content:start;justify-items:center;min-width:0;border-bottom:4px solid transparent;transition:opacity .15s;scroll-snap-align:start}
+.blk b{font-size:1.15rem;line-height:1.1}
+.blk em{font-style:normal;font-size:.84rem;line-height:1.25;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical}
 .blk span{font-size:.72rem;color:var(--muted);white-space:nowrap}
 .blk .weak{font-style:normal;font-size:.7rem;font-weight:700;color:var(--red)}
 .blk:hover{filter:brightness(.96)}
@@ -142,13 +147,11 @@ h1.stitle .ar{font:400 .95em/1.2 var(--q);color:var(--green)}
 .stage{display:grid;gap:1.2rem;align-items:start;grid-template-columns:minmax(0,1fr)}
 .screen{display:contents}
 @media (min-width:1100px){
-  .stage{grid-template-columns:15rem minmax(0,1fr) 25rem}
-  #sHead,#sBar{grid-column:1 / -1}
-  .strip{grid-column:1;align-self:start;position:sticky;top:3.6rem;max-height:calc(100vh - 10rem)}
-  .pagewrap{grid-column:2}
-  .panel{grid-column:3;grid-row:span 2;align-self:start}
-  .deep{grid-column:1 / 3}
-  .stage.sim .pagewrap{grid-column:1 / 3}
+  /* the strip sits above the pages; "dense" lets the panel rise to the strip's row in the right-hand column */
+  .stage{grid-template-columns:minmax(0,1fr) 25rem;grid-auto-flow:row dense}
+  #sWhere,#sHead,#sBar{grid-column:1 / -1}
+  .strip,.pagewrap,.deep{grid-column:1}
+  .panel{grid-column:2;grid-row:span 3;align-self:start}
 }
 /* wide screens show two pages side by side, so a section that runs over a page break is all in view */
 @media (min-width:1300px){.pagewrap .pages{grid-auto-columns:calc(50% - .4rem)}.pagewrap .page{scroll-snap-align:start}}
@@ -352,8 +355,14 @@ h1.stitle .ar{font:400 .95em/1.2 var(--q);color:var(--green)}
 .fold>summary .d{font:400 .84rem/1.3 var(--ui);color:var(--muted)}
 .foldbody{display:grid;gap:.9rem;padding:.1rem .3rem 1rem}
 .panel .ayds{margin-inline-start:0}
-.intro .folds{margin-top:.3rem}
-.intro .foldbody p{max-width:64ch;line-height:1.6}
+/* "Where it sits": always shown at the top of the intro screen, just under the top bar — the surahs of the juz
+   in order (swipe; right to left), then the surah's place in the whole muṣḥaf */
+.where{display:grid;gap:.4rem;min-width:0}
+.where .jhead,.where .qpos{padding-inline:.15rem}
+.where .jhead{justify-content:flex-start;gap:.2rem .5rem}
+.where .qpos{display:grid;gap:.1rem}
+.whybody{display:grid;gap:.5rem}
+.whybody p{max-width:64ch;line-height:1.6}
 .panel details.grpd>summary{grid-template-columns:3.2rem minmax(0,1fr)}
 details.grpd{border-top:1px solid var(--line)}
 details.grpd>summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:3.8rem minmax(0,1fr);gap:.2rem .8rem;padding-block:.65rem;border-radius:6px}
@@ -400,13 +409,15 @@ details[open]>summary .more::before{content:"▾ Close"}
 @media (max-width:1099px){
   body.in-surah{padding-bottom:0}
   body.in-surah #surah{padding-bottom:0}
-  .stage{display:block;height:calc(100vh - var(--topbar,5.6rem) - 1.1rem);height:calc(100dvh - var(--topbar,5.6rem) - 1.1rem);overflow-y:auto;scroll-snap-type:y mandatory;overscroll-behavior-y:contain;overflow-anchor:none;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  /* the scroller ends where the bar pinned to the bottom begins (--bar is measured live), so no screen is covered */
+  .stage{display:block;height:calc(100vh - var(--topbar,5.6rem) - 1.1rem - var(--bar,0px));height:calc(100dvh - var(--topbar,5.6rem) - 1.1rem - var(--bar,0px));overflow-y:auto;scroll-snap-type:y mandatory;overscroll-behavior-y:contain;overflow-anchor:none;-webkit-overflow-scrolling:touch;scrollbar-width:none}
   .stage::-webkit-scrollbar{display:none}
-  .screen{display:grid;grid-template-columns:minmax(0,1fr);gap:1rem;align-content:start;scroll-snap-align:start;scroll-snap-stop:always;box-sizing:border-box}
+  .screen{display:grid;grid-template-columns:minmax(0,1fr);gap:1rem;align-content:start;scroll-snap-align:start;scroll-snap-stop:always;box-sizing:border-box;padding-bottom:1rem}
   #scr2,#scr3{min-height:100%}
-  #scr1,#scr3{padding-bottom:8.5rem}   /* room for the bar pinned to the bottom of the screen */
   #sBar{display:none}                  /* the hint lives in the intro card's last line on phones */
-  .strip{max-height:8.6rem}
+  /* the bar slides away on the intro screen and returns on the sections screen */
+  .anav,.dock{transition:transform .25s ease}
+  .anav.away,.dock.away{transform:translate(-50%,150%);pointer-events:none}
   .scrollhint{display:block;padding-top:.4rem;text-align:center;font-size:.85rem;color:var(--muted)}
   /* Section tab: before, this and after all fit one screen — neighbours compact, this section scrolls inside its card */
   .strio .nbc .mid-ar,.strio .nbc .t ~ .d{display:none}
@@ -526,23 +537,19 @@ mark.simdiff{background:var(--repsoft);color:var(--rep);border-radius:3px;paddin
     <div id="surahBody" hidden>
      <div class="stage" id="stage">
      <div class="screen" id="scr1">
+      <div class="where" id="sWhere">
+        <div class="jhead"><span class="lbl" id="jLbl"></span><span class="src" id="jRange"></span></div>
+        <div class="juzline-wrap"><div class="juzline" id="jline"></div></div>
+        <div class="qpos"><div class="quran-bar" id="qbar" aria-hidden="true"></div>
+          <div class="ends"><span>Page 604</span><span id="posTxt"></span><span>Page 1</span></div></div>
+      </div>
       <div class="card intro" id="sHead">
         <h1 class="stitle" id="sTitle"></h1>
         <div class="sub" id="sub"></div>
-        <div class="lbl" style="margin-top:.35rem">Main theme</div>
+        <div class="lbl themelbl" style="margin-top:.35rem">Main theme</div>
         <p class="theme" id="theme"></p>
-        <div class="folds">
-          <details class="fold" data-f="why"><summary>Why it was revealed</summary><div class="foldbody" id="whyBody"></div></details>
-          <details class="fold" data-f="where"><summary>Where it sits<span class="d">in the Quran and in its juz</span></summary>
-            <div class="foldbody">
-              <div><div class="quran-bar" id="qbar" aria-hidden="true"></div>
-                <div class="ends"><span>Page 604</span><span id="posTxt"></span><span>Page 1</span></div></div>
-              <div class="neigh" id="neigh"></div>
-              <div class="jhead"><span class="lbl" id="jLbl"></span><span class="src" id="jRange"></span></div>
-              <div class="juzline-wrap"><div class="juzline" id="jline"></div></div>
-            </div>
-          </details>
-        </div>
+        <div class="lbl" style="margin-top:.35rem">Why it was revealed</div>
+        <div class="whybody" id="whyBody"></div>
         <div class="scrollhint" aria-hidden="true">Scroll down for the sections and the page ↓<br>Tap any word on the page to jump to its ayah.</div>
       </div>
      </div>
@@ -565,12 +572,12 @@ mark.simdiff{background:var(--repsoft);color:var(--rep);border-radius:3px;paddin
     <div class="dock" id="dock" hidden></div>
     <nav class="anav" id="anav" aria-label="Step through ayat" hidden>
       <button type="button" class="anav-view" id="a-view" hidden></button>
-      <button type="button" class="btn ghost" id="a-prev">‹ Previous ayah</button>
+      <button type="button" class="btn" id="a-next">‹ Next ayah</button>
       <div class="anav-mid">
         <button type="button" class="anav-where" id="a-where" aria-label="Show the current ayah"><b id="a-num"></b></button>
         <button type="button" class="anav-mark" id="a-mark">Mark weak spot</button>
       </div>
-      <button type="button" class="btn" id="a-next">Next ayah ›</button>
+      <button type="button" class="btn ghost" id="a-prev">Previous ayah ›</button>
     </nav>
   </section>
 </div>
