@@ -245,7 +245,9 @@ details[open]>summary .more::before{content:"▾ Close"}
   .modes{display:flex}
   .modes button{flex:1}
   .hint{text-align:center}
-  .blk em{display:none}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(9rem,1fr))!important}
+  .blk{padding:.55rem .6rem .5rem}
+  .blk em{-webkit-line-clamp:3;font-size:.86rem}
   .deep{padding:1rem}
   .ayds{margin-inline-start:0}
   .pages{grid-auto-columns:92%}
