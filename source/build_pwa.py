@@ -27,6 +27,12 @@ ready = json.loads(index_js.split("=", 1)[1].rstrip().rstrip(";"))["ready"]
 shutil.copy(os.path.join(SITE, "data", "index.js"), os.path.join(OUT, "data", "index.js"))
 for n in ready:
     shutil.copy(os.path.join(SITE, "data", f"s{n:03d}.js"), os.path.join(OUT, "data", f"s{n:03d}.js"))
+# The page names the exact script version it was built with (?v=…), so a page and script cached at
+# different times can never be mixed: an old page keeps loading its old script, a new page its new one.
+h = hashlib.sha1()
+for f in ["app.js", "data/index.js"] + [f"data/s{n:03d}.js" for n in ready]:
+    h.update(open(os.path.join(OUT, f), "rb").read())
+codever = h.hexdigest()[:10]
 for f in os.listdir(os.path.join(SRC, "fonts")):
     if f.endswith((".woff2", "fonts.css")):
         shutil.copy(os.path.join(SRC, "fonts", f), os.path.join(OUT, "fonts", f))
@@ -38,6 +44,11 @@ title = re.search(r"<title>.*?</title>", body).group(0)
 body = body.replace(title, "", 1)
 body = re.sub(r'<link rel="preconnect"[^>]*>\s*', "", body)
 body = re.sub(r'<link rel="stylesheet" href="https://fonts\.googleapis\.com[^>]*>\s*', "", body)
+body = body.replace('<script src="data/index.js"></script>', f'<script src="data/index.js?v={codever}"></script>', 1)
+body = body.replace('<script src="app.js"></script>', f'<script src="app.js?v={codever}"></script>', 1)
+# the opening's basmala, written into the page from the muṣḥaf data so it shows before any script runs
+BASMALA = json.load(open(os.path.join(SP, "raw", "basmala.json"), encoding="utf-8"))["basmala"]
+body = body.replace('<div class="bism" lang="ar" id="splashBism"></div>', f'<div class="bism" lang="ar" id="splashBism">{BASMALA}</div>', 1)
 
 html = f"""<!doctype html>
 <html lang="en">
@@ -123,7 +134,8 @@ self.addEventListener("fetch", e => {
   // straight away; everything else (surah data, fonts, icons) is served from the offline cache first.
   const fresh = req.mode === "navigate" || url.pathname.endsWith("/") || /(index\\.html|app\\.js|data\\/index\\.js)$/.test(url.pathname);
   if (fresh) {
-    e.respondWith(fetch(req).then(res => store(req, res))
+    // always ask the server whether these changed (a conditional request), so a new version shows up at once
+    e.respondWith(fetch(req.url, { cache: "no-cache", credentials: "same-origin" }).then(res => store(req, res))
       .catch(() => caches.match(req, { ignoreSearch: true }).then(hit => hit || caches.match("index.html"))));
     return;
   }

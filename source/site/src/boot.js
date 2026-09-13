@@ -22,7 +22,7 @@ Weak.listeners.add(() => {
 // The opening animation plays once per launch; a tap skips it.
 const splash = $("splash");
 if (splash && !splash.hidden) {
-  $("splashBism").textContent = IDX.basmala;   // the basmala as it is drawn in the muṣḥaf data, not typed by hand
+  if ($("splashBism") && !$("splashBism").textContent) $("splashBism").textContent = IDX.basmala;   // from the muṣḥaf data, not typed by hand
   const done = () => { splash.hidden = true; try { sessionStorage.setItem("qf-splash", "1"); } catch (e) { /* storage unavailable */ } };
   if (reduceMotion) done(); else { splash.addEventListener("click", done); setTimeout(done, 3800); }
 }

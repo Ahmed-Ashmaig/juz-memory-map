@@ -133,7 +133,7 @@ function showHome() {
   // Weak spots across the app, one link per surah into its Weak spots tab (clearing happens there, per surah).
   const withWeak = Object.keys(Weak.local).map(Number).filter(k => IDX.surahs[k] && Weak.total(k)).sort((a, b) => a - b);
   const allWeak = withWeak.reduce((sum, k) => sum + Weak.total(k), 0);
-  $("weakSummary").innerHTML = allWeak ? `<div class="wsum"><span class="lbl red">Your weak spots · ${allWeak} in ${withWeak.length} surah${withWeak.length > 1 ? "s" : ""}</span>
+  if ($("weakSummary")) $("weakSummary").innerHTML = allWeak ? `<div class="wsum"><span class="lbl red">Your weak spots · ${allWeak} in ${withWeak.length} surah${withWeak.length > 1 ? "s" : ""}</span>
     <div class="wsumrows">${withWeak.map(k => `<a href="#${k}/weak">${k}. ${esc(nameOf(k))}<b>${Weak.total(k)}</b></a>`).join("")}</div></div>` : "";
   // Every juz the app covers, in order. A surah that runs across two juz is listed under the first.
   const listed = new Set(), nums = Object.keys(IDX.juz).map(Number).sort((a, b) => a - b);
@@ -1027,7 +1027,7 @@ Weak.listeners.add(() => {
 // The opening animation plays once per launch; a tap skips it.
 const splash = $("splash");
 if (splash && !splash.hidden) {
-  $("splashBism").textContent = IDX.basmala;   // the basmala as it is drawn in the muṣḥaf data, not typed by hand
+  if ($("splashBism") && !$("splashBism").textContent) $("splashBism").textContent = IDX.basmala;   // from the muṣḥaf data, not typed by hand
   const done = () => { splash.hidden = true; try { sessionStorage.setItem("qf-splash", "1"); } catch (e) { /* storage unavailable */ } };
   if (reduceMotion) done(); else { splash.addEventListener("click", done); setTimeout(done, 3800); }
 }
