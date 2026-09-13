@@ -28,7 +28,8 @@ const setTopbar = () => {
   const root = document.documentElement.style;
   root.setProperty("--topbar", document.querySelector(".topbar").offsetHeight + "px");
   const bar = [$("anav"), $("dock")].find(b => b && !b.hidden);
-  root.setProperty("--bar", bar ? Math.max(0, Math.ceil(window.innerHeight - bar.getBoundingClientRect().top)) + "px" : "0px");
+  // measure the bar's own height plus its gap from the bottom — not its position, which moves while it slides away
+  root.setProperty("--bar", bar ? Math.ceil(bar.offsetHeight + (parseFloat(getComputedStyle(bar).bottom) || 0)) + "px" : "0px");
 };
 window.addEventListener("resize", setTopbar);
 const store = {

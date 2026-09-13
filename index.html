@@ -431,10 +431,44 @@ details[open]>summary .more::before{content:"▾ Close"}
   body.in-surah{padding-bottom:0}
   body.in-surah #surah{padding-bottom:0}
   /* the scroller ends where the bar pinned to the bottom begins (--bar is measured live), so no screen is covered */
-  .stage{display:block;height:calc(100vh - var(--topbar,5.6rem) - 1.1rem - var(--bar,0px));height:calc(100dvh - var(--topbar,5.6rem) - 1.1rem - var(--bar,0px));overflow-y:auto;scroll-snap-type:y mandatory;overscroll-behavior-y:contain;overflow-anchor:none;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .stage{display:block;height:calc(100vh - var(--topbar,5.6rem) - .3rem - var(--bar,0px));height:calc(100dvh - var(--topbar,5.6rem) - .3rem - var(--bar,0px));overflow-y:auto;scroll-snap-type:y mandatory;overscroll-behavior-y:contain;overflow-anchor:none;-webkit-overflow-scrolling:touch;scrollbar-width:none}
   .stage::-webkit-scrollbar{display:none}
   .screen{display:grid;grid-template-columns:minmax(0,1fr);gap:1rem;align-content:start;scroll-snap-align:start;scroll-snap-stop:always;box-sizing:border-box;padding-bottom:1rem}
-  #scr2,#scr3{min-height:100%}
+  body.in-surah .app{gap:.3rem}
+  /* screen 2: the section row and page bar take what they need; the page gets the rest, sized to fit (fitPage) */
+  #scr2{height:100%;display:flex;flex-direction:column;gap:.3rem;padding-bottom:.2rem}
+  #scr2 .strip{flex:none;grid-auto-columns:minmax(11.5rem,1fr);padding-bottom:3px}
+  /* one line per section on phones: the number and the title (the ayat stay in its label) */
+  #scr2 .blk{grid-template-columns:auto minmax(0,1fr);justify-items:start;align-items:center;column-gap:.4rem;row-gap:0;padding:.3rem .5rem .22rem;text-align:start}
+  #scr2 .blk b{font-size:.95rem}
+  #scr2 .blk em{-webkit-line-clamp:1;font-size:.8rem}
+  #scr2 .blk span{display:none}
+  #scr2 .blk .weak{grid-column:1 / -1;font-size:.65rem}
+  #scr2 .pagewrap{flex:1;min-height:0;display:flex;flex-direction:column;gap:.25rem}
+  #scr2 .pages{flex:1;min-height:0;align-items:start;padding-bottom:0}
+  #scr2 .page{width:var(--pw,100%);padding:.35rem .35rem .2rem}
+  #scr2 .pno{padding-top:.12rem;font-size:.68rem}
+  #scr2 .pips button{height:7px}
+  .pagebar{display:flex;align-items:center;gap:.5rem}
+  .pagebar .pips{flex:1}
+  .pagetxt{font-size:.72rem;white-space:nowrap}
+  #scr3{min-height:100%}
+  /* screen 3 in Learn: exactly one screen tall; the tabs stay put and the tab's content scrolls inside */
+  .stage.learn #scr3{height:100%;display:flex;flex-direction:column;padding-bottom:.3rem}
+  .stage.learn #scr3 .panel{flex:1;min-height:0;display:flex;flex-direction:column;gap:.5rem;padding:.6rem .65rem;overflow:hidden}
+  .stage.learn #scr3 .lbody{flex:1;min-height:0;overflow-y:auto;align-content:start;scrollbar-width:thin}
+  /* Section tab: before and after stay in view; only this section's card scrolls */
+  .stage.learn #scr3 .lbody.sec{overflow:hidden;display:flex;flex-direction:column;gap:.4rem}
+  .lbody.sec .strio{flex:1;min-height:0;display:flex;flex-direction:column;gap:.35rem}
+  .lbody.sec .strio > .nbc{flex:none;padding:.4rem .6rem;gap:.1rem}
+  .lbody.sec .strio .here.secmain{flex:1;min-height:0;overflow-y:auto;scrollbar-width:thin}
+  /* a slimmer bottom bar */
+  .anav{padding:.3rem;gap:.3rem;row-gap:.15rem}
+  .anav .btn{padding:.4rem .55rem;font-size:.86rem}
+  .anav-mid{gap:.1rem}
+  .anav-where{font-size:.88rem;line-height:1.1}
+  .anav-mark{font-size:.68rem;padding:0 .45rem;line-height:1.5}
+  .anav-view{font-size:.7rem;line-height:1.2}
   #sBar{display:none}                  /* the hint lives in the intro card's last line on phones */
   /* the bar slides away on the intro screen and returns on the sections screen */
   .anav,.dock{transition:transform .25s ease}
@@ -442,7 +476,6 @@ details[open]>summary .more::before{content:"▾ Close"}
   .scrollhint{display:block;padding-top:.4rem;text-align:center;font-size:.85rem;color:var(--muted)}
   /* Section tab: before, this and after all fit one screen — neighbours compact, this section scrolls inside its card */
   .strio .nbc .mid-ar,.strio .nbc .t ~ .d{display:none}
-  .strio .here.secmain{max-height:calc(100vh - 29rem);max-height:calc(100dvh - 29rem);min-height:11rem;overflow-y:auto;scrollbar-width:thin}
   .deep{padding:1rem}
   .ayds{margin-inline-start:0}
   .points li{grid-template-columns:3rem 1fr}
@@ -603,8 +636,8 @@ mark.simdiff{background:var(--repsoft);color:var(--rep);border-radius:3px;paddin
   </section>
 </div>
 
-<script src="data/index.js?v=0b3c2f2c56"></script>
-<script src="app.js?v=0b3c2f2c56"></script>
+<script src="data/index.js?v=b777eed565"></script>
+<script src="app.js?v=b777eed565"></script>
 
 <script>
 if ("serviceWorker" in navigator && location.protocol === "https:") {

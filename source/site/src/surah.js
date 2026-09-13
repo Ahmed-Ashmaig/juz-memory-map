@@ -123,8 +123,8 @@ const Surah = (() => {
     const pages = D.pages.map(pg => pg.p), i = pages.indexOf(viewPage);
     $("pagepips").querySelectorAll("button").forEach(b => b.classList.toggle("on", +b.dataset.p === viewPage));
     $("pagetxt").textContent = pages.length > 1
-      ? `Page ${viewPage} · ${i + 1} of ${pages.length} in this surah · swipe the page for the others`
-      : `Page ${viewPage} · the whole surah is on this page`;
+      ? `Page ${viewPage} · ${i + 1} of ${pages.length} · swipe for more`
+      : `Page ${viewPage} · the whole surah`;
   }
   let syncAt = 0, syncTimer = 0;
   $("pages").addEventListener("scroll", () => {
@@ -248,6 +248,7 @@ const Surah = (() => {
       centerIn($("jline").parentElement, $("jline").querySelector(".me"));
       $("pages").scrollBy({ left: 0 });
       syncStrip(true);
+      setTopbar(); fitPage();
     });
   }
 
@@ -257,6 +258,7 @@ const Surah = (() => {
     st.classList.toggle("test", mode === "test");
     st.classList.toggle("quiz", mode === "quiz");
     st.classList.toggle("sim", mode === "sim");
+    st.classList.toggle("learn", mode === "learn");
     const G = D.similars || [];
     const SIMK = new Set(mode === "sim" && G[simSel] ? G[simSel].members.filter(m => surahOfKey(m.k) === n).map(m => +m.k.split(":")[1]) : []);
     $("surah").classList.toggle("surah-test", mode === "test");
@@ -358,10 +360,10 @@ const Surah = (() => {
           <div class="hook"><span class="lbl">Memory hook</span><p>${esc(s.hook)}</p></div>
           <div class="kp"><span class="lbl">Key points · ${(s.points || []).length} · open one for its ayat</span>${pointDetails(s)}</div>
           <div class="row"><button class="btn" type="button" id="b-test">Test this section</button></div>
+          <div class="src">Translation: Sahih International · Explanations condensed from classical tafsir: Ibn Kathīr, al-Saʿdī, al-Jalālayn, al-Baghawī, al-Qurṭubī and Maʿāriful Qurʾān.</div>
         </div>
         ${neighbourCard("next", s)}
-      </div>
-      <div class="src">Translation: Sahih International · Explanations condensed from classical tafsir: Ibn Kathīr, al-Saʿdī, al-Jalālayn, al-Baghawī, al-Qurṭubī and Maʿāriful Qurʾān.</div>`;
+      </div>`;
   }
 
   function ctx(label, k, big, extra = "") {
@@ -495,7 +497,7 @@ const Surah = (() => {
     const tab = (id, label) => `<button type="button" role="tab" data-tab="${id}" aria-selected="${ltab === id}">${label}</button>`;
     const body = ltab === "section" ? sectionBlock(s) : ltab === "weak" ? weakBlock() : ayahBlock();
     P.innerHTML = `<div class="ltabs" role="tablist" aria-label="Show">${tab("ayah", `Ayah ${cur}`)}${tab("section", `Section ${s.n}`)}${tab("weak", `Weak spots${K ? ` <i>${K}</i>` : ""}`)}</div>
-      <div class="lbody">${body}</div>`;
+      <div class="lbody${ltab === "section" ? " sec" : ""}">${body}</div>`;
     P.querySelectorAll("[data-tab]").forEach(b => (b.onclick = () => setTab(b.dataset.tab)));
     P.querySelectorAll("details.fold").forEach(d => d.addEventListener("toggle", () => {
       if (d.open) openFolds.add(d.dataset.f); else openFolds.delete(d.dataset.f);
@@ -715,6 +717,7 @@ const Surah = (() => {
     const restore = screenAnchor();
     renderNow();
     setTopbar();   // the bottom bar's height may have changed; the phone scroller is sized around it
+    fitPage();
     restore();
     syncBar();
   }
@@ -782,6 +785,24 @@ const Surah = (() => {
     [$("anav"), $("dock")].forEach(b => b.classList.toggle("away", away));
   }
   $("stage").addEventListener("scroll", syncBar, { passive: true });
+
+  // Phones: size the muṣḥaf page so the section row, the whole page and the bar fit on the second screen together.
+  // A page is 15 lines of 9.3% of its inner width each (139.5%), plus fixed padding and the page number.
+  function fitPage() {
+    const pages = $("pages"), pg = pages && pages.firstElementChild;
+    if (!pg) return;
+    if (!matchMedia("(max-width: 1099px)").matches) { pages.style.removeProperty("--pw"); return; }
+    const cs = getComputedStyle(pg);
+    const padX = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight) + parseFloat(cs.borderLeftWidth) + parseFloat(cs.borderRightWidth);
+    const inner = pg.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+    const fixed = pg.offsetHeight - 1.395 * inner;
+    const avail = pages.clientHeight - 2;
+    if (avail <= 0) return;
+    const w = Math.min(pages.clientWidth, (avail - fixed) / 1.395 + padX);
+    pages.style.setProperty("--pw", Math.max(160, Math.floor(w)) + "px");
+  }
+  window.addEventListener("resize", () => { if (D) { setTopbar(); fitPage(); } });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { if (D) { setTopbar(); fitPage(); } });
 
   // Arrow keys step through Learn, matching the bar and the muṣḥaf: ← next, → previous.
   document.addEventListener("keydown", e => {
