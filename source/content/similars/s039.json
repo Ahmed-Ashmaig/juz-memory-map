@@ -1,0 +1,50 @@
+{
+  "n": 39,
+  "groups": {
+    "g1": {
+      "flow": "Four surah openings, and Az-Zumar's is first: ayah 1, with no Ḥā Mīm, ending al-ḥakīm (the Wise). Its next ayah says 'the Book' again: 'We have sent down to you the Book'. Ghāfir 40:2 is the only one ending al-ʿalīm (the Knowing). Al-Jāthiyah 45:2 and Al-Aḥqāf 46:2 match Az-Zumar exactly. Hook: ḥakīm, ʿalīm, ḥakīm, ḥakīm; the odd one out is the very next surah.",
+      "cues": {
+        "39:1": "Az-Zumar: ayah 1, no Ḥā Mīm; ends al-ḥakīm; next, the Book again, sent down to you.",
+        "40:2": "Ghāfir: after Ḥā Mīm; ends al-ʿalīm (the Knowing); next, 'forgiver of sin, acceptor of repentance'.",
+        "45:2": "Al-Jāthiyah: after Ḥā Mīm; same words as Az-Zumar; next, 'signs for the believers'.",
+        "46:2": "Al-Aḥqāf: after Ḥā Mīm; same words again; next, creation 'for a specified term'."
+      }
+    },
+    "g2": {
+      "flow": "Identical, and in both the ayah before says 'I have been commanded to be the first'. Al-Anʿām 6:15: 'first who submit … never be of the polytheists'; next, whoever is spared that Day has been granted mercy. Az-Zumar 39:13: 'first of the Muslims'; next, 'Allāh alone do I worship, sincere to Him', echoing 39:2. Hook: Al-Anʿām moves on to mercy, Az-Zumar to sincere worship.",
+      "cues": {
+        "6:15": "Al-Anʿām: after 'never be of the polytheists'; next, whoever is spared that Day is granted mercy.",
+        "39:13": "Az-Zumar: after 'the first of the Muslims'; next, 'Allāh alone do I worship, sincere to Him'."
+      }
+    },
+    "g3": {
+      "flow": "Hūd 11:39 opens with fa-sawfa taʿlamūn (you are going to know), said while building the ship and being ridiculed; next, the oven overflows. In Az-Zumar 'you are going to know' closes the ayah before, 'work according to your position', so 39:40 starts at man yaʾtīhi; next, the Book sent down for the people. Hook: Hūd keeps the warning in one ayah; Az-Zumar splits it over two.",
+      "cues": {
+        "11:39": "Hūd: opens with fa-sawfa taʿlamūn, after 'if you ridicule us'; next, the oven overflows.",
+        "39:40": "Az-Zumar: starts man yaʾtīhi, as 39:39 ends 'you are going to know'; next, the Book."
+      }
+    },
+    "g4": {
+      "flow": "Same second half in all three; the opening and the deeds verb change. An-Naḥl 16:34: fa-aṣābahum … ʿamilū (did), after 'they had been wronging themselves'. Az-Zumar 39:48: wa badā lahum … kasabū (earned), after the ransom ayah, which also says 'there will appear to them'. Al-Jāthiyah 45:33: badā with ʿamilū, after 'we know not what is the Hour'. Hook: Az-Zumar says 'earned' again, twice, at 39:51.",
+      "cues": {
+        "16:34": "An-Naḥl: fa-aṣābahum … ʿamilū; after 'Allāh wronged them not'; next, 'if Allāh had willed'.",
+        "39:48": "Az-Zumar: wa badā lahum … kasabū, after the ransom ayah; next, 'when adversity touches man'.",
+        "45:33": "Al-Jāthiyah: badā … ʿamilū, after doubting the Hour; next, 'Today We will forget you'."
+      }
+    },
+    "g5": {
+      "flow": "Ar-Rūm 30:37 says a-wa-lam yaraw (do they not see), after people rejoice in mercy, then despair; next, 'give the relative his right'. Az-Zumar 39:52 says a-wa-lam yaʿlamū (do they not know), after 'what they earned struck them'; next, 'do not despair of the mercy of Allāh'. Hook: despair comes before it in Ar-Rūm, after it in Az-Zumar; and 39:49 says 'most of them do not know'.",
+      "cues": {
+        "30:37": "Ar-Rūm: yaraw (see); after rejoicing in mercy then despairing; next, 'give the relative his right'.",
+        "39:52": "Az-Zumar: yaʿlamū (know); after 'what they earned struck them'; next, 'O My servants… do not despair'."
+      }
+    },
+    "g6": {
+      "flow": "Az-Zumar 39:72 opens with qīla (it will be said). It sits between its two 'in groups' (zumar) ayat: disbelievers driven to Hell answer the keepers, then qīla; next, those who feared their Lord are driven to Paradise. Ghāfir 40:76 has no qīla: the speech from 40:75, 'you used to exult', runs on; next, 'be patient'. Hook: Az-Zumar, reply then qīla; Ghāfir, one running speech, no qīla.",
+      "cues": {
+        "39:72": "Az-Zumar: qīla, after 'the word of punishment has come into effect'; next, groups to Paradise.",
+        "40:76": "Ghāfir: no qīla; the speech runs on from 'you used to exult'; next, 'So be patient'."
+      }
+    }
+  }
+}

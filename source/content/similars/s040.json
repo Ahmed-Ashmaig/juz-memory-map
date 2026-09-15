@@ -1,0 +1,28 @@
+{
+  "n": 40,
+  "groups": {
+    "g1": {
+      "flow": "Four surah openings, one odd ending, and it is Ghāfir's: 40:2 ends al-ʿalīm (the Knowing), then 40:3 begins ghāfir, 'forgiver of sin', the surah's own name. The other three end al-ḥakīm (the Wise): Az-Zumar 39:1, the only one with no Ḥā Mīm before it, then Al-Jāthiyah 45:2 and Al-Aḥqāf 46:2. Hook: ḥakīm, ʿalīm, ḥakīm, ḥakīm; Ghāfir's pair sounds alike: ʿazīz, ʿalīm.",
+      "cues": {
+        "39:1": "Az-Zumar: ayah 1, straight after Ṣād with no Ḥā Mīm; ends al-ḥakīm (the Wise).",
+        "40:2": "Ghāfir: al-ʿazīz al-ʿalīm, the only ʿalīm; next, 'forgiver of sin, acceptor of repentance'.",
+        "45:2": "Al-Jāthiyah: al-ḥakīm, like Az-Zumar; next, 'within the heavens and earth are signs'.",
+        "46:2": "Al-Aḥqāf: al-ḥakīm again; next, heavens and earth created 'for a specified term'."
+      }
+    },
+    "g2": {
+      "flow": "Same words in both; the ayat around them decide. Hūd 11:96 follows 'away with Madyan as Thamūd was taken away', then 'to Pharaoh and his establishment', who followed Pharaoh's command. Ghāfir 40:23 follows 'Allāh seized them… severe in punishment', then 'to Pharaoh, Hāmān and Qārūn', who called Moses 'a magician and a liar'. Hook: Hūd's next ayah names one; Ghāfir's names three.",
+      "cues": {
+        "11:96": "Hūd: after 'away with Madyan', like Thamūd; next, 'to Pharaoh and his establishment'.",
+        "40:23": "Ghāfir: after 'Allāh seized them… severe in punishment'; next, 'to Pharaoh, Hāmān and Qārūn'."
+      }
+    },
+    "g3": {
+      "flow": "Ghāfir 40:76 starts straight with udkhulū (enter), carrying on the speech begun in 40:75, 'you used to exult upon the earth'; next, 'So be patient'. Az-Zumar 39:72 opens with qīla (it will be said), between its two 'in groups' (zumar) ayat: the disbelievers answer Hell's keepers, then qīla; next, the groups to Paradise. Hook: Ghāfir, one speech, no qīla; Az-Zumar, question, answer, then qīla.",
+      "cues": {
+        "39:72": "Az-Zumar: opens qīla, after 'Yes, but the word of punishment has come into effect'.",
+        "40:76": "Ghāfir: straight into udkhulū, after 'you used to behave insolently'; next, 'So be patient'."
+      }
+    }
+  }
+}

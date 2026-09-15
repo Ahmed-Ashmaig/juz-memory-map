@@ -1,0 +1,155 @@
+{
+ "surah": 39,
+ "groups": [
+  {
+   "kind": "cross",
+   "anchor": "39:1",
+   "more": 0,
+   "members": [
+    {
+     "k": "39:1",
+     "page": 458,
+     "exact": true,
+     "diff": []
+    },
+    {
+     "k": "40:2",
+     "page": 467,
+     "exact": false,
+     "diff": [
+      5
+     ]
+    },
+    {
+     "k": "45:2",
+     "page": 499,
+     "exact": true,
+     "diff": []
+    },
+    {
+     "k": "46:2",
+     "page": 502,
+     "exact": true,
+     "diff": []
+    }
+   ],
+   "id": "g1"
+  },
+  {
+   "kind": "cross",
+   "anchor": "39:13",
+   "more": 0,
+   "members": [
+    {
+     "k": "6:15",
+     "page": 129,
+     "exact": true,
+     "diff": []
+    },
+    {
+     "k": "39:13",
+     "page": 460,
+     "exact": true,
+     "diff": []
+    }
+   ],
+   "id": "g2"
+  },
+  {
+   "kind": "cross",
+   "anchor": "39:40",
+   "more": 0,
+   "members": [
+    {
+     "k": "11:39",
+     "page": 226,
+     "exact": false,
+     "diff": [
+      0,
+      1
+     ]
+    },
+    {
+     "k": "39:40",
+     "page": 462,
+     "exact": true,
+     "diff": []
+    }
+   ],
+   "id": "g3"
+  },
+  {
+   "kind": "cross",
+   "anchor": "39:48",
+   "more": 0,
+   "members": [
+    {
+     "k": "16:34",
+     "page": 270,
+     "exact": false,
+     "diff": [
+      0,
+      3
+     ]
+    },
+    {
+     "k": "39:48",
+     "page": 464,
+     "exact": true,
+     "diff": []
+    },
+    {
+     "k": "45:33",
+     "page": 502,
+     "exact": false,
+     "diff": [
+      4
+     ]
+    }
+   ],
+   "id": "g4"
+  },
+  {
+   "kind": "cross",
+   "anchor": "39:52",
+   "more": 0,
+   "members": [
+    {
+     "k": "30:37",
+     "page": 408,
+     "exact": false,
+     "diff": [
+      1
+     ]
+    },
+    {
+     "k": "39:52",
+     "page": 464,
+     "exact": true,
+     "diff": []
+    }
+   ],
+   "id": "g5"
+  },
+  {
+   "kind": "cross",
+   "anchor": "39:72",
+   "more": 0,
+   "members": [
+    {
+     "k": "39:72",
+     "page": 466,
+     "exact": true,
+     "diff": []
+    },
+    {
+     "k": "40:76",
+     "page": 475,
+     "exact": false,
+     "diff": []
+    }
+   ],
+   "id": "g6"
+  }
+ ]
+}

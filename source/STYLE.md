@@ -34,6 +34,7 @@ ayah 1 to the last ayah.
   then Maʿāriful Qurʾān, al-Kashshāf and al-Taḥrīr), plus the rukus. Pick the split where the
   sources agree and the theme clearly shifts.
 - Length: under 10 ayat → 1–2 sections; 10–30 ayat → 2–4; over 30 ayat → 3–6. At most 8.
+  Surahs over 110 ayat are the exception: they follow `LONG_SURAHS.md` (sections of 8–25 ayat, written in pieces).
 - Title: 7–12 words that say what the section is actually about: who or what it covers, what happens,
   and where it's heading. A reader should be able to follow the whole surah's flow from the titles alone.
   Avoid vague or metaphorical labels.
