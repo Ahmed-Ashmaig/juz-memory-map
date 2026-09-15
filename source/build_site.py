@@ -13,7 +13,7 @@ import validate_content as V  # noqa: E402
 from repeats import find_repeats  # noqa: E402
 
 RAW, CONTENT, SITE = (os.path.join(SP, x) for x in ("raw", "content", "site"))
-FIRST = 41   # Fussilat: the first surah reaching Juz 25
+from coverage import FIRST  # noqa: E402  (the first surah the app covers)
 os.makedirs(os.path.join(SITE, "data"), exist_ok=True)
 BASMALA = json.load(open(os.path.join(RAW, "basmala.json"), encoding="utf-8"))["basmala"]
 

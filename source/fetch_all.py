@@ -86,7 +86,10 @@ class MCP:
                 out.setdefault(ed, []).extend(rows)
             tok = (s.get("pagination") or {}).get("continuation")
             i += 1
-            if not tok or i > 60:
+            if not tok:
+                return out
+            if i > 600:   # long surahs (Al-Baqarah) need many pages; stop only if something is clearly looping
+                log("WARNING: stopped paging", name, "after", i, "pages; results may be incomplete")
                 return out
             s = self.tool(name, {"continuation": tok})
 
@@ -210,7 +213,7 @@ def do_surah(n):
     }
     json.dump(meta_out, open(os.path.join(d, "meta.json"), "w"), ensure_ascii=False, indent=1)
     json.dump(trmap, open(os.path.join(d, "tr.json"), "w"), ensure_ascii=False, indent=1)
-    json.dump({"en": en, "ar": ar}, open(os.path.join(d, "tafsir.json"), "w"), ensure_ascii=False)
+    json.dump({"en": en, "ar": ar, "qur": qur}, open(os.path.join(d, "tafsir.json"), "w"), ensure_ascii=False)
 
     B = [f"# Surah {n}: {si['name_simple']} ({si['name_arabic']})",
          f"{si['revelation_place']} · {N} ayat · muṣḥaf pages {meta['page']['start']}–{meta['page']['end']} · juz {meta['juz']['start']}",
@@ -242,7 +245,7 @@ def do_surah(n):
         for m in re.finditer(r"(نزلت|سبب نزول|نزل قوله|نزلت في|فأنزل الله)", t):
             snips.append(f"[{r['range']}] …{t[max(0, m.start() - 300):m.end() + 400]}…")
     if snips:
-        B += ["", "## al-Qurtubi: revelation-report excerpts (Arabic)"] + snips[:40]
+        B += ["", "## al-Qurtubi: revelation-report excerpts (Arabic)"] + snips   # all of them: long surahs have many
     open(os.path.join(d, "brief.md"), "w").write("\n".join(B))
     open(os.path.join(d, "done"), "w").write("ok")
     log("done", n, "brief chars", len("\n".join(B)))

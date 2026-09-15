@@ -145,6 +145,13 @@ function chip(n, last) {
     <span class="jtx"><span class="jen">${esc(nameOf(n))}</span><span class="jpg">${s.ayat} ayat · ${pages}${note}</span></span>
     <span class="jar" lang="ar">${esc(s.ar)}</span></a>`;
 }
+// A juz that opens partway through a surah starts with a row that continues that surah from the juz's first ayah.
+function contChip(n, a, page) {
+  return `<a class="chip cont" href="#${n}/ayah/${a}">
+    <span class="jn">${n}</span>
+    <span class="jtx"><span class="jen">Continues ${esc(nameOf(n))}</span><span class="jpg">from ayah ${a} · page ${page}</span></span>
+    <span class="jar" lang="ar">${esc(IDX.surahs[n].ar)}</span></a>`;
+}
 /* Destructive buttons ask for a second tap within 4 seconds instead of a pop-up. */
 function armClear(btn, label, onConfirm) {
   if (!btn.dataset.armed) btn.textContent = label;
@@ -174,9 +181,13 @@ function showHome() {
   const listed = new Set(), nums = Object.keys(IDX.juz).map(Number).sort((a, b) => a - b);
   const blocks = nums.map(j => {
     const J = IDX.juz[j], list = J.surahs.filter(n => IDX.surahs[n] && !listed.has(n));
+    // e.g. Juz 2 lies wholly inside Al-Baqarah: it shows one row continuing Al-Baqarah from ayah 142
+    const [cs, ca] = String(J.start || "").split(":").map(Number);
+    const cont = ca > 1 && listed.has(cs) && IDX.ready.includes(cs) ? contChip(cs, ca, J.pages[0]) : "";
     list.forEach(n => listed.add(n));
-    return list.length ? `<div class="juzblock"><h2>Juz ${j}<span class="src">pages ${J.pages[0]}–${J.pages[1]} · ${list.length} surah${list.length > 1 ? "s" : ""}</span></h2>
-      <div class="chips">${list.map(n => chip(n, last)).join("")}</div></div>` : "";
+    const count = list.length ? ` · ${list.length} surah${list.length > 1 ? "s" : ""}` : "";
+    return list.length || cont ? `<div class="juzblock"><h2>Juz ${j}<span class="src">pages ${J.pages[0]}–${J.pages[1]}${count}</span></h2>
+      <div class="chips">${cont}${list.map(n => chip(n, last)).join("")}</div></div>` : "";
   });
   const soon = nums[0] > 1 ? `<div class="soon"><b>Juz 1${nums[0] > 2 ? `–${nums[0] - 1}` : ""}</b><span>Coming soon</span></div>` : "";
   $("juzList").innerHTML = soon + blocks.join("");
@@ -197,7 +208,7 @@ function loadSurah(n) {
   return loading[n];
 }
 let routeToken = 0;
-async function openSurah(n, tab) {
+async function openSurah(n, tab, ayah) {
   const token = ++routeToken;
   if (!$("home").hidden && Surah.n !== n) flip.show();
   $("home").hidden = true; $("surah").hidden = false;
@@ -228,13 +239,14 @@ async function openSurah(n, tab) {
   $("loading").hidden = true; $("surahBody").hidden = false;
   if (fresh) { $("stage").scrollTop = 0; Surah.syncBar(); }   // phones: a new surah starts on its first screen (only works once it is visible)
   if (tab) Surah.setTab(tab);   // e.g. #70/weak opens straight into that surah's weak spots
+  if (ayah) Surah.goAyah(ayah); // e.g. #2/ayah/142, where a juz starts partway through a surah
   setTopbar();
   flip.hide();
 }
 function route() {
-  const m = location.hash.match(/^#(\d{1,3})(?:\/(ayah|section|weak))?$/);
+  const m = location.hash.match(/^#(\d{1,3})(?:\/(ayah|section|weak)(?:\/(\d{1,3}))?)?$/);
   const n = m ? Number(m[1]) : null;
-  if (n && IDX.ready.includes(n)) openSurah(n, m[2]); else showHome();
+  if (n && IDX.ready.includes(n)) openSurah(n, m[2], m[3] ? Number(m[3]) : 0); else showHome();
   requestAnimationFrame(setTopbar);
 }
 
@@ -1053,7 +1065,16 @@ const Surah = (() => {
     if (e.key === "ArrowRight") { e.preventDefault(); stepLearn(-1); }
   });
 
-  return { get n() { return n; }, mount, setMode, setTab, refresh: render, leave, syncBar };
+  // Open a given ayah in Learn, on the page screen (links such as "#2/ayah/142" from the home list).
+  function goAyah(a) {
+    if (!D || !(a >= 1 && a <= N)) return;
+    if (mode !== "learn") setMode("learn");
+    openAyah(a, true, ltab === "section" ? "section" : "ayah");
+    const st = $("stage");
+    if (st.scrollHeight > st.clientHeight + 1) { st.scrollTop = $("scr2").offsetTop - st.offsetTop; syncBar(); }
+  }
+
+  return { get n() { return n; }, mount, setMode, setTab, goAyah, refresh: render, leave, syncBar };
 })();
 
 /* Wire up the shell once everything is defined. */

@@ -21,7 +21,8 @@ from repeats import norm_tokens, core  # noqa: E402
 RAW = os.path.join(SP, "raw")
 OUT = os.path.join(RAW, "similars")
 os.makedirs(OUT, exist_ok=True)
-FIRST, LAST = 41, 114
+from coverage import FIRST  # noqa: E402
+LAST = 114
 MAX_MEMBERS = 16
 RATIO = 0.8
 

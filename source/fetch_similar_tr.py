@@ -6,6 +6,8 @@ import re
 import time
 import urllib.request
 
+from coverage import FIRST
+
 SP = os.path.dirname(os.path.abspath(__file__))
 RAW = os.path.join(SP, "raw")
 U = "https://mcp.quran.ai"
@@ -47,7 +49,7 @@ def init():
 
 
 have = {}
-for n in range(41, 115):
+for n in range(FIRST, 115):
     f = os.path.join(RAW, f"s{n:03d}", "tr.json")
     if os.path.exists(f):
         for a, t in json.load(open(f, encoding="utf-8")).items():

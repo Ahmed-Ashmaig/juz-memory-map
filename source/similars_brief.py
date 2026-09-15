@@ -5,6 +5,8 @@ import os
 import sys
 from collections import defaultdict
 
+from coverage import FIRST
+
 SP = os.path.dirname(os.path.abspath(__file__))
 RAW = os.path.join(SP, "raw")
 SIM = os.path.join(RAW, "similars")
@@ -26,7 +28,7 @@ for k in words:
     last[s] = max(last[s], a)
 chapters = json.load(open(os.path.join(RAW, "chapters.json"), encoding="utf-8"))
 tr = dict(json.load(open(os.path.join(SIM, "tr_extra.json"), encoding="utf-8")))
-for n in range(41, 115):
+for n in range(FIRST, 115):
     for a, t in json.load(open(os.path.join(RAW, f"s{n:03d}", "tr.json"), encoding="utf-8")).items():
         tr[f"{n}:{a}"] = t
 
@@ -42,7 +44,7 @@ def step(k, d):
 
 
 made = 0
-for n in [int(x) for x in sys.argv[1:]] or range(41, 115):
+for n in [int(x) for x in sys.argv[1:]] or range(FIRST, 115):
     groups = json.load(open(os.path.join(SIM, f"s{n:03d}.json"), encoding="utf-8"))["groups"]
     if not groups:
         continue

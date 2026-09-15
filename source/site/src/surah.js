@@ -813,5 +813,14 @@ const Surah = (() => {
     if (e.key === "ArrowRight") { e.preventDefault(); stepLearn(-1); }
   });
 
-  return { get n() { return n; }, mount, setMode, setTab, refresh: render, leave, syncBar };
+  // Open a given ayah in Learn, on the page screen (links such as "#2/ayah/142" from the home list).
+  function goAyah(a) {
+    if (!D || !(a >= 1 && a <= N)) return;
+    if (mode !== "learn") setMode("learn");
+    openAyah(a, true, ltab === "section" ? "section" : "ayah");
+    const st = $("stage");
+    if (st.scrollHeight > st.clientHeight + 1) { st.scrollTop = $("scr2").offsetTop - st.offsetTop; syncBar(); }
+  }
+
+  return { get n() { return n; }, mount, setMode, setTab, goAyah, refresh: render, leave, syncBar };
 })();

@@ -1,8 +1,8 @@
 """Build the public, installable (offline-capable) version of the app into the repo root.
 
 Same app code and data as the claude.ai artifact (site/), plus: a real HTML head, a web app
-manifest, self-hosted fonts, icons, and a service worker that precaches every file so
-the app works offline once opened. Run build_site.py first.
+manifest, self-hosted fonts, icons, and a service worker that precaches the app shell and keeps each
+surah offline once it has been opened. Run build_site.py first.
 """
 import hashlib
 import json
@@ -184,6 +184,9 @@ h = hashlib.sha1()
 for a in assets[1:]:
     h.update(open(os.path.join(OUT, a), "rb").read())
 version = h.hexdigest()[:12]
+# Precache the app shell only; each surah is cached the first time it is opened (the whole Quran is too much to
+# download at install). The version still covers every file, so changed surah data replaces the old cache.
+precache = [a for a in assets if not re.match(r"data/s\d{3}\.js$", a)]
 sw = """/* Offline cache for QuranFlow. The version changes whenever any file changes. */
 const CACHE = "juzmap-%s";
 const ASSETS = %s;
@@ -210,7 +213,7 @@ self.addEventListener("fetch", e => {
   }
   e.respondWith(caches.match(req, { ignoreSearch: true }).then(hit => hit || fetch(req).then(res => store(req, res))));
 });
-""" % (version, json.dumps(assets))
+""" % (version, json.dumps(precache))
 open(os.path.join(OUT, "sw.js"), "w", encoding="utf-8").write(sw)
 open(os.path.join(OUT, ".nojekyll"), "w").write("")
 README = """# QuranFlow
@@ -240,4 +243,4 @@ Quran text and muṣḥaf page layout come from the Quran Foundation (quran.com)
 The build pipeline and content live in [`source/`](source/README.md).
 """
 open(os.path.join(OUT, "README.md"), "w", encoding="utf-8").write(README.format(desc=DESC))
-print(f"built {OUT}: {len(ready)} surahs, {len(assets)} cached files, version {version}")
+print(f"built {OUT}: {len(ready)} surahs, {len(precache)} precached files of {len(assets)}, version {version}")

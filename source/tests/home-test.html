@@ -1,0 +1,32 @@
+<!doctype html><html><body>
+<pre id="out">running</pre>
+<iframe id="f1" src="../../index.html" style="width:400px;height:900px"></iframe>
+<script>
+// Home list: every juz in order, a juz that starts partway through a surah opens with a "continues" row,
+// and that row opens the surah at the juz's first ayah.
+try { localStorage.clear(); sessionStorage.clear(); } catch (e) {}
+const f = document.getElementById("f1"), log = [], wait = ms => new Promise(r => setTimeout(r, ms));
+async function run() {
+  let d, w = f.contentWindow;
+  while (!(d = f.contentDocument) || !d.querySelector("#juzList .chip")) await wait(200);
+  const blocks = [...d.querySelectorAll("#juzList .juzblock")].map(b => ({
+    juz: b.querySelector("h2").firstChild.textContent.trim(),
+    rows: [...b.querySelectorAll(".chip")].map(c => (c.classList.contains("cont") ? "↳ " : "") + c.querySelector(".jen").textContent + " (" + c.querySelector(".jn").textContent + ")"),
+  }));
+  for (const b of blocks) log.push(`${b.juz}: ${b.rows.slice(0, 3).join(" · ")}${b.rows.length > 3 ? ` … ${b.rows.length} rows` : ""}`);
+  const cont = d.querySelector("#juzList .chip.cont");
+  if (!cont) { log.push("no continues rows (every juz starts at a surah's first ayah)"); }
+  else {
+    const href = cont.getAttribute("href");
+    cont.click();
+    let tries = 0;
+    while (!(d.querySelector("#panel .ltabs") && d.getElementById("a-num").textContent) && tries++ < 40) await wait(200);
+    await wait(600);
+    const [, s, a] = href.match(/#(\d+)\/ayah\/(\d+)/);
+    log.push(`continues row ${href} → surah ${d.querySelector("#navbtns .here").textContent} · bar "${d.getElementById("a-num").textContent}" · ayah ${a} solid on the page: ${[...d.querySelectorAll(`#pages .w.s[data-a="${a}"]`)].every(x => x.classList.contains("curayah"))}`);
+  }
+  document.getElementById("out").textContent = log.join("\n");
+}
+setTimeout(() => run().catch(e => { log.push("ERROR: " + (e && e.stack || e)); document.getElementById("out").textContent = log.join("\n"); }), 800);
+</script>
+</body></html>
